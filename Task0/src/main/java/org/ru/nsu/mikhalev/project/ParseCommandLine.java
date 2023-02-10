@@ -1,0 +1,93 @@
+package ru.nsu.mikhalev.project;
+
+import org.apache.commons.cli.*;
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+import java.io.OutputStream;
+import java.io.PrintWriter;
+
+public class ParseCommandLine {
+    public static void printHelp(
+            final Options options,
+            final int printedRowWidth,
+            final String header,
+            final String footer,
+            final int spacesBeforeOption,
+            final int spacesBeforeOptionDescription,
+            final boolean displayUsage,
+            final OutputStream out)
+    {
+        final String commandLineSyntax = "java test.jar";
+
+        final PrintWriter writer = new PrintWriter(out);
+
+        final HelpFormatter helpFormatter = new HelpFormatter();
+
+        helpFormatter.printHelp(
+                writer,
+                printedRowWidth,
+                commandLineSyntax,
+                header,
+                options,
+                spacesBeforeOption,
+                spacesBeforeOptionDescription,
+                footer,
+                displayUsage);
+        writer.flush();
+    }
+    private String[] searchCommandLine(String[] args) throws ParseException {
+        Option optCommands = new Option("n", "nameFile", true, "-n=input name file");
+
+        optCommands.setArgs(1);
+        optCommands.setArgName("file");
+
+        optCommands.setOptionalArg(true);
+        Options posixOptions = new Options();
+        posixOptions.addOption(optCommands);
+
+        Pattern patternHelp = Pattern.compile("-help");
+        Matcher matcherHelp = patternHelp.matcher(args[0]);
+
+        if(matcherHelp.find()) {
+            printHelp(
+                    posixOptions,
+                    80,
+                    "Option:",
+                    "-- HELP --",
+                    0,
+                    3,
+                    true,
+                    System.out
+            );
+            throw new ParseException("call -help");
+        }
+
+        CommandLineParser cmdLinePosixParser = new PosixParser();
+        CommandLine commandLine = cmdLinePosixParser.parse(posixOptions, args);
+
+        String[] arguments = new String[]{""};
+
+        if(commandLine.hasOption("nameFile")) {
+            arguments = commandLine.getOptionValues("nameFile");
+        } else if(commandLine.hasOption("n")) {
+            arguments = commandLine.getOptionValues("n");
+        } else if(commandLine.hasOption("NameFile")) {
+            arguments = commandLine.getOptionValues("NameFile");
+        }
+        return arguments;
+    }
+    public String findNameFile(String[] args) throws ParseException {
+
+        String[] arguments = searchCommandLine(args);
+        Pattern pattern = Pattern.compile("=.+");
+        Matcher matcher = pattern.matcher(arguments[0]);
+
+        String line = "";
+
+        while (matcher.find()) {
+            line = (arguments[0].substring(matcher.start() + 1,
+                    matcher.end()));
+        }
+        return line;
+    }
+}
