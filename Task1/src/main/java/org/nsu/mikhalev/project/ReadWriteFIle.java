@@ -1,9 +1,10 @@
 package org.nsu.mikhalev.project;
 
 
-
 import java.io.*;
+import java.util.List;
 import java.util.Map;
+import java.util.TreeMap;
 
 public class ReadWriteFIle {
     private  Reader reader = null;
@@ -13,17 +14,13 @@ public class ReadWriteFIle {
         reader = new InputStreamReader(new FileInputStream(fileIn));
         writer = new OutputStreamWriter(new FileOutputStream(fileOut));
     }
-    public void write(Map<String, Integer> map, int countFrequency) throws IOException {
-        System.out.println(countFrequency);
+    public void write(Map<String, Integer> treeMap, int countFrequency) throws IOException {
         writer.write("Key, Value, PercentCount\n");
-        for(Map.Entry<String, Integer> pair : map.entrySet()) {
+
+        for(Map.Entry<String,Integer> pair : treeMap.entrySet()) {
             writer.write(pair.getKey() + ",");
-            System.out.print(pair.getKey() + ",");
             writer.write(pair.getValue() + ",");
-            System.out.print(pair.getValue() + ",");
             writer.write(String.format("%.0f", ((double)pair.getValue() / (double)countFrequency)*100) + "\n");
-            double v= (double)pair.getValue() / (double)countFrequency;
-            System.out.println(String.format("%.2f", v) + "\n");
             writer.flush();
         }
     }

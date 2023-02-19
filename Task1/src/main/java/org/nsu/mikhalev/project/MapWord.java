@@ -1,25 +1,24 @@
 package org.nsu.mikhalev.project;
 
-
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.util.HashMap;
+import java.io.*;
 import java.util.Map;
-
+import java.util.TreeMap;
+import java.util.stream.Collectors;
+import java.util.LinkedHashMap;
 
 public class MapWord {
     private ReadWriteFIle readWriteFIle;
-    private final Map<String, Integer>  map;
+    private Map<String, Integer> newMapSortedByValue;
+    private  TreeMap<String, Integer> treeMap;
     private int wordFrequency = 0;
 
     public MapWord(String fileIn, String fileOut) throws FileNotFoundException {
          readWriteFIle = new ReadWriteFIle(fileIn, fileOut);
-         map = new HashMap<>();
+         treeMap = new TreeMap<>();
     }
     public void addWord(String word) {
-        map.compute(word, (key, value) -> (value == null) ? 1: value+1);
+        treeMap.compute(word, (key, value)->((value == null) ? 1: (value + 1)));
         ++wordFrequency;
-        System.out.println(map);
     }
 
     public String createWord() throws IOException {
@@ -43,10 +42,13 @@ public class MapWord {
     }
 
     public void sortDescending() {
-        map.entrySet().stream()
-                .sorted(Map.Entry.<String, Integer>comparingByValue().reversed());
+        newMapSortedByValue = treeMap.entrySet().stream()
+                .sorted(Map.Entry.<String,Integer>comparingByValue().reversed())
+                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1,e2) -> e1, LinkedHashMap::new));
+        System.out.println(newMapSortedByValue);
     }
     public void writeFileCSV() throws IOException {
-        readWriteFIle.write(map, wordFrequency);
+        readWriteFIle.write(newMapSortedByValue, wordFrequency);
+        System.out.println(newMapSortedByValue);
     }
 }
