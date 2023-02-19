@@ -45,7 +45,6 @@ public class MapWord {
         newMapSortedByValue = treeMap.entrySet().stream()
                 .sorted(Map.Entry.<String,Integer>comparingByValue().reversed())
                 .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1,e2) -> e1, LinkedHashMap::new));
-        System.out.println(newMapSortedByValue);
     }
     public void writeFileCSV() throws IOException {
         readWriteFIle.write(newMapSortedByValue, wordFrequency);
