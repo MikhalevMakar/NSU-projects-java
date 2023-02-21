@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.example</groupId>
-    <artifactId>StackCalculator</artifactId>
+    <groupId>org.ru.nsu.mikhalev.task2</groupId>
+    <artifactId>Task2</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
@@ -20,11 +20,12 @@
             <artifactId>commons-cli</artifactId>
             <version>1.4</version>
         </dependency>
-
-<!--        <dependency>-->
-<!--            <groupId>org.apache.commons</groupId>-->
-<!--            <artifactId>commons-lang3</artifactId>-->
-<!--            <version>3.12.0</version>-->
-<!--        </dependency>-->
     </dependencies>
+
+    <!--        <dependency>-->
+    <!--            <groupId>org.apache.commons</groupId>-->
+    <!--            <artifactId>commons-lang3</artifactId>-->
+    <!--            <version>3.12.0</version>-->
+    <!--        </dependency>-->
+
 </project>

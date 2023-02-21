@@ -1,8 +1,8 @@
-package org.example.Operations;
+package org.ru.nsu.mikhalev.task2.Operations;
 
 import java.util.HashMap;
 import java.util.Map;
-import org.example.CheckerDoubleValue.*;
+import  org.ru.nsu.mikhalev.task2.CheckerDouble.*;
 import java.lang.Double;
 import java.util.Iterator;
 import java.lang.Exception;
@@ -12,7 +12,6 @@ public class DEFINE {
     static {
         paramValue = new HashMap<>();
     }
-
     private static int  countValue = 0;
     public   static void addParamValue(String parameter, double value) {
         if(!CheckerDouble.IsNumberFormat(parameter)) {
@@ -33,5 +32,4 @@ public class DEFINE {
         }
         throw new Exception("Not found element\n");
     }
-
 }

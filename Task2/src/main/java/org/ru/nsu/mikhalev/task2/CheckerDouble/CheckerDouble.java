@@ -1,7 +1,6 @@
-package org.example.CheckerDoubleValue;
+package org.ru.nsu.mikhalev.task2.CheckerDouble;
 
 //import org.apache.commons.lang3.math.NumberUtils;
-import org.example.CheckerDoubleValue.CheckerDouble;
 public  class CheckerDouble {
     public static boolean IsNumberFormat(String s) {
         try {

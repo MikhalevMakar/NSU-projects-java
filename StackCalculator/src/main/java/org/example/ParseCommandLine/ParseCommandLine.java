@@ -38,27 +38,31 @@ public class ParseCommandLine {
         writer.flush();
     }
     private String[] searchCommandLine(String[] args) throws ParseException {
-        Option optCommands = new Option("n", "nameFile", true, "NameFile");
+        Option optCommands = new Option("n", "nameFile", true, "-n=input name file");
 
-        optCommands.setArgs(2);
-        optCommands.setArgName("nameFile");
-        optCommands.setArgName("n");
+        optCommands.setArgs(1);
+        optCommands.setArgName("file");
 
         optCommands.setOptionalArg(true);
-
         Options posixOptions = new Options();
         posixOptions.addOption(optCommands);
 
-        printHelp(
-                posixOptions,
-                80,
-                "Options",
-                "-- HELP --",
-                0,
-                3,
-                true,
-                System.out
-        );
+        Pattern patternHelp = Pattern.compile("-help");
+        Matcher matcherHelp = patternHelp.matcher(args[0]);
+
+        if(matcherHelp.find()) {
+            printHelp(
+                    posixOptions,
+                    80,
+                    "Option:",
+                    "-- HELP --",
+                    0,
+                    3,
+                    true,
+                    System.out
+            );
+            throw new ParseException("call -help");
+        }
 
         CommandLineParser cmdLinePosixParser = new PosixParser();
         CommandLine commandLine = cmdLinePosixParser.parse(posixOptions, args);
@@ -72,10 +76,10 @@ public class ParseCommandLine {
         } else if(commandLine.hasOption("NameFile")) {
             arguments = commandLine.getOptionValues("NameFile");
         }
-
         return arguments;
     }
     public String findNameFile(String[] args) throws ParseException {
+
         String[] arguments = searchCommandLine(args);
         Pattern pattern = Pattern.compile("=.+");
         Matcher matcher = pattern.matcher(arguments[0]);
@@ -88,7 +92,6 @@ public class ParseCommandLine {
         }
         return line;
     }
-
 }
 
 
