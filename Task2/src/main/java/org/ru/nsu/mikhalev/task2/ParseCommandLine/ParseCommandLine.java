@@ -8,7 +8,7 @@ import java.io.OutputStream;
 import java.io.PrintWriter;
 
 public class ParseCommandLine {
-    private static Options posixOptions = null;
+    private static Options posixOptions;
     private static String[] argInput, argOutput;
     static {
         posixOptions = new Options();
@@ -95,7 +95,7 @@ public class ParseCommandLine {
         }  else {
             throw new ParseException("not found command -i | -o");
         }
-//^[\s\S]*\.txt$
+
         Pattern patternTxt = Pattern.compile(".*\\.txt$");
 
         if(!argInput[0].matches(patternTxt.pattern()) ||

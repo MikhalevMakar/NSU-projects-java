@@ -11,11 +11,13 @@ public class TerminalCalculator {
 
     private Set<Double> set = new LinkedHashSet<>();
     public TerminalCalculator() throws Exception {
+
+
         System.out.println("Input param stack calculator:");
         String line = "";
 
         Scanner scanner = new Scanner(System.in);
-        Map<String, String> hashMap = new HashMap<>();
+        Map<StringBuilder, String> hashMap = new HashMap<>();
 
         while(scanner.hasNext()) {
             line = scanner.nextLine();
