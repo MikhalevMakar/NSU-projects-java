@@ -1,13 +1,16 @@
 package org.ru.nsu.mikhalev.task2;
 
 import java.io.*;
-import org.slf4j.*;
-
-
+import org.apache.commons.cli.ParseException;
+import org.ru.nsu.mikhalev.task2.CalculatorController.CalculatorController;
+import java.util.logging.*;
 public class Main {
-    //private static final Logger log =  LoggerFactory.getLogger(Main.class);
-    private  static  final Logger log = LoggerFactory.getLogger(Main.class);
-    public static void main(String[] args) throws IOException {
-        
+
+    private  static  final Logger LOGGER = Logger.getLogger(Main.class.getName());
+    public static void main(String[] args) throws IOException, ParseException, NoSuchFieldException {
+        LOGGER.info("Start process");
+        LOGGER.info("Call calculator controller");
+        CalculatorController calculator = new CalculatorController(args);
+        calculator.launch();
     }
 }

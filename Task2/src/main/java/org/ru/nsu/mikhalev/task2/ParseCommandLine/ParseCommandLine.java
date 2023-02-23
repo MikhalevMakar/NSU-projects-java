@@ -2,6 +2,8 @@ package org.ru.nsu.mikhalev.task2.ParseCommandLine;
 
 
 import org.apache.commons.cli.*;
+import org.jetbrains.annotations.NotNull;
+
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 import java.io.OutputStream;
@@ -9,13 +11,12 @@ import java.io.PrintWriter;
 
 public class ParseCommandLine {
     private static Options posixOptions;
-    private static String[] argInput, argOutput;
+    private static String[] argInput;
     static {
         posixOptions = new Options();
         argInput = new String[]{""};
-        argOutput = new String[]{""};
     }
-    public static void printHelp(
+    private static void printHelp(
             final Options options,
             final int printedRowWidth,
             final String header,
@@ -44,27 +45,20 @@ public class ParseCommandLine {
         writer.flush();
     }
 
-    private static void createOptions(String[] args) throws ParseException {
+    private static void createOptions(String @NotNull [] args) throws ParseException {
         Option optComInputFile = new Option("i",
                 "inputFile",
                 true,
                 "-i = input name file");
-        Option optComOutFile = new Option("o",
-                "outputFile",
-                true,
-                "-o = output name file");
 
         optComInputFile.setArgs(1);
-        optComOutFile.setArgs(1);
 
         optComInputFile.setArgName("file");
-        optComOutFile.setArgName("file");
 
         optComInputFile.setOptionalArg(true);
 
 
         posixOptions.addOption(optComInputFile);
-        posixOptions.addOption(optComOutFile);
 
         Pattern patternHelp = Pattern.compile("-help");
         Matcher matcherHelp = patternHelp.matcher(args[0]);
@@ -88,28 +82,21 @@ public class ParseCommandLine {
         CommandLineParser cmdLinePosixParser = new PosixParser();
         CommandLine commandLine = cmdLinePosixParser.parse(posixOptions, args);
 
-        if(commandLine.hasOption("i") &&
-                commandLine.hasOption("o")) {
+        if(commandLine.hasOption("i")) {
             argInput = commandLine.getOptionValues("i");
-            argOutput = commandLine.getOptionValues("o");
         }  else {
-            throw new ParseException("not found command -i | -o");
+            throw new ParseException("not found command -i");
         }
 
         Pattern patternTxt = Pattern.compile(".*\\.txt$");
 
-        if(!argInput[0].matches(patternTxt.pattern()) ||
-           !argOutput[0].matches(patternTxt.pattern()))
+        if(!argInput[0].matches(patternTxt.pattern()))
             throw new ParseException("Incorrect file name");
 
         argInput[0] = argInput[0].replaceFirst(".*=+", "");
-        argOutput[0] = argOutput[0].replaceFirst(".*=+", "");
     }
 
     public static String getFileInput() {
         return argInput[0];
-    }
-    public static String getFileOutput() {
-        return argOutput[0];
     }
 }
