@@ -5,7 +5,7 @@ import org.ru.nsu.mikhalev.task2.CalculatorController.Context;
 
 import java.util.LinkedList;
 
-@Operations
+@CommandAnnotation
 public class Minus implements Operation {
     @Override
     public void calculation(@NotNull Context context, @NotNull LinkedList<String> listValue) {

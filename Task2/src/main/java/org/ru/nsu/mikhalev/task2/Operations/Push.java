@@ -5,7 +5,7 @@ import org.ru.nsu.mikhalev.task2.CalculatorController.Context;
 import org.ru.nsu.mikhalev.task2.CheckerDouble.CheckerDouble;
 
 import java.util.LinkedList;
-@Operations
+@CommandAnnotation
 public class Push implements Operation{
     @Override
     public void calculation(Context context, @NotNull LinkedList<String> listValue) throws Exception {

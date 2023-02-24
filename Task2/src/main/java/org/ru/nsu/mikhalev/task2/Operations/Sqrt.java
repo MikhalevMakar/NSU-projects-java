@@ -6,7 +6,7 @@ import org.ru.nsu.mikhalev.task2.CalculatorController.Context;
 import java.util.LinkedList;
 
 import static java.lang.Math.sqrt;
-@Operations
+@CommandAnnotation
 public class Sqrt implements Operation {
     @Override
     public void calculation(@NotNull Context context, LinkedList<String> listValue) {

@@ -1,11 +1,10 @@
 package org.ru.nsu.mikhalev.task2.Operations;
 
-import java.lang.annotation.Annotation;
 import java.util.*;
 import org.jetbrains.annotations.NotNull;
 import org.ru.nsu.mikhalev.task2.CalculatorController.Context;
 
-@Operations
+@CommandAnnotation
 public class Define implements Operation {
     @Override
     public void calculation(@NotNull Context context, @NotNull LinkedList<String> listValue) {

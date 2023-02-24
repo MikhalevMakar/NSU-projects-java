@@ -2,13 +2,11 @@ package org.ru.nsu.mikhalev.task2.LoaderFactory;
 
 import org.jetbrains.annotations.NotNull;
 import org.ru.nsu.mikhalev.task2.Operations.Operation;
-import org.ru.nsu.mikhalev.task2.Operations.Operations;
+import org.ru.nsu.mikhalev.task2.Operations.CommandAnnotation;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.lang.annotation.Annotation;
-import java.lang.reflect.Method;
-import java.lang.reflect.Type;
 import java.util.Properties;
 public class LoaderFactory {
     private Properties properties;
@@ -27,7 +25,7 @@ public class LoaderFactory {
         Annotation[] annotations = cl.getAnnotations();
 
         for (Annotation annotation : annotations){
-            if (annotation instanceof Operations fileInfo) {
+            if (annotation instanceof CommandAnnotation fileInfo) {
                 return (Operation)cl.newInstance();
             }
         }
