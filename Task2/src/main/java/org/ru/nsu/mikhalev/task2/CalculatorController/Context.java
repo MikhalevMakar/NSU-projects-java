@@ -9,11 +9,13 @@ import java.util.TreeMap;
 import java.util.Stack;
 import java.util.Map;
 
+
 import org.apache.commons.cli.ParseException;
 import org.ru.nsu.mikhalev.task2.ParseCommandLine.*;
 import org.ru.nsu.mikhalev.task2.CheckerDouble.*;
 public class Context {
-    private final Map<String, Double> mapDefineValue;
+
+    private final  Map<String, Double> mapDefineValue;
     private final Stack<Double> stackDouble;
     private final Reader input;
 
