@@ -5,11 +5,10 @@ import org.ru.nsu.mikhalev.task2.CalculatorController.Context;
 
 import java.util.LinkedList;
 
+@Operations
 public class Minus implements Operation {
-
-
     @Override
-    public void calculation(Context context, @NotNull LinkedList<String> listValue) {
+    public void calculation(@NotNull Context context, @NotNull LinkedList<String> listValue) {
         checkCorrectArgs (listValue);
         try {
             Double v1 = context.popValue();

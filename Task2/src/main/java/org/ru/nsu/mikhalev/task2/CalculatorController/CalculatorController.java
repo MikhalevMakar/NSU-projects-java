@@ -3,9 +3,12 @@ package org.ru.nsu.mikhalev.task2.CalculatorController;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.lang.reflect.Method;
+
 import org.apache.commons.cli.ParseException;
 import org.ru.nsu.mikhalev.task2.LoaderFactory.LoaderFactory;
 import org.ru.nsu.mikhalev.task2.Operations.Operation;
+import org.ru.nsu.mikhalev.task2.Operations.Operations;
 import org.ru.nsu.mikhalev.task2.ParseLine.ParseLine;
 
 public class CalculatorController {
@@ -26,8 +29,9 @@ public class CalculatorController {
             while ((line = br.readLine()) != null) {
                if(line.charAt(0) == '#') continue;
                parseLine.parse(line);
-               operation = loaderFactory.getFilePathToSave(parseLine.getNameCommand ());
-               operation.calculation(context, parseLine.getListValue());
+               operation = loaderFactory.getFilePathToSave(parseLine.getNameCommand());
+
+                operation.calculation(context, parseLine.getListValue());
             }
         } catch (Exception e) {
             throw new RuntimeException (e);
