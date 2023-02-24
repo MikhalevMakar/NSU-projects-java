@@ -1,6 +1,7 @@
 package org.ru.nsu.mikhalev.task2.LoaderFactory;
 
 import org.jetbrains.annotations.NotNull;
+import org.ru.nsu.mikhalev.task2.Exceptions.LoadException;
 import org.ru.nsu.mikhalev.task2.Operations.Operation;
 import org.ru.nsu.mikhalev.task2.Operations.CommandAnnotation;
 
@@ -16,7 +17,7 @@ public class LoaderFactory {
                 .getClassLoader().getResourceAsStream("config.properties")){
             properties.load(inputStream);
         } catch(IOException io) {
-            throw io;
+            throw new IOException("config.properties was not found" + io.getMessage ());
         }
     }
 
@@ -29,6 +30,6 @@ public class LoaderFactory {
                 return (Operation)cl.newInstance();
             }
         }
-        throw new Exception ("Not found command");
+        throw new LoadException("Command not found or class was not annotated");
     }
 }

@@ -1,9 +1,6 @@
 package org.ru.nsu.mikhalev.task2.CalculatorController;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.InputStreamReader;
-import java.io.Reader;
+import java.io.*;
 import java.util.Iterator;
 import java.util.TreeMap;
 import java.util.Stack;
@@ -11,6 +8,7 @@ import java.util.Map;
 
 
 import org.apache.commons.cli.ParseException;
+import org.ru.nsu.mikhalev.task2.Exceptions.OperationException;
 import org.ru.nsu.mikhalev.task2.ParseCommandLine.*;
 import org.ru.nsu.mikhalev.task2.CheckerDouble.*;
 public class Context {
@@ -46,20 +44,24 @@ public class Context {
         mapDefineValue.put(parameter, Double.valueOf(value));
     }
 
-    public Double getDefineValue(String param) throws Exception {
+    public Double getDefineValue(String param) {
         Iterator iterator  = mapDefineValue.entrySet().iterator();
 
         for(var entry: mapDefineValue.entrySet()) {
             if(entry.getKey().equals(param)) return entry.getValue();
         }
-        throw new Exception("Not found element\n");
+        throw new OperationException("Not found element");
     }
 
     public Double peekValueStack() {
         try {
             return stackDouble.peek();
-        } catch(IllegalArgumentException e) {
-            throw new IllegalArgumentException("not correct stack");
+        } catch(OperationException e) {
+            throw new OperationException ("Failed to pop element from stack" + e.getStackTrace());
         }
+    }
+
+    public void close() throws IOException {
+        input.close();
     }
 }
