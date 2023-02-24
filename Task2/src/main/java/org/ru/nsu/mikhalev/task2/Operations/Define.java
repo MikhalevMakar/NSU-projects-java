@@ -3,7 +3,6 @@ package org.ru.nsu.mikhalev.task2.Operations;
 import java.util.*;
 import org.jetbrains.annotations.NotNull;
 import org.ru.nsu.mikhalev.task2.CalculatorController.Context;
-import  org.ru.nsu.mikhalev.task2.CheckerDouble.*;
 
 
 public class Define implements Operation {
@@ -14,5 +13,4 @@ public class Define implements Operation {
         }
         context.addDefineValue(listValue.get(0), listValue.get(1));
     }
-
 }

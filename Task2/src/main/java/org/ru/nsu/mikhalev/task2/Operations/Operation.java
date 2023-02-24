@@ -8,7 +8,7 @@ import java.util.LinkedList;
 
 public interface Operation {
     public void calculation(Context context, LinkedList<String> listValue) throws Exception;
-    public default void CheckCorrectArgs(@NotNull LinkedList<String> listValue) {
+    public default void checkCorrectArgs(@NotNull LinkedList<String> listValue) {
         if(!listValue.isEmpty()) {
             throw new IllegalArgumentException("Size args is not correct");
         }

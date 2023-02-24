@@ -52,4 +52,12 @@ public class Context {
         }
         throw new Exception("Not found element\n");
     }
+
+    public Double peekValueStack() {
+        try {
+            return stackDouble.peek();
+        } catch(IllegalArgumentException e) {
+            throw new IllegalArgumentException("not correct stack");
+        }
+    }
 }

@@ -7,7 +7,7 @@ import java.util.LinkedList;
 public class Multiplication implements Operation {
     @Override
     public void calculation(Context context, LinkedList<String> listValue) {
-        CheckCorrectArgs(listValue);
+        checkCorrectArgs (listValue);
         try {
             Double v1 = context.popValue();
             Double v2 = context.popValue();

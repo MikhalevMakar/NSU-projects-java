@@ -1,16 +1,17 @@
 package org.ru.nsu.mikhalev.task2.Operations;
 
+import org.jetbrains.annotations.NotNull;
 import org.ru.nsu.mikhalev.task2.CalculatorController.Context;
 
 import java.util.LinkedList;
 
 import static java.lang.Math.sqrt;
 
-public class Sqrt  implements Operation {
+public class Sqrt implements Operation {
     @Override
-    public void calculation(Context context, LinkedList<String> listValue) {
-        CheckCorrectArgs(listValue);
-        Double v, result;
+    public void calculation(@NotNull Context context, LinkedList<String> listValue) {
+        checkCorrectArgs (listValue);
+        Double v;
         try {
             v = context.popValue();
             if(v < 0) {
@@ -20,7 +21,6 @@ public class Sqrt  implements Operation {
         } catch(IllegalArgumentException illegalArgumentException) {
             throw  illegalArgumentException;
         }
-        result = sqrt(v);
-        context.pushValue(result.toString());
+        context.pushValue(Double.valueOf(sqrt(v)).toString());
     }
 }

@@ -20,11 +20,11 @@ public class ParseLine {
         listValue.removeFirst();
     }
 
-    LinkedList getListValue() {
+    public LinkedList getListValue() {
         return listValue;
     }
 
-    String getNameCommand() {
+    public String getNameCommand() {
         return nameCommand;
     }
 }

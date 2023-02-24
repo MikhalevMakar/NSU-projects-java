@@ -8,7 +8,7 @@ import java.util.LinkedList;
 public class Plus implements Operation {
     @Override
     public void calculation(@NotNull Context context, LinkedList<String> listValue) {
-        CheckCorrectArgs(listValue);
+        checkCorrectArgs (listValue);
         try {
             Double v1 = context.popValue();
             Double v2 = context.popValue();
