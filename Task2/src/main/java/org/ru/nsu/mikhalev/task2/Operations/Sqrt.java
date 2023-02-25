@@ -16,12 +16,16 @@ public class Sqrt implements Operation {
         try {
             v = context.popValue();
             if(v < 0) {
+                LOGGER.equals ("Value < 0 " + this.getClass ());
                 throw new OperationException("the sqrt argument should: >= 0");
             }
             context.pushValue(v.toString());
         } catch(OperationException operationException) {
+            LOGGER.warn ("Stack is empty" + operationException.getMessage ());
             throw  new OperationException("Stack is empty" + operationException.getStackTrace());
         }
-        context.pushValue(Double.valueOf(sqrt(v)).toString());
+        String pushValue = Double.valueOf(sqrt(v)).toString ();
+        LOGGER.info ("Push value "  + pushValue);
+        context.pushValue(pushValue);
     }
 }

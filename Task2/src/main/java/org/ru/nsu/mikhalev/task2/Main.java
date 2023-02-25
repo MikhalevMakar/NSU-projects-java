@@ -10,10 +10,9 @@ import java.io.IOException;
 public class Main {
     private  static  final Logger LOGGER = Logger.getLogger(Main.class.getName());
     public static void main(String[] args) throws IOException, ParseException {
-        LOGGER.info ("Chat gpt");
         LOGGER.info ("Start process");
         LOGGER.info ("Call calculator controller");
         CalculatorController calculator = new CalculatorController (args);
-        calculator.launch ();
+        calculator.launch();
     }
 }

@@ -1,6 +1,8 @@
 package org.ru.nsu.mikhalev.task2.LoaderFactory;
 
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
+import org.ru.nsu.mikhalev.task2.CalculatorController.CalculatorController;
 import org.ru.nsu.mikhalev.task2.Exceptions.LoadException;
 import org.ru.nsu.mikhalev.task2.Operations.Operation;
 import org.ru.nsu.mikhalev.task2.Operations.CommandAnnotation;
@@ -9,27 +11,33 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.lang.annotation.Annotation;
 import java.util.Properties;
+
 public class LoaderFactory {
     private Properties properties;
+    private static final org.apache.log4j.Logger LOGGER = Logger.getLogger (LoaderFactory.class.getName ());
+
     public LoaderFactory() throws IOException {
         properties = new Properties();
         try(InputStream inputStream = getClass()
                 .getClassLoader().getResourceAsStream("config.properties")) {
             properties.load(inputStream);
         } catch(IOException io) {
+            LOGGER.warn ("Constructor loader factory " + io.getMessage ());
             throw new IOException("config.properties was not found" + io.getMessage ());
         }
     }
-
     public Operation getFilePathToSave(@NotNull String nameClass) throws Exception {
+        LOGGER.info("Find class by nameCommand");
         Class cl = Class.forName(properties.getProperty(nameClass.toUpperCase()));
         Annotation[] annotations = cl.getAnnotations();
 
+        LOGGER.info("Annotation comparison CommandAnnotation");
         for (Annotation annotation : annotations) {
             if (annotation instanceof CommandAnnotation fileInfo) {
                 return (Operation)cl.newInstance();
             }
         }
+        LOGGER.trace ("Class not found");
         throw new LoadException("Command not found or class was not annotated");
     }
 }

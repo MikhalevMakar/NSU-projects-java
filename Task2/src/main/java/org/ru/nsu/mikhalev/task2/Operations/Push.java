@@ -11,9 +11,13 @@ import java.util.LinkedList;
 public class Push implements Operation{
     @Override
     public void calculation(Context context, @NotNull LinkedList<String> listValue) throws Exception {
-        if(listValue.size() != 1)
-            throw new NumericArguments("Incorrect number of arguments");
+        LOGGER.info ("Check correct size list args");
+        if (listValue.size () != 1) {
+            LOGGER.error ("Size list was not correct " + this.getClass ());
+        throw new NumericArguments ("Incorrect number of arguments");
+        }
 
+        LOGGER.info ("Push value in stack");
         if(CheckerDouble.IsNumberFormat(listValue.getFirst())) {
             context.pushValue(listValue.getFirst());
         } else {

@@ -13,6 +13,7 @@ import java.util.LinkedList;
 public class Plus implements Operation {
     @Override
     public void calculation(@NotNull Context context, LinkedList<String> listValue) {
+        LOGGER.info ("Check correct list args for command " + this.getClass ());
         checkCorrectArgs (listValue);
         try {
             Double v1 = context.popValue();
@@ -24,7 +25,10 @@ public class Plus implements Operation {
             }
             context.pushValue(result.toString());
         } catch(OperationException numericArguments) {
-            throw new OperationException("Failed to pop element from stack" + numericArguments.getStackTrace()  + this.getClass ());
+            LOGGER.error ("Failed to pop element from stack" + numericArguments.getMessage ());
+            throw new OperationException("Failed to pop element from stack" +
+                                         numericArguments.getStackTrace() +
+                                         this.getClass ());
         }
     }
 }
