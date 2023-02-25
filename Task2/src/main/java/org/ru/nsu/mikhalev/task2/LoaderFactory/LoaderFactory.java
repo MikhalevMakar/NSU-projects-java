@@ -2,7 +2,6 @@ package org.ru.nsu.mikhalev.task2.LoaderFactory;
 
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
-import org.ru.nsu.mikhalev.task2.CalculatorController.CalculatorController;
 import org.ru.nsu.mikhalev.task2.Exceptions.LoadException;
 import org.ru.nsu.mikhalev.task2.Operations.Operation;
 import org.ru.nsu.mikhalev.task2.Operations.CommandAnnotation;
@@ -19,11 +18,11 @@ public class LoaderFactory {
     public LoaderFactory() throws IOException {
         properties = new Properties();
         try(InputStream inputStream = getClass()
-                .getClassLoader().getResourceAsStream("config.properties")) {
+                .getClassLoader().getResourceAsStream("classCommands.properties")) {
             properties.load(inputStream);
         } catch(IOException io) {
             LOGGER.warn ("Constructor loader factory " + io.getMessage ());
-            throw new IOException("config.properties was not found" + io.getMessage ());
+            throw new IOException("classCommands.properties was not found" + io.getMessage ());
         }
     }
     public Operation getFilePathToSave(@NotNull String nameClass) throws Exception {

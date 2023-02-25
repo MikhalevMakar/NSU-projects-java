@@ -2,6 +2,7 @@ package org.ru.nsu.mikhalev.task2.ParseLine;
 
 import org.jetbrains.annotations.NotNull;
 import org.ru.nsu.mikhalev.task2.CheckerDouble.CheckerDouble;
+import org.ru.nsu.mikhalev.task2.Exceptions.NumericArguments;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -10,13 +11,12 @@ import java.util.List;
 public class ParseLine {
     private  LinkedList<String> listValue;
     String nameCommand;
-    public void parse(@NotNull String line) {
+    public void parse(@NotNull String line) throws NumericArguments {
         listValue = new LinkedList<>(List.of(line.split("\\s")));
         nameCommand = listValue.getFirst();
 
         if(CheckerDouble.IsNumberFormat(nameCommand))
-            throw new IllegalArgumentException("Invalid command entry");
-
+            throw new NumericArguments ("Invalid command entry");
         listValue.removeFirst();
     }
 
