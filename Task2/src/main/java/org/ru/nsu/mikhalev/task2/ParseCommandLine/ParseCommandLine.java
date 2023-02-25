@@ -47,9 +47,9 @@ public class ParseCommandLine {
 
     private static void createOptions(String @NotNull [] args) throws ParseException {
         Option optComInputFile = new Option("i",
-                "inputFile",
-                true,
-                "-i = input name file");
+                                        "inputFile",
+                                        true,
+                                        "-i = input name file");
 
         optComInputFile.setArgs(1);
 

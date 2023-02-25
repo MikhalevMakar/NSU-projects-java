@@ -14,7 +14,7 @@ public class LoaderFactory {
     public LoaderFactory() throws IOException {
         properties = new Properties();
         try(InputStream inputStream = getClass()
-                .getClassLoader().getResourceAsStream("config.properties")){
+                .getClassLoader().getResourceAsStream("config.properties")) {
             properties.load(inputStream);
         } catch(IOException io) {
             throw new IOException("config.properties was not found" + io.getMessage ());
@@ -25,7 +25,7 @@ public class LoaderFactory {
         Class cl = Class.forName(properties.getProperty(nameClass.toUpperCase()));
         Annotation[] annotations = cl.getAnnotations();
 
-        for (Annotation annotation : annotations){
+        for (Annotation annotation : annotations) {
             if (annotation instanceof CommandAnnotation fileInfo) {
                 return (Operation)cl.newInstance();
             }

@@ -34,13 +34,11 @@ public class CalculatorController implements Closeable {
                operation = loaderFactory.getFilePathToSave (parseLine.getNameCommand ());
 
                operation.calculation(context, parseLine.getListValue());
-
             }
         } catch (Exception ex) {
             throw new RuntimeException(ex.getMessage());
         }
     }
-
     @Override
     public void close() throws IOException {
         context.close();
