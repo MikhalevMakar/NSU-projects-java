@@ -13,19 +13,19 @@ CSV файл должен быть упорядочен по убыванию ч
  Для чтения из файла удобно использовать: java.io.InputStreamReader, например:
     
             Reader reader = null;
-                try {
-                      reader = new InputStreamReader(new FileInputStream(&quot;FILE NAME&quot;));
+            try {
+                  reader = new InputStreamReader(new FileInputStream(&quot;FILE NAME&quot;));
+            } catch (IOException e) {
+                  System.err.println(&quot;Error while reading file: &quot; + e.getLocalizedMessage());
+            } finally {
+                  if (null != reader) {
+                  try {
+                       reader.close();
                   } catch (IOException e) {
-                      System.err.println(&quot;Error while reading file: &quot; + e.getLocalizedMessage());
-                  } finally {
-                    if (null != reader) {
-                       try {
-                         reader.close();
-                       } catch (IOException e) {
-                         e.printStackTrace(System.err);
-                       }
-                   }
-                 }
+                       e.printStackTrace(System.err);
+                  }
+              }
+            }
          
  Для определения класса символа использовать метод Character.isLetterOrDigit. Для
 хранения статистики в памяти можно использовать одну из реализаций интерфейса
