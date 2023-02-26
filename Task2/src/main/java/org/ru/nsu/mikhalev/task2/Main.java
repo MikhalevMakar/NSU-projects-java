@@ -6,7 +6,6 @@ import org.jetbrains.annotations.NotNull;
 import org.ru.nsu.mikhalev.task2.CalculatorController.CalculatorController;
 import java.io.IOException;
 
-//-i=../Task2/src/main/resources/inputFile.txt
 public class Main {
     private  static  final Logger LOGGER = Logger.getLogger(Main.class.getName());
     public static void main(String @NotNull [] args) throws IOException, ParseException {

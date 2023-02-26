@@ -37,7 +37,6 @@ public class CalculatorController {
             LoaderFactory loaderFactory = new LoaderFactory ();
 
             while ((line = br.readLine ()) != null) {
-                System.out.println (line);
                 if(line.toUpperCase ().equals ("EXIT")) return;
 
                 LOGGER.info ("Read command and parameter " + line);
