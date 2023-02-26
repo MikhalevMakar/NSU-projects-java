@@ -17,7 +17,7 @@ public class Sqrt implements Operation {
             v = context.popValue();
             if(v < 0) {
                 LOGGER.equals ("Value < 0 " + this.getClass ());
-                throw new OperationException("the sqrt argument should: >= 0");
+                throw new OperationException("The sqrt argument should: >= 0");
             }
             context.pushValue(v.toString());
         } catch(OperationException operationException) {

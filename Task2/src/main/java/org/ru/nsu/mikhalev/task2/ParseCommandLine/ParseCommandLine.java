@@ -16,6 +16,8 @@ public class ParseCommandLine {
         posixOptions = new Options();
         argInput = new String[]{""};
     }
+
+
     private static void printHelp(
             final Options options,
             final int printedRowWidth,
@@ -85,7 +87,7 @@ public class ParseCommandLine {
         if(commandLine.hasOption("i")) {
             argInput = commandLine.getOptionValues("i");
         }  else {
-            throw new ParseException("not found command -i");
+            throw new ParseException("Not found command -i");
         }
 
         Pattern patternTxt = Pattern.compile(".*\\.txt$");
@@ -95,7 +97,6 @@ public class ParseCommandLine {
 
         argInput[0] = argInput[0].replaceFirst(".*=+", "");
     }
-
     public static String getFileInput() {
         return argInput[0];
     }

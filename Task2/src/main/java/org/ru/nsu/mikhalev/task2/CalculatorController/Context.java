@@ -16,19 +16,23 @@ import org.ru.nsu.mikhalev.task2.ParseCommandLine.*;
 import org.ru.nsu.mikhalev.task2.CheckerDouble.*;
 import javax.inject.Inject;
 public class Context implements Closeable {
-
     @Inject
     private final  Map<String, Double> mapDefineValue;
     @Inject
     private final Stack<Double> stackDouble;
     private final Reader input;
-
-    private static final Logger LOGGER = Logger.getLogger(Context.class.getName());
-    public Context(String[] args) throws ParseException, FileNotFoundException {
-        LOGGER.info ("Call constructor Context");
+    {
         mapDefineValue = new TreeMap<>();
         stackDouble = new Stack<>();
+    }
+    private static final Logger LOGGER = Logger.getLogger(Context.class.getName());
+    public Context() {
+        LOGGER.info ("Call constructor Context input console");
+        input = new InputStreamReader(System.in);
 
+    }
+    public Context(String[] args) throws ParseException, FileNotFoundException {
+        LOGGER.info ("Call constructor Context input file");
         ParseCommandLine.searchCommandLine(args);
         input = new InputStreamReader(new FileInputStream(ParseCommandLine.getFileInput()));
     }

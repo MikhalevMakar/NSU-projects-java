@@ -5,7 +5,6 @@ import org.ru.nsu.mikhalev.task2.CalculatorController.Context;
 import org.ru.nsu.mikhalev.task2.CheckerDouble.CheckerDouble;
 import org.ru.nsu.mikhalev.task2.Exceptions.FormatDouble;
 import org.ru.nsu.mikhalev.task2.Exceptions.OperationException;
-
 import java.util.LinkedList;
 
 @CommandAnnotation

@@ -15,6 +15,7 @@ public class LoaderFactory {
     private Properties properties;
     private static final org.apache.log4j.Logger LOGGER = Logger.getLogger (LoaderFactory.class.getName ());
 
+    private  Class cl;
     public LoaderFactory() throws IOException {
         properties = new Properties();
         try(InputStream inputStream = getClass()
@@ -25,9 +26,15 @@ public class LoaderFactory {
             throw new IOException("classCommands.properties was not found" + io.getMessage ());
         }
     }
-    public Operation getFilePathToSave(@NotNull String nameClass) throws Exception {
+    public Operation createInstanceClass(@NotNull String nameClass) throws Exception {
         LOGGER.info("Find class by nameCommand");
-        Class cl = Class.forName(properties.getProperty(nameClass.toUpperCase()));
+
+        try {
+            cl = Class.forName(properties.getProperty(nameClass.toUpperCase()));
+        } catch (NullPointerException nullPointerException) {
+            throw new NullPointerException ("This command wasn't found " + nullPointerException.getMessage ());
+        }
+
         Annotation[] annotations = cl.getAnnotations();
 
         LOGGER.info("Annotation comparison CommandAnnotation");
@@ -36,7 +43,7 @@ public class LoaderFactory {
                 return (Operation)cl.newInstance();
             }
         }
-        LOGGER.trace ("Class not found");
+        LOGGER.trace ("Class wasn't found");
         throw new LoadException("Command not found or class was not annotated");
     }
 }

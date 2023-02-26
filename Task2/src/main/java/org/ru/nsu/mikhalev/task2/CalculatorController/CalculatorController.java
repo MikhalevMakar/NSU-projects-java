@@ -17,10 +17,16 @@ public class CalculatorController {
     private String line;
     private Operation operation;
     private final Context context;
-    public CalculatorController(String[] args) throws ParseException, FileNotFoundException {
-        LOGGER.info ("Calculator controller constructor");
-        context = new Context (args);
+    {
         parseLine = new ParseLine ();
+    }
+    public CalculatorController() throws ParseException, FileNotFoundException {
+        LOGGER.info ("Calculator controller constructor empty");
+        context = new Context ();
+    }
+    public CalculatorController(String[] args) throws ParseException, FileNotFoundException {
+        LOGGER.info ("Calculator controller constructor args");
+        context = new Context (args);
     }
 
     public void launch() {
@@ -31,12 +37,15 @@ public class CalculatorController {
             LoaderFactory loaderFactory = new LoaderFactory ();
 
             while ((line = br.readLine ()) != null) {
+                System.out.println (line);
+                if(line.toUpperCase ().equals ("EXIT")) return;
+
                 LOGGER.info ("Read command and parameter " + line);
                 if (line.charAt (0) == '#') continue;
 
                 LOGGER.info("Parse read line");
                 parseLine.parse (line);
-                operation = loaderFactory.getFilePathToSave (parseLine.getNameCommand ());
+                operation = loaderFactory.createInstanceClass (parseLine.getNameCommand ());
                 LOGGER.info ("Create objet " + operation.getClass ());
 
                 operation.calculation (context, parseLine.getListValue ());
@@ -44,8 +53,7 @@ public class CalculatorController {
             }
         } catch (Exception ex) {
             LOGGER.error ("Runtime exception " + ex.getStackTrace ());
-            throw new RuntimeException (ex.getMessage ());
+            throw new RuntimeException (ex.getMessage () + ex.getStackTrace ());
         }
-
     }
 }

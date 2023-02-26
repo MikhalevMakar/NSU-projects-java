@@ -13,11 +13,6 @@ public class Pop implements Operation {
     public void calculation(@NotNull Context context, LinkedList<String> listValue) {
         LOGGER.info ("Try to pop value");
         checkCorrectArgs (listValue);
-         try {
-             context.popValue();
-         } catch(OperationException operationException) {
-             LOGGER.error ("Failed pop element " + this.getClass ());
-             throw new OperationException("Failed to pop element from stack "  + operationException.getMessage());
-         }
+        context.popValue();
     }
 }

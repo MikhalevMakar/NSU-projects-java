@@ -42,7 +42,7 @@ class ParseLineTest {
     @MethodSource("argsThrowProviderFactory")
     void parseExceptionsTest(@NotNull String line, String name, LinkedList<String> list) {
         ParseLine parseLine = new ParseLine ();
-        NumericArguments exception = Assertions.assertThrows(NumericArguments.class, () ->parseLine.parse (line), "Invalid command entry");
+        NumericArguments exception = Assertions.assertThrows(NumericArguments.class, () -> parseLine.parse (line), "Invalid command entry");
         assertEquals("Invalid command entry", exception.getMessage ());
     }
 }
