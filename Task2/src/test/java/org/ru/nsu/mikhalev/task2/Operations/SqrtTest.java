@@ -7,14 +7,11 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import org.ru.nsu.mikhalev.task2.CalculatorController.Context;
-import org.ru.nsu.mikhalev.task2.Exceptions.NumericArguments;
 import org.ru.nsu.mikhalev.task2.Exceptions.OperationException;
-
 import java.io.FileNotFoundException;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Stream;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class SqrtTest {

@@ -1,10 +1,7 @@
 package org.ru.nsu.mikhalev.task2.CalculatorController;
 
 import java.io.BufferedReader;
-import java.io.Closeable;
 import java.io.FileNotFoundException;
-import java.io.IOException;
-
 import org.apache.commons.cli.ParseException;
 import org.ru.nsu.mikhalev.task2.LoaderFactory.LoaderFactory;
 import org.ru.nsu.mikhalev.task2.Operations.Operation;
@@ -17,6 +14,7 @@ public class CalculatorController {
     private String line;
     private Operation operation;
     private final Context context;
+
     {
         parseLine = new ParseLine ();
     }

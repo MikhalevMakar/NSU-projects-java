@@ -9,7 +9,6 @@ import org.junit.jupiter.params.provider.MethodSource;
 import org.ru.nsu.mikhalev.task2.CalculatorController.Context;
 import org.ru.nsu.mikhalev.task2.Exceptions.FormatDouble;
 import org.ru.nsu.mikhalev.task2.Exceptions.OperationException;
-
 import java.io.FileNotFoundException;
 import java.util.LinkedList;
 import java.util.List;

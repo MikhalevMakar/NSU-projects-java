@@ -3,6 +3,7 @@ package org.ru.nsu.mikhalev.task2.Operations;
 import org.jetbrains.annotations.NotNull;
 import org.ru.nsu.mikhalev.task2.CalculatorController.Context;
 import org.ru.nsu.mikhalev.task2.CheckerDouble.CheckerDouble;
+import org.ru.nsu.mikhalev.task2.Exceptions.FormatDouble;
 import org.ru.nsu.mikhalev.task2.Exceptions.NumericArguments;
 
 
@@ -20,8 +21,10 @@ public class Push implements Operation{
         LOGGER.info ("Push value in stack");
         if(CheckerDouble.IsNumberFormat(listValue.getFirst())) {
             context.pushValue(listValue.getFirst());
-        } else {
+        } else if (context.findValueMap (listValue.getFirst())){
             context.pushValue(context.getDefineValue(listValue.getFirst()).toString());
+        } else {
+            throw new FormatDouble ("No such symbol was found");
         }
     }
 }

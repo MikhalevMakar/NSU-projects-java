@@ -1,20 +1,16 @@
 package org.ru.nsu.mikhalev.task2.CalculatorController;
 
 import java.io.*;
-import java.text.Format;
-import java.util.Iterator;
-import java.util.TreeMap;
-import java.util.Stack;
-import java.util.Map;
-
-
+import java.util.*;
 import org.apache.commons.cli.ParseException;
 import org.apache.log4j.Logger;
+import org.ru.nsu.mikhalev.task2.CheckerDouble.CheckerDouble;
 import org.ru.nsu.mikhalev.task2.Exceptions.FormatDouble;
 import org.ru.nsu.mikhalev.task2.Exceptions.OperationException;
-import org.ru.nsu.mikhalev.task2.ParseCommandLine.*;
-import org.ru.nsu.mikhalev.task2.CheckerDouble.*;
+import org.ru.nsu.mikhalev.task2.ParseCommandLine.ParseCommandLine;
+
 import javax.inject.Inject;
+
 public class Context implements Closeable {
     @Inject
     private final  Map<String, Double> mapDefineValue;
@@ -38,25 +34,30 @@ public class Context implements Closeable {
     }
     public void pushValue(String value) {
         LOGGER.info ("Push value in Stack<Double>");
-        if(CheckerDouble.IsNumberFormat(value))
-            stackDouble.push(Double.valueOf(value));
+         if (CheckerDouble.IsNumberFormat (value))
+             stackDouble.push (Double.valueOf (value));
+         else
+             throw new FormatDouble ("It's not a number");
     }
     public Reader getReader() { return input; }
     public Double popValue() {
         LOGGER.info ("Try pop value in stack");
         if(stackDouble.size() == 0) {
             LOGGER.error ("Stack<Double> is empty");
-            throw new FormatDouble("Stack is empty, " +
-                    "an exception was thrown when the pop element was raised");
+            throw new FormatDouble ("Stack is empty");
         }
         return stackDouble.pop();
+    }
+
+    public boolean findValueMap(String value) {
+        return mapDefineValue.containsKey(value);
     }
 
     public void addDefineValue(String parameter, String value) {
         if(CheckerDouble.IsNumberFormat(parameter) ||
            !CheckerDouble.IsNumberFormat(value)) {
             LOGGER.error ("Parameter or value was not correct");
-            throw new FormatDouble("Format not correct, when add define value");
+            throw new FormatDouble ("Format not correct");
         }
         mapDefineValue.put(parameter, Double.valueOf(value));
     }
@@ -67,16 +68,15 @@ public class Context implements Closeable {
         for(var entry: mapDefineValue.entrySet()) {
             if(entry.getKey().equals(param)) return entry.getValue();
         }
-        throw new OperationException("Element was not found, when try to" +
-                " get define value");
+        throw new OperationException ("Element was not found");
     }
 
     public Double peekValueStack() {
         try {
             return stackDouble.peek();
-        } catch(OperationException e) {
+        } catch(EmptyStackException e) {
             LOGGER.warn (e);
-            throw new OperationException ("Failed to pop element from stack" + e.getStackTrace());
+            throw new EmptyStackException ();
         }
     }
     @Override
