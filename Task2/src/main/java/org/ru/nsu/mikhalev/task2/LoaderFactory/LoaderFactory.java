@@ -5,7 +5,6 @@ import org.jetbrains.annotations.NotNull;
 import org.ru.nsu.mikhalev.task2.Exceptions.LoadException;
 import org.ru.nsu.mikhalev.task2.Operations.Operation;
 import org.ru.nsu.mikhalev.task2.Operations.CommandAnnotation;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.lang.annotation.Annotation;
