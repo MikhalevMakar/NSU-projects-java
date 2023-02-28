@@ -12,7 +12,7 @@ public class Print implements Operation{
     public void calculation(@NotNull Context context, LinkedList<String> listValue) throws Exception {
         checkCorrectArgs (listValue);
         try {
-            LOGGER.info ("Try to print value, That's why call peek in stack");
+            LOGGER.debug ("Try to print value, That's why call peek in stack");
             Double value = context.peekValueStack();
         } catch (OperationException operationException) {
             LOGGER.error ("Failed pop element " + this.getClass ());

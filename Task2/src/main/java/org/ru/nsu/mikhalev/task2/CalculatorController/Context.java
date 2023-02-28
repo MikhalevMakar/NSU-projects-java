@@ -23,17 +23,17 @@ public class Context implements Closeable {
     }
     private static final Logger LOGGER = Logger.getLogger(Context.class.getName());
     public Context() {
-        LOGGER.info ("Call constructor Context input console");
+        LOGGER.debug ("Call constructor Context input console");
         input = new InputStreamReader(System.in);
 
     }
     public Context(String[] args) throws ParseException, FileNotFoundException {
-        LOGGER.info ("Call constructor Context input file");
+        LOGGER.debug ("Call constructor Context input file");
         ParseCommandLine.searchCommandLine(args);
         input = new InputStreamReader(new FileInputStream(ParseCommandLine.getFileInput()));
     }
     public void pushValue(String value) {
-        LOGGER.info ("Push value in Stack<Double>");
+        LOGGER.debug ("Push value in Stack<Double>");
          if (CheckerDouble.IsNumberFormat (value))
              stackDouble.push (Double.valueOf (value));
          else
@@ -41,7 +41,7 @@ public class Context implements Closeable {
     }
     public Reader getReader() { return input; }
     public Double popValue() {
-        LOGGER.info ("Try pop value in stack");
+        LOGGER.debug ("Try pop value in stack");
         if(stackDouble.size() == 0) {
             LOGGER.error ("Stack<Double> is empty");
             throw new FormatDouble ("Stack is empty");
@@ -81,7 +81,7 @@ public class Context implements Closeable {
     }
     @Override
     public void close() throws IOException {
-        LOGGER.info("Close Reader");
+        LOGGER.debug("Close Reader");
         input.close();
     }
 }

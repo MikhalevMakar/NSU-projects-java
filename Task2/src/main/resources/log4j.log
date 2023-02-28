@@ -1,682 +1,79 @@
-2023-02-26 13:48:49 INFO  Main:12 - Call calculator controller
-2023-02-26 13:48:49 INFO  CalculatorController:28 - Calculator controller constructor args
-2023-02-26 13:48:49 INFO  Context:35 - Call constructor Context input file
-2023-02-26 13:48:49 INFO  CalculatorController:33 - Create buffered reader
-2023-02-26 13:48:49 INFO  CalculatorController:36 - Create load factory
-2023-02-26 13:48:49 INFO  CalculatorController:42 - Read command and parameter DEFINE a 4
-2023-02-26 13:48:49 INFO  CalculatorController:45 - Parse read line
-2023-02-26 13:48:49 INFO  LoaderFactory:30 - Find class by nameCommand
-2023-02-26 13:48:49 INFO  LoaderFactory:40 - Annotation comparison CommandAnnotation
-2023-02-26 13:48:49 INFO  CalculatorController:48 - Create objet class org.ru.nsu.mikhalev.task2.Operations.Define
-2023-02-26 13:48:49 INFO  CalculatorController:51 - Calc command DEFINE
-2023-02-26 13:48:49 INFO  CalculatorController:42 - Read command and parameter PUSH a
-2023-02-26 13:48:49 INFO  CalculatorController:45 - Parse read line
-2023-02-26 13:48:49 INFO  LoaderFactory:30 - Find class by nameCommand
-2023-02-26 13:48:49 INFO  LoaderFactory:40 - Annotation comparison CommandAnnotation
-2023-02-26 13:48:49 INFO  CalculatorController:48 - Create objet class org.ru.nsu.mikhalev.task2.Operations.Push
-2023-02-26 13:48:49 INFO  Operation:14 - Check correct size list args
-2023-02-26 13:48:49 INFO  Operation:20 - Push value in stack
-2023-02-26 13:48:49 INFO  Context:40 - Push value in Stack<Double>
-2023-02-26 13:48:49 INFO  CalculatorController:51 - Calc command PUSH
-2023-02-26 13:48:49 INFO  CalculatorController:42 - Read command and parameter # test
-2023-02-26 13:48:49 INFO  CalculatorController:42 - Read command and parameter SQRT
-2023-02-26 13:48:49 INFO  CalculatorController:45 - Parse read line
-2023-02-26 13:48:49 INFO  LoaderFactory:30 - Find class by nameCommand
-2023-02-26 13:48:49 INFO  LoaderFactory:40 - Annotation comparison CommandAnnotation
-2023-02-26 13:48:49 INFO  CalculatorController:48 - Create objet class org.ru.nsu.mikhalev.task2.Operations.Sqrt
-2023-02-26 13:48:49 INFO  Context:46 - Try pop value in stack
-2023-02-26 13:48:49 INFO  Context:40 - Push value in Stack<Double>
-2023-02-26 13:48:49 INFO  Operation:28 - Push value 2.0
-2023-02-26 13:48:49 INFO  Context:40 - Push value in Stack<Double>
-2023-02-26 13:48:49 INFO  CalculatorController:51 - Calc command SQRT
-2023-02-26 13:48:49 INFO  CalculatorController:42 - Read command and parameter PRINT
-2023-02-26 13:48:49 INFO  CalculatorController:45 - Parse read line
-2023-02-26 13:48:49 INFO  LoaderFactory:30 - Find class by nameCommand
-2023-02-26 13:48:49 INFO  LoaderFactory:40 - Annotation comparison CommandAnnotation
-2023-02-26 13:48:49 INFO  CalculatorController:48 - Create objet class org.ru.nsu.mikhalev.task2.Operations.Print
-2023-02-26 13:48:49 INFO  Operation:15 - Try to print value, That's why call peek in stack
-2023-02-26 13:48:49 INFO  CalculatorController:51 - Calc command PRINT
-2023-02-26 13:48:49 INFO  CalculatorController:42 - Read command and parameter PRINT
-2023-02-26 13:48:49 INFO  CalculatorController:45 - Parse read line
-2023-02-26 13:48:49 INFO  LoaderFactory:30 - Find class by nameCommand
-2023-02-26 13:48:49 INFO  LoaderFactory:40 - Annotation comparison CommandAnnotation
-2023-02-26 13:48:49 INFO  CalculatorController:48 - Create objet class org.ru.nsu.mikhalev.task2.Operations.Print
-2023-02-26 13:48:49 INFO  Operation:15 - Try to print value, That's why call peek in stack
-2023-02-26 13:48:49 INFO  CalculatorController:51 - Calc command PRINT
-2023-02-26 13:48:49 INFO  CalculatorController:42 - Read command and parameter PRINT
-2023-02-26 13:48:49 INFO  CalculatorController:45 - Parse read line
-2023-02-26 13:48:49 INFO  LoaderFactory:30 - Find class by nameCommand
-2023-02-26 13:48:49 INFO  LoaderFactory:40 - Annotation comparison CommandAnnotation
-2023-02-26 13:48:49 INFO  CalculatorController:48 - Create objet class org.ru.nsu.mikhalev.task2.Operations.Print
-2023-02-26 13:48:49 INFO  Operation:15 - Try to print value, That's why call peek in stack
-2023-02-26 13:48:49 INFO  CalculatorController:51 - Calc command PRINT
-2023-02-26 13:48:49 INFO  CalculatorController:42 - Read command and parameter SQRT
-2023-02-26 13:48:49 INFO  CalculatorController:45 - Parse read line
-2023-02-26 13:48:49 INFO  LoaderFactory:30 - Find class by nameCommand
-2023-02-26 13:48:49 INFO  LoaderFactory:40 - Annotation comparison CommandAnnotation
-2023-02-26 13:48:49 INFO  CalculatorController:48 - Create objet class org.ru.nsu.mikhalev.task2.Operations.Sqrt
-2023-02-26 13:48:49 INFO  Context:46 - Try pop value in stack
-2023-02-26 13:48:49 INFO  Context:40 - Push value in Stack<Double>
-2023-02-26 13:48:49 INFO  Operation:28 - Push value 1.4142135623730951
-2023-02-26 13:48:49 INFO  Context:40 - Push value in Stack<Double>
-2023-02-26 13:48:49 INFO  CalculatorController:51 - Calc command SQRT
-2023-02-26 13:48:49 INFO  CalculatorController:42 - Read command and parameter DEFINE b 5
-2023-02-26 13:48:49 INFO  CalculatorController:45 - Parse read line
-2023-02-26 13:48:49 INFO  LoaderFactory:30 - Find class by nameCommand
-2023-02-26 13:48:49 INFO  LoaderFactory:40 - Annotation comparison CommandAnnotation
-2023-02-26 13:48:49 INFO  CalculatorController:48 - Create objet class org.ru.nsu.mikhalev.task2.Operations.Define
-2023-02-26 13:48:49 INFO  CalculatorController:51 - Calc command DEFINE
-2023-02-26 13:48:49 INFO  CalculatorController:42 - Read command and parameter PUSH b
-2023-02-26 13:48:49 INFO  CalculatorController:45 - Parse read line
-2023-02-26 13:48:49 INFO  LoaderFactory:30 - Find class by nameCommand
-2023-02-26 13:48:49 INFO  LoaderFactory:40 - Annotation comparison CommandAnnotation
-2023-02-26 13:48:49 INFO  CalculatorController:48 - Create objet class org.ru.nsu.mikhalev.task2.Operations.Push
-2023-02-26 13:48:49 INFO  Operation:14 - Check correct size list args
-2023-02-26 13:48:49 INFO  Operation:20 - Push value in stack
-2023-02-26 13:48:49 INFO  Context:40 - Push value in Stack<Double>
-2023-02-26 13:48:49 INFO  CalculatorController:51 - Calc command PUSH
-2023-02-26 13:48:49 INFO  CalculatorController:42 - Read command and parameter PUSH a
-2023-02-26 13:48:49 INFO  CalculatorController:45 - Parse read line
-2023-02-26 13:48:49 INFO  LoaderFactory:30 - Find class by nameCommand
-2023-02-26 13:48:49 INFO  LoaderFactory:40 - Annotation comparison CommandAnnotation
-2023-02-26 13:48:49 INFO  CalculatorController:48 - Create objet class org.ru.nsu.mikhalev.task2.Operations.Push
-2023-02-26 13:48:49 INFO  Operation:14 - Check correct size list args
-2023-02-26 13:48:49 INFO  Operation:20 - Push value in stack
-2023-02-26 13:48:49 INFO  Context:40 - Push value in Stack<Double>
-2023-02-26 13:48:49 INFO  CalculatorController:51 - Calc command PUSH
-2023-02-26 13:48:49 INFO  CalculatorController:42 - Read command and parameter MINUS
-2023-02-26 13:48:49 INFO  CalculatorController:45 - Parse read line
-2023-02-26 13:48:49 INFO  LoaderFactory:30 - Find class by nameCommand
-2023-02-26 13:48:49 INFO  LoaderFactory:40 - Annotation comparison CommandAnnotation
-2023-02-26 13:48:49 INFO  CalculatorController:48 - Create objet class org.ru.nsu.mikhalev.task2.Operations.Minus
-2023-02-26 13:48:49 INFO  Context:46 - Try pop value in stack
-2023-02-26 13:48:49 INFO  Context:46 - Try pop value in stack
-2023-02-26 13:48:49 INFO  Context:40 - Push value in Stack<Double>
-2023-02-26 13:48:49 INFO  CalculatorController:51 - Calc command MINUS
-2023-02-26 13:48:49 INFO  CalculatorController:42 - Read command and parameter PRINT
-2023-02-26 13:48:49 INFO  CalculatorController:45 - Parse read line
-2023-02-26 13:48:49 INFO  LoaderFactory:30 - Find class by nameCommand
-2023-02-26 13:48:49 INFO  LoaderFactory:40 - Annotation comparison CommandAnnotation
-2023-02-26 13:48:50 INFO  CalculatorController:48 - Create objet class org.ru.nsu.mikhalev.task2.Operations.Print
-2023-02-26 13:48:50 INFO  Operation:15 - Try to print value, That's why call peek in stack
-2023-02-26 13:48:50 INFO  CalculatorController:51 - Calc command PRINT
-2023-02-26 13:48:50 INFO  Context:84 - Close Reader
-2023-02-27 12:50:12 INFO  Main:12 - Call calculator controller
-2023-02-27 12:50:12 INFO  CalculatorController:28 - Calculator controller constructor args
-2023-02-27 12:50:12 INFO  Context:35 - Call constructor Context input file
-2023-02-27 12:50:12 INFO  CalculatorController:33 - Create buffered reader
-2023-02-27 12:50:12 INFO  CalculatorController:36 - Create load factory
-2023-02-27 12:50:12 INFO  CalculatorController:42 - Read command and parameter DEFINE a 4
-2023-02-27 12:50:12 INFO  CalculatorController:45 - Parse read line
-2023-02-27 12:50:12 INFO  LoaderFactory:30 - Find class by nameCommand
-2023-02-27 12:50:12 INFO  LoaderFactory:40 - Annotation comparison CommandAnnotation
-2023-02-27 12:50:12 INFO  CalculatorController:48 - Create objet class org.ru.nsu.mikhalev.task2.Operations.Define
-2023-02-27 12:50:12 INFO  CalculatorController:51 - Calc command DEFINE
-2023-02-27 12:50:12 INFO  CalculatorController:42 - Read command and parameter PUSH a
-2023-02-27 12:50:12 INFO  CalculatorController:45 - Parse read line
-2023-02-27 12:50:12 INFO  LoaderFactory:30 - Find class by nameCommand
-2023-02-27 12:50:12 INFO  LoaderFactory:40 - Annotation comparison CommandAnnotation
-2023-02-27 12:50:12 INFO  CalculatorController:48 - Create objet class org.ru.nsu.mikhalev.task2.Operations.Push
-2023-02-27 12:50:12 INFO  Operation:14 - Check correct size list args
-2023-02-27 12:50:12 INFO  Operation:20 - Push value in stack
-2023-02-27 12:50:12 INFO  Context:40 - Push value in Stack<Double>
-2023-02-27 12:50:12 INFO  CalculatorController:51 - Calc command PUSH
-2023-02-27 12:50:12 INFO  CalculatorController:42 - Read command and parameter # test
-2023-02-27 12:50:12 INFO  CalculatorController:42 - Read command and parameter SQRT
-2023-02-27 12:50:12 INFO  CalculatorController:45 - Parse read line
-2023-02-27 12:50:12 INFO  LoaderFactory:30 - Find class by nameCommand
-2023-02-27 12:50:12 INFO  LoaderFactory:40 - Annotation comparison CommandAnnotation
-2023-02-27 12:50:12 INFO  CalculatorController:48 - Create objet class org.ru.nsu.mikhalev.task2.Operations.Sqrt
-2023-02-27 12:50:12 INFO  Context:46 - Try pop value in stack
-2023-02-27 12:50:12 INFO  Context:40 - Push value in Stack<Double>
-2023-02-27 12:50:12 INFO  Operation:28 - Push value 2.0
-2023-02-27 12:50:12 INFO  Context:40 - Push value in Stack<Double>
-2023-02-27 12:50:12 INFO  CalculatorController:51 - Calc command SQRT
-2023-02-27 12:50:12 INFO  CalculatorController:42 - Read command and parameter PRINT
-2023-02-27 12:50:12 INFO  CalculatorController:45 - Parse read line
-2023-02-27 12:50:12 INFO  LoaderFactory:30 - Find class by nameCommand
-2023-02-27 12:50:12 INFO  LoaderFactory:40 - Annotation comparison CommandAnnotation
-2023-02-27 12:50:12 INFO  CalculatorController:48 - Create objet class org.ru.nsu.mikhalev.task2.Operations.Print
-2023-02-27 12:50:12 INFO  Operation:15 - Try to print value, That's why call peek in stack
-2023-02-27 12:50:12 INFO  CalculatorController:51 - Calc command PRINT
-2023-02-27 12:50:12 INFO  CalculatorController:42 - Read command and parameter PRINT
-2023-02-27 12:50:12 INFO  CalculatorController:45 - Parse read line
-2023-02-27 12:50:12 INFO  LoaderFactory:30 - Find class by nameCommand
-2023-02-27 12:50:12 INFO  LoaderFactory:40 - Annotation comparison CommandAnnotation
-2023-02-27 12:50:12 INFO  CalculatorController:48 - Create objet class org.ru.nsu.mikhalev.task2.Operations.Print
-2023-02-27 12:50:12 INFO  Operation:15 - Try to print value, That's why call peek in stack
-2023-02-27 12:50:12 INFO  CalculatorController:51 - Calc command PRINT
-2023-02-27 12:50:12 INFO  CalculatorController:42 - Read command and parameter PRINT
-2023-02-27 12:50:12 INFO  CalculatorController:45 - Parse read line
-2023-02-27 12:50:12 INFO  LoaderFactory:30 - Find class by nameCommand
-2023-02-27 12:50:12 INFO  LoaderFactory:40 - Annotation comparison CommandAnnotation
-2023-02-27 12:50:12 INFO  CalculatorController:48 - Create objet class org.ru.nsu.mikhalev.task2.Operations.Print
-2023-02-27 12:50:12 INFO  Operation:15 - Try to print value, That's why call peek in stack
-2023-02-27 12:50:12 INFO  CalculatorController:51 - Calc command PRINT
-2023-02-27 12:50:12 INFO  CalculatorController:42 - Read command and parameter SQRT
-2023-02-27 12:50:12 INFO  CalculatorController:45 - Parse read line
-2023-02-27 12:50:12 INFO  LoaderFactory:30 - Find class by nameCommand
-2023-02-27 12:50:12 INFO  LoaderFactory:40 - Annotation comparison CommandAnnotation
-2023-02-27 12:50:12 INFO  CalculatorController:48 - Create objet class org.ru.nsu.mikhalev.task2.Operations.Sqrt
-2023-02-27 12:50:12 INFO  Context:46 - Try pop value in stack
-2023-02-27 12:50:12 INFO  Context:40 - Push value in Stack<Double>
-2023-02-27 12:50:12 INFO  Operation:28 - Push value 1.4142135623730951
-2023-02-27 12:50:12 INFO  Context:40 - Push value in Stack<Double>
-2023-02-27 12:50:12 INFO  CalculatorController:51 - Calc command SQRT
-2023-02-27 12:50:12 INFO  CalculatorController:42 - Read command and parameter DEFINE b 5
-2023-02-27 12:50:12 INFO  CalculatorController:45 - Parse read line
-2023-02-27 12:50:12 INFO  LoaderFactory:30 - Find class by nameCommand
-2023-02-27 12:50:12 INFO  LoaderFactory:40 - Annotation comparison CommandAnnotation
-2023-02-27 12:50:12 INFO  CalculatorController:48 - Create objet class org.ru.nsu.mikhalev.task2.Operations.Define
-2023-02-27 12:50:12 INFO  CalculatorController:51 - Calc command DEFINE
-2023-02-27 12:50:12 INFO  CalculatorController:42 - Read command and parameter PUSH b
-2023-02-27 12:50:12 INFO  CalculatorController:45 - Parse read line
-2023-02-27 12:50:12 INFO  LoaderFactory:30 - Find class by nameCommand
-2023-02-27 12:50:12 INFO  LoaderFactory:40 - Annotation comparison CommandAnnotation
-2023-02-27 12:50:12 INFO  CalculatorController:48 - Create objet class org.ru.nsu.mikhalev.task2.Operations.Push
-2023-02-27 12:50:12 INFO  Operation:14 - Check correct size list args
-2023-02-27 12:50:12 INFO  Operation:20 - Push value in stack
-2023-02-27 12:50:12 INFO  Context:40 - Push value in Stack<Double>
-2023-02-27 12:50:12 INFO  CalculatorController:51 - Calc command PUSH
-2023-02-27 12:50:12 INFO  CalculatorController:42 - Read command and parameter PUSH a
-2023-02-27 12:50:12 INFO  CalculatorController:45 - Parse read line
-2023-02-27 12:50:12 INFO  LoaderFactory:30 - Find class by nameCommand
-2023-02-27 12:50:12 INFO  LoaderFactory:40 - Annotation comparison CommandAnnotation
-2023-02-27 12:50:12 INFO  CalculatorController:48 - Create objet class org.ru.nsu.mikhalev.task2.Operations.Push
-2023-02-27 12:50:12 INFO  Operation:14 - Check correct size list args
-2023-02-27 12:50:12 INFO  Operation:20 - Push value in stack
-2023-02-27 12:50:12 INFO  Context:40 - Push value in Stack<Double>
-2023-02-27 12:50:12 INFO  CalculatorController:51 - Calc command PUSH
-2023-02-27 12:50:12 INFO  CalculatorController:42 - Read command and parameter MINUS
-2023-02-27 12:50:12 INFO  CalculatorController:45 - Parse read line
-2023-02-27 12:50:12 INFO  LoaderFactory:30 - Find class by nameCommand
-2023-02-27 12:50:12 INFO  LoaderFactory:40 - Annotation comparison CommandAnnotation
-2023-02-27 12:50:12 INFO  CalculatorController:48 - Create objet class org.ru.nsu.mikhalev.task2.Operations.Minus
-2023-02-27 12:50:12 INFO  Context:46 - Try pop value in stack
-2023-02-27 12:50:12 INFO  Context:46 - Try pop value in stack
-2023-02-27 12:50:12 INFO  Context:40 - Push value in Stack<Double>
-2023-02-27 12:50:12 INFO  CalculatorController:51 - Calc command MINUS
-2023-02-27 12:50:12 INFO  CalculatorController:42 - Read command and parameter PRINT
-2023-02-27 12:50:12 INFO  CalculatorController:45 - Parse read line
-2023-02-27 12:50:12 INFO  LoaderFactory:30 - Find class by nameCommand
-2023-02-27 12:50:12 INFO  LoaderFactory:40 - Annotation comparison CommandAnnotation
-2023-02-27 12:50:12 INFO  CalculatorController:48 - Create objet class org.ru.nsu.mikhalev.task2.Operations.Print
-2023-02-27 12:50:12 INFO  Operation:15 - Try to print value, That's why call peek in stack
-2023-02-27 12:50:12 INFO  CalculatorController:51 - Calc command PRINT
-2023-02-27 12:50:12 INFO  Context:84 - Close Reader
-2023-02-27 14:19:58 INFO  Main:12 - Call calculator controller
-2023-02-27 14:19:58 INFO  CalculatorController:28 - Calculator controller constructor args
-2023-02-27 14:19:58 INFO  Context:36 - Call constructor Context input file
-2023-02-27 14:19:58 INFO  CalculatorController:33 - Create buffered reader
-2023-02-27 14:19:58 INFO  CalculatorController:36 - Create load factory
-2023-02-27 14:19:58 INFO  CalculatorController:42 - Read command and parameter DEFINE a 4
-2023-02-27 14:19:58 INFO  CalculatorController:45 - Parse read line
-2023-02-27 14:19:58 INFO  LoaderFactory:30 - Find class by nameCommand
-2023-02-27 14:19:58 INFO  LoaderFactory:40 - Annotation comparison CommandAnnotation
-2023-02-27 14:19:58 INFO  CalculatorController:48 - Create objet class org.ru.nsu.mikhalev.task2.Operations.Define
-2023-02-27 14:19:58 INFO  CalculatorController:51 - Calc command DEFINE
-2023-02-27 14:19:58 INFO  CalculatorController:42 - Read command and parameter PUSH a
-2023-02-27 14:19:58 INFO  CalculatorController:45 - Parse read line
-2023-02-27 14:19:58 INFO  LoaderFactory:30 - Find class by nameCommand
-2023-02-27 14:19:58 INFO  LoaderFactory:40 - Annotation comparison CommandAnnotation
-2023-02-27 14:19:58 INFO  CalculatorController:48 - Create objet class org.ru.nsu.mikhalev.task2.Operations.Push
-2023-02-27 14:19:58 INFO  Operation:15 - Check correct size list args
-2023-02-27 14:19:58 INFO  Operation:21 - Push value in stack
-2023-02-27 14:19:58 INFO  Context:91 - Close Reader
-2023-02-27 14:20:47 INFO  Main:12 - Call calculator controller
-2023-02-27 14:20:47 INFO  CalculatorController:28 - Calculator controller constructor args
-2023-02-27 14:20:47 INFO  Context:36 - Call constructor Context input file
-2023-02-27 14:20:47 INFO  CalculatorController:33 - Create buffered reader
-2023-02-27 14:20:47 INFO  CalculatorController:36 - Create load factory
-2023-02-27 14:20:47 INFO  CalculatorController:42 - Read command and parameter DEFINE a 4
-2023-02-27 14:20:47 INFO  CalculatorController:45 - Parse read line
-2023-02-27 14:20:47 INFO  LoaderFactory:30 - Find class by nameCommand
-2023-02-27 14:20:47 INFO  LoaderFactory:40 - Annotation comparison CommandAnnotation
-2023-02-27 14:20:47 INFO  CalculatorController:48 - Create objet class org.ru.nsu.mikhalev.task2.Operations.Define
-2023-02-27 14:20:47 INFO  CalculatorController:51 - Calc command DEFINE
-2023-02-27 14:20:47 INFO  CalculatorController:42 - Read command and parameter PUSH a
-2023-02-27 14:20:47 INFO  CalculatorController:45 - Parse read line
-2023-02-27 14:20:47 INFO  LoaderFactory:30 - Find class by nameCommand
-2023-02-27 14:20:47 INFO  LoaderFactory:40 - Annotation comparison CommandAnnotation
-2023-02-27 14:20:47 INFO  CalculatorController:48 - Create objet class org.ru.nsu.mikhalev.task2.Operations.Push
-2023-02-27 14:20:47 INFO  Operation:15 - Check correct size list args
-2023-02-27 14:20:47 INFO  Operation:21 - Push value in stack
-2023-02-27 14:20:47 INFO  Context:91 - Close Reader
-2023-02-27 14:21:37 INFO  Main:12 - Call calculator controller
-2023-02-27 14:21:37 INFO  CalculatorController:28 - Calculator controller constructor args
-2023-02-27 14:21:37 INFO  Context:36 - Call constructor Context input file
-2023-02-27 14:21:37 INFO  CalculatorController:33 - Create buffered reader
-2023-02-27 14:21:37 INFO  CalculatorController:36 - Create load factory
-2023-02-27 14:21:37 INFO  CalculatorController:42 - Read command and parameter DEFINE a 4
-2023-02-27 14:21:37 INFO  CalculatorController:45 - Parse read line
-2023-02-27 14:21:37 INFO  LoaderFactory:30 - Find class by nameCommand
-2023-02-27 14:21:37 INFO  LoaderFactory:40 - Annotation comparison CommandAnnotation
-2023-02-27 14:21:37 INFO  CalculatorController:48 - Create objet class org.ru.nsu.mikhalev.task2.Operations.Define
-2023-02-27 14:21:37 INFO  CalculatorController:51 - Calc command DEFINE
-2023-02-27 14:21:37 INFO  CalculatorController:42 - Read command and parameter PUSH a
-2023-02-27 14:21:37 INFO  CalculatorController:45 - Parse read line
-2023-02-27 14:21:37 INFO  LoaderFactory:30 - Find class by nameCommand
-2023-02-27 14:21:37 INFO  LoaderFactory:40 - Annotation comparison CommandAnnotation
-2023-02-27 14:21:37 INFO  CalculatorController:48 - Create objet class org.ru.nsu.mikhalev.task2.Operations.Push
-2023-02-27 14:21:37 INFO  Operation:15 - Check correct size list args
-2023-02-27 14:21:37 INFO  Operation:21 - Push value in stack
-2023-02-27 14:21:37 INFO  CalculatorController:51 - Calc command PUSH
-2023-02-27 14:21:37 INFO  CalculatorController:42 - Read command and parameter #
-2023-02-27 14:21:37 INFO  Context:91 - Close Reader
-2023-02-27 14:23:53 INFO  Main:12 - Call calculator controller
-2023-02-27 14:23:53 INFO  CalculatorController:28 - Calculator controller constructor args
-2023-02-27 14:23:53 INFO  Context:36 - Call constructor Context input file
-2023-02-27 14:23:53 INFO  CalculatorController:33 - Create buffered reader
-2023-02-27 14:23:53 INFO  CalculatorController:36 - Create load factory
-2023-02-27 14:23:53 INFO  CalculatorController:42 - Read command and parameter DEFINE a 4
-2023-02-27 14:23:53 INFO  CalculatorController:45 - Parse read line
-2023-02-27 14:23:53 INFO  LoaderFactory:30 - Find class by nameCommand
-2023-02-27 14:23:53 INFO  LoaderFactory:40 - Annotation comparison CommandAnnotation
-2023-02-27 14:23:53 INFO  CalculatorController:48 - Create objet class org.ru.nsu.mikhalev.task2.Operations.Define
-2023-02-27 14:23:53 INFO  CalculatorController:51 - Calc command DEFINE
-2023-02-27 14:23:53 INFO  CalculatorController:42 - Read command and parameter PUSH a
-2023-02-27 14:23:53 INFO  CalculatorController:45 - Parse read line
-2023-02-27 14:23:53 INFO  LoaderFactory:30 - Find class by nameCommand
-2023-02-27 14:23:53 INFO  LoaderFactory:40 - Annotation comparison CommandAnnotation
-2023-02-27 14:23:53 INFO  CalculatorController:48 - Create objet class org.ru.nsu.mikhalev.task2.Operations.Push
-2023-02-27 14:23:53 INFO  Operation:15 - Check correct size list args
-2023-02-27 14:23:53 INFO  Operation:21 - Push value in stack
-2023-02-27 14:23:53 INFO  Context:41 - Push value in Stack<Double>
-2023-02-27 14:23:53 INFO  Context:91 - Close Reader
-2023-02-27 14:24:36 INFO  Main:12 - Call calculator controller
-2023-02-27 14:24:36 INFO  CalculatorController:28 - Calculator controller constructor args
-2023-02-27 14:24:36 INFO  Context:36 - Call constructor Context input file
-2023-02-27 14:24:36 INFO  CalculatorController:33 - Create buffered reader
-2023-02-27 14:24:36 INFO  CalculatorController:36 - Create load factory
-2023-02-27 14:24:36 INFO  CalculatorController:42 - Read command and parameter DEFINE a 4
-2023-02-27 14:24:36 INFO  CalculatorController:45 - Parse read line
-2023-02-27 14:24:36 INFO  LoaderFactory:30 - Find class by nameCommand
-2023-02-27 14:24:36 INFO  LoaderFactory:40 - Annotation comparison CommandAnnotation
-2023-02-27 14:24:36 INFO  CalculatorController:48 - Create objet class org.ru.nsu.mikhalev.task2.Operations.Define
-2023-02-27 14:24:36 INFO  CalculatorController:51 - Calc command DEFINE
-2023-02-27 14:24:36 INFO  CalculatorController:42 - Read command and parameter PUSH a
-2023-02-27 14:24:36 INFO  CalculatorController:45 - Parse read line
-2023-02-27 14:24:36 INFO  LoaderFactory:30 - Find class by nameCommand
-2023-02-27 14:24:36 INFO  LoaderFactory:40 - Annotation comparison CommandAnnotation
-2023-02-27 14:24:36 INFO  CalculatorController:48 - Create objet class org.ru.nsu.mikhalev.task2.Operations.Push
-2023-02-27 14:24:36 INFO  Operation:15 - Check correct size list args
-2023-02-27 14:24:36 INFO  Operation:21 - Push value in stack
-2023-02-27 14:24:36 INFO  Context:41 - Push value in Stack<Double>
-2023-02-27 14:24:36 INFO  Context:91 - Close Reader
-2023-02-27 14:25:53 INFO  Main:12 - Call calculator controller
-2023-02-27 14:25:53 INFO  CalculatorController:28 - Calculator controller constructor args
-2023-02-27 14:25:53 INFO  Context:36 - Call constructor Context input file
-2023-02-27 14:25:53 INFO  CalculatorController:33 - Create buffered reader
-2023-02-27 14:25:53 INFO  CalculatorController:36 - Create load factory
-2023-02-27 14:25:53 INFO  CalculatorController:42 - Read command and parameter DEFINE a 4
-2023-02-27 14:25:53 INFO  CalculatorController:45 - Parse read line
-2023-02-27 14:25:53 INFO  LoaderFactory:30 - Find class by nameCommand
-2023-02-27 14:25:53 INFO  LoaderFactory:40 - Annotation comparison CommandAnnotation
-2023-02-27 14:25:53 INFO  CalculatorController:48 - Create objet class org.ru.nsu.mikhalev.task2.Operations.Define
-2023-02-27 14:25:53 INFO  CalculatorController:51 - Calc command DEFINE
-2023-02-27 14:25:53 INFO  CalculatorController:42 - Read command and parameter PUSH a
-2023-02-27 14:25:53 INFO  CalculatorController:45 - Parse read line
-2023-02-27 14:25:53 INFO  LoaderFactory:30 - Find class by nameCommand
-2023-02-27 14:25:53 INFO  LoaderFactory:40 - Annotation comparison CommandAnnotation
-2023-02-27 14:25:53 INFO  CalculatorController:48 - Create objet class org.ru.nsu.mikhalev.task2.Operations.Push
-2023-02-27 14:25:53 INFO  Operation:15 - Check correct size list args
-2023-02-27 14:25:53 INFO  Operation:21 - Push value in stack
-2023-02-27 14:25:53 INFO  Context:41 - Push value in Stack<Double>
-2023-02-27 14:25:53 INFO  Context:89 - Close Reader
-2023-02-27 14:26:31 INFO  Main:12 - Call calculator controller
-2023-02-27 14:26:31 INFO  CalculatorController:28 - Calculator controller constructor args
-2023-02-27 14:26:31 INFO  Context:36 - Call constructor Context input file
-2023-02-27 14:26:31 INFO  CalculatorController:33 - Create buffered reader
-2023-02-27 14:26:31 INFO  CalculatorController:36 - Create load factory
-2023-02-27 14:26:31 INFO  CalculatorController:42 - Read command and parameter DEFINE a 4
-2023-02-27 14:26:31 INFO  CalculatorController:45 - Parse read line
-2023-02-27 14:26:31 INFO  LoaderFactory:30 - Find class by nameCommand
-2023-02-27 14:26:32 INFO  LoaderFactory:40 - Annotation comparison CommandAnnotation
-2023-02-27 14:26:32 INFO  CalculatorController:48 - Create objet class org.ru.nsu.mikhalev.task2.Operations.Define
-2023-02-27 14:26:32 INFO  CalculatorController:51 - Calc command DEFINE
-2023-02-27 14:26:32 INFO  CalculatorController:42 - Read command and parameter PUSH a
-2023-02-27 14:26:32 INFO  CalculatorController:45 - Parse read line
-2023-02-27 14:26:32 INFO  LoaderFactory:30 - Find class by nameCommand
-2023-02-27 14:26:32 INFO  LoaderFactory:40 - Annotation comparison CommandAnnotation
-2023-02-27 14:26:32 INFO  CalculatorController:48 - Create objet class org.ru.nsu.mikhalev.task2.Operations.Push
-2023-02-27 14:26:32 INFO  Operation:15 - Check correct size list args
-2023-02-27 14:26:32 INFO  Operation:21 - Push value in stack
-2023-02-27 14:26:32 INFO  Context:41 - Push value in Stack<Double>
-2023-02-27 14:26:32 INFO  Context:89 - Close Reader
-2023-02-27 14:27:06 INFO  Main:12 - Call calculator controller
-2023-02-27 14:27:06 INFO  CalculatorController:28 - Calculator controller constructor args
-2023-02-27 14:27:06 INFO  Context:36 - Call constructor Context input file
-2023-02-27 14:27:06 INFO  CalculatorController:33 - Create buffered reader
-2023-02-27 14:27:06 INFO  CalculatorController:36 - Create load factory
-2023-02-27 14:27:06 INFO  CalculatorController:42 - Read command and parameter DEFINE a 4
-2023-02-27 14:27:06 INFO  CalculatorController:45 - Parse read line
-2023-02-27 14:27:06 INFO  LoaderFactory:30 - Find class by nameCommand
-2023-02-27 14:27:06 INFO  LoaderFactory:40 - Annotation comparison CommandAnnotation
-2023-02-27 14:27:06 INFO  CalculatorController:48 - Create objet class org.ru.nsu.mikhalev.task2.Operations.Define
-2023-02-27 14:27:06 INFO  CalculatorController:51 - Calc command DEFINE
-2023-02-27 14:27:06 INFO  CalculatorController:42 - Read command and parameter PUSH a
-2023-02-27 14:27:06 INFO  CalculatorController:45 - Parse read line
-2023-02-27 14:27:06 INFO  LoaderFactory:30 - Find class by nameCommand
-2023-02-27 14:27:06 INFO  LoaderFactory:40 - Annotation comparison CommandAnnotation
-2023-02-27 14:27:06 INFO  CalculatorController:48 - Create objet class org.ru.nsu.mikhalev.task2.Operations.Push
-2023-02-27 14:27:06 INFO  Operation:15 - Check correct size list args
-2023-02-27 14:27:06 INFO  Operation:21 - Push value in stack
-2023-02-27 14:27:06 INFO  Context:41 - Push value in Stack<Double>
-2023-02-27 14:27:06 INFO  CalculatorController:51 - Calc command PUSH
-2023-02-27 14:27:06 INFO  CalculatorController:42 - Read command and parameter #
-2023-02-27 14:27:06 INFO  Context:89 - Close Reader
-2023-02-27 14:27:38 INFO  Main:12 - Call calculator controller
-2023-02-27 14:27:38 INFO  CalculatorController:28 - Calculator controller constructor args
-2023-02-27 14:27:38 INFO  Context:36 - Call constructor Context input file
-2023-02-27 14:27:38 INFO  CalculatorController:33 - Create buffered reader
-2023-02-27 14:27:38 INFO  CalculatorController:36 - Create load factory
-2023-02-27 14:27:38 INFO  CalculatorController:42 - Read command and parameter DEFINE a 4
-2023-02-27 14:27:38 INFO  CalculatorController:45 - Parse read line
-2023-02-27 14:27:38 INFO  LoaderFactory:30 - Find class by nameCommand
-2023-02-27 14:27:38 INFO  LoaderFactory:40 - Annotation comparison CommandAnnotation
-2023-02-27 14:27:38 INFO  CalculatorController:48 - Create objet class org.ru.nsu.mikhalev.task2.Operations.Define
-2023-02-27 14:27:38 INFO  CalculatorController:51 - Calc command DEFINE
-2023-02-27 14:27:38 INFO  CalculatorController:42 - Read command and parameter PUSH a
-2023-02-27 14:27:38 INFO  CalculatorController:45 - Parse read line
-2023-02-27 14:27:38 INFO  LoaderFactory:30 - Find class by nameCommand
-2023-02-27 14:27:38 INFO  LoaderFactory:40 - Annotation comparison CommandAnnotation
-2023-02-27 14:27:38 INFO  CalculatorController:48 - Create objet class org.ru.nsu.mikhalev.task2.Operations.Push
-2023-02-27 14:27:38 INFO  Operation:15 - Check correct size list args
-2023-02-27 14:27:38 INFO  Operation:21 - Push value in stack
-2023-02-27 14:27:38 INFO  Context:41 - Push value in Stack<Double>
-2023-02-27 14:27:38 INFO  CalculatorController:51 - Calc command PUSH
-2023-02-27 14:27:38 INFO  CalculatorController:42 - Read command and parameter # test
-2023-02-27 14:27:38 INFO  CalculatorController:42 - Read command and parameter SQRT
-2023-02-27 14:27:38 INFO  CalculatorController:45 - Parse read line
-2023-02-27 14:27:38 INFO  LoaderFactory:30 - Find class by nameCommand
-2023-02-27 14:27:38 INFO  LoaderFactory:40 - Annotation comparison CommandAnnotation
-2023-02-27 14:27:38 INFO  CalculatorController:48 - Create objet class org.ru.nsu.mikhalev.task2.Operations.Sqrt
-2023-02-27 14:27:38 INFO  Context:47 - Try pop value in stack
-2023-02-27 14:27:38 INFO  Context:41 - Push value in Stack<Double>
-2023-02-27 14:27:38 INFO  Operation:28 - Push value 2.0
-2023-02-27 14:27:38 INFO  Context:41 - Push value in Stack<Double>
-2023-02-27 14:27:38 INFO  CalculatorController:51 - Calc command SQRT
-2023-02-27 14:27:38 INFO  CalculatorController:42 - Read command and parameter PRINT
-2023-02-27 14:27:38 INFO  CalculatorController:45 - Parse read line
-2023-02-27 14:27:38 INFO  LoaderFactory:30 - Find class by nameCommand
-2023-02-27 14:27:38 INFO  LoaderFactory:40 - Annotation comparison CommandAnnotation
-2023-02-27 14:27:38 INFO  CalculatorController:48 - Create objet class org.ru.nsu.mikhalev.task2.Operations.Print
-2023-02-27 14:27:38 INFO  Operation:15 - Try to print value, That's why call peek in stack
-2023-02-27 14:27:38 INFO  CalculatorController:51 - Calc command PRINT
-2023-02-27 14:27:38 INFO  CalculatorController:42 - Read command and parameter PRINT
-2023-02-27 14:27:38 INFO  CalculatorController:45 - Parse read line
-2023-02-27 14:27:38 INFO  LoaderFactory:30 - Find class by nameCommand
-2023-02-27 14:27:38 INFO  LoaderFactory:40 - Annotation comparison CommandAnnotation
-2023-02-27 14:27:38 INFO  CalculatorController:48 - Create objet class org.ru.nsu.mikhalev.task2.Operations.Print
-2023-02-27 14:27:38 INFO  Operation:15 - Try to print value, That's why call peek in stack
-2023-02-27 14:27:38 INFO  CalculatorController:51 - Calc command PRINT
-2023-02-27 14:27:38 INFO  CalculatorController:42 - Read command and parameter PRINT
-2023-02-27 14:27:38 INFO  CalculatorController:45 - Parse read line
-2023-02-27 14:27:38 INFO  LoaderFactory:30 - Find class by nameCommand
-2023-02-27 14:27:38 INFO  LoaderFactory:40 - Annotation comparison CommandAnnotation
-2023-02-27 14:27:38 INFO  CalculatorController:48 - Create objet class org.ru.nsu.mikhalev.task2.Operations.Print
-2023-02-27 14:27:38 INFO  Operation:15 - Try to print value, That's why call peek in stack
-2023-02-27 14:27:38 INFO  CalculatorController:51 - Calc command PRINT
-2023-02-27 14:27:38 INFO  CalculatorController:42 - Read command and parameter SQRT
-2023-02-27 14:27:38 INFO  CalculatorController:45 - Parse read line
-2023-02-27 14:27:38 INFO  LoaderFactory:30 - Find class by nameCommand
-2023-02-27 14:27:38 INFO  LoaderFactory:40 - Annotation comparison CommandAnnotation
-2023-02-27 14:27:38 INFO  CalculatorController:48 - Create objet class org.ru.nsu.mikhalev.task2.Operations.Sqrt
-2023-02-27 14:27:38 INFO  Context:47 - Try pop value in stack
-2023-02-27 14:27:38 INFO  Context:41 - Push value in Stack<Double>
-2023-02-27 14:27:38 INFO  Operation:28 - Push value 1.4142135623730951
-2023-02-27 14:27:38 INFO  Context:41 - Push value in Stack<Double>
-2023-02-27 14:27:38 INFO  CalculatorController:51 - Calc command SQRT
-2023-02-27 14:27:38 INFO  CalculatorController:42 - Read command and parameter DEFINE b 5
-2023-02-27 14:27:38 INFO  CalculatorController:45 - Parse read line
-2023-02-27 14:27:38 INFO  LoaderFactory:30 - Find class by nameCommand
-2023-02-27 14:27:38 INFO  LoaderFactory:40 - Annotation comparison CommandAnnotation
-2023-02-27 14:27:38 INFO  CalculatorController:48 - Create objet class org.ru.nsu.mikhalev.task2.Operations.Define
-2023-02-27 14:27:38 INFO  CalculatorController:51 - Calc command DEFINE
-2023-02-27 14:27:38 INFO  CalculatorController:42 - Read command and parameter PUSH b
-2023-02-27 14:27:38 INFO  CalculatorController:45 - Parse read line
-2023-02-27 14:27:38 INFO  LoaderFactory:30 - Find class by nameCommand
-2023-02-27 14:27:38 INFO  LoaderFactory:40 - Annotation comparison CommandAnnotation
-2023-02-27 14:27:38 INFO  CalculatorController:48 - Create objet class org.ru.nsu.mikhalev.task2.Operations.Push
-2023-02-27 14:27:38 INFO  Operation:15 - Check correct size list args
-2023-02-27 14:27:38 INFO  Operation:21 - Push value in stack
-2023-02-27 14:27:38 INFO  Context:41 - Push value in Stack<Double>
-2023-02-27 14:27:38 INFO  CalculatorController:51 - Calc command PUSH
-2023-02-27 14:27:38 INFO  CalculatorController:42 - Read command and parameter PUSH a
-2023-02-27 14:27:38 INFO  CalculatorController:45 - Parse read line
-2023-02-27 14:27:38 INFO  LoaderFactory:30 - Find class by nameCommand
-2023-02-27 14:27:38 INFO  LoaderFactory:40 - Annotation comparison CommandAnnotation
-2023-02-27 14:27:38 INFO  CalculatorController:48 - Create objet class org.ru.nsu.mikhalev.task2.Operations.Push
-2023-02-27 14:27:38 INFO  Operation:15 - Check correct size list args
-2023-02-27 14:27:38 INFO  Operation:21 - Push value in stack
-2023-02-27 14:27:38 INFO  Context:41 - Push value in Stack<Double>
-2023-02-27 14:27:38 INFO  CalculatorController:51 - Calc command PUSH
-2023-02-27 14:27:38 INFO  CalculatorController:42 - Read command and parameter MINUS
-2023-02-27 14:27:38 INFO  CalculatorController:45 - Parse read line
-2023-02-27 14:27:38 INFO  LoaderFactory:30 - Find class by nameCommand
-2023-02-27 14:27:38 INFO  LoaderFactory:40 - Annotation comparison CommandAnnotation
-2023-02-27 14:27:38 INFO  CalculatorController:48 - Create objet class org.ru.nsu.mikhalev.task2.Operations.Minus
-2023-02-27 14:27:38 INFO  Context:47 - Try pop value in stack
-2023-02-27 14:27:38 INFO  Context:47 - Try pop value in stack
-2023-02-27 14:27:38 INFO  Context:41 - Push value in Stack<Double>
-2023-02-27 14:27:38 INFO  CalculatorController:51 - Calc command MINUS
-2023-02-27 14:27:38 INFO  CalculatorController:42 - Read command and parameter PRINT
-2023-02-27 14:27:38 INFO  CalculatorController:45 - Parse read line
-2023-02-27 14:27:38 INFO  LoaderFactory:30 - Find class by nameCommand
-2023-02-27 14:27:38 INFO  LoaderFactory:40 - Annotation comparison CommandAnnotation
-2023-02-27 14:27:38 INFO  CalculatorController:48 - Create objet class org.ru.nsu.mikhalev.task2.Operations.Print
-2023-02-27 14:27:38 INFO  Operation:15 - Try to print value, That's why call peek in stack
-2023-02-27 14:27:38 INFO  CalculatorController:51 - Calc command PRINT
-2023-02-27 14:27:38 INFO  Context:89 - Close Reader
-2023-02-27 14:43:11 INFO  Main:12 - Call calculator controller
-2023-02-27 14:43:11 INFO  CalculatorController:28 - Calculator controller constructor args
-2023-02-27 14:43:11 INFO  Context:36 - Call constructor Context input file
-2023-02-27 14:43:11 INFO  CalculatorController:33 - Create buffered reader
-2023-02-27 14:43:11 INFO  CalculatorController:36 - Create load factory
-2023-02-27 14:43:11 INFO  CalculatorController:42 - Read command and parameter DEFINE a 4
-2023-02-27 14:43:11 INFO  CalculatorController:45 - Parse read line
-2023-02-27 14:43:11 INFO  LoaderFactory:30 - Find class by nameCommand
-2023-02-27 14:43:11 INFO  LoaderFactory:40 - Annotation comparison CommandAnnotation
-2023-02-27 14:43:11 INFO  CalculatorController:48 - Create objet class org.ru.nsu.mikhalev.task2.Operations.Define
-2023-02-27 14:43:11 INFO  CalculatorController:51 - Calc command DEFINE
-2023-02-27 14:43:11 INFO  CalculatorController:42 - Read command and parameter PUSH a
-2023-02-27 14:43:11 INFO  CalculatorController:45 - Parse read line
-2023-02-27 14:43:11 INFO  LoaderFactory:30 - Find class by nameCommand
-2023-02-27 14:43:11 INFO  LoaderFactory:40 - Annotation comparison CommandAnnotation
-2023-02-27 14:43:11 INFO  CalculatorController:48 - Create objet class org.ru.nsu.mikhalev.task2.Operations.Push
-2023-02-27 14:43:11 INFO  Operation:15 - Check correct size list args
-2023-02-27 14:43:11 INFO  Operation:21 - Push value in stack
-2023-02-27 14:43:11 INFO  Context:41 - Push value in Stack<Double>
-2023-02-27 14:43:11 INFO  CalculatorController:51 - Calc command PUSH
-2023-02-27 14:43:11 INFO  CalculatorController:42 - Read command and parameter # test
-2023-02-27 14:43:11 INFO  CalculatorController:42 - Read command and parameter SQRT
-2023-02-27 14:43:11 INFO  CalculatorController:45 - Parse read line
-2023-02-27 14:43:11 INFO  LoaderFactory:30 - Find class by nameCommand
-2023-02-27 14:43:11 INFO  LoaderFactory:40 - Annotation comparison CommandAnnotation
-2023-02-27 14:43:11 INFO  CalculatorController:48 - Create objet class org.ru.nsu.mikhalev.task2.Operations.Sqrt
-2023-02-27 14:43:11 INFO  Context:49 - Try pop value in stack
-2023-02-27 14:43:11 INFO  Context:41 - Push value in Stack<Double>
-2023-02-27 14:43:11 INFO  Operation:28 - Push value 2.0
-2023-02-27 14:43:11 INFO  Context:41 - Push value in Stack<Double>
-2023-02-27 14:43:11 INFO  CalculatorController:51 - Calc command SQRT
-2023-02-27 14:43:11 INFO  CalculatorController:42 - Read command and parameter PRINT
-2023-02-27 14:43:11 INFO  CalculatorController:45 - Parse read line
-2023-02-27 14:43:11 INFO  LoaderFactory:30 - Find class by nameCommand
-2023-02-27 14:43:11 INFO  LoaderFactory:40 - Annotation comparison CommandAnnotation
-2023-02-27 14:43:11 INFO  CalculatorController:48 - Create objet class org.ru.nsu.mikhalev.task2.Operations.Print
-2023-02-27 14:43:11 INFO  Operation:15 - Try to print value, That's why call peek in stack
-2023-02-27 14:43:11 INFO  CalculatorController:51 - Calc command PRINT
-2023-02-27 14:43:11 INFO  CalculatorController:42 - Read command and parameter PRINT
-2023-02-27 14:43:11 INFO  CalculatorController:45 - Parse read line
-2023-02-27 14:43:11 INFO  LoaderFactory:30 - Find class by nameCommand
-2023-02-27 14:43:11 INFO  LoaderFactory:40 - Annotation comparison CommandAnnotation
-2023-02-27 14:43:11 INFO  CalculatorController:48 - Create objet class org.ru.nsu.mikhalev.task2.Operations.Print
-2023-02-27 14:43:11 INFO  Operation:15 - Try to print value, That's why call peek in stack
-2023-02-27 14:43:11 INFO  CalculatorController:51 - Calc command PRINT
-2023-02-27 14:43:11 INFO  CalculatorController:42 - Read command and parameter PRINT
-2023-02-27 14:43:11 INFO  CalculatorController:45 - Parse read line
-2023-02-27 14:43:11 INFO  LoaderFactory:30 - Find class by nameCommand
-2023-02-27 14:43:11 INFO  LoaderFactory:40 - Annotation comparison CommandAnnotation
-2023-02-27 14:43:11 INFO  CalculatorController:48 - Create objet class org.ru.nsu.mikhalev.task2.Operations.Print
-2023-02-27 14:43:11 INFO  Operation:15 - Try to print value, That's why call peek in stack
-2023-02-27 14:43:11 INFO  CalculatorController:51 - Calc command PRINT
-2023-02-27 14:43:11 INFO  CalculatorController:42 - Read command and parameter SQRT
-2023-02-27 14:43:11 INFO  CalculatorController:45 - Parse read line
-2023-02-27 14:43:11 INFO  LoaderFactory:30 - Find class by nameCommand
-2023-02-27 14:43:11 INFO  LoaderFactory:40 - Annotation comparison CommandAnnotation
-2023-02-27 14:43:11 INFO  CalculatorController:48 - Create objet class org.ru.nsu.mikhalev.task2.Operations.Sqrt
-2023-02-27 14:43:11 INFO  Context:49 - Try pop value in stack
-2023-02-27 14:43:11 INFO  Context:41 - Push value in Stack<Double>
-2023-02-27 14:43:11 INFO  Operation:28 - Push value 1.4142135623730951
-2023-02-27 14:43:11 INFO  Context:41 - Push value in Stack<Double>
-2023-02-27 14:43:11 INFO  CalculatorController:51 - Calc command SQRT
-2023-02-27 14:43:11 INFO  CalculatorController:42 - Read command and parameter DEFINE b 5
-2023-02-27 14:43:11 INFO  CalculatorController:45 - Parse read line
-2023-02-27 14:43:11 INFO  LoaderFactory:30 - Find class by nameCommand
-2023-02-27 14:43:11 INFO  LoaderFactory:40 - Annotation comparison CommandAnnotation
-2023-02-27 14:43:11 INFO  CalculatorController:48 - Create objet class org.ru.nsu.mikhalev.task2.Operations.Define
-2023-02-27 14:43:11 INFO  CalculatorController:51 - Calc command DEFINE
-2023-02-27 14:43:11 INFO  CalculatorController:42 - Read command and parameter PUSH b
-2023-02-27 14:43:11 INFO  CalculatorController:45 - Parse read line
-2023-02-27 14:43:11 INFO  LoaderFactory:30 - Find class by nameCommand
-2023-02-27 14:43:11 INFO  LoaderFactory:40 - Annotation comparison CommandAnnotation
-2023-02-27 14:43:11 INFO  CalculatorController:48 - Create objet class org.ru.nsu.mikhalev.task2.Operations.Push
-2023-02-27 14:43:11 INFO  Operation:15 - Check correct size list args
-2023-02-27 14:43:11 INFO  Operation:21 - Push value in stack
-2023-02-27 14:43:11 INFO  Context:41 - Push value in Stack<Double>
-2023-02-27 14:43:11 INFO  CalculatorController:51 - Calc command PUSH
-2023-02-27 14:43:11 INFO  CalculatorController:42 - Read command and parameter PUSH a
-2023-02-27 14:43:11 INFO  CalculatorController:45 - Parse read line
-2023-02-27 14:43:11 INFO  LoaderFactory:30 - Find class by nameCommand
-2023-02-27 14:43:11 INFO  LoaderFactory:40 - Annotation comparison CommandAnnotation
-2023-02-27 14:43:11 INFO  CalculatorController:48 - Create objet class org.ru.nsu.mikhalev.task2.Operations.Push
-2023-02-27 14:43:11 INFO  Operation:15 - Check correct size list args
-2023-02-27 14:43:11 INFO  Operation:21 - Push value in stack
-2023-02-27 14:43:11 INFO  Context:41 - Push value in Stack<Double>
-2023-02-27 14:43:11 INFO  CalculatorController:51 - Calc command PUSH
-2023-02-27 14:43:11 INFO  CalculatorController:42 - Read command and parameter MINUS
-2023-02-27 14:43:11 INFO  CalculatorController:45 - Parse read line
-2023-02-27 14:43:11 INFO  LoaderFactory:30 - Find class by nameCommand
-2023-02-27 14:43:11 INFO  LoaderFactory:40 - Annotation comparison CommandAnnotation
-2023-02-27 14:43:11 INFO  CalculatorController:48 - Create objet class org.ru.nsu.mikhalev.task2.Operations.Minus
-2023-02-27 14:43:11 INFO  Context:49 - Try pop value in stack
-2023-02-27 14:43:11 INFO  Context:49 - Try pop value in stack
-2023-02-27 14:43:11 INFO  Context:41 - Push value in Stack<Double>
-2023-02-27 14:43:11 INFO  CalculatorController:51 - Calc command MINUS
-2023-02-27 14:43:11 INFO  CalculatorController:42 - Read command and parameter PRINT
-2023-02-27 14:43:11 INFO  CalculatorController:45 - Parse read line
-2023-02-27 14:43:11 INFO  LoaderFactory:30 - Find class by nameCommand
-2023-02-27 14:43:11 INFO  LoaderFactory:40 - Annotation comparison CommandAnnotation
-2023-02-27 14:43:11 INFO  CalculatorController:48 - Create objet class org.ru.nsu.mikhalev.task2.Operations.Print
-2023-02-27 14:43:11 INFO  Operation:15 - Try to print value, That's why call peek in stack
-2023-02-27 14:43:11 INFO  CalculatorController:51 - Calc command PRINT
-2023-02-27 14:43:11 INFO  Context:91 - Close Reader
-2023-02-27 15:14:28 INFO  Context:31 - Call constructor Context input console
-2023-02-27 15:14:28 INFO  Context:41 - Push value in Stack<Double>
-2023-02-27 15:17:07 INFO  Context:31 - Call constructor Context input console
-2023-02-27 15:17:07 INFO  Context:41 - Push value in Stack<Double>
-2023-02-27 15:28:14 INFO  Context:31 - Call constructor Context input console
-2023-02-27 15:28:14 INFO  Context:41 - Push value in Stack<Double>
-2023-02-27 15:28:35 INFO  Context:31 - Call constructor Context input console
-2023-02-27 15:28:35 INFO  Context:41 - Push value in Stack<Double>
-2023-02-27 15:28:49 INFO  Context:31 - Call constructor Context input console
-2023-02-27 15:28:49 INFO  Context:41 - Push value in Stack<Double>
-2023-02-27 15:30:21 INFO  Context:31 - Call constructor Context input console
-2023-02-27 15:30:21 INFO  Context:41 - Push value in Stack<Double>
-2023-02-27 15:30:33 INFO  Context:31 - Call constructor Context input console
-2023-02-27 15:30:33 INFO  Context:41 - Push value in Stack<Double>
-2023-02-27 15:30:48 INFO  Context:31 - Call constructor Context input console
-2023-02-27 15:30:48 INFO  Context:41 - Push value in Stack<Double>
-2023-02-27 15:33:06 INFO  Context:31 - Call constructor Context input console
-2023-02-27 15:33:06 INFO  Context:41 - Push value in Stack<Double>
-2023-02-27 15:34:10 INFO  Context:31 - Call constructor Context input console
-2023-02-27 15:34:10 INFO  Context:41 - Push value in Stack<Double>
-2023-02-27 15:34:20 INFO  Context:31 - Call constructor Context input console
-2023-02-27 15:34:20 INFO  Context:41 - Push value in Stack<Double>
-2023-02-27 15:43:07 INFO  Context:31 - Call constructor Context input console
-2023-02-27 15:43:07 INFO  Context:49 - Try pop value in stack
-2023-02-27 15:43:07 ERROR Context:51 - Stack<Double> is empty
-2023-02-27 15:43:32 INFO  Context:31 - Call constructor Context input console
-2023-02-27 15:43:32 INFO  Context:49 - Try pop value in stack
-2023-02-27 15:43:32 ERROR Context:51 - Stack<Double> is empty
-2023-02-27 15:44:45 INFO  Context:31 - Call constructor Context input console
-2023-02-27 15:44:45 INFO  Context:49 - Try pop value in stack
-2023-02-27 15:44:45 ERROR Context:51 - Stack<Double> is empty
-2023-02-27 15:58:15 INFO  Context:31 - Call constructor Context input console
-2023-02-27 15:58:36 INFO  Context:31 - Call constructor Context input console
-2023-02-27 15:58:49 INFO  Context:31 - Call constructor Context input console
-2023-02-27 15:59:11 INFO  Context:31 - Call constructor Context input console
-2023-02-27 18:56:52 INFO  Context:26 - Call constructor Context input console
-2023-02-27 18:57:06 INFO  Context:26 - Call constructor Context input console
-2023-02-27 18:57:06 INFO  Context:44 - Try pop value in stack
-2023-02-27 18:57:06 ERROR Context:46 - Stack<Double> is empty
-2023-02-27 18:59:43 INFO  Context:26 - Call constructor Context input console
-2023-02-27 19:00:09 INFO  Context:26 - Call constructor Context input console
-2023-02-27 19:00:33 INFO  Context:26 - Call constructor Context input console
-2023-02-27 19:02:39 INFO  Context:26 - Call constructor Context input console
-2023-02-27 19:03:34 INFO  Context:26 - Call constructor Context input console
-2023-02-27 19:10:24 INFO  Context:26 - Call constructor Context input console
-2023-02-27 19:10:24 ERROR Context:59 - Parameter or value was not correct
-2023-02-27 19:10:51 INFO  Context:26 - Call constructor Context input console
-2023-02-27 19:10:51 ERROR Context:59 - Parameter or value was not correct
-2023-02-27 19:11:11 INFO  Context:26 - Call constructor Context input console
-2023-02-27 19:11:11 ERROR Context:59 - Parameter or value was not correct
-2023-02-27 19:11:47 INFO  Context:26 - Call constructor Context input console
-2023-02-27 19:11:47 ERROR Context:59 - Parameter or value was not correct
-2023-02-27 19:11:47 INFO  Context:26 - Call constructor Context input console
-2023-02-27 19:11:47 ERROR Context:59 - Parameter or value was not correct
-2023-02-27 19:43:54 INFO  CalculatorController:26 - Calculator controller constructor args
-2023-02-27 19:43:54 INFO  Context:31 - Call constructor Context input file
-2023-02-27 19:43:54 INFO  CalculatorController:31 - Create buffered reader
-2023-02-27 19:43:54 INFO  CalculatorController:34 - Create load factory
-2023-02-27 19:43:54 INFO  CalculatorController:40 - Read command and parameter DEFINE a 4
-2023-02-27 19:43:54 INFO  CalculatorController:43 - Parse read line
-2023-02-27 19:43:54 INFO  LoaderFactory:30 - Find class by nameCommand
-2023-02-27 19:43:54 INFO  LoaderFactory:40 - Annotation comparison CommandAnnotation
-2023-02-27 19:43:54 INFO  CalculatorController:46 - Create objet class org.ru.nsu.mikhalev.task2.Operations.Define
-2023-02-27 19:43:54 INFO  CalculatorController:49 - Calc command DEFINE
-2023-02-27 19:43:54 INFO  CalculatorController:40 - Read command and parameter SQRT
-2023-02-27 19:43:54 INFO  CalculatorController:43 - Parse read line
-2023-02-27 19:43:54 INFO  LoaderFactory:30 - Find class by nameCommand
-2023-02-27 19:43:54 INFO  LoaderFactory:40 - Annotation comparison CommandAnnotation
-2023-02-27 19:43:54 INFO  CalculatorController:46 - Create objet class org.ru.nsu.mikhalev.task2.Operations.Sqrt
-2023-02-27 19:43:54 INFO  Context:44 - Try pop value in stack
-2023-02-27 19:43:54 ERROR Context:46 - Stack<Double> is empty
-2023-02-27 19:43:54 INFO  Context:84 - Close Reader
-2023-02-27 19:44:19 INFO  CalculatorController:26 - Calculator controller constructor args
-2023-02-27 19:44:19 INFO  Context:31 - Call constructor Context input file
-2023-02-27 19:44:19 INFO  CalculatorController:31 - Create buffered reader
-2023-02-27 19:44:19 INFO  CalculatorController:34 - Create load factory
-2023-02-27 19:44:19 INFO  CalculatorController:40 - Read command and parameter DEFINE a 4
-2023-02-27 19:44:19 INFO  CalculatorController:43 - Parse read line
-2023-02-27 19:44:19 INFO  LoaderFactory:30 - Find class by nameCommand
-2023-02-27 19:44:19 INFO  LoaderFactory:40 - Annotation comparison CommandAnnotation
-2023-02-27 19:44:19 INFO  CalculatorController:46 - Create objet class org.ru.nsu.mikhalev.task2.Operations.Define
-2023-02-27 19:44:19 INFO  CalculatorController:49 - Calc command DEFINE
-2023-02-27 19:44:19 INFO  CalculatorController:40 - Read command and parameter PUSH a
-2023-02-27 19:44:19 INFO  CalculatorController:43 - Parse read line
-2023-02-27 19:44:19 INFO  LoaderFactory:30 - Find class by nameCommand
-2023-02-27 19:44:19 INFO  LoaderFactory:40 - Annotation comparison CommandAnnotation
-2023-02-27 19:44:19 INFO  CalculatorController:46 - Create objet class org.ru.nsu.mikhalev.task2.Operations.Push
-2023-02-27 19:44:19 INFO  Operation:15 - Check correct size list args
-2023-02-27 19:44:19 INFO  Operation:21 - Push value in stack
-2023-02-27 19:44:19 INFO  Context:36 - Push value in Stack<Double>
-2023-02-27 19:44:19 INFO  CalculatorController:49 - Calc command PUSH
-2023-02-27 19:44:19 INFO  CalculatorController:40 - Read command and parameter SQRT
-2023-02-27 19:44:19 INFO  CalculatorController:43 - Parse read line
-2023-02-27 19:44:19 INFO  LoaderFactory:30 - Find class by nameCommand
-2023-02-27 19:44:19 INFO  LoaderFactory:40 - Annotation comparison CommandAnnotation
-2023-02-27 19:44:19 INFO  CalculatorController:46 - Create objet class org.ru.nsu.mikhalev.task2.Operations.Sqrt
-2023-02-27 19:44:19 INFO  Context:44 - Try pop value in stack
-2023-02-27 19:44:19 INFO  Context:36 - Push value in Stack<Double>
-2023-02-27 19:44:19 INFO  Operation:28 - Push value 2.0
-2023-02-27 19:44:19 INFO  Context:36 - Push value in Stack<Double>
-2023-02-27 19:44:19 INFO  CalculatorController:49 - Calc command SQRT
-2023-02-27 19:44:19 INFO  CalculatorController:40 - Read command and parameter PRINT
-2023-02-27 19:44:19 INFO  CalculatorController:43 - Parse read line
-2023-02-27 19:44:19 INFO  LoaderFactory:30 - Find class by nameCommand
-2023-02-27 19:44:19 INFO  LoaderFactory:40 - Annotation comparison CommandAnnotation
-2023-02-27 19:44:19 INFO  CalculatorController:46 - Create objet class org.ru.nsu.mikhalev.task2.Operations.Print
-2023-02-27 19:44:19 INFO  Operation:15 - Try to print value, That's why call peek in stack
-2023-02-27 19:44:19 INFO  CalculatorController:49 - Calc command PRINT
-2023-02-27 19:44:19 INFO  Context:84 - Close Reader
+2023-02-28 08:59:52 INFO  Main:12 - Call calculator controller
+2023-02-28 08:59:52 DEBUG CalculatorController:27 - Calculator controller constructor args
+2023-02-28 08:59:52 DEBUG Context:31 - Call constructor Context input file
+2023-02-28 08:59:52 INFO  CalculatorController:32 - Create buffered reader
+2023-02-28 08:59:52 DEBUG CalculatorController:35 - Create load factory
+2023-02-28 08:59:52 DEBUG CalculatorController:41 - Read command and parameter DEFINE a 4
+2023-02-28 08:59:52 DEBUG CalculatorController:44 - Parse read line
+2023-02-28 08:59:52 INFO  LoaderFactory:30 - Find class by nameCommand
+2023-02-28 08:59:52 INFO  LoaderFactory:40 - Annotation comparison CommandAnnotation
+2023-02-28 08:59:52 DEBUG CalculatorController:48 - Create objet class org.ru.nsu.mikhalev.task2.Operations.Define
+2023-02-28 08:59:52 DEBUG CalculatorController:51 - Calc command DEFINE
+2023-02-28 08:59:52 DEBUG CalculatorController:41 - Read command and parameter PUSH a
+2023-02-28 08:59:52 DEBUG CalculatorController:44 - Parse read line
+2023-02-28 08:59:52 INFO  LoaderFactory:30 - Find class by nameCommand
+2023-02-28 08:59:52 INFO  LoaderFactory:40 - Annotation comparison CommandAnnotation
+2023-02-28 08:59:52 DEBUG CalculatorController:48 - Create objet class org.ru.nsu.mikhalev.task2.Operations.Push
+2023-02-28 08:59:52 DEBUG Operation:15 - Check correct size list args
+2023-02-28 08:59:52 DEBUG Operation:21 - Push value in stack
+2023-02-28 08:59:52 DEBUG Context:36 - Push value in Stack<Double>
+2023-02-28 08:59:52 DEBUG CalculatorController:51 - Calc command PUSH
+2023-02-28 08:59:52 DEBUG CalculatorController:41 - Read command and parameter # test
+2023-02-28 08:59:52 DEBUG CalculatorController:41 - Read command and parameter PRINT
+2023-02-28 08:59:52 DEBUG CalculatorController:44 - Parse read line
+2023-02-28 08:59:52 INFO  LoaderFactory:30 - Find class by nameCommand
+2023-02-28 08:59:52 INFO  LoaderFactory:40 - Annotation comparison CommandAnnotation
+2023-02-28 08:59:52 DEBUG CalculatorController:48 - Create objet class org.ru.nsu.mikhalev.task2.Operations.Print
+2023-02-28 08:59:52 DEBUG Operation:15 - Try to print value, That's why call peek in stack
+2023-02-28 08:59:52 DEBUG CalculatorController:51 - Calc command PRINT
+2023-02-28 08:59:52 DEBUG CalculatorController:41 - Read command and parameter SQRT
+2023-02-28 08:59:52 DEBUG CalculatorController:44 - Parse read line
+2023-02-28 08:59:52 INFO  LoaderFactory:30 - Find class by nameCommand
+2023-02-28 08:59:52 INFO  LoaderFactory:40 - Annotation comparison CommandAnnotation
+2023-02-28 08:59:52 DEBUG CalculatorController:48 - Create objet class org.ru.nsu.mikhalev.task2.Operations.Sqrt
+2023-02-28 08:59:52 DEBUG Context:44 - Try pop value in stack
+2023-02-28 08:59:52 DEBUG Context:36 - Push value in Stack<Double>
+2023-02-28 08:59:52 DEBUG Operation:28 - Push value 2.0
+2023-02-28 08:59:52 DEBUG Context:36 - Push value in Stack<Double>
+2023-02-28 08:59:52 DEBUG CalculatorController:51 - Calc command SQRT
+2023-02-28 08:59:52 DEBUG CalculatorController:41 - Read command and parameter DEFINE b 5
+2023-02-28 08:59:52 DEBUG CalculatorController:44 - Parse read line
+2023-02-28 08:59:52 INFO  LoaderFactory:30 - Find class by nameCommand
+2023-02-28 08:59:52 INFO  LoaderFactory:40 - Annotation comparison CommandAnnotation
+2023-02-28 08:59:52 DEBUG CalculatorController:48 - Create objet class org.ru.nsu.mikhalev.task2.Operations.Define
+2023-02-28 08:59:52 DEBUG CalculatorController:51 - Calc command DEFINE
+2023-02-28 08:59:52 DEBUG CalculatorController:41 - Read command and parameter PUSH b
+2023-02-28 08:59:52 DEBUG CalculatorController:44 - Parse read line
+2023-02-28 08:59:52 INFO  LoaderFactory:30 - Find class by nameCommand
+2023-02-28 08:59:52 INFO  LoaderFactory:40 - Annotation comparison CommandAnnotation
+2023-02-28 08:59:52 DEBUG CalculatorController:48 - Create objet class org.ru.nsu.mikhalev.task2.Operations.Push
+2023-02-28 08:59:52 DEBUG Operation:15 - Check correct size list args
+2023-02-28 08:59:52 DEBUG Operation:21 - Push value in stack
+2023-02-28 08:59:52 DEBUG Context:36 - Push value in Stack<Double>
+2023-02-28 08:59:52 DEBUG CalculatorController:51 - Calc command PUSH
+2023-02-28 08:59:52 DEBUG CalculatorController:41 - Read command and parameter PUSH a
+2023-02-28 08:59:52 DEBUG CalculatorController:44 - Parse read line
+2023-02-28 08:59:52 INFO  LoaderFactory:30 - Find class by nameCommand
+2023-02-28 08:59:52 INFO  LoaderFactory:40 - Annotation comparison CommandAnnotation
+2023-02-28 08:59:52 DEBUG CalculatorController:48 - Create objet class org.ru.nsu.mikhalev.task2.Operations.Push
+2023-02-28 08:59:52 DEBUG Operation:15 - Check correct size list args
+2023-02-28 08:59:52 DEBUG Operation:21 - Push value in stack
+2023-02-28 08:59:52 DEBUG Context:36 - Push value in Stack<Double>
+2023-02-28 08:59:52 DEBUG CalculatorController:51 - Calc command PUSH
+2023-02-28 08:59:52 DEBUG CalculatorController:41 - Read command and parameter MINUS
+2023-02-28 08:59:52 DEBUG CalculatorController:44 - Parse read line
+2023-02-28 08:59:52 INFO  LoaderFactory:30 - Find class by nameCommand
+2023-02-28 08:59:52 INFO  LoaderFactory:40 - Annotation comparison CommandAnnotation
+2023-02-28 08:59:52 DEBUG CalculatorController:48 - Create objet class org.ru.nsu.mikhalev.task2.Operations.Minus
+2023-02-28 08:59:52 DEBUG Context:44 - Try pop value in stack
+2023-02-28 08:59:52 DEBUG Context:44 - Try pop value in stack
+2023-02-28 08:59:52 DEBUG Context:36 - Push value in Stack<Double>
+2023-02-28 08:59:52 DEBUG CalculatorController:51 - Calc command MINUS
+2023-02-28 08:59:52 DEBUG CalculatorController:41 - Read command and parameter PRINT
+2023-02-28 08:59:52 DEBUG CalculatorController:44 - Parse read line
+2023-02-28 08:59:52 INFO  LoaderFactory:30 - Find class by nameCommand
+2023-02-28 08:59:52 INFO  LoaderFactory:40 - Annotation comparison CommandAnnotation
+2023-02-28 08:59:52 DEBUG CalculatorController:48 - Create objet class org.ru.nsu.mikhalev.task2.Operations.Print
+2023-02-28 08:59:52 DEBUG Operation:15 - Try to print value, That's why call peek in stack
+2023-02-28 08:59:52 DEBUG CalculatorController:51 - Calc command PRINT
+2023-02-28 08:59:52 DEBUG Context:84 - Close Reader

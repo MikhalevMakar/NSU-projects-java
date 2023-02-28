@@ -25,7 +25,7 @@ public class Sqrt implements Operation {
             throw  new OperationException("Stack is empty" + operationException.getStackTrace());
         }
         String pushValue = Double.valueOf(sqrt(v)).toString ();
-        LOGGER.info ("Push value "  + pushValue);
+        LOGGER.debug ("Push value "  + pushValue);
         context.pushValue(pushValue);
     }
 }
