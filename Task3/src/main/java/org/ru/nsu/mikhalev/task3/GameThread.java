@@ -7,14 +7,15 @@ public class GameThread extends Thread {
     }
     @Override
     public void run() {
-        while (true) {
-            try {
-            gameArea.moveShapeDown();
-
-                Thread.sleep (1000);
-            } catch (InterruptedException e) {
-                throw new RuntimeException (e);
+        while(true) {
+            while (gameArea.IsMoveShapeDown()) {
+                try {
+                    Thread.sleep (400);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException (e);
+                }
             }
+            gameArea.spawnShape();
         }
     }
 }
