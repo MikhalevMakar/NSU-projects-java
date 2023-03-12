@@ -15,6 +15,10 @@ public class GameThread extends Thread {
                     throw new RuntimeException (e);
                 }
             }
+            if(gameArea.isBlockOutOfBounds()) {
+                System.out.println ("Game Over");
+                return;
+            }
             gameArea.spawnShape();
         }
     }

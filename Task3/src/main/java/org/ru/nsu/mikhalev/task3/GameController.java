@@ -1,11 +1,23 @@
 package org.ru.nsu.mikhalev.task3;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+
+//class ButtonActionListener implements ActionListener {
+//    @Override
+//    public void actionPerformed(ActionEvent e) {
+//        String message = "";
+//        JOptionPane.showMessageDialog (null, message, "Output", JOptionPane.PLAIN_MESSAGE);
+//    }
+//}
 
 public class GameController {
     private GameArea gameArea;
     private JFrame frame;
+    private JButton button = new JButton ("RULES");
     private void creationControls() {
         InputMap inputMap = frame.getRootPane().getInputMap();
         ActionMap actionMap = frame.getRootPane().getActionMap();

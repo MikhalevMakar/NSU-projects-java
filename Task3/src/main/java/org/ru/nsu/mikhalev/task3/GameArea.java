@@ -2,6 +2,9 @@ package org.ru.nsu.mikhalev.task3;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import org.apache.log4j.*;
 
 class DrawRectangle extends JPanel {
@@ -31,7 +34,6 @@ public class GameArea extends JPanel {
     public Color color(int red, int green, int blue){
         return new Color(red, green, blue);
     }
-
     public GameArea() {
         LOGGER.info("GameArea");
         this.setBounds(getBounds());
@@ -50,21 +52,31 @@ public class GameArea extends JPanel {
         shape.spawn();
     }
 
-    private void clearLines() {
-        boolean statusField;
-        for(int row =HEIGHT-1; row >= 0; --row) {
-            statusField = true;
+    private void clearLine(int row) {
+        for (int i = 0; i < WIDTH; ++i) {
+            placedShape[row][i] = null;
+        }
+    }
+
+    private void shiftDown(int curRow) {
+        for(int row = curRow; row > 0; row--) {
             for(int column = 0; column < WIDTH; ++column) {
-                if(placedShape[row][column] == null) {
-                    statusField = false;
-                    break;
-                }
+                placedShape[row][column] = placedShape[row-1][column];
             }
-            if(statusField == true) {
-                System.out.println ("TRUE");
-                for (int i = 0; i < WIDTH; ++i) {
-                    placedShape[row][i] = null;
-                }
+        }
+    }
+
+    public void clearLines() {
+        int cntStatusField;
+        for(int row = 0; row < HEIGHT; ++row) {
+            cntStatusField = 0;
+            for(int column = 0; column < WIDTH; column++) {
+                if(placedShape[row][column] != null) ++cntStatusField;
+            }
+            if(cntStatusField == 12) {
+                clearLine(row);
+                shiftDown(row);
+                clearLine(0);
                 repaint();
             }
         }
@@ -80,7 +92,7 @@ public class GameArea extends JPanel {
                 int x = column + shape.getX();
                 int y = row + shape.getY();
                 if(shape.IsShape (column, row) &&
-                   placedShape[y + 1][x] != null)
+                    placedShape[y + 1][x] != null)
                     return false;
             }
         }
@@ -172,7 +184,6 @@ public class GameArea extends JPanel {
     public void drawDetails(Graphics graphics) {
         int height = shape.getHeight ();
         int weight = shape.getWidth ();
-
         for (int y = 0; y < height; ++y) {
             for (int x = 0; x < weight; ++x) {
                 if (shape.IsShape(x, y))
@@ -180,16 +191,23 @@ public class GameArea extends JPanel {
             }
         }
     }
-    private void moveShapeToBackGround() {
+    public void moveShapeToBackGround() {
         int h = shape.getHeight();
         int w = shape.getWidth();
 
         for(int y = 0; y < h; ++y) {
             for(int x = 0; x < w; ++x) {
-                if (shape.IsShape(x, y))
+                if (shape.IsShape(x, y)) {
+                    //System.out.println (y+shape.getY() + " " +x+shape.getX());
                     placedShape[y + shape.getY()][x + shape.getX()] = shape.getColor();
+                }
             }
         }
+    }
+
+    public boolean isBlockOutOfBounds() {
+        System.out.println (shape.getY());
+        return shape.getY() <= 0;
     }
     private void drawBackGround(Graphics graphics) {
         Color color;
