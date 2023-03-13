@@ -6,7 +6,7 @@ import org.ru.nsu.mikhalev.task3.TetrisShape;
 public class Ricky implements Shape{
     @Override
     public TetrisShape generateShape(int indexColor) {
-        return new TetrisShape(color[indexColor], new boolean[][] {
+        return new TetrisShape(color[random.nextInt (color.length)], new boolean[][] {
                                                                 {true, true},
                                                                 {true, false},
                                                                 {true, false},

@@ -1,6 +1,7 @@
 package org.ru.nsu.mikhalev.task3;
 
-import java.awt.*;
+import java.awt.Color;
+import java.util.Random;
 
 public class TetrisShape {
     private Color color;
@@ -8,11 +9,13 @@ public class TetrisShape {
     private int y = 0;
     private final int CNT_ROTATION_SHIP = 4;
     private int indexRotation = 0;
+    private Random random;
     boolean[][][] rotateShapes;
     private boolean[][] shape;
     public TetrisShape(Color color, boolean[][] shape) {
         this.shape = shape;
         this.color = color;
+        random = new Random();
         generateRotateShapes();
     }
 
@@ -42,8 +45,9 @@ public class TetrisShape {
 
     public Color getColor() {return this.color;}
     public void spawn() {
-        indexRotation = 0;
+        indexRotation = random.nextInt (rotateShapes.length);
         shape = rotateShapes[indexRotation];
+        x = random.nextInt(12 - getWidth() + 1);
         y = 0;
     }
     public int getX() {return x;}

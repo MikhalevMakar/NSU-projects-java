@@ -2,6 +2,7 @@ package org.ru.nsu.mikhalev.task3.shape;
 import  org.ru.nsu.mikhalev.task3.TetrisShape;
 
 import java.awt.*;
+import java.util.Random;
 
 public interface Shape {
       Color[] color = new Color[]{
@@ -13,6 +14,6 @@ public interface Shape {
                                Color.cyan
                               };
 
-     default Color getColor(int index) { return color[index];}
+      static Random random = new Random();
      public TetrisShape generateShape(int indexColor);
 }
