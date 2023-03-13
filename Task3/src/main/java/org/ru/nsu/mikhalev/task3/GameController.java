@@ -26,6 +26,7 @@ public class GameController {
         inputMap.put (KeyStroke.getKeyStroke ("LEFT"), "left");
         inputMap.put (KeyStroke.getKeyStroke ("RIGHT"), "right");
         inputMap.put (KeyStroke.getKeyStroke ("SPACE"), "space");
+
         actionMap.put("up", new AbstractAction () {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -50,11 +51,9 @@ public class GameController {
                 gameArea.moveShapeRight();
             }
         });
-
         actionMap.put("space",  new AbstractAction () {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println ("SPACE");
                 gameArea.moveShapeRotate();
             }
         });

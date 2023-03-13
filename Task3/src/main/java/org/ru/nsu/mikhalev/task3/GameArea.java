@@ -2,16 +2,11 @@ package org.ru.nsu.mikhalev.task3;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
 import org.apache.log4j.*;
+import org.ru.nsu.mikhalev.task3.shape.TeeWee;
 
 class DrawRectangle extends JPanel {
-    private Rectangle rect;
-    public DrawRectangle(int x, int y, int w, int h) {
-        rect = new Rectangle(x, y, w, h);
-    }
+    public DrawRectangle(int x, int y, int w, int h) { new Rectangle(x, y, w, h); }
     @Override
     public void paintComponent(Graphics g) {
         Graphics2D g2 = (Graphics2D) g;
@@ -41,23 +36,15 @@ public class GameArea extends JPanel {
         spawnShape();
     }
     public void spawnShape() {
-
-        shape = new TetrisShape (Color.blue, new boolean[][]{{true, false},
-                                                             {true, false},
-                                                             {true, false},
-                                                             {true, true},
-                                                             {true, false},
-                                                             {true, true}
-                                                             });
+        TeeWee ricky = new TeeWee();
+        shape = ricky.generateShape(4);
         shape.spawn();
     }
-
     private void clearLine(int row) {
         for (int i = 0; i < WIDTH; ++i) {
             placedShape[row][i] = null;
         }
     }
-
     private void shiftDown(int curRow) {
         for(int row = curRow; row > 0; row--) {
             for(int column = 0; column < WIDTH; ++column) {
@@ -65,12 +52,11 @@ public class GameArea extends JPanel {
             }
         }
     }
-
     public void clearLines() {
         int cntStatusField;
         for(int row = 0; row < HEIGHT; ++row) {
             cntStatusField = 0;
-            for(int column = 0; column < WIDTH; column++) {
+            for(int column = 0; column < WIDTH; ++column) {
                 if(placedShape[row][column] != null) ++cntStatusField;
             }
             if(cntStatusField == 12) {
@@ -82,9 +68,9 @@ public class GameArea extends JPanel {
         }
     }
     private boolean checkBarrier() {
-        if (shape.getY () + shape.getHeight () >= HEIGHT / (RATIO_SHAPE_VAlUE * SCALE) - 1) {
+        if (shape.getY () + shape.getHeight () >= HEIGHT / (RATIO_SHAPE_VAlUE * SCALE) - 1)
             return false;
-        }
+
         int w = shape.getWidth();
         int h = shape.getHeight();
         for (int column = 0; column < w; ++column) {
@@ -114,7 +100,7 @@ public class GameArea extends JPanel {
         return true;
     }
     public boolean checkRight() {
-        if(shape.getRightSide() >= WIDTH/(RATIO_SHAPE_VAlUE*SCALE))
+        if(shape.getRightSide() > WIDTH / (RATIO_SHAPE_VAlUE*SCALE))
            return false;
 
         int w = shape.getWidth();
@@ -132,10 +118,10 @@ public class GameArea extends JPanel {
     public boolean checkRotate() {
         shape.nextRotation ();
         if(!checkRight() || !checkLeft() || !checkBarrier()) {
-            shape.previousRotation ();
+            shape.previousRotation();
             return false;
         }
-        shape.previousRotation ();
+        shape.previousRotation();
         return true;
     }
     public boolean IsMoveShapeDown() {
@@ -187,7 +173,7 @@ public class GameArea extends JPanel {
         for (int y = 0; y < height; ++y) {
             for (int x = 0; x < weight; ++x) {
                 if (shape.IsShape(x, y))
-                    drawGivenFigure (graphics, Color.red, shape.getX () + x, shape.getY () + y);
+                    drawGivenFigure (graphics, shape.getColor(), shape.getX () + x, shape.getY () + y);
             }
         }
     }
@@ -198,7 +184,6 @@ public class GameArea extends JPanel {
         for(int y = 0; y < h; ++y) {
             for(int x = 0; x < w; ++x) {
                 if (shape.IsShape(x, y)) {
-                    //System.out.println (y+shape.getY() + " " +x+shape.getX());
                     placedShape[y + shape.getY()][x + shape.getX()] = shape.getColor();
                 }
             }
@@ -206,7 +191,6 @@ public class GameArea extends JPanel {
     }
 
     public boolean isBlockOutOfBounds() {
-        System.out.println (shape.getY());
         return shape.getY() <= 0;
     }
     private void drawBackGround(Graphics graphics) {
