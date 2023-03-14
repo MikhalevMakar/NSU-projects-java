@@ -47,7 +47,6 @@ public class TetrisShape {
             do {
                 number = random.nextInt(colors.length);
             } while (contains(numbers, number));
-            System.out.println(number);
             numbers[i] = number;
         }
 
@@ -65,7 +64,7 @@ public class TetrisShape {
                     rotateShapes[i][y][x] = shape[w-x-1][y];
                 }
             }
-            shape =  rotateShapes[i];
+            shape = rotateShapes[i];
         }
     }
     public void setColor() {
@@ -88,7 +87,6 @@ public class TetrisShape {
         shape = rotateShapes[indexRotation];
         x = random.nextInt(10);
         y = 0;
-        System.out.println ("X " + x );
     }
     public int getX() {return x;}
     public int getY() {return y;}

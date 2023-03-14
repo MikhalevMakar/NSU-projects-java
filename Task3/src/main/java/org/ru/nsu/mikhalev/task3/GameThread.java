@@ -10,7 +10,7 @@ public class GameThread extends Thread {
         while(true) {
             while (gameArea.IsMoveShapeDown()) {
                 try {
-                    Thread.sleep (75);
+                    Thread.sleep (250);
                 } catch (InterruptedException e) {
                     throw new RuntimeException (e);
                 }
