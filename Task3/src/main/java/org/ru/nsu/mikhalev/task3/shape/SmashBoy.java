@@ -1,14 +1,13 @@
 package org.ru.nsu.mikhalev.task3.shape;
 
 import org.ru.nsu.mikhalev.task3.TetrisShape;
-@AnnotationShape
-public class SmashBoy  implements Shape{
-    @Override
-    public TetrisShape generateShape(int indexColor) {
-        return new TetrisShape(color[random.nextInt (color.length)], new boolean[][]{
-                                                                {true,true},
-                                                                {true,true}
-                                                              });
-    }
 
+@AnnotationShape
+public class SmashBoy extends TetrisShape {
+    public SmashBoy() {
+        super(new boolean[][]{
+                {true,true},
+                {true,true}
+        });
+    }
 }

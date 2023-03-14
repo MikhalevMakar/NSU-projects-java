@@ -2,6 +2,9 @@ package org.ru.nsu.mikhalev.task3;
 
 import java.awt.Color;
 import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
+
+import static org.apache.commons.lang3.ArrayUtils.contains;
 
 public class TetrisShape {
     private Color color;
@@ -9,14 +12,46 @@ public class TetrisShape {
     private int y = 0;
     private final int CNT_ROTATION_SHIP = 4;
     private int indexRotation = 0;
-    private Random random;
+    private static Random random = new Random();
     boolean[][][] rotateShapes;
     private boolean[][] shape;
-    public TetrisShape(Color color, boolean[][] shape) {
+    private static Color[] colors = new Color[]{
+            Color.RED,
+            Color.BLUE,
+            Color.BLACK,
+            Color.YELLOW,
+            Color.PINK,
+            Color.CYAN,
+            Color.MAGENTA,
+            Color.WHITE,
+            Color.GREEN,
+            Color.ORANGE
+    };
+    private static int[] numbers = new int[colors.length];
+    static {
+        fillColorArray();
+    }
+    private static int indexColor = 0;
+
+    public TetrisShape(boolean[][] shape) {
         this.shape = shape;
-        this.color = color;
-        random = new Random();
         generateRotateShapes();
+    }
+
+    private static void fillColorArray() {
+        int number;
+        for (int i = 0; i < 10; ++i){
+            numbers[i] = -1;
+        }
+        for (int i = 0; i < 10; i++) {
+            do {
+                number = random.nextInt(colors.length);
+            } while (contains(numbers, number));
+            System.out.println(number);
+            numbers[i] = number;
+        }
+
+        System.out.println ("finish");
     }
 
     private void generateRotateShapes() {
@@ -33,6 +68,10 @@ public class TetrisShape {
             shape =  rotateShapes[i];
         }
     }
+    public void setColor() {
+        this.color = colors[numbers[indexColor % colors.length]];
+        indexColor++;
+    }
     public int getWidth() {
         return shape.length;
     }
@@ -47,8 +86,9 @@ public class TetrisShape {
     public void spawn() {
         indexRotation = random.nextInt (rotateShapes.length);
         shape = rotateShapes[indexRotation];
-        x = random.nextInt(12 - getWidth() + 1);
+        x = random.nextInt(10);
         y = 0;
+        System.out.println ("X " + x );
     }
     public int getX() {return x;}
     public int getY() {return y;}
@@ -59,16 +99,13 @@ public class TetrisShape {
     public void nextRotation() {
         shape = rotateShapes[(++indexRotation) % CNT_ROTATION_SHIP];
     }
-
     public void previousRotation() {
         shape = rotateShapes[(--indexRotation) % CNT_ROTATION_SHIP];
     }
-
     public int getLeftSide() {
         return x;
     }
-
     public int getRightSide() {
-        return x+getWidth();
+        return x + getWidth();
     }
 }

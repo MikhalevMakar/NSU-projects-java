@@ -2,28 +2,38 @@ package org.ru.nsu.mikhalev.task3;
 
 import javax.swing.*;
 import org.apache.log4j.*;
-import org.ru.nsu.mikhalev.task3.shape.TeeWee;
+import org.ru.nsu.mikhalev.task3.shape.*;
 import java.awt.*;
 import java.util.Random;
 
 public class GameArea extends JPanel {
     private static final Logger LOGGER = Logger.getLogger (GameArea.class.getName());
-    private TetrisShape shape;
-    private Color[][] placedShape = new Color[Context.getHEIGHT()][Context.getWIDTH()];
     private Random random;
+    private Color[][] placedShape = new Color[Context.getHEIGHT()][Context.getWIDTH()];
+    private TetrisShape shape;
+    private  TetrisShape[] shapes;
     private Color color(int red, int green, int blue){
         return new Color(red, green, blue);
     }
     public GameArea() {
         LOGGER.info("GameArea");
         setBounds(getBounds());
-        setBackground(color(49,84,100));
+        setBackground(color(49, 84, 100));
         random = new Random();
+
+        shapes = new TetrisShape[] {
+                    new SmashBoy(),
+                    new Ricky(),
+                    new Hero(),
+                    new TeeWee(),
+                    new Cleveland()
+                };
+
         spawnShape();
     }
     public void spawnShape() {
-        TeeWee ricky = new TeeWee();
-        shape = ricky.generateShape(4);
+        shape = shapes[random.nextInt(shapes.length)];
+        shape.setColor();
         shape.spawn();
     }
     private void clearLine(int row) {
@@ -32,7 +42,7 @@ public class GameArea extends JPanel {
         }
     }
     private void shiftDown(int curRow) {
-        for(int row = curRow; row > 0; row--) {
+        for(int row = curRow; row > 0; --row) {
             for(int column = 0; column < Context.getWIDTH(); ++column) {
                 placedShape[row][column] = placedShape[row-1][column];
             }
@@ -74,16 +84,16 @@ public class GameArea extends JPanel {
        if(shape.getLeftSide() == 0)
            return false;
 
-        int w = shape.getWidth();
-        int h = shape.getHeight();
-        for (int row = 0; row < h; ++row) {
-            for (int column = 0; column < w; ++column) {
-                if (shape.IsShape(column, row) &&
-                    placedShape[row + shape.getY()][column + shape.getX() - 1] != null)
-                    return false;
-            }
-        }
-        return true;
+       int w = shape.getWidth();
+       int h = shape.getHeight();
+       for (int row = 0; row < h; ++row) {
+           for (int column = 0; column < w; ++column) {
+               if (shape.IsShape(column, row) &&
+                   placedShape[row + shape.getY()][column + shape.getX() - 1] != null)
+                   return false;
+           }
+       }
+       return true;
     }
     public boolean checkMoveRightShape() {
         if(shape.getRightSide() >= Context.getWIDTH() / Context.getRATE_VALUE())
@@ -94,7 +104,7 @@ public class GameArea extends JPanel {
         for (int row = 0; row < h; ++row) {
             for (int column = 0; column < w; ++column) {
                 if (shape.IsShape(column, row) &&
-                    placedShape[row + shape.getY()][column + shape.getX()+1] != null) {
+                    placedShape[row + shape.getY()][column + shape.getX() + 1] != null) {
                     return false;
                 }
             }
@@ -205,7 +215,7 @@ public class GameArea extends JPanel {
                           Context.getOFFSET_TABLE_Y(),
                     Context.getWIDTH() * Context.getSCALE(),
                    Context.getHEIGHT() * Context.getSCALE());
-        graphics.setColor(Color.black);
+        graphics.setColor(Color.BLACK);
 
         for(int x = 0; x <= Context.getWIDTH()*Context.getSCALE(); x += Context.getSCALE()) {
             graphics.drawLine(x + Context.getOFFSET_TABLE_X(),
