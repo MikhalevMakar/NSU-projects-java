@@ -1,8 +1,6 @@
 package org.ru.nsu.mikhalev.task3.controller;
 
-import org.ru.nsu.mikhalev.task3.controller.GameArea;
 import org.ru.nsu.mikhalev.task3.model.GameThread;
-
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 

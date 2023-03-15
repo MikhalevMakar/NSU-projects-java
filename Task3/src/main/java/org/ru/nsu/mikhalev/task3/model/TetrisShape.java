@@ -2,8 +2,6 @@ package org.ru.nsu.mikhalev.task3.model;
 
 import java.awt.Color;
 import java.util.Random;
-import java.util.concurrent.ThreadLocalRandom;
-
 import static org.apache.commons.lang3.ArrayUtils.contains;
 
 public class TetrisShape {
@@ -37,7 +35,6 @@ public class TetrisShape {
         this.shape = shape;
         generateRotateShapes();
     }
-
     private static void fillColorArray() {
         int number;
         for (int i = 0; i < 10; ++i){
@@ -49,10 +46,7 @@ public class TetrisShape {
             } while (contains(numbers, number));
             numbers[i] = number;
         }
-
-        System.out.println ("finish");
     }
-
     private void generateRotateShapes() {
         rotateShapes = new boolean[CNT_ROTATION_SHIP][][];
         for(int i = 0, h, w; i < CNT_ROTATION_SHIP; ++i) {

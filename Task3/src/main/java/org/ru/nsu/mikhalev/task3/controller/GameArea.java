@@ -23,11 +23,11 @@ public class GameArea extends JPanel {
         setBackground(DrawRectangle.color(49, 84, 100));
         random = new Random();
         shapes = new TetrisShape[] {
-                    new SmashBoy (),
-                    new Ricky (),
-                    new Hero (),
-                    new TeeWee (),
-                    new Cleveland ()
+                    new SmashBoy(),
+                    new Ricky(),
+                    new Hero(),
+                    new TeeWee(),
+                    new Cleveland()
                 };
 
         spawnShape();

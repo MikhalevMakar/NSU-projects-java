@@ -2,7 +2,6 @@ package org.ru.nsu.mikhalev.task3.view;
 
 import org.ru.nsu.mikhalev.task3.model.Context;
 import org.ru.nsu.mikhalev.task3.model.TetrisShape;
-
 import java.awt.*;
 
 public class FieldPanel {

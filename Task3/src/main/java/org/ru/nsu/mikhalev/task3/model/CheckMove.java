@@ -1,26 +1,32 @@
 package org.ru.nsu.mikhalev.task3.model;
 
+import org.jetbrains.annotations.NotNull;
 import java.awt.*;
 
 public class CheckMove {
-//    static private TetrisShape shape;
-//    static private Color[][] placedShape;
-//    static void setField(TetrisShape s, Color[][] ps) {
-//        shape = s;
-//        placedShape = ps;
-//    }
-    static public  boolean checkBarrier(TetrisShape shape, Color[][] placedShape) {
-        if(shape.getY () + shape.getHeight () >= Context.getHEIGHT() / Context.getRATE_VALUE() - 1)
-            return false;
-
+    static private boolean EmptyColor(@NotNull TetrisShape shape) {
+        int row = shape.getHeight() - 1;
+        for(int i = 0; i < shape.getWidth(); ++i) {
+            if(shape.IsShape(i, row) && shape.getColor() != null)
+                return false;
+        }
+        return true;
+    }
+    static public boolean checkBarrier(TetrisShape shape, Color[][] placedShape) {
         int w = shape.getWidth();
         int h = shape.getHeight();
+
+        //if(EmptyColor(shape)) return true;
+        if(shape.getY() + h >= Context.getHEIGHT() / Context.getRATE_VALUE() - 1)
+            return false;
+
         for (int column = 0; column < w; ++column) {
             for (int row = h - 1; row >= 0; --row) {
                 int x = column + shape.getX();
                 int y = row + shape.getY();
                 if(shape.IsShape(column, row) &&
-                        placedShape[y + 1][x] != null)
+                   placedShape[y + 1][x] != null
+                   )
                     return false;
             }
         }
