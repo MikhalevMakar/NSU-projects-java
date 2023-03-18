@@ -7,9 +7,9 @@ import org.ru.nsu.mikhalev.task3.model.TetrisShape;
 public class TeeWee extends TetrisShape {
     public TeeWee() {
         super (new boolean[][]{
-                {true, false},
-                {true, true},
-                {true, false}
-        });
+                        {true, false},
+                        {true, true},
+                        {true, false}
+                      });
     }
 }

@@ -1,22 +1,12 @@
 package org.ru.nsu.mikhalev.task3.model;
 
-import org.jetbrains.annotations.NotNull;
 import java.awt.*;
 
 public class CheckMove {
-    static private boolean EmptyColor(@NotNull TetrisShape shape) {
-        int row = shape.getHeight() - 1;
-        for(int i = 0; i < shape.getWidth(); ++i) {
-            if(shape.IsShape(i, row) && shape.getColor() != null)
-                return false;
-        }
-        return true;
-    }
     static public boolean checkBarrier(TetrisShape shape, Color[][] placedShape) {
         int w = shape.getWidth();
         int h = shape.getHeight();
 
-        //if(EmptyColor(shape)) return true;
         if(shape.getY() + h >= Context.getHEIGHT() / Context.getRATE_VALUE() - 1)
             return false;
 

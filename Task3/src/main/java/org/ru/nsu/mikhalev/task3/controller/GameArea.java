@@ -16,7 +16,6 @@ public class GameArea extends JPanel {
     private Color[][] placedShape = new Color[Context.getHEIGHT()][Context.getWIDTH()];
     private TetrisShape shape;
     private  TetrisShape[] shapes;
-
     public GameArea() {
         LOGGER.info("GameArea");
         setBounds(getBounds());
@@ -34,6 +33,7 @@ public class GameArea extends JPanel {
     }
     public void spawnShape() {
         shape = shapes[random.nextInt(shapes.length)];
+        shape.rotate();
         shape.setColor();
         shape.spawn();
     }
@@ -42,7 +42,6 @@ public class GameArea extends JPanel {
             placedShape[row][i] = null;
         }
     }
-
     private void shiftDown(int curRow) {
         for(int row = curRow; row > 0; --row) {
             for(int column = 0; column < Context.getWIDTH(); ++column) {
@@ -124,9 +123,6 @@ public class GameArea extends JPanel {
                                          800);
         add(r);
         DrawDetails.drawDetails(graphics, shape);
-        Image img = new ImageIcon (Context.getLOGO_TETRIS ()).getImage();
-        graphics.drawImage(img, 1037, -4, null);
-        revalidate();
-        FieldPanel.drawBackGround(graphics, shape, placedShape);
+        FieldPanel.drawBackGround(graphics, placedShape);
     }
 }

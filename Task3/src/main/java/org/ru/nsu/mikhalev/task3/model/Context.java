@@ -10,8 +10,8 @@ public class Context {
         private static final int OFFSET_SHARED = HEIGHT / RATIO_SHAPE_VAlUE;
         private static final int RATE_VALUE = RATIO_SHAPE_VAlUE * SCALE;
         private static final String LOGO_TETRIS = "../Task3/src/main/resources/LogoTetris.png";
-
         private static final int NUMBER_CUBES_ROW = 12;
+
         static public int getSCALE() { return SCALE; }
         static public int getWIDTH() { return WIDTH; }
         static public int getHEIGHT() { return HEIGHT; }

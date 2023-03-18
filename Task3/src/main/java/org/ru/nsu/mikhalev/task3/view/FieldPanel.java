@@ -27,7 +27,7 @@ public class FieldPanel {
         }
     }
 
-    static public  void drawBackGround(Graphics graphics, TetrisShape shape, Color[][] placedShape) {
+    static public  void drawBackGround(Graphics graphics,Color[][] placedShape) {
         Color color;
         for(int y = 0; y < Context.getHEIGHT(); ++y) {
             for(int x = 0; x < Context.getWIDTH(); ++x) {

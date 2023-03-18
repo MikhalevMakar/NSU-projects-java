@@ -6,9 +6,22 @@ import org.ru.nsu.mikhalev.task3.model.TetrisShape;
 public class Hero extends TetrisShape {
     public Hero() {
         super(new boolean[][]{
-                {true, false},
-                {true, false},
-                {true, false},
+                {true},
+                {true},
+                {true},
         });
+    }
+
+    @Override
+    public void rotate() {
+        super.rotate();
+        if(this.getWidth() == 1) {
+             this.setX(this.getX() + 1);
+             this.setY(this.getY() - 1);
+        } else {
+            this.setX(this.getX() - 1);
+            this.setY(this.getY() + 1);
+        }
+
     }
 }

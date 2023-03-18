@@ -10,6 +10,7 @@ public class TetrisShape {
     private int y = 0;
     private final int CNT_ROTATION_SHIP = 4;
     private int indexRotation = 0;
+    private static int indexColor = 0;
     private static Random random = new Random();
     boolean[][][] rotateShapes;
     private boolean[][] shape;
@@ -29,15 +30,13 @@ public class TetrisShape {
     static {
         fillColorArray();
     }
-    private static int indexColor = 0;
-
     public TetrisShape(boolean[][] shape) {
         this.shape = shape;
         generateRotateShapes();
     }
     private static void fillColorArray() {
         int number;
-        for (int i = 0; i < 10; ++i){
+        for (int i = 0; i < 10; ++i) {
             numbers[i] = -1;
         }
         for (int i = 0; i < 10; i++) {
@@ -74,16 +73,19 @@ public class TetrisShape {
     public boolean IsShape(int x, int y) {
         return shape[x][y];
     }
-
-    public Color getColor() {return this.color;}
-    public void spawn() {
-        indexRotation = random.nextInt (rotateShapes.length);
+    public Color getColor() { return this.color; }
+    public void rotate() {
+        indexRotation = random.nextInt(rotateShapes.length);
         shape = rotateShapes[indexRotation];
+    }
+    public void spawn() {
         x = random.nextInt(10);
         y = 0;
     }
     public int getX() {return x;}
     public int getY() {return y;}
+    public void setX(int x) { this.x = x;}
+    public void setY(int y) { this.y = y;}
     public void moveDown() {++y;}
     public void moveUp() {--y;}
     public void moveLeft() {--x;}
