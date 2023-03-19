@@ -11,9 +11,9 @@ public class DrawDetails {
             for (int x = 0; x < weight; ++x) {
                 if (shape.IsShape(x, y))
                     DrawGivenFigure.draw(graphics,
-                                    shape.getColor(),
-                                 shape.getX() + x,
-                                 shape.getY() + y);
+                                         shape.getColor(),
+                                      shape.getX() + x,
+                                      shape.getY() + y);
             }
         }
     }

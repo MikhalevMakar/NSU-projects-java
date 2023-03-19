@@ -5,7 +5,7 @@ public class Context {
         private static final int WIDTH = 252;
         private static final int HEIGHT = 420;
         private static final int OFFSET_TABLE_X = 400;
-        private static final int OFFSET_TABLE_Y = 50;
+        private static final int OFFSET_TABLE_Y = 20;
         private static final int RATIO_SHAPE_VAlUE = 10;
         private static final int OFFSET_SHARED = HEIGHT / RATIO_SHAPE_VAlUE;
         private static final int RATE_VALUE = RATIO_SHAPE_VAlUE * SCALE;

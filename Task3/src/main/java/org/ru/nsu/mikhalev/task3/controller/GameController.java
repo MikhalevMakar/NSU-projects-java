@@ -1,11 +1,16 @@
 package org.ru.nsu.mikhalev.task3.controller;
 
+import org.ru.nsu.mikhalev.task3.model.LeaderBoard;
+import org.ru.nsu.mikhalev.task3.view.GenerateMenu;
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.io.IOException;
 
 public class GameController implements Runnable {
     private GameArea gameArea;
     private JFrame frame;
+
     private void creationControls() {
         InputMap inputMap = frame.getRootPane().getInputMap();
         ActionMap actionMap = frame.getRootPane().getActionMap();
@@ -46,7 +51,18 @@ public class GameController implements Runnable {
             }
         });
     }
-    public GameController() {
+
+    private void createLeaderBoard(String playerName) {
+        LeaderBoard leaderBoard = new LeaderBoard();
+        leaderBoard.addPlayer(playerName, gameArea.getPointPlayer());
+    }
+    private void gameOver() {
+        String playerName = JOptionPane.showInputDialog("Game Over\n Please, input your name.");
+        createLeaderBoard(playerName);
+        System.out.println(playerName);
+    }
+    static public void launchMenu() { new GenerateMenu ();}
+    public GameController()  {
         frame = new JFrame();
         gameArea = new GameArea();
         frame.add(gameArea);
@@ -55,7 +71,6 @@ public class GameController implements Runnable {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         creationControls();
     }
-
     @Override
     public void run() {
         while(true) {
@@ -68,7 +83,8 @@ public class GameController implements Runnable {
             }
             if(gameArea.isBlockOutOfBounds()) {
                 System.out.println("Game Over");
-                return;
+                Thread.currentThread().interrupt();
+                gameOver();
             }
             gameArea.spawnShape();
         }

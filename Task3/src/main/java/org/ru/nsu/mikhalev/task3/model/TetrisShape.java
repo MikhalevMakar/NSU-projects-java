@@ -62,7 +62,7 @@ public class TetrisShape {
     }
     public void setColor() {
         this.color = colors[numbers[indexColor % colors.length]];
-        indexColor++;
+        ++indexColor;
     }
     public int getWidth() {
         return shape.length;

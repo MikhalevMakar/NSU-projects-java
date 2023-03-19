@@ -31,8 +31,8 @@ public class GenerateMenu extends JFrame {
             @Override
             protected void paintComponent(Graphics g) {
                 super.paintComponent (g);
-                Image image = new ImageIcon ("../Task3/src/main/resources/template-5.jpg").getImage ();
-                g.drawImage (image, 0, 0, getWidth (), getHeight (), this);
+                Image image = new ImageIcon("../Task3/src/main/resources/template-5.jpg").getImage ();
+                g.drawImage(image, 0, 0, getWidth (), getHeight (), this);
             }
         };
 
