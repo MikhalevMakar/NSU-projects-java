@@ -55,6 +55,7 @@ public class GameController implements Runnable {
     private void createLeaderBoard(String playerName) {
         LeaderBoard leaderBoard = new LeaderBoard();
         leaderBoard.addPlayer(playerName, gameArea.getPointPlayer());
+        leaderBoard.fillTablePlayer();
     }
     private void gameOver() {
         String playerName = JOptionPane.showInputDialog("Game Over\n Please, input your name.");
@@ -76,7 +77,7 @@ public class GameController implements Runnable {
         while(true) {
             while(gameArea.IsMoveShapeDown()) {
                 try {
-                    Thread.sleep(250);
+                    Thread.sleep(100);
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
                 }
@@ -85,6 +86,7 @@ public class GameController implements Runnable {
                 System.out.println("Game Over");
                 Thread.currentThread().interrupt();
                 gameOver();
+                return;
             }
             gameArea.spawnShape();
         }

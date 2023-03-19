@@ -115,9 +115,9 @@
             repaint();
         }
         public void moveShapeToBackGround() {
+            pointPlayer += 10;
             int h = shape.getHeight();
             int w = shape.getWidth();
-
             for(int y = 0; y < h; ++y) {
                 for(int x = 0; x < w; ++x) {
                     if (shape.IsShape(x, y))

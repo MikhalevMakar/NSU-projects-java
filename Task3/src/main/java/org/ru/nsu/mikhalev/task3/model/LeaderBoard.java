@@ -3,10 +3,11 @@ package org.ru.nsu.mikhalev.task3.model;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectOutputStream;
+import java.io.*;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.function.Function;
 
 public class LeaderBoard extends JFrame {
     private JTable table;
@@ -18,33 +19,36 @@ public class LeaderBoard extends JFrame {
         setDefaultCloseOperation (JFrame.EXIT_ON_CLOSE);
         setSize(400, 300);
 
-        //Создаем модель таблицы
         model = new DefaultTableModel();
         model.addColumn("Имя");
         model.addColumn("Очки");
-
-        //Добавляем предыдущих игроков в таблицу
         players = getPreviousPlayers();
+    }
+    private ArrayList<String[]> getPreviousPlayers() {
+        try(ObjectInputStream ois = new ObjectInputStream(new FileInputStream (playerStatistics))) {
+            players = (ArrayList<String[]>)ois.readObject();
+        } catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return players;
+    }
+    public void fillTablePlayer() {
         for (String[] player : players) {
             model.addRow(player);
         }
-        //Создаем таблицу
         table = new JTable(model);
         JScrollPane scrollPane = new JScrollPane(table);
         getContentPane().add(scrollPane, BorderLayout.CENTER);
-        setVisible (true);
-    }
-    private ArrayList<String[]> getPreviousPlayers() {
-        return players;
+        setVisible(true);
     }
     public void addPlayer(String name, int score)  {
         String[] player = new String[]{name, Integer.toString(score)};
-        model.addRow(player);
         players.add(player);
+        players.sort(Comparator.comparing((Function<String[], String>)array-> String.valueOf(Integer.parseInt(array[1]))).reversed());
         try(FileOutputStream fileOutputStream = new FileOutputStream(playerStatistics);
             ObjectOutputStream oos = new ObjectOutputStream(fileOutputStream)) {
             oos.writeObject(players);
-        } catch (IOException e) {
+        } catch(IOException e) {
             System.err.println("Result table not found");
         }
     }
