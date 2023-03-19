@@ -5,20 +5,17 @@ import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.function.Function;
 
 public class LeaderBoard extends JFrame {
     private JTable table;
     private DefaultTableModel model;
-    private ArrayList<String[]> players = new ArrayList<>();
+    private ArrayList<String[]> players;
     private String playerStatistics = "../Task3/src/main/resources/PlayerStatistics.txt";
     public LeaderBoard() {
         setTitle("Таблица результатов");
-        setDefaultCloseOperation (JFrame.EXIT_ON_CLOSE);
         setSize(400, 300);
-
         model = new DefaultTableModel();
         model.addColumn("Имя");
         model.addColumn("Очки");

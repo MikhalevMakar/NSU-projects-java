@@ -1,6 +1,7 @@
 package org.ru.nsu.mikhalev.task3.view;
 
 import org.ru.nsu.mikhalev.task3.controller.GameController;
+import org.ru.nsu.mikhalev.task3.model.LeaderBoard;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -35,24 +36,22 @@ public class GenerateMenu extends JFrame {
                 g.drawImage(image, 0, 0, getWidth(), getHeight(), this);
             }
         };
-
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         panel.setOpaque(false);
         setContentPane(panel);
-
         createButtonStart();
         createButtonLevel();
         createButtonScore();
         createButtonRules();
-
         setVisible(true);
     }
 
     private void createButtonStart() {
          buttonStart = new HorizontalGradientButton("Start game!",
-                                                        1050,
-                                                       300,
-                                                        SetColor.GREEN_START.get(),
-                                                        SetColor.GREEN_END.get());
+                                                    1050,
+                                                    300,
+                                                    SetColor.GREEN_START.get(),
+                                                    SetColor.GREEN_END.get());
         buttonStart.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 ExecutorService newExecutor = Executors.newSingleThreadExecutor();
@@ -86,19 +85,18 @@ public class GenerateMenu extends JFrame {
                                                         SetColor.GREEN_END.get());
         buttonScore.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                ExecutorService newExecutor = Executors.newSingleThreadExecutor();
-                newExecutor.execute(new GameController());
-                newExecutor.shutdown();
+                LeaderBoard leaderBoard = new LeaderBoard();
+                leaderBoard.fillTablePlayer();
             }
         });
         getContentPane().add(buttonScore);
     }
     private void createButtonRules() {
         buttonRules = new HorizontalGradientButton("Rules!",
-                250,
-                450,
-                SetColor.GOLD_START.get(),
-                SetColor.GOLD_END.get());
+                                                   250,
+                                                   450,
+                                                   SetColor.GOLD_START.get(),
+                                                   SetColor.GOLD_END.get());
         buttonRules.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 ExecutorService newExecutor = Executors.newSingleThreadExecutor();
