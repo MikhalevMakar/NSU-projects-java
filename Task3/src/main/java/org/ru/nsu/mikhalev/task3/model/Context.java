@@ -13,7 +13,7 @@ public class Context {
         private static final int RATIO_SHAPE_VAlUE = 10;
         private static final int OFFSET_SHARED = HEIGHT / RATIO_SHAPE_VAlUE;
         private static final int RATE_VALUE = RATIO_SHAPE_VAlUE * SCALE;
-        private static final String LOGO_TETRIS = "../Task3/src/main/resources/LogoTetris.png";
+        private static final String PATH_RESOURCES = "../Task3/src/main/resources/";
         private static final int NUMBER_CUBES_ROW = 12;
 
         static public int getEASILY() { return EASILY; }
@@ -27,7 +27,7 @@ public class Context {
         static public int getOFFSET_TABLE_Y() { return OFFSET_TABLE_Y; }
         static public int getOFFSET_SHARED() { return OFFSET_SHARED; }
         static public int getRATE_VALUE() { return RATE_VALUE; }
-        static public String getLOGO_TETRIS() { return LOGO_TETRIS; }
+        static public String getPATH_RESOURCES() { return PATH_RESOURCES; }
         static public int getREAL_HEIGHT() { return SCALE*HEIGHT; }
         static public int getREAL_WIDTH() { return SCALE*WIDTH; }
         static public int getNUMBER_CUBES_ROW() { return NUMBER_CUBES_ROW; }

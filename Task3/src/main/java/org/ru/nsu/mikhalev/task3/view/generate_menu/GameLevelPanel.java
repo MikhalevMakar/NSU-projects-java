@@ -1,4 +1,4 @@
-package org.ru.nsu.mikhalev.task3.view;
+package org.ru.nsu.mikhalev.task3.view.generate_menu;
 
 import org.ru.nsu.mikhalev.task3.controller.GameController;
 import org.ru.nsu.mikhalev.task3.model.Context;
@@ -11,7 +11,7 @@ import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 
 public class GameLevelPanel extends JFrame {
-    private String pathFile = "../Task3/src/main/resources/PanelLevel.png";
+    private String PanelLevel = "PanelLevel.png";
     private JCheckBox EASILY = new JCheckBox ("EASILY");
     private JPanel panel;
     private JCheckBox MIDDLE = new JCheckBox("MIDDLE");
@@ -55,7 +55,7 @@ public class GameLevelPanel extends JFrame {
             @Override
             protected void paintComponent(Graphics g) {
                 super.paintComponent(g);
-                Image image = new ImageIcon(pathFile).getImage();
+                Image image = new ImageIcon(Context.getPATH_RESOURCES() + PanelLevel).getImage();
                 g.drawImage(image, 0, 0, getWidth(), getHeight(), this);
             }
         };
@@ -70,7 +70,6 @@ public class GameLevelPanel extends JFrame {
         setContentPane(panel);
         setVisible(true);
     }
-
     private void addActions() {
         EASILY.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {

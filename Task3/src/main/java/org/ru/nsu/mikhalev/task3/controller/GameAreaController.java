@@ -1,6 +1,5 @@
     package org.ru.nsu.mikhalev.task3.controller;
 
-    import org.apache.log4j.Logger;
     import org.ru.nsu.mikhalev.task3.model.CheckMove;
     import org.ru.nsu.mikhalev.task3.model.Context;
     import org.ru.nsu.mikhalev.task3.model.TetrisShape;
@@ -8,6 +7,9 @@
     import org.ru.nsu.mikhalev.task3.view.DrawDetails;
     import org.ru.nsu.mikhalev.task3.view.DrawRectangle;
     import org.ru.nsu.mikhalev.task3.view.FieldPanel;
+    import org.ru.nsu.mikhalev.task3.view.HorizontalGradientButton;
+    import org.ru.nsu.mikhalev.task3.view.SetColor;
+
     import javax.imageio.ImageIO;
     import javax.swing.*;
     import java.awt.*;
@@ -16,13 +18,19 @@
     import java.util.Random;
 
     public class GameArea extends JPanel {
-        private static final Logger LOGGER = Logger.getLogger (GameArea.class.getName());
         private Random random;
         private Color[][] placedShape = new Color[Context.getHEIGHT()][Context.getWIDTH()];
         private TetrisShape shape;
         private  TetrisShape[] shapes;
         private Image backgroundImage;
         private Integer pointPlayer = 0;
+
+        JButton buttonMenu = new HorizontalGradientButton("Rules!",
+                                                          250,
+                                                          450,
+                                                          SetColor.GOLD_START.get(),
+                                                          SetColor.GOLD_END.get());
+
         public GameArea()  {
             setBounds(getBounds());
 
@@ -35,13 +43,15 @@
                         new Cleveland()
                     };
             try {
-                backgroundImage = ImageIO.read(new File("../Task3/src/main/resources/PanelGameArea.jpg"));
+                backgroundImage = ImageIO.read(new File(Context.getPATH_RESOURCES() + "PanelGameArea.jpg"));
             } catch (IOException e) {
                 System.out.println(e.getMessage());
             }
+
+            add(buttonMenu);
             spawnShape();
         }
-        public int getPointPlayer() {return pointPlayer;}
+        public int getPointPlayer() { return pointPlayer; }
         public void spawnShape() {
             shape = shapes[random.nextInt(shapes.length)];
             shape.rotate();

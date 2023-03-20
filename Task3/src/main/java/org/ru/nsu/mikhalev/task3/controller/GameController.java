@@ -1,8 +1,8 @@
 package org.ru.nsu.mikhalev.task3.controller;
 
 import org.ru.nsu.mikhalev.task3.model.Context;
-import org.ru.nsu.mikhalev.task3.view.LeaderBoard;
-import org.ru.nsu.mikhalev.task3.view.GenerateMenu;
+import org.ru.nsu.mikhalev.task3.view.generate_menu.LeaderBoard;
+import org.ru.nsu.mikhalev.task3.view.generate_menu.GenerateMenu;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 

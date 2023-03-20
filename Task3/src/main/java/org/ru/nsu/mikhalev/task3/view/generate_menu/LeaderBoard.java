@@ -1,4 +1,6 @@
-package org.ru.nsu.mikhalev.task3.view;
+package org.ru.nsu.mikhalev.task3.view.generate_menu;
+
+import org.ru.nsu.mikhalev.task3.model.Context;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -12,7 +14,7 @@ public class LeaderBoard extends JFrame {
     private JTable table;
     private DefaultTableModel model;
     private ArrayList<String[]> players;
-    private String playerStatistics = "../Task3/src/main/resources/PlayerStatistics.txt";
+    private String playerStatistics = "PlayerStatistics.txt";
     public LeaderBoard() {
         super.setBounds(550, 200, 400, 300);
         setTitle("Таблица результатов");
@@ -23,7 +25,7 @@ public class LeaderBoard extends JFrame {
         players = getPreviousPlayers();
     }
     private ArrayList<String[]> getPreviousPlayers() {
-        try(ObjectInputStream ois = new ObjectInputStream(new FileInputStream (playerStatistics))) {
+        try(ObjectInputStream ois = new ObjectInputStream(new FileInputStream (Context.getPATH_RESOURCES() + playerStatistics))) {
             players = (ArrayList<String[]>)ois.readObject();
         } catch(Exception ex){
             System.out.println(ex.getMessage());

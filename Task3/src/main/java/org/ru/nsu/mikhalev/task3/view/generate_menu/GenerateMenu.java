@@ -1,6 +1,9 @@
-package org.ru.nsu.mikhalev.task3.view;
+package org.ru.nsu.mikhalev.task3.view.generate_menu;
 
 import org.ru.nsu.mikhalev.task3.controller.GameController;
+import org.ru.nsu.mikhalev.task3.model.Context;
+import org.ru.nsu.mikhalev.task3.view.HorizontalGradientButton;
+import org.ru.nsu.mikhalev.task3.view.SetColor;
 
 import javax.swing.*;
 import java.awt.*;
@@ -9,20 +12,8 @@ import java.awt.event.ActionListener;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-enum SetColor {
-    GREEN_START(new Color(81, 116, 128)),
-    GREEN_END(new Color(88, 128, 140)),
-    GOLD_START(new Color(130, 136, 103)),
-    GOLD_END(new Color(120, 123, 90));
-    private Color color;
-    SetColor(Color color) {
-        this.color = color;
-    }
-    public Color get(){ return color;}
-
-}
 public class GenerateMenu extends JFrame {
-    private String pathFile = "../Task3/src/main/resources/MainMenu.jpg";
+    private String MainMenu = "MainMenu.jpg";
     private JButton buttonStart,
                     buttonLevel,
                     buttonScore,
@@ -33,7 +24,7 @@ public class GenerateMenu extends JFrame {
             @Override
             protected void paintComponent(Graphics g) {
                 super.paintComponent (g);
-                Image image = new ImageIcon(pathFile).getImage();
+                Image image = new ImageIcon(Context.getPATH_RESOURCES() + MainMenu).getImage();
                 g.drawImage(image, 0, 0, getWidth(), getHeight(), this);
             }
         };
@@ -49,7 +40,7 @@ public class GenerateMenu extends JFrame {
     }
 
     private void createButtonStart() {
-         buttonStart = new HorizontalGradientButton("Start game!",
+         buttonStart = new HorizontalGradientButton ("Start game!",
                                                     1050,
                                                     300,
                                                     SetColor.GREEN_START.get(),
@@ -72,7 +63,7 @@ public class GenerateMenu extends JFrame {
                                                     SetColor.GOLD_END.get());
         buttonLevel.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                new GameLevelPanel();
+                new GameLevelPanel ();
             }
         });
         getContentPane().add(buttonLevel);
@@ -99,9 +90,7 @@ public class GenerateMenu extends JFrame {
                                                    SetColor.GOLD_END.get());
         buttonRules.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                ExecutorService newExecutor = Executors.newSingleThreadExecutor();
-                newExecutor.execute(new GameController());
-                newExecutor.shutdown();
+                new RulesGame();
             }
         });
         getContentPane().add(buttonRules);
