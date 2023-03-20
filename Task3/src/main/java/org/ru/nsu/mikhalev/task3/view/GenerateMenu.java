@@ -1,7 +1,7 @@
 package org.ru.nsu.mikhalev.task3.view;
 
 import org.ru.nsu.mikhalev.task3.controller.GameController;
-import org.ru.nsu.mikhalev.task3.model.LeaderBoard;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -22,6 +22,7 @@ enum SetColor {
 
 }
 public class GenerateMenu extends JFrame {
+    private String pathFile = "../Task3/src/main/resources/MainMenu.jpg";
     private JButton buttonStart,
                     buttonLevel,
                     buttonScore,
@@ -32,10 +33,11 @@ public class GenerateMenu extends JFrame {
             @Override
             protected void paintComponent(Graphics g) {
                 super.paintComponent (g);
-                Image image = new ImageIcon("../Task3/src/main/resources/template-5.jpg").getImage();
+                Image image = new ImageIcon(pathFile).getImage();
                 g.drawImage(image, 0, 0, getWidth(), getHeight(), this);
             }
         };
+
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         panel.setOpaque(false);
         setContentPane(panel);
@@ -64,15 +66,13 @@ public class GenerateMenu extends JFrame {
 
     private void  createButtonLevel() {
          buttonLevel = new HorizontalGradientButton("Difficulty level",
-                                                       250,
-                                                       300,
-                                                                SetColor.GOLD_START.get(),
-                                                                SetColor.GOLD_END.get());
+                                                    250,
+                                                    300,
+                                                    SetColor.GOLD_START.get(),
+                                                    SetColor.GOLD_END.get());
         buttonLevel.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                ExecutorService newExecutor = Executors.newSingleThreadExecutor();
-                newExecutor.execute(new GameController());
-                newExecutor.shutdown();
+                new GameLevelPanel();
             }
         });
         getContentPane().add(buttonLevel);

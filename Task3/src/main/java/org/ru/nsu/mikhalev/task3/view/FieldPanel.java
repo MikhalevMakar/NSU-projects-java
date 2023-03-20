@@ -15,15 +15,15 @@ public class FieldPanel {
 
         for(int x = 0; x <= Context.getREAL_WIDTH(); x += Context.getSCALE()) {
             graphics.drawLine(x + Context.getOFFSET_TABLE_X(),
-                    Context.getOFFSET_TABLE_Y(),
-                    x + Context.getOFFSET_TABLE_X(),
-                    Context.getREAL_HEIGHT() + Context.getOFFSET_TABLE_Y());
+                              Context.getOFFSET_TABLE_Y(),
+                              x + Context.getOFFSET_TABLE_X(),
+                              Context.getREAL_HEIGHT() + Context.getOFFSET_TABLE_Y());
         }
         for(int y = 0; y <= Context.getREAL_HEIGHT(); y += Context.getSCALE()) {
             graphics.drawLine(Context.getOFFSET_TABLE_X(),
-                    y + Context.getOFFSET_TABLE_Y(),
-                    Context.getREAL_WIDTH() + Context.getOFFSET_TABLE_X(),
-                    y + Context.getOFFSET_TABLE_Y());
+                              y + Context.getOFFSET_TABLE_Y(),
+                              Context.getREAL_WIDTH() + Context.getOFFSET_TABLE_X(),
+                              y + Context.getOFFSET_TABLE_Y());
         }
     }
 

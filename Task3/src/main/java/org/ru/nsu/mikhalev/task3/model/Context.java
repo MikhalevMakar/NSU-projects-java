@@ -1,6 +1,10 @@
 package org.ru.nsu.mikhalev.task3.model;
 
 public class Context {
+
+        private static final int EASILY = 100;
+        private static final int MIDDLE = 200;
+        private static final int HARD = 300;
         private static final int SCALE = 2;
         private static final int WIDTH = 252;
         private static final int HEIGHT = 420;
@@ -11,6 +15,10 @@ public class Context {
         private static final int RATE_VALUE = RATIO_SHAPE_VAlUE * SCALE;
         private static final String LOGO_TETRIS = "../Task3/src/main/resources/LogoTetris.png";
         private static final int NUMBER_CUBES_ROW = 12;
+
+        static public int getEASILY() { return EASILY; }
+        static public int getMIDDLE() { return MIDDLE; }
+        static public int getHARD() { return HARD; }
 
         static public int getSCALE() { return SCALE; }
         static public int getWIDTH() { return WIDTH; }

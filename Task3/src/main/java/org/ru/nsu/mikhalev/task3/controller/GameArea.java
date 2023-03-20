@@ -35,7 +35,7 @@
                         new Cleveland()
                     };
             try {
-                backgroundImage = ImageIO.read(new File("../Task3/src/main/resources/photo.jpg"));
+                backgroundImage = ImageIO.read(new File("../Task3/src/main/resources/PanelGameArea.jpg"));
             } catch (IOException e) {
                 System.out.println(e.getMessage());
             }

@@ -1,15 +1,15 @@
 package org.ru.nsu.mikhalev.task3.controller;
 
-import org.ru.nsu.mikhalev.task3.model.LeaderBoard;
+import org.ru.nsu.mikhalev.task3.model.Context;
+import org.ru.nsu.mikhalev.task3.view.LeaderBoard;
 import org.ru.nsu.mikhalev.task3.view.GenerateMenu;
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
-import java.io.IOException;
 
 public class GameController implements Runnable {
     private GameArea gameArea;
     private JFrame frame;
+    private static int DELAY = Context.getMIDDLE();
 
     private void creationControls() {
         InputMap inputMap = frame.getRootPane().getInputMap();
@@ -57,6 +57,8 @@ public class GameController implements Runnable {
         leaderBoard.addPlayer(playerName, gameArea.getPointPlayer());
         leaderBoard.fillTablePlayer();
     }
+
+    static public void setDELAY(int curDELAY) { DELAY = curDELAY;}
     private void gameOver() {
         String playerName = JOptionPane.showInputDialog("Game Over\n Please, input your name.");
         createLeaderBoard(playerName);
@@ -77,7 +79,7 @@ public class GameController implements Runnable {
         while(true) {
             while(gameArea.IsMoveShapeDown()) {
                 try {
-                    Thread.sleep(100);
+                    Thread.sleep(DELAY);
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
                 }
