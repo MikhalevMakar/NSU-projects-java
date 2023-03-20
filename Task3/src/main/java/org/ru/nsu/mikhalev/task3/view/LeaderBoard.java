@@ -14,8 +14,9 @@ public class LeaderBoard extends JFrame {
     private ArrayList<String[]> players;
     private String playerStatistics = "../Task3/src/main/resources/PlayerStatistics.txt";
     public LeaderBoard() {
+        super.setBounds(550, 200, 400, 300);
         setTitle("Таблица результатов");
-        setSize(400, 300);
+      //  setSize(400, 300);
         model = new DefaultTableModel();
         model.addColumn("Имя");
         model.addColumn("Очки");

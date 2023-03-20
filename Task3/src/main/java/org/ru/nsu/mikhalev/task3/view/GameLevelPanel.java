@@ -12,9 +12,10 @@ import java.awt.event.ItemListener;
 
 public class GameLevelPanel extends JFrame {
     private String pathFile = "../Task3/src/main/resources/PanelLevel.png";
-    JCheckBox EASILY = new JCheckBox ("EASILY");
-    JCheckBox MIDDLE = new JCheckBox("MIDDLE");
-    JCheckBox HARD = new JCheckBox ("HARD");
+    private JCheckBox EASILY = new JCheckBox ("EASILY");
+    private JPanel panel;
+    private JCheckBox MIDDLE = new JCheckBox("MIDDLE");
+    private JCheckBox HARD = new JCheckBox ("HARD");
     private void checkListener() {
         EASILY.addItemListener(new ItemListener () {
             @Override
@@ -49,8 +50,8 @@ public class GameLevelPanel extends JFrame {
     }
 
     public GameLevelPanel() {
-        super.setBounds(500, 200, 300, 100);
-        JPanel panel = new JPanel() {
+        super.setBounds(550, 200, 300, 100);
+        panel = new JPanel() {
             @Override
             protected void paintComponent(Graphics g) {
                 super.paintComponent(g);
@@ -59,22 +60,9 @@ public class GameLevelPanel extends JFrame {
             }
         };
 
-        EASILY.setSelected(true);
-        EASILY.setForeground(Color.WHITE);
-        EASILY.setSize(new Dimension(20, 20));
-        EASILY.setLocation(50, 50);
-        panel.add(EASILY);
-
-        MIDDLE.setForeground(Color.WHITE);
-        MIDDLE.setSize(new Dimension(20, 20));
-        MIDDLE.setLocation(50, 100);
-        panel.add(MIDDLE);
-
-
-        HARD.setForeground(Color.WHITE);
-        HARD.setSize(new Dimension(20, 20));
-        HARD.setLocation(50, 150);
-        panel.add(HARD);
+        createEASILY();
+        createMIDDLE();
+        createHARD();
 
         checkListener();
         addActions();
@@ -101,5 +89,25 @@ public class GameLevelPanel extends JFrame {
                 GameController.setDELAY(Context.getHARD());
             }
         });
+    }
+
+    private void createEASILY() {
+        EASILY.setSelected(true);
+        EASILY.setForeground(Color.WHITE);
+        EASILY.setSize(new Dimension(20, 20));
+        EASILY.setLocation(50, 50);
+        panel.add(EASILY);
+    }
+    private void createMIDDLE() {
+        MIDDLE.setForeground(Color.WHITE);
+        MIDDLE.setSize(new Dimension(20, 20));
+        MIDDLE.setLocation(50, 100);
+        panel.add(MIDDLE);
+    }
+    private void createHARD() {
+        HARD.setForeground(Color.WHITE);
+        HARD.setSize(new Dimension(20, 20));
+        HARD.setLocation(50, 150);
+        panel.add(HARD);
     }
 }
