@@ -39,6 +39,7 @@ public class LoaderFactory {
         LOGGER.info("Annotation comparison CommandAnnotation");
         for (Annotation annotation : annotations) {
             if (annotation instanceof CommandAnnotation fileInfo) {
+                fileInfo.
                 return (Operation)cl.newInstance();
             }
         }

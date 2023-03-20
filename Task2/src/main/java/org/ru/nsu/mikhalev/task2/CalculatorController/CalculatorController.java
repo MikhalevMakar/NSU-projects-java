@@ -14,6 +14,7 @@ public class CalculatorController {
     private final ParseLine parseLine;
     private String line;
     private Operation operation;
+
     private final Context context;
 
     {
@@ -21,11 +22,11 @@ public class CalculatorController {
     }
     public CalculatorController() throws ParseException, FileNotFoundException {
         LOGGER.debug ("Calculator controller constructor empty");
-        context = new Context ();
+        context = new Context();
     }
     public CalculatorController(String[] args) throws ParseException, FileNotFoundException {
         LOGGER.debug ("Calculator controller constructor args");
-        context = new Context (args);
+        context = new Context(args);
     }
 
     public void launch() {
@@ -51,8 +52,7 @@ public class CalculatorController {
                 LOGGER.debug ("Calc command " + parseLine.getNameCommand ());
             }
         } catch (Exception ex) {
-            LOGGER.error ("Runtime exception " + ex.getStackTrace ());
-            throw new RuntimeException (ex.getMessage () + ex.getStackTrace ());
+            throw new RuntimeException (ex);
         }
     }
 }

@@ -13,14 +13,11 @@ import javax.inject.Inject;
 
 public class Context implements Closeable {
     @Inject
-    private final  Map<String, Double> mapDefineValue;
+    private final  Map<String, Double> mapDefineValue = new TreeMap<>();
     @Inject
-    private final Stack<Double> stackDouble;
+    private final Stack<Double> stackDouble = new Stack<>();
     private final Reader input;
-    {
-        mapDefineValue = new TreeMap<>();
-        stackDouble = new Stack<>();
-    }
+
     private static final Logger LOGGER = Logger.getLogger(Context.class.getName());
     public Context() {
         LOGGER.debug ("Call constructor Context input console");
