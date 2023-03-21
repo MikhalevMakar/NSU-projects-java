@@ -1,16 +1,19 @@
 package org.ru.nsu.mikhalev.task3.controller;
 
 import org.ru.nsu.mikhalev.task3.model.Context;
+import org.ru.nsu.mikhalev.task3.view.HorizontalGradientButton;
+import org.ru.nsu.mikhalev.task3.view.SetColor;
 import org.ru.nsu.mikhalev.task3.view.generate_menu.LeaderBoard;
 import org.ru.nsu.mikhalev.task3.view.generate_menu.GenerateMenu;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 
 public class GameController implements Runnable {
-    private GameArea gameArea;
+    private GameAreaController gameArea;
     private JFrame frame;
     private static int DELAY = Context.getMIDDLE();
-
+    private JButton buttonMenu, buttonPause, buttonPlay;
+    private boolean isPaused = false;
     private void creationControls() {
         InputMap inputMap = frame.getRootPane().getInputMap();
         ActionMap actionMap = frame.getRootPane().getActionMap();
@@ -67,7 +70,7 @@ public class GameController implements Runnable {
     static public void launchMenu() { new GenerateMenu ();}
     public GameController()  {
         frame = new JFrame();
-        gameArea = new GameArea();
+        gameArea = new GameAreaController(frame);
         frame.add(gameArea);
         frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
         frame.setVisible(true);
@@ -88,9 +91,9 @@ public class GameController implements Runnable {
                 System.out.println("Game Over");
                 Thread.currentThread().interrupt();
                 gameOver();
-                return;
             }
-            gameArea.spawnShape();
+            if(!gameArea.isPaused())
+                gameArea.spawnShape();
         }
     }
 }

@@ -1,4 +1,4 @@
-    package org.ru.nsu.mikhalev.task3.view;
+package org.ru.nsu.mikhalev.task3.view;
 
 import javax.swing.*;
 import java.awt.*;

@@ -47,6 +47,7 @@ public class GenerateMenu extends JFrame {
                                                     SetColor.GREEN_END.get());
         buttonStart.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+                dispose();
                 ExecutorService newExecutor = Executors.newSingleThreadExecutor();
                 newExecutor.execute(new GameController());
                 newExecutor.shutdown();

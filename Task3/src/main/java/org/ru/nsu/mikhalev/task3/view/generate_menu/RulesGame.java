@@ -34,7 +34,6 @@ public class RulesGame extends JFrame {
         figuresPanel.add(new JLabel(smashBoyIcon));
         panel.add(figuresPanel, BorderLayout.SOUTH);
 
-        //setPreferredSize(new Dimension(1000, 400));
         setContentPane(panel);
         pack();
         setLocationRelativeTo(null);

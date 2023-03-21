@@ -18,14 +18,14 @@ public class LeaderBoard extends JFrame {
     public LeaderBoard() {
         super.setBounds(550, 200, 400, 300);
         setTitle("Таблица результатов");
-      //  setSize(400, 300);
         model = new DefaultTableModel();
         model.addColumn("Имя");
         model.addColumn("Очки");
         players = getPreviousPlayers();
     }
     private ArrayList<String[]> getPreviousPlayers() {
-        try(ObjectInputStream ois = new ObjectInputStream(new FileInputStream (Context.getPATH_RESOURCES() + playerStatistics))) {
+        try(ObjectInputStream ois = new ObjectInputStream(
+                new FileInputStream (Context.getPATH_RESOURCES() + playerStatistics))) {
             players = (ArrayList<String[]>)ois.readObject();
         } catch(Exception ex){
             System.out.println(ex.getMessage());

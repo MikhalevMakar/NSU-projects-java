@@ -17,21 +17,18 @@
     import java.io.IOException;
     import java.util.Random;
 
-    public class GameArea extends JPanel {
+    public class GameAreaController extends JPanel {
         private Random random;
         private Color[][] placedShape = new Color[Context.getHEIGHT()][Context.getWIDTH()];
         private TetrisShape shape;
         private  TetrisShape[] shapes;
         private Image backgroundImage;
         private Integer pointPlayer = 0;
-
-        JButton buttonMenu = new HorizontalGradientButton("Rules!",
-                                                          250,
-                                                          450,
-                                                          SetColor.GOLD_START.get(),
-                                                          SetColor.GOLD_END.get());
-
-        public GameArea()  {
+        private boolean isPaused = false;
+        private JFrame frame;
+        JButton buttonMenu, buttonPause, buttonPlay, buttonRestart;
+        public GameAreaController(JFrame frame)  {
+            this.frame = frame;
             setBounds(getBounds());
 
             random = new Random();
@@ -43,14 +40,75 @@
                         new Cleveland()
                     };
             try {
-                backgroundImage = ImageIO.read(new File(Context.getPATH_RESOURCES() + "PanelGameArea.jpg"));
+                backgroundImage = ImageIO.read(
+                        new File(Context.getPATH_RESOURCES() + "PanelGameArea.jpg"));
             } catch (IOException e) {
                 System.out.println(e.getMessage());
             }
 
-            add(buttonMenu);
+            createButtonPausePlay();
+            createButtonMenu();
+            createButtonRestart();
             spawnShape();
         }
+        private void createButtonMenu() {
+            buttonMenu  = new HorizontalGradientButton("Menu!",
+                    1100,
+                    500,
+                    SetColor.GREEN_START.get(),
+                    SetColor.GREEN_END.get());
+            buttonMenu.addKeyListener(null);
+            buttonMenu.addActionListener(e -> {
+                frame.dispose();
+                GameController.launchMenu();
+            });
+            add(buttonMenu);
+        }
+        private void createButtonPausePlay() {
+            buttonPause = new HorizontalGradientButton("Pause",
+                                                100,
+                                                500,
+                                                         SetColor.GREEN_START.get(),
+                                                         SetColor.GREEN_END.get());
+            buttonPause.setFocusable(false);
+
+            buttonPlay = new HorizontalGradientButton("Play",
+                                                      100,
+                                                      600,
+                                                      SetColor.GREEN_START.get(),
+                                                      SetColor.GREEN_END.get());
+            buttonPlay.setFocusable(false);
+
+            buttonPause.addActionListener(e -> {
+                isPaused = true;
+            });
+
+            buttonPlay.addActionListener(n -> {
+                isPaused = false;
+            });
+            add(buttonPlay);
+            add(buttonPause);
+        }
+        private void createButtonRestart() {
+            buttonRestart = new HorizontalGradientButton("Restart",
+                                                         1100,
+                                                         600,
+                                                         SetColor.GREEN_START.get(),
+                                                         SetColor.GREEN_END.get());
+
+            buttonRestart.setFocusable(false);
+            buttonRestart.addActionListener(e -> {
+                for(int i = 0; i < Context.getHEIGHT(); ++i) {
+                    for(int j = 0; j < Context.getWIDTH(); ++j) {
+                        placedShape[i][j] = null;
+                    }
+                }
+                pointPlayer = 0;
+                shape.spawn();
+            });
+            add(buttonRestart);
+        }
+        public boolean isPaused() { return isPaused; }
         public int getPointPlayer() { return pointPlayer; }
         public void spawnShape() {
             shape = shapes[random.nextInt(shapes.length)];
@@ -95,7 +153,7 @@
                 clearLines();
                 return false;
             }
-            shape.moveDown();
+            if(!isPaused) shape.moveDown();
             repaint();
             return true;
         }
