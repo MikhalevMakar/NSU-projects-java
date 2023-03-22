@@ -1,6 +1,6 @@
-package org.ru.nsu.mikhalev.task3.model.shape;
+package ru.nsu.org.mikhalev.model.shape;
 
-import org.ru.nsu.mikhalev.task3.model.TetrisShape;
+import ru.nsu.org.mikhalev.model.TetrisShape;
 
 @AnnotationShape
 public class Hero extends TetrisShape {

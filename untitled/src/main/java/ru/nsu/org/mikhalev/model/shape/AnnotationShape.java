@@ -1,4 +1,4 @@
-package org.ru.nsu.mikhalev.task3.model.shape;
+package ru.nsu.org.mikhalev.model.shape;
 
 import java.lang.annotation.*;
 @Target(value = {ElementType.TYPE})
