@@ -36,11 +36,12 @@ public class GameController {
                     throw new RuntimeException(e);
                 }
             }
-            if (gameArea.isBlockOutOfBounds()) {
+
+            if (!isPaused && gameArea.isBlockOutOfBounds()) {
                 System.out.println("Game Over");
                 Thread.currentThread().interrupt();
                 PerformanceGameArea.gameOver();
-                return;
+                isPaused = true;
             }
             if (!isPaused)
                 gameArea.spawnShape();

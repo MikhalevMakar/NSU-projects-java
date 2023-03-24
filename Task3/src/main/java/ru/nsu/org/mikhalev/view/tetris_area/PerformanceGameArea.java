@@ -110,6 +110,7 @@ public class PerformanceGameArea implements Runnable {
 
         buttonRestart.addActionListener(e -> {
                             gameController.preparationNewGame();
+                            gameController.setPaused(false);
         });
 
         frame.add(buttonRestart);
