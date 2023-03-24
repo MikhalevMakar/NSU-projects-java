@@ -12,7 +12,7 @@ public class TetrisShape {
     private final int CNT_ROTATION_SHIP = 4;
     private int indexRotation = 0;
     private static int indexColor = 0;
-    private static Random random = new Random ();
+    private static Random random = new Random();
     boolean[][][] rotateShapes;
     private boolean[][] shape;
     private static Color[] colors = new Color[]{
@@ -30,12 +30,12 @@ public class TetrisShape {
     private static int[] numbers = new int[colors.length];
 
     static {
-        fillColorArray ();
+        fillColorArray();
     }
 
     public TetrisShape(boolean[][] shape) {
         this.shape = shape;
-        generateRotateShapes ();
+        generateRotateShapes();
     }
 
     private static void fillColorArray() {
@@ -45,8 +45,8 @@ public class TetrisShape {
         }
         for (int i = 0; i < 10; i++) {
             do {
-                number = random.nextInt (colors.length);
-            } while (contains (numbers, number));
+                number = random.nextInt(colors.length);
+            } while (contains(numbers, number));
             numbers[i] = number;
         }
     }
@@ -54,8 +54,8 @@ public class TetrisShape {
     private void generateRotateShapes() {
         rotateShapes = new boolean[CNT_ROTATION_SHIP][][];
         for (int i = 0, h, w; i < CNT_ROTATION_SHIP; ++i) {
-            h = getHeight ();
-            w = getWidth ();
+            h = getHeight();
+            w = getWidth();
             rotateShapes[i] = new boolean[h][w];
             for (int y = 0; y < h; ++y) {
                 for (int x = 0; x < w; ++x) {
@@ -88,12 +88,12 @@ public class TetrisShape {
     }
 
     public void rotate() {
-        indexRotation = random.nextInt (rotateShapes.length);
+        indexRotation = random.nextInt(rotateShapes.length);
         shape = rotateShapes[indexRotation];
     }
 
     public void spawn() {
-        x = random.nextInt (10);
+        x = random.nextInt(10);
         y = 0;
     }
 
@@ -142,6 +142,6 @@ public class TetrisShape {
     }
 
     public int getRightSide() {
-        return x + getWidth ();
+        return x + getWidth();
     }
 }

@@ -8,13 +8,14 @@ public class DrawGivenFigure {
     static public void draw(Graphics graphics, Color color, int x, int y) {
         graphics.setColor(color);
         graphics.fillRect(x * Context.getOFFSET_SHARED() + Context.getOFFSET_TABLE_X(),
-                y * Context.getOFFSET_SHARED() + Context.getOFFSET_TABLE_Y(),
-                Context.getOFFSET_SHARED(),
-                Context.getOFFSET_SHARED());
+                          y * Context.getOFFSET_SHARED() + Context.getOFFSET_TABLE_Y(),
+                          Context.getOFFSET_SHARED(),
+                          Context.getOFFSET_SHARED());
+
         graphics.setColor(Color.BLACK);
         graphics.drawRect(x * Context.getOFFSET_SHARED() + Context.getOFFSET_TABLE_X(),
-                y * Context.getOFFSET_SHARED() + Context.getOFFSET_TABLE_Y(),
-                Context.getOFFSET_SHARED(),
-                Context.getOFFSET_SHARED());
+                          y * Context.getOFFSET_SHARED() + Context.getOFFSET_TABLE_Y(),
+                          Context.getOFFSET_SHARED(),
+                          Context.getOFFSET_SHARED());
     }
 }

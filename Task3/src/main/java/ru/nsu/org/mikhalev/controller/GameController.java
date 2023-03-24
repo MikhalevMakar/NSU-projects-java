@@ -6,7 +6,7 @@ import ru.nsu.org.mikhalev.view.tetris_area.PerformanceGameArea;
 
 public class GameController {
     private static boolean isPaused = false;
-    private static int DELAY = Context.getMIDDLE ();
+    private static int DELAY = Context.getMIDDLE();
     private GameArea gameArea;
 
     public GameController(GameArea gameArea) {
@@ -24,27 +24,26 @@ public class GameController {
     }
 
     public void preparationNewGame() {
-        gameArea.updateInitialValues ();
+        gameArea.updateInitialValues();
     }
 
     public void run() {
-        while (true) {
-            while (gameArea.IsMoveShapeDown (isPaused)) {
+        while(true) {
+            while (gameArea.IsMoveShapeDown(isPaused)) {
                 try {
-                    Thread.sleep (DELAY);
+                    Thread.sleep(DELAY);
                 } catch (InterruptedException e) {
-                    throw new RuntimeException (e);
+                    throw new RuntimeException(e);
                 }
             }
-            if (gameArea.isBlockOutOfBounds ()) {
-                System.out.println ("Game Over");
-                Thread.currentThread ().interrupt ();
-                PerformanceGameArea.gameOver ();
+            if (gameArea.isBlockOutOfBounds()) {
+                System.out.println("Game Over");
+                Thread.currentThread().interrupt();
+                PerformanceGameArea.gameOver();
                 return;
             }
             if (!isPaused)
                 gameArea.spawnShape();
-
         }
     }
 }

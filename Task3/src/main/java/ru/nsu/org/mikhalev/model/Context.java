@@ -1,7 +1,6 @@
 package ru.nsu.org.mikhalev.model;
 
 public class Context {
-
     private static final int EASILY = 300;
     private static final int MIDDLE = 200;
     private static final int HARD = 100;
@@ -71,6 +70,7 @@ public class Context {
     static public int getNUMBER_CUBES_ROW() {
         return NUMBER_CUBES_ROW;
     }
+
     static public int getZERO_VALUE() { return 0; }
 }
 

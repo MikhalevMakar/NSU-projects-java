@@ -1,5 +1,6 @@
 package ru.nsu.org.mikhalev.view.tetris_area;
 
+import ru.nsu.org.mikhalev.controller.GameController;
 import ru.nsu.org.mikhalev.model.GameArea;
 
 import javax.swing.*;
@@ -17,30 +18,35 @@ public class DetailSwitchButtons {
         actionMap.put("up", new AbstractAction () {
             @Override
             public void actionPerformed(ActionEvent e) {
+                if (GameController.getPaused()) return;
                 gameArea.moveShapeUp();
             }
         });
         actionMap.put("down",  new AbstractAction() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                if (GameController.getPaused()) return;
                 gameArea.moveShapeDown();
             }
         });
         actionMap.put("left",  new AbstractAction() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                if (GameController.getPaused()) return;
                 gameArea.moveShapeLeft();
             }
         });
         actionMap.put("right",  new AbstractAction () {
             @Override
             public void actionPerformed(ActionEvent e) {
+                if (GameController.getPaused()) return;
                 gameArea.moveShapeRight();
             }
         });
         actionMap.put("space",  new AbstractAction () {
             @Override
             public void actionPerformed(ActionEvent e) {
+                if (GameController.getPaused()) return;
                 gameArea.moveShapeRotate();
             }
         });
