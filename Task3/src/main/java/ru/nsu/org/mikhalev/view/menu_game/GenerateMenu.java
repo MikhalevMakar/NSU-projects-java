@@ -5,6 +5,7 @@
     import ru.nsu.org.mikhalev.view.HorizontalGradientButton;
     import ru.nsu.org.mikhalev.view.SetColor;
     import ru.nsu.org.mikhalev.view.tetris_area.PerformanceGameArea;
+    import ru.nsu.org.mikhalev.view.tetris_area.TetrisAreaView;
 
     import javax.swing.*;
     import java.awt.*;
@@ -50,7 +51,7 @@
                 public void actionPerformed(ActionEvent e) {
                     frame.dispose();
                     ExecutorService newExecutor = Executors.newSingleThreadExecutor();
-                    newExecutor.execute( new PerformanceGameArea());
+                    newExecutor.execute( new TetrisAreaView());
                     newExecutor.shutdown();
                 }
             });

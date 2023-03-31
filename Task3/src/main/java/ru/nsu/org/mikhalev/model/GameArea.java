@@ -3,20 +3,27 @@ package ru.nsu.org.mikhalev.model;
 
 import ru.nsu.org.mikhalev.controller.GameController;
 import ru.nsu.org.mikhalev.model.shape.*;
+import ru.nsu.org.mikhalev.view.tetris_area.Observer;
 import ru.nsu.org.mikhalev.view.tetris_area.PerformanceGameArea;
 
 import java.awt.*;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Random;
 
-public class GameArea {
+public class GameArea implements Observable {
     private Random random;
     private Color[][] placedShape = new Color[Context.getHEIGHT()][Context.getWIDTH()];
     private TetrisShape shape;
     private TetrisShape[] shapes;
     private Integer pointPlayer = 0;
 
+    private List<Observer> observers;
+
     public GameArea() {
         random = new Random();
+
+        observers = new LinkedList<Observer>();
 
         shapes = new TetrisShape[] {
                              new SmashBoy(),
@@ -126,12 +133,13 @@ public class GameArea {
     public void moveShapeRight() {
         if (!CheckMove.checkMoveRightShape(shape, placedShape)) return;
         shape.moveRight();
-        PerformanceGameArea.Repaint ();
+        PerformanceGameArea.Repaint();
     }
 
     public void moveShapeRotate() {
         if (!CheckMove.checkMoveRotateShape(shape, placedShape)) return;
         shape.nextRotation();
+
         PerformanceGameArea.Repaint();
     }
 
@@ -144,6 +152,19 @@ public class GameArea {
                 if (shape.IsShape(x, y))
                     placedShape[y + shape.getY()][x + shape.getX()] = shape.getColor();
             }
+        }
+    }
+
+
+    @Override
+    public void registerObserver(Observer o) {
+        observers.add(o);
+    }
+
+    @Override
+    public void notifyObservers() {
+        for (Observer observer : observers) {
+            observer.notification();
         }
     }
 }

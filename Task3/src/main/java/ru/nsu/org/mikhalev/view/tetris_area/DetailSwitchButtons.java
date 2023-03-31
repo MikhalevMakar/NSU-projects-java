@@ -7,7 +7,7 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 
 public class DetailSwitchButtons {
-    public DetailSwitchButtons(JFrame frame, GameArea gameArea) {
+    public DetailSwitchButtons(JFrame frame, GameController gameController) {
         InputMap inputMap = frame.getRootPane().getInputMap();
         ActionMap actionMap = frame.getRootPane().getActionMap();
         inputMap.put(KeyStroke.getKeyStroke("UP"), "up");
@@ -19,35 +19,35 @@ public class DetailSwitchButtons {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (GameController.getPaused()) return;
-                gameArea.moveShapeUp();
+                gameController.actionButtonUp();
             }
         });
         actionMap.put("down",  new AbstractAction() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (GameController.getPaused()) return;
-                gameArea.moveShapeDown();
+                gameController.actionButtonDown();
             }
         });
         actionMap.put("left",  new AbstractAction() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (GameController.getPaused()) return;
-                gameArea.moveShapeLeft();
+                gameController.actionButtonLeft();
             }
         });
         actionMap.put("right",  new AbstractAction () {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (GameController.getPaused()) return;
-                gameArea.moveShapeRight();
+                gameController.actionButtonRight();
             }
         });
         actionMap.put("space",  new AbstractAction () {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (GameController.getPaused()) return;
-                gameArea.moveShapeRotate();
+                gameController.actionButtonRotate();
             }
         });
     }

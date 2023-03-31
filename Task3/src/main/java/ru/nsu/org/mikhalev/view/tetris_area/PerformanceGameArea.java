@@ -2,7 +2,6 @@ package ru.nsu.org.mikhalev.view.tetris_area;
 
 import ru.nsu.org.mikhalev.controller.GameController;
 import ru.nsu.org.mikhalev.model.Context;
-import ru.nsu.org.mikhalev.model.GameArea;
 import ru.nsu.org.mikhalev.view.CreateFrame;
 import ru.nsu.org.mikhalev.view.HorizontalGradientButton;
 import ru.nsu.org.mikhalev.view.SetColor;
@@ -11,17 +10,17 @@ import ru.nsu.org.mikhalev.view.menu_game.LeaderBoard;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
 
-public class PerformanceGameArea implements Runnable {
+public class PerformanceGameArea implements Observer {
     CreateFrame frame;
     private JButton buttonMenu, buttonPause, buttonPlay, buttonRestart;
     private String PANEL_GAME_AREA = "PanelGameArea.jpg";
-    private GameController gameController;
-    private static GameArea gameArea;
+    private static GameController gameController;
     private static JPanel panel;
-    public PerformanceGameArea() {
+    public PerformanceGameArea(GameController gameController) {
+        this.gameController = gameController;
         frame = new CreateFrame();
-        gameArea = new GameArea();
         panel = new JPanel () {
             @Override
             protected void paintComponent(Graphics g) {
@@ -35,21 +34,20 @@ public class PerformanceGameArea implements Runnable {
                 g.setColor(new Color(88, 114, 140));
                 g.drawString("POINT", 1050, 80);
 
-                g.drawString(gameArea.getPointPlayer().toString(), 1200, 160);
+                g.drawString(gameController.getPointPlayer().toString(), 1200, 160);
 
-                DrawDetails.drawDetails(g, gameArea.getShape());
-                FieldPanel.drawBackGround(g, gameArea.getPlacedShape());
+                DrawDetails.drawDetails(g, gameController.getTetrisShape());
+                FieldPanel.drawBackGround(g, gameController.getPlacedTetrisShape());
             }
         };
 
         panel.setOpaque(false);
         frame.setContentPane(panel);
-        new DetailSwitchButtons(frame, gameArea);
+        new DetailSwitchButtons(frame, gameController);
         createButtonMenu();
         createButtonPause();
         createButtonRestart();
         createButtonPlay();
-        gameController = new GameController(gameArea);
     }
 
     public static void Repaint() {
@@ -88,23 +86,25 @@ public class PerformanceGameArea implements Runnable {
         buttonPause = new HorizontalGradientButton("Pause",
                                                    100,
                                                    500,
-                                                    SetColor.GREEN_START.get(),
-                                                    SetColor.GREEN_END.get());
+                                                   SetColor.GREEN_START.get(),
+                                                   SetColor.GREEN_END.get());
         buttonPause.setFocusable(false);
 
         buttonPause.addActionListener(e -> {
                             gameController.setPaused(true);
         });
 
-        frame.add (buttonPause);
+        ArrayList<String> d = new ArrayList<>();
+
+        frame.add(buttonPause);
     }
 
     private void createButtonRestart() {
         buttonRestart = new HorizontalGradientButton("Restart",
                                                      1100,
                                                      600,
-                                                      SetColor.GREEN_START.get(),
-                                                      SetColor.GREEN_END.get());
+                                                     SetColor.GREEN_START.get(),
+                                                     SetColor.GREEN_END.get());
 
         buttonRestart.setFocusable(false);
 
@@ -118,7 +118,7 @@ public class PerformanceGameArea implements Runnable {
 
     private static void createLeaderBoard(String playerName) {
         LeaderBoard leaderBoard = new LeaderBoard();
-        leaderBoard.addPlayer(playerName, gameArea.getPointPlayer());
+        leaderBoard.addPlayer(playerName, gameController.getPointPlayer());
         leaderBoard.fillTablePlayer();
     }
 
@@ -128,7 +128,5 @@ public class PerformanceGameArea implements Runnable {
     }
 
     @Override
-    public void run() {
-        gameController.run();
-    }
+    public void notification() { panel.repaint(); }
 }

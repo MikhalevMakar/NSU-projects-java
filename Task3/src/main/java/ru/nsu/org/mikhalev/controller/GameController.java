@@ -2,7 +2,10 @@ package ru.nsu.org.mikhalev.controller;
 
 import ru.nsu.org.mikhalev.model.Context;
 import ru.nsu.org.mikhalev.model.GameArea;
+import ru.nsu.org.mikhalev.model.TetrisShape;
 import ru.nsu.org.mikhalev.view.tetris_area.PerformanceGameArea;
+
+import java.awt.*;
 
 public class GameController {
     private static boolean isPaused = false;
@@ -26,6 +29,20 @@ public class GameController {
     public void preparationNewGame() {
         gameArea.updateInitialValues();
     }
+
+    public TetrisShape getTetrisShape() { return gameArea.getShape(); }
+    public Color[][] getPlacedTetrisShape() { return gameArea.getPlacedShape(); }
+    public Integer getPointPlayer() { return gameArea.getPointPlayer(); }
+
+    public void actionButtonUp() { gameArea.moveShapeUp(); }
+
+    public void actionButtonDown() { gameArea.moveShapeDown(); }
+
+    public void actionButtonLeft() { gameArea.moveShapeLeft(); }
+
+    public void actionButtonRight() { gameArea.moveShapeRight(); }
+
+    public void actionButtonRotate() { gameArea.moveShapeRotate(); }
 
     public void run() {
         while(true) {
