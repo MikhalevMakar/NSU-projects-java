@@ -99,6 +99,7 @@ public class GameArea implements Observable {
         shape.spawn();
     }
 
+
     public boolean IsMoveShapeDown(boolean isPaused) {
         if (!CheckMove.checkBarrier(shape, placedShape)) {
             moveShapeToBackGround();
@@ -107,40 +108,39 @@ public class GameArea implements Observable {
             return false;
         }
         if (!isPaused) shape.moveDown();
-        PerformanceGameArea.Repaint();
+        notifyObservers();
         return true;
     }
 
     public void moveShapeDown() {
-        while (!CheckMove.checkBarrier(shape, placedShape)) {
+        while (CheckMove.checkBarrier(shape, placedShape)) {
             shape.moveDown();
         }
-        PerformanceGameArea.Repaint();
+        notifyObservers();
     }
 
     public void moveShapeUp() {
         if (!CheckMove.checkMoveUpShape(shape)) return;
         shape.moveUp();
-        PerformanceGameArea.Repaint();
+        notifyObservers();
     }
 
     public void moveShapeLeft() {
         if (!CheckMove.checkMoveLeftShape(shape, placedShape)) return;
         shape.moveLeft();
-        PerformanceGameArea.Repaint();
+        notifyObservers();
     }
 
     public void moveShapeRight() {
         if (!CheckMove.checkMoveRightShape(shape, placedShape)) return;
         shape.moveRight();
-        PerformanceGameArea.Repaint();
+        notifyObservers();
     }
 
     public void moveShapeRotate() {
         if (!CheckMove.checkMoveRotateShape(shape, placedShape)) return;
         shape.nextRotation();
-
-        PerformanceGameArea.Repaint();
+        notifyObservers();
     }
 
     public void moveShapeToBackGround() {

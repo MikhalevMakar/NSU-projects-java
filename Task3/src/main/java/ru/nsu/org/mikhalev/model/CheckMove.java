@@ -17,7 +17,7 @@ public class CheckMove {
                 if (shape.IsShape(column, row) &&
                     placedShape[y + 1][x] != null
                 )
-                    return false;
+                return false;
             }
         }
         return true;

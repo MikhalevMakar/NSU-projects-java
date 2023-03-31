@@ -94,8 +94,6 @@ public class PerformanceGameArea implements Observer {
                             gameController.setPaused(true);
         });
 
-        ArrayList<String> d = new ArrayList<>();
-
         frame.add(buttonPause);
     }
 

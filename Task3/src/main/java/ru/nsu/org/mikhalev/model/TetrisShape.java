@@ -71,6 +71,10 @@ public class TetrisShape {
         ++indexColor;
     }
 
+
+    public void  shapeDropped() {
+        y =  Context.getHEIGHT() / Context.getRATE_VALUE() - getHeight() - 1;
+    }
     public int getWidth() {
         return shape.length;
     }

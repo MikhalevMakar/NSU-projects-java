@@ -9,7 +9,8 @@ public class TetrisAreaView implements Runnable {
     public TetrisAreaView() {
         gameArea = new GameArea();
         gameController = new GameController(gameArea);
-        PerformanceGameArea performanceGameArea = new PerformanceGameArea (gameController);
+        PerformanceGameArea performanceGameArea = new PerformanceGameArea(gameController);
+        gameArea.registerObserver(performanceGameArea);
     }
 
     @Override
