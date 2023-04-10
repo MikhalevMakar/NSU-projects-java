@@ -1,6 +1,6 @@
 package ru.nsu.org.mikhalev;
 
-import ru.nsu.org.mikhalev.gui.GenerateMainMenu;
+import ru.nsu.org.mikhalev.view.GenerateMainMenu;
 
 import javax.swing.*;
 

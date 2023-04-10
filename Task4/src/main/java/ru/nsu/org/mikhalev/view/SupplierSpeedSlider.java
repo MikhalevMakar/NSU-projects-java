@@ -1,4 +1,4 @@
-package ru.nsu.org.mikhalev.gui;
+package ru.nsu.org.mikhalev.view;
 
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
@@ -9,16 +9,20 @@ import javax.swing.JPanel;
 import javax.swing.JSlider;
 
 public class SupplierSpeedSlider implements ChangeListener {
-
     private JSlider supplier1Slider;
     private JSlider supplier2Slider;
     private JSlider supplier3Slider;
 
     public SupplierSpeedSlider(JFrame frame) {
 
-        supplier1Slider = createSlider(200, 30, 250, 10);
-        supplier2Slider = createSlider(200, 30, 250, 10);
-        supplier3Slider = createSlider(200, 30, 250, 10);
+        supplier1Slider = createSlider(ContextGUI.OFFSET_X, ContextGUI.OFFSET_Y,
+                                       ContextGUI.WIDTH_SUPPLIER, ContextGUI.HEIGHT_SUPPLIER);
+
+        supplier2Slider = createSlider(ContextGUI.OFFSET_X, ContextGUI.OFFSET_Y,
+                                       ContextGUI.WIDTH_SUPPLIER, ContextGUI.HEIGHT_SUPPLIER);
+
+        supplier3Slider = createSlider(ContextGUI.OFFSET_X, ContextGUI.OFFSET_Y,
+                                       ContextGUI.WIDTH_SUPPLIER, ContextGUI.HEIGHT_SUPPLIER);
 
         JPanel panel1 = new JPanel();
         panel1.setLayout(new BorderLayout());
@@ -41,7 +45,7 @@ public class SupplierSpeedSlider implements ChangeListener {
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.getContentPane().add(sliderPanel, BorderLayout.CENTER);
-        frame.setSize(1000, 500);
+        frame.setSize(ContextGUI.WIDTH, ContextGUI.HEIGHT);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
     }
