@@ -11,12 +11,15 @@ import java.io.PrintWriter;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.apache.log4j.Logger;
+import org.slf4j.LoggerFactory;
 import ru.nsu.org.mikhalev.exceptions.ExcParseFileJSON;
 
 public class ParseFileJSON {
     private static Options posixOptions = new Options();
     private GuiComponents gui_components;
     private InfoFactory info_factory;
+
+    private static final Logger LOGGER = Logger.getLogger(ParseFileJSON.class);
 
     private static class GuiComponents {
         private String reference;
@@ -108,7 +111,9 @@ public class ParseFileJSON {
         return  argInput[0];
     }
 
-    public ParseFileJSON(String[] nameFile) throws ParseException, ExcParseFileJSON{
+    public ParseFileJSON(String[] nameFile) throws ParseException, ExcParseFileJSON {
+        LOGGER.info ("Entrance ParseFileJSON");
+
         createOptions(nameFile[0]);
 
         Gson gson = new Gson();
@@ -120,16 +125,17 @@ public class ParseFileJSON {
             this.linkInfoFactory = myClass.info_factory.reference;
 
         } catch (IOException e) {
+            LOGGER.error("File json isn't found", e);
             e.printStackTrace();
-            throw new ExcParseFileJSON("file json not found");
+            throw new ExcParseFileJSON("file json isn't found");
         }
     }
 
-    public static String getLinkGuiComponents(){
+    public static String getLinkGuiComponents() {
         return linkGuiComponents;
     }
 
-    public static String getInfo_factory(){
+    public static String getInfo_factory() {
         return linkInfoFactory;
     }
 }
