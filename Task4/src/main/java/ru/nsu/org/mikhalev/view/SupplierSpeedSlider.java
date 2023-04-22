@@ -8,21 +8,30 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JSlider;
 
-public class SupplierSpeedSlider implements ChangeListener {
+import ru.nsu.org.mikhalev.view.ContextGUI;
+
+public class SupplierSpeedSlider extends JFrame implements ChangeListener {
+
     private JSlider supplier1Slider;
     private JSlider supplier2Slider;
     private JSlider supplier3Slider;
 
-    public SupplierSpeedSlider(JFrame frame) {
+    public SupplierSpeedSlider() {
 
-        supplier1Slider = createSlider(ContextGUI.OFFSET_X, ContextGUI.OFFSET_Y,
-                                       ContextGUI.WIDTH_SUPPLIER, ContextGUI.HEIGHT_SUPPLIER);
 
-        supplier2Slider = createSlider(ContextGUI.OFFSET_X, ContextGUI.OFFSET_Y,
-                                       ContextGUI.WIDTH_SUPPLIER, ContextGUI.HEIGHT_SUPPLIER);
+        ImageIcon imageIcon = new ImageIcon
+            (
+            "/Users/natasamihaleva/NSU_Projects_Java/Task4/src/main/resources/image.gif"
+            );
 
-        supplier3Slider = createSlider(ContextGUI.OFFSET_X, ContextGUI.OFFSET_Y,
-                                       ContextGUI.WIDTH_SUPPLIER, ContextGUI.HEIGHT_SUPPLIER);
+        JLabel label = new JLabel (imageIcon);
+
+        add(label, BorderLayout.WEST);
+
+        supplier1Slider = createSlider(ContextGUI.OFFSET_X , ContextGUI.OFFSET_Y,
+                                       ContextGUI.WIDTH_SUPPLIER,ContextGUI.HEIGHT_SUPPLIER);
+        supplier2Slider = createSlider(ContextGUI.OFFSET_X , ContextGUI.OFFSET_Y, ContextGUI.WIDTH_SUPPLIER,ContextGUI.HEIGHT_SUPPLIER);
+        supplier3Slider = createSlider(ContextGUI.OFFSET_X , ContextGUI.OFFSET_Y, ContextGUI.WIDTH_SUPPLIER,ContextGUI.HEIGHT_SUPPLIER);
 
         JPanel panel1 = new JPanel();
         panel1.setLayout(new BorderLayout());
@@ -43,11 +52,11 @@ public class SupplierSpeedSlider implements ChangeListener {
         sliderPanel.add(panel2);
         sliderPanel.add(panel3);
 
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.getContentPane().add(sliderPanel, BorderLayout.CENTER);
-        frame.setSize(ContextGUI.WIDTH, ContextGUI.HEIGHT);
-        frame.setLocationRelativeTo(null);
-        frame.setVisible(true);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        getContentPane().add(sliderPanel, BorderLayout.CENTER);
+        setSize(1000, 500);
+        setLocationRelativeTo(null);
+        setVisible(true);
     }
 
     private JSlider createSlider(int x, int y, int width, int height) {

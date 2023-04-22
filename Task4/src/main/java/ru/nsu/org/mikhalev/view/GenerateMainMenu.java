@@ -13,7 +13,12 @@ public class GenerateMainMenu extends JFrame {
 
         JLabel label = new JLabel (imageIcon);
 
-        add(label, BorderLayout.WEST);
-        new SupplierSpeedSlider(this);
+       // add(label, BorderLayout.WEST);
+        //new SupplierSpeedSlider(this);
+
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setSize(ContextGUI.WIDTH, ContextGUI.HEIGHT);
+        setLocationRelativeTo(null);
+        setVisible(true);
     }
 }

@@ -1,13 +1,17 @@
 package ru.nsu.org.mikhalev;
 
-import ru.nsu.org.mikhalev.view.GenerateMainMenu;
+import org.apache.commons.cli.ParseException;
+import ru.nsu.org.mikhalev.exceptions.ExcParseFileJSON;
 
-import javax.swing.*;
+public class Main {
 
-public class Main extends JPanel {
-
-    public static void main(String[] args) {
-        new GenerateMainMenu();
+    public static void main(String[] args) throws ParseException, ExcParseFileJSON {
+        ParseFileJSON parseFileJSON = new ParseFileJSON(args);
+        
     }
 }
 
+//    public static void main(String[] args) {
+//        //new GenerateMainMenu();
+//        new ru.nsu.org.mikhalev.view.SupplierSpeedSlider();
+//    }
