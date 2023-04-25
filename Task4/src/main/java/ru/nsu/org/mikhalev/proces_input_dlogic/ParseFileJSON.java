@@ -1,25 +1,28 @@
-package ru.nsu.org.mikhalev;
+package ru.nsu.org.mikhalev.proces_input_dlogic;
 
 
 import com.google.gson.Gson;
+import lombok.extern.log4j.Log4j2;
 import org.apache.commons.cli.*;
+import ru.nsu.org.mikhalev.exceptions.ExcParseFileJSON;
 
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-import org.apache.log4j.Logger;
-import org.slf4j.LoggerFactory;
-import ru.nsu.org.mikhalev.exceptions.ExcParseFileJSON;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
+import java.util.regex.Pattern;
+
+@Log4j2
 public class ParseFileJSON {
     private static Options posixOptions = new Options();
     private GuiComponents gui_components;
     private InfoFactory info_factory;
 
-    private static final Logger LOGGER = Logger.getLogger(ParseFileJSON.class);
+    private static final Logger LOGGER = LogManager.getLogger(ParseFileJSON.class);
 
     private static class GuiComponents {
         private String reference;
@@ -29,7 +32,7 @@ public class ParseFileJSON {
         private String reference;
     }
 
-    private static String linkGuiComponents, linkInfoFactory;
+    private String linkGuiComponents, linkInfoFactory;
     private static void printHelp(
                                   final Options options,
                                   final int printedRowWidth,
@@ -39,6 +42,7 @@ public class ParseFileJSON {
                                   final int spacesBeforeOptionDescription,
                                   final boolean displayUsage,
                                   final OutputStream out) {
+
         final String commandLineSyntax = "path to file";
 
         final PrintWriter writer = new PrintWriter(out);
@@ -58,7 +62,7 @@ public class ParseFileJSON {
         writer.flush();
     }
 
-    private static void createOptions(String line) throws ParseException {
+    private static void createOptions(String line) throws ExcParseFileJSON {
         Option optComInputFile = new Option("p",
             "pathFile",
             true,
@@ -86,7 +90,8 @@ public class ParseFileJSON {
                 true,
                 System.out
             );
-            throw new ParseException("call -help");
+
+            throw new ExcParseFileJSON("call -help");
         }
     }
 
@@ -98,7 +103,7 @@ public class ParseFileJSON {
 
         if(commandLine.hasOption("p")) {
             argInput = commandLine.getOptionValues("p");
-        }  else {
+        } else {
             throw new ParseException("Not found command -p");
         }
 
@@ -131,11 +136,11 @@ public class ParseFileJSON {
         }
     }
 
-    public static String getLinkGuiComponents() {
+    public String getLinkGuiComponents() {
         return linkGuiComponents;
     }
 
-    public static String getInfo_factory() {
+    public String getLinkInfoFactory() {
         return linkInfoFactory;
     }
 }

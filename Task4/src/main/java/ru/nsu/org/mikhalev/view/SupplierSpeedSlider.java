@@ -8,8 +8,6 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JSlider;
 
-import ru.nsu.org.mikhalev.view.ContextGUI;
-
 public class SupplierSpeedSlider extends JFrame implements ChangeListener {
 
     private JSlider supplier1Slider;
@@ -30,8 +28,12 @@ public class SupplierSpeedSlider extends JFrame implements ChangeListener {
 
         supplier1Slider = createSlider(ContextGUI.OFFSET_X , ContextGUI.OFFSET_Y,
                                        ContextGUI.WIDTH_SUPPLIER,ContextGUI.HEIGHT_SUPPLIER);
-        supplier2Slider = createSlider(ContextGUI.OFFSET_X , ContextGUI.OFFSET_Y, ContextGUI.WIDTH_SUPPLIER,ContextGUI.HEIGHT_SUPPLIER);
-        supplier3Slider = createSlider(ContextGUI.OFFSET_X , ContextGUI.OFFSET_Y, ContextGUI.WIDTH_SUPPLIER,ContextGUI.HEIGHT_SUPPLIER);
+
+        supplier2Slider = createSlider(ContextGUI.OFFSET_X , ContextGUI.OFFSET_Y,
+                                       ContextGUI.WIDTH_SUPPLIER,ContextGUI.HEIGHT_SUPPLIER);
+
+        supplier3Slider = createSlider(ContextGUI.OFFSET_X , ContextGUI.OFFSET_Y,
+                                       ContextGUI.WIDTH_SUPPLIER,ContextGUI.HEIGHT_SUPPLIER);
 
         JPanel panel1 = new JPanel();
         panel1.setLayout(new BorderLayout());

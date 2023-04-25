@@ -3,6 +3,6 @@
         "reference": "/Users/natasamihaleva/NSU_Projects_Java/Task4/src/main/resources/image.gif"
     },
     "info_factory": {
-        "reference": "/Users/natasamihaleva/NSU_Projects_Java/Task4/src/main/resources/factory.properties"
+        "reference": "/Users/natasamihaleva/NSU_Projects_Java/Task4/src/main/resources/info_factory/factory.properties"
     }
 }
