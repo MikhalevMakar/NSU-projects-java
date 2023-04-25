@@ -4,6 +4,7 @@ import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import java.awt.*;
+import java.io.IOException;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JSlider;
@@ -14,16 +15,10 @@ public class SupplierSpeedSlider extends JFrame implements ChangeListener {
     private JSlider supplier2Slider;
     private JSlider supplier3Slider;
 
-    public SupplierSpeedSlider() {
+    public SupplierSpeedSlider(String link ) {
 
-
-        ImageIcon imageIcon = new ImageIcon
-            (
-            "/Users/natasamihaleva/NSU_Projects_Java/Task4/src/main/resources/image.gif"
-            );
-
+        ImageIcon imageIcon = new ImageIcon(link);
         JLabel label = new JLabel (imageIcon);
-
         add(label, BorderLayout.WEST);
 
         supplier1Slider = createSlider(ContextGUI.OFFSET_X , ContextGUI.OFFSET_Y,

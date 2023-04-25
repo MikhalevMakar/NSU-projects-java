@@ -1,4 +1,4 @@
-package ru.nsu.org.mikhalev.properties_read;
+package ru.nsu.org.mikhalev.proces_input.properties_read;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -15,6 +15,6 @@ public enum Properties_Value {
 
     @Setter
     @Getter
-    private Object value;
+    private String value;
 }
 

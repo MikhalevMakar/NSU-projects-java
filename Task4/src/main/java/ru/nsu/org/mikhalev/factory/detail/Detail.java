@@ -1,4 +1,4 @@
-package ru.nsu.org.mikhalev.detail;
+package ru.nsu.org.mikhalev.factory.detail;
 
 import java.util.UUID;
 

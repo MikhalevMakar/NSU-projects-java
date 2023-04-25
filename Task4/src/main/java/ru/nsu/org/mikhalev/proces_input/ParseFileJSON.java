@@ -1,4 +1,4 @@
-package ru.nsu.org.mikhalev.proces_input_dlogic;
+package ru.nsu.org.mikhalev.proces_input;
 
 
 import com.google.gson.Gson;
@@ -123,13 +123,13 @@ public class ParseFileJSON {
 
         Gson gson = new Gson();
 
-        try (FileReader reader = new FileReader(searchCommandLine(nameFile))) {
+        try(FileReader reader = new FileReader(searchCommandLine(nameFile))) {
             ParseFileJSON myClass = gson.fromJson(reader, ParseFileJSON.class);
 
             this.linkGuiComponents = myClass.gui_components.reference;
             this.linkInfoFactory = myClass.info_factory.reference;
 
-        } catch (IOException e) {
+        } catch(IOException e) {
             LOGGER.error("File json isn't found", e);
             e.printStackTrace();
             throw new ExcParseFileJSON("file json isn't found");

@@ -1,4 +1,4 @@
-package ru.nsu.org.mikhalev.properties_read;
+package ru.nsu.org.mikhalev.proces_input.properties_read;
 
 import java.io.FileInputStream;
 import java.io.IOException;
