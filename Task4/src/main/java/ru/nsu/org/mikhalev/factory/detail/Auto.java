@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.UUID;
 
 public class Auto extends Detail {
-    LinkedList<Detail> caseDetails;
+    LinkedList<Detail> caseDetails = new LinkedList<>();
     public Auto(LinkedList<Detail> caseDetails) {
         super();
         this.caseDetails.addAll(caseDetails);

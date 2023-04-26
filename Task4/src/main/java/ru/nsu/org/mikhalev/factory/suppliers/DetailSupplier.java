@@ -6,7 +6,7 @@ import ru.nsu.org.mikhalev.factory.detail.Detail;
 import ru.nsu.org.mikhalev.factory.storage.DetailStorage;
 
 public class DetailSupplier <T extends Detail> implements Runnable {
-    private final Integer time = 10;
+    private final Integer time = 1000;
     private @NotNull Class<T> clazz;
     private final DetailStorage<T> detailStorage;
 
@@ -21,26 +21,26 @@ public class DetailSupplier <T extends Detail> implements Runnable {
     }
 
     @Override
-    public synchronized void run() {
-        synchronized(detailStorage) {
-            detailStorage.registrationSupplier(this);
+    public void run() {
+        detailStorage.registrationSupplier(this);
 
-            while (true) {
+        while (true) {
+
                 try {
-
                     if (!detailStorage.isFull ()) {
                         detailStorage.addDetail (create ());
-                        detailStorage.notify ();
+                        synchronized(detailStorage) {
+                            detailStorage.notify ();
+                        }
                     } else {
-                        this.wait ();
+                        synchronized(this) {
+                            this.wait();
+                        }
                     }
-
                     Thread.sleep (time);
-
                 } catch (InterruptedException e) {
                     throw new RuntimeException (e);
                 }
-            }
         }
     }
 }

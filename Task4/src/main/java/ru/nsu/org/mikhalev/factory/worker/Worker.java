@@ -21,9 +21,9 @@ public class Worker implements Runnable {
         storages.add(motorStorage);
         storages.add(bodyStorage);
         ControllerAutoStorage.registrationWorkers(this);
-     }
+    }
 
-    private synchronized void requestDetails() throws InterruptedException {
+    private void requestDetails() throws InterruptedException {
         caseDetails.clear();
         for(var storage : storages) {
             Detail detail = storage.getDetail();
@@ -37,14 +37,16 @@ public class Worker implements Runnable {
 
     @Override
     public void run() {
-        while(true) {
+        while (true) {
             try {
                 requestDetails();
-                if(autoStorage.isFull()) {
+                if (autoStorage.isFull()) {
                     this.wait();
                 }
                 autoStorage.addAuto(new Auto(caseDetails));
-                autoStorage.notify();
+                synchronized(autoStorage) {
+                    autoStorage.notify();
+                }
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }

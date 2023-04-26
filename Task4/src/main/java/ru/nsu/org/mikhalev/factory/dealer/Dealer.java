@@ -15,10 +15,10 @@ public class Dealer implements Runnable {
         while(true) {
             try {
                 ++countFinishedAuto;
-                System.out.println("Auto ID - "  +autoStorage.getAuto().getId() + " " + countFinishedAuto);
+                System.out.println("Auto ID - "  + autoStorage.getAuto().getId() + " " + countFinishedAuto);
                 Thread.sleep(time);
             } catch (InterruptedException e) {
-                throw new RuntimeException (e);
+                throw new RuntimeException(e);
             }
         }
     }

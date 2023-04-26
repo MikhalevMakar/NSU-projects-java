@@ -1,6 +1,6 @@
 {
     "gui_components": {
-        "reference": "/Users/natasamihaleva/NSU_Projects_Java/Task4/src/main/resources/image.gif"
+        "reference": "/Users/natasamihaleva/NSU_Projects_Java/Task4/src/main/resources/gui_components/image.gif"
     },
     "info_factory": {
         "reference": "/Users/natasamihaleva/NSU_Projects_Java/Task4/src/main/resources/info_factory/factory.properties"
