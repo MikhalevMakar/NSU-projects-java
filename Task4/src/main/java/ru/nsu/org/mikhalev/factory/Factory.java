@@ -20,10 +20,11 @@ import ru.nsu.org.mikhalev.thread_pool.ThreadPool;
 import java.io.IOException;
 
 public class Factory {
-    private ThreadPool threadWorker,
-                       threadMotorSupplier,
-                       threadBodySupplier,
-                       threadAccessorySupplier;
+    private final ThreadPool<Worker> threadWorker;
+    private final ThreadPool<MotorSupplier> threadMotorSupplier;
+    private final ThreadPool<AccessorySupplier> threadAccessorySupplier;
+    private final ThreadPool<BodySupplier> threadBodySupplier;
+    private final ThreadPool<Dealer> threadDealer;
 
     public Factory(ParseFileJSON parseFileJSON) throws IOException{
         FactoryReader.read(parseFileJSON.getLinkInfoFactory());
@@ -40,16 +41,31 @@ public class Factory {
         BodySupplier bodySupplier = new BodySupplier(bodyStorage, Body.class);
         Dealer dealer = new Dealer(autoStorage);
 
+        threadWorker = new ThreadPool(Integer.valueOf(Properties_Value.WORKERS.getValue()), worker);
 
-        threadWorker = new ThreadPool(1, worker);
         threadMotorSupplier = new ThreadPool(1, motorSupplier);
+
         threadBodySupplier = new ThreadPool(1, bodySupplier);
+
         threadAccessorySupplier = new ThreadPool(
             Integer.valueOf(Properties_Value.ACCESSORY_SUPPLIERS.getValue()), accessorySupplier);
 
-        ThreadPool threadDealer = new ThreadPool(Integer.valueOf(Properties_Value.DEALERS.getValue()), dealer);
+        threadDealer = new ThreadPool(Integer.valueOf(Properties_Value.DEALERS.getValue()), dealer);
     }
 
-    private void Каково значение метки потока для этой дейтаграммы?
+    public void start() {
+        threadWorker.start();
+        threadMotorSupplier.start();
+        threadAccessorySupplier.start();
+        threadBodySupplier.start();
+        threadDealer.start();
+    }
 
+    public void stop() {
+        threadWorker.end();
+        threadMotorSupplier.end();
+        threadAccessorySupplier.end();
+        threadBodySupplier.end();
+        threadDealer.end();
+    }
 }

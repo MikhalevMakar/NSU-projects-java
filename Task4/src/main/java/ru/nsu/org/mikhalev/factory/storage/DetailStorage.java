@@ -24,10 +24,10 @@ public class DetailStorage<T extends Detail> extends Storage<T> {
     }
 
     public synchronized T getDetail() throws InterruptedException{
-            if (details.size () == 0)
+            while(details.size () == 0)
                 this.wait();
 
-            T detail = details.remove (0);
+            T detail = details.remove(0);
 
             if (details.size () == sizeStorage - 1)
                 synchronized(detailSuppliers) {
