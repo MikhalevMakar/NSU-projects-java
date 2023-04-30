@@ -18,11 +18,6 @@ import java.util.regex.Pattern;
 
 @Log4j2
 public class ParseFileJSON {
-    private static Options posixOptions = new Options();
-    private GuiComponents gui_components;
-    private InfoFactory info_factory;
-
-    private static final Logger LOGGER = LogManager.getLogger(ParseFileJSON.class);
 
     private static class GuiComponents {
         private String reference;
@@ -32,16 +27,22 @@ public class ParseFileJSON {
         private String reference;
     }
 
+    private static Options posixOptions = new Options();
+    private GuiComponents gui_components;
+    private InfoFactory info_factory;
+
+    private static final Logger LOGGER = LogManager.getLogger(ParseFileJSON.class);
+
     private String linkGuiComponents, linkInfoFactory;
     private static void printHelp(
-                                  final Options options,
-                                  final int printedRowWidth,
-                                  final String header,
-                                  final String footer,
-                                  final int spacesBeforeOption,
-                                  final int spacesBeforeOptionDescription,
-                                  final boolean displayUsage,
-                                  final OutputStream out) {
+        final Options options,
+        final int printedRowWidth,
+        final String header,
+        final String footer,
+        final int spacesBeforeOption,
+        final int spacesBeforeOptionDescription,
+        final boolean displayUsage,
+        final OutputStream out) {
 
         final String commandLineSyntax = "path to file";
 
@@ -50,15 +51,15 @@ public class ParseFileJSON {
         final HelpFormatter helpFormatter = new HelpFormatter();
 
         helpFormatter.printHelp(
-                                writer,
-                                printedRowWidth,
-                                commandLineSyntax,
-                                header,
-                                options,
-                                spacesBeforeOption,
-                                spacesBeforeOptionDescription,
-                                footer,
-                                displayUsage);
+            writer,
+            printedRowWidth,
+            commandLineSyntax,
+            header,
+            options,
+            spacesBeforeOption,
+            spacesBeforeOptionDescription,
+            footer,
+            displayUsage);
         writer.flush();
     }
 
@@ -124,10 +125,10 @@ public class ParseFileJSON {
         Gson gson = new Gson();
 
         try(FileReader reader = new FileReader(searchCommandLine(nameFile))) {
-            ParseFileJSON myClass = gson.fromJson(reader, ParseFileJSON.class);
+            ParseFileJSON parseJSON = gson.fromJson(reader, ParseFileJSON.class);
 
-            this.linkGuiComponents = myClass.gui_components.reference;
-            this.linkInfoFactory = myClass.info_factory.reference;
+            this.linkGuiComponents = parseJSON.gui_components.reference;
+            this.linkInfoFactory = parseJSON.info_factory.reference;
 
         } catch(IOException e) {
             LOGGER.error("File json isn't found", e);

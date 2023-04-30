@@ -1,47 +1,66 @@
 package ru.nsu.org.mikhalev.view;
 
+import org.jetbrains.annotations.NotNull;
+import ru.nsu.org.mikhalev.factory.dealer.Dealer;
+import ru.nsu.org.mikhalev.view.observer.Observer;
+
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
-public class Chat extends JFrame {
-    private JTextArea chatArea;
+
+public class Chat implements Observer {
+    private JTextArea chatArea = new JTextArea();
     private JTextField inputField;
+    private String helpMessage = "Bot: 4 splitters set the speed: SUPPLIERS, DEALER\n";
 
-    public Chat() {
-        setSize(500, 600);
-        setResizable(false);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setLocationRelativeTo(null);
-
-        JPanel inputPanel = new JPanel(new BorderLayout ());
+    public Chat(@NotNull JFrame frame) {
+        JPanel inputPanel = new JPanel(new BorderLayout());
         inputField = new JTextField();
-        inputField.addActionListener(new ActionListener () {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                String message = inputField.getText();
-                chatArea.append("You: " + message + "\n");
-                inputField.setText("");
+
+        inputField.addActionListener(e -> {
+            String message = inputField.getText();
+            chatArea.append("You: " + message + "\n");
+
+            if(message.compareTo("help") == 0) {
+                chatArea.append (helpMessage);
             }
+            inputField.setText("");
         });
 
-        inputPanel.add(inputField, BorderLayout.CENTER);
-        JButton sendButton = new JButton("Send");
-        sendButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                String message = inputField.getText();
-                chatArea.append("You: " + message + "\n");
-                inputField.setText("");
-            }
-        });
+        createSendButton();
 
-        inputPanel.add(sendButton, BorderLayout.EAST);
-        add(inputPanel, BorderLayout.SOUTH);
-
-        chatArea = new JTextArea();
+        chatArea = new JTextArea ();
         chatArea.setEditable(false);
         JScrollPane scrollPane = new JScrollPane(chatArea);
-        add(scrollPane, BorderLayout.CENTER);
-        setVisible(true);
+
+        inputPanel.add(inputField, BorderLayout.CENTER);
+        inputField.add(scrollPane, BorderLayout.CENTER);
+
+        frame.add(inputPanel, BorderLayout.SOUTH);
+
+        frame.setLocation(ContextGUI.getWIDTH() - ContextGUI.ContextChat.getWIDTH(),
+                          ContextGUI.ContextChat.getHEIGHT());
+
+        scrollPane.setBounds(ContextGUI.ContextChat.getX(), ContextGUI.ContextChat.getY(),
+                             ContextGUI.ContextChat.getWIDTH(), ContextGUI.ContextChat.getHEIGHT());
+
+        frame.add(scrollPane, BorderLayout.CENTER);
+    }
+
+    private void createSendButton() {
+        JButton sendButton = new JButton("Send");
+
+        sendButton.addActionListener(e -> {
+            String message = inputField.getText();
+
+            chatArea.append("You: " + message + "\n");
+
+            inputField.setText(" ");
+        });
+    }
+
+    @Override
+    public void notification(String message) {
+        chatArea.setCaretColor(Color.CYAN);
+        chatArea.append(message);
     }
 }

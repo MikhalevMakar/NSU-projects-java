@@ -1,15 +1,18 @@
 package ru.nsu.org.mikhalev.factory.storage;
 
 import ru.nsu.org.mikhalev.factory.detail.Detail;
+import ru.nsu.org.mikhalev.factory.observable.Observable;
 import ru.nsu.org.mikhalev.factory.suppliers.DetailSupplier;
+import ru.nsu.org.mikhalev.view.observer.Observer;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 
-public class DetailStorage<T extends Detail> extends Storage<T> {
+public class DetailStorage<T extends Detail> extends Storage<T>  {
     private ArrayList<DetailSupplier<T>> detailSuppliers;
 
     public DetailStorage(int sizeStorage, int countSupplier) {
-        super (sizeStorage);
+        super(sizeStorage);
         detailSuppliers = new ArrayList<> (countSupplier);
     }
 
@@ -23,16 +26,25 @@ public class DetailStorage<T extends Detail> extends Storage<T> {
         }
     }
 
-    public synchronized T getDetail() throws InterruptedException{
-            while(details.size () == 0)
+    public synchronized T getDetail() throws InterruptedException {
+        T detail = null;
+        synchronized(details) {
+            if (details.size() == 0) {
                 this.wait();
+            }
+           detail = details.removeFirst();
+        }
 
-            T detail = details.remove(0);
-
-            if (details.size () == sizeStorage - 1)
-                synchronized(detailSuppliers) {
-                    detailSuppliers.notifyAll();
+        if (this.details.size() <= this.sizeStorage) {
+            synchronized(detailSuppliers) {
+                for (var supplier : detailSuppliers) {
+                    synchronized(supplier) {
+                        supplier.notify();
+                    }
                 }
-            return detail;
+            }
+        }
+        this.notifyObservers(String.valueOf(this.details.size()));
+        return detail;
     }
 }

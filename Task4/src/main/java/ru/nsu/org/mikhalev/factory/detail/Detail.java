@@ -5,6 +5,8 @@ import java.util.UUID;
 public class Detail {
     protected final UUID id;
     Detail() {
-        this.id = UUID.randomUUID();
+        synchronized(this) {
+            this.id = UUID.randomUUID();
+        }
     }
 }

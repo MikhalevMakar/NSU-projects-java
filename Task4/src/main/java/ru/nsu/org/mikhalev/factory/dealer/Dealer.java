@@ -1,14 +1,17 @@
 package ru.nsu.org.mikhalev.factory.dealer;
 
+import ru.nsu.org.mikhalev.factory.observable.Observable;
 import ru.nsu.org.mikhalev.factory.storage.auto_storage.AutoStorage;
-import ru.nsu.org.mikhalev.proces_input.properties_read.Properties_Value;
+import ru.nsu.org.mikhalev.view.observer.Observer;
 
-public class Dealer implements Runnable {
+import java.util.LinkedList;
+import java.util.concurrent.atomic.AtomicInteger;
+
+public class Dealer implements Runnable, Observable {
+    private LinkedList<Observer> observers = new LinkedList<>();
     private final AutoStorage autoStorage;
-    private final int time = 10;
-    private int countFinishedAuto = 1 - Integer.valueOf(Properties_Value.DEALERS.getValue());
-    private final Object lock = new Object(); // создаем объект-монитор
-
+    private final int time = 0;
+    private AtomicInteger countFinishedAuto = new AtomicInteger();
     public Dealer(AutoStorage autoStorage) {
         this.autoStorage = autoStorage;
     }
@@ -17,14 +20,27 @@ public class Dealer implements Runnable {
     public void run() {
         while (true) {
             try {
-                synchronized (lock) {
-                    ++countFinishedAuto;
+                synchronized (autoStorage) {
+                    String message  = String.valueOf(autoStorage.getAuto().getId());
+                    notifyObservers("Auto ID"  + message + "\n");
+                    //System.out.println("Auto ID - " + message + " " + countFinishedAuto.incrementAndGet ());
                 }
-                System.out.println ("Auto ID - " + autoStorage.getAuto ().getId () + " " + countFinishedAuto);
-                Thread.sleep (time);
+                Thread.sleep(time);
             } catch (InterruptedException e) {
-                throw new RuntimeException (e);
+                throw new RuntimeException(e);
             }
+        }
+    }
+
+    @Override
+    public void registerObserver(Observer o){
+        observers.add(o);
+    }
+
+    @Override
+    public void notifyObservers(String message){
+        for(Observer observer : observers) {
+            observer.notification(message);
         }
     }
 }

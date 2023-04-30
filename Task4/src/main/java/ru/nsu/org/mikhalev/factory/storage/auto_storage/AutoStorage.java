@@ -4,24 +4,24 @@ import ru.nsu.org.mikhalev.factory.detail.Auto;
 import ru.nsu.org.mikhalev.factory.storage.Storage;
 import ru.nsu.org.mikhalev.proces_input.properties_read.Properties_Value;
 
+
 public class AutoStorage extends Storage<Auto> {
     public AutoStorage() {
         super(Integer.valueOf(Properties_Value.STORAGE_AUTO_SIZE.getValue()));
     }
 
-    public synchronized void addAuto(Auto auto) throws InterruptedException { //add exception
+    public synchronized void addAuto(Auto auto) {
         details.add(auto);
     }
 
-    public synchronized Auto getAuto() throws InterruptedException {
-        Auto auto = (details.size () != 0) ? details.remove(0) : null;
-
-        if(auto == null) {
-            this.wait();
-            auto = details.remove(0);
+    public synchronized Auto getAuto() throws InterruptedException{
+        Auto auto = (!details.isEmpty ()) ? details.removeFirst () : null;
+        while (auto == null) {
+            this.wait ();
+            if (!details.isEmpty ()) auto = details.removeFirst ();
         }
-
-        ControllerAutoStorage.isWakesUpWorkers(details.size());
+        ControllerAutoStorage.isWakesUpWorkers (details.size());
+        notifyObservers(String.valueOf(details.size()));
         return auto;
     }
 }

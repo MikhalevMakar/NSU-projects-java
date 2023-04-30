@@ -10,13 +10,21 @@ public class ControllerAutoStorage {
     @Setter
     private static int sizeStorage;
 
-    public synchronized static void registrationWorkers(Worker worker) {
-        workers.add(worker);
+    public static void registrationWorkers(Worker worker) {
+        synchronized(workers) {
+            workers.add(worker);
+        }
     }
 
-    public static void isWakesUpWorkers(int currentCount){
-        if (currentCount == sizeStorage - 1) {
-            workers.notifyAll ();
+    public static void isWakesUpWorkers(int currentCount) {
+        synchronized(workers) {
+            if (currentCount <= sizeStorage) {
+                for(var worker : workers) {
+                    synchronized(worker) {
+                        worker.notify();
+                    }
+                }
+            }
         }
     }
 }
