@@ -16,7 +16,7 @@ public class Storage<T extends Detail> implements Observable {
     }
 
     public synchronized boolean isFull() {
-        return details.size() >= sizeStorage;
+        return details.size() > sizeStorage;
     }
 
     @Override
@@ -25,9 +25,9 @@ public class Storage<T extends Detail> implements Observable {
     }
 
     @Override
-    public void notifyObservers(String message){
+    public void notifyObservers(String message, Integer count){
         for(Observer observer : observers) {
-            observer.notification(message);
+            observer.notification(message, 0);
         }
     }
 }

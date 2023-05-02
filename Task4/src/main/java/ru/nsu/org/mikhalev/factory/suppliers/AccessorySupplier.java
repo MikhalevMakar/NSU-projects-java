@@ -1,5 +1,6 @@
 package ru.nsu.org.mikhalev.factory.suppliers;
 
+import lombok.Setter;
 import ru.nsu.org.mikhalev.factory.detail.Accessory;
 import ru.nsu.org.mikhalev.factory.storage.DetailStorage;
 

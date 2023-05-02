@@ -9,12 +9,12 @@ import javax.swing.*;
 public class DetailAutoStorage extends JLabel implements Observer {
     public DetailAutoStorage(@NotNull AutoStorage autoStorage) {
         setText("Auto storage: 0");
-        setBounds (1100, 425, 150, 20);
+        setBounds (1050, 425, 150, 20);
         autoStorage.registerObserver(this);
     }
 
     @Override
-    public void notification(String message){
+    public void notification(String message,  Integer count){
         setText("Auto storage: " + message);
     }
 }

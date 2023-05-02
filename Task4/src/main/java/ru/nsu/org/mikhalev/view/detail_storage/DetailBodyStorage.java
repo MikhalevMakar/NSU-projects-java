@@ -9,12 +9,12 @@ import javax.swing.*;
 public class DetailBodyStorage extends JLabel implements Observer  {
     public DetailBodyStorage(@NotNull BodyStorage bodyStorage) {
         setText("Body storage: 0");
-        setBounds (1095, 450, 150, 20);
+        setBounds (1050, 450, 150, 20);
         bodyStorage.registerObserver(this);
     }
 
     @Override
-    public void notification(String message){
+    public void notification(String message,  Integer count){
         setText("Body storage: " + message);
     }
 }

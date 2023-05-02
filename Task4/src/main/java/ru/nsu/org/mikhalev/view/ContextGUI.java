@@ -31,9 +31,9 @@ public class ContextGUI {
     @Getter
     private static final int HEIGHT = 580;
     @Getter
-    private static final int MAJOR_TICK_SPACING = 50;
+    private static final int MAJOR_TICK_SPACING = 100;
     @Getter
-    private static final int MINOR_TICK_SPACING = 10;
+    private static final int MINOR_TICK_SPACING = 50;
 
     public static class ContextChat {
         @Getter

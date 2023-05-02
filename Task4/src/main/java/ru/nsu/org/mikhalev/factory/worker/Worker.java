@@ -48,12 +48,11 @@ public class Worker implements Runnable {
     public void run() {
         try {
             while (true) {
-                if (autoStorage.isFull()) {
-                    synchronized(this) {
-                        this.wait();
+                    if (autoStorage.isFull ()) {
+                        synchronized(this) {
+                            this.wait();
+                        }
                     }
-                }
-
                 synchronized(caseDetails) {
                     requestDetails();
                     synchronized(autoStorage) {

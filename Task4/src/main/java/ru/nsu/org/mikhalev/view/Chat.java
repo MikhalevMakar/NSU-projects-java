@@ -1,7 +1,7 @@
 package ru.nsu.org.mikhalev.view;
 
 import org.jetbrains.annotations.NotNull;
-import ru.nsu.org.mikhalev.factory.dealer.Dealer;
+import ru.nsu.org.mikhalev.factory.Factory;
 import ru.nsu.org.mikhalev.view.observer.Observer;
 
 import javax.swing.*;
@@ -12,7 +12,7 @@ public class Chat implements Observer {
     private JTextField inputField;
     private String helpMessage = "Bot: 4 splitters set the speed: SUPPLIERS, DEALER\n";
 
-    public Chat(@NotNull JFrame frame) {
+    public Chat(@NotNull JFrame frame, Factory factory) {
         JPanel inputPanel = new JPanel(new BorderLayout());
         inputField = new JTextField();
 
@@ -22,6 +22,10 @@ public class Chat implements Observer {
 
             if(message.compareTo("help") == 0) {
                 chatArea.append (helpMessage);
+            } else if(message.compareTo("start") == 0) {
+                factory.start();
+            } else if(message.compareTo("stop") == 0) {
+                factory.stop();
             }
             inputField.setText("");
         });
@@ -59,7 +63,7 @@ public class Chat implements Observer {
     }
 
     @Override
-    public void notification(String message) {
+    public void notification(String message,  Integer count) {
         chatArea.setCaretColor(Color.CYAN);
         chatArea.append(message);
     }

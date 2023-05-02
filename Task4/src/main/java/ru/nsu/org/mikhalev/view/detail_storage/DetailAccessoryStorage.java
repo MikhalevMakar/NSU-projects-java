@@ -9,13 +9,12 @@ import javax.swing.*;
 public class DetailAccessoryStorage extends JLabel implements Observer {
     public DetailAccessoryStorage(@NotNull AccessoryStorage accessoryStorage) {
         setText("Accessory storage: 0");
-        setBounds(1060, 400, 150, 20);
+        setBounds(1050, 400, 150, 20);
         accessoryStorage.registerObserver(this);
     }
 
     @Override
-    public void notification(String message){
-        System.out.println(message);
+    public void notification(String message,  Integer count){
         setText("Accessory storage: " + message);
     }
 }

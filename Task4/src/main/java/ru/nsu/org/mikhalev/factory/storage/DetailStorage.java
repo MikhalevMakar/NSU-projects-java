@@ -1,12 +1,9 @@
 package ru.nsu.org.mikhalev.factory.storage;
 
 import ru.nsu.org.mikhalev.factory.detail.Detail;
-import ru.nsu.org.mikhalev.factory.observable.Observable;
 import ru.nsu.org.mikhalev.factory.suppliers.DetailSupplier;
-import ru.nsu.org.mikhalev.view.observer.Observer;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 
 public class DetailStorage<T extends Detail> extends Storage<T>  {
     private ArrayList<DetailSupplier<T>> detailSuppliers;
@@ -22,12 +19,13 @@ public class DetailStorage<T extends Detail> extends Storage<T>  {
 
     public synchronized void addDetail(T detail) {
         if (!isFull()) {
+            this.notifyObservers(String.valueOf(this.details.size()), 0);
             details.add(detail);
         }
     }
 
     public synchronized T getDetail() throws InterruptedException {
-        T detail = null;
+        T detail;
         synchronized(details) {
             if (details.size() == 0) {
                 this.wait();
@@ -44,7 +42,7 @@ public class DetailStorage<T extends Detail> extends Storage<T>  {
                 }
             }
         }
-        this.notifyObservers(String.valueOf(this.details.size()));
+        this.notifyObservers(String.valueOf(this.details.size()), 0);
         return detail;
     }
 }

@@ -9,12 +9,12 @@ import javax.swing.*;
 public class DetailMotorStorage extends JLabel implements Observer  {
     public DetailMotorStorage(@NotNull MotorStorage motorStorage) {
         setText("Motor storage: 0");
-        setBounds (1087, 375, 150, 20);
+        setBounds (1050, 375, 150, 20);
         motorStorage.registerObserver(this);
     }
 
     @Override
-    public void notification(String message){
+    public void notification(String message,  Integer count){
         setText("Motor storage: " + message);
     }
 }

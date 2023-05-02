@@ -11,17 +11,17 @@ public class AutoStorage extends Storage<Auto> {
     }
 
     public synchronized void addAuto(Auto auto) {
+        notifyObservers(String.valueOf (details.size()), 0);
         details.add(auto);
     }
-
     public synchronized Auto getAuto() throws InterruptedException{
         Auto auto = (!details.isEmpty ()) ? details.removeFirst () : null;
         while (auto == null) {
-            this.wait ();
+            this.wait();
             if (!details.isEmpty ()) auto = details.removeFirst ();
         }
         ControllerAutoStorage.isWakesUpWorkers (details.size());
-        notifyObservers(String.valueOf(details.size()));
+        notifyObservers(String.valueOf(details.size()), 0);
         return auto;
     }
 }
