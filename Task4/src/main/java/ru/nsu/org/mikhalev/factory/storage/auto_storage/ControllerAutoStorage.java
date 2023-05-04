@@ -1,29 +1,19 @@
 package ru.nsu.org.mikhalev.factory.storage.auto_storage;
 
 import lombok.Setter;
-import ru.nsu.org.mikhalev.factory.worker.Worker;
-
-import java.util.LinkedList;
 
 public class ControllerAutoStorage {
-    private static LinkedList<Worker> workers = new LinkedList<>();
-    @Setter
-    private static int sizeStorage;
-
-    public static void registrationWorkers(Worker worker) {
-        synchronized(workers) {
-            workers.add(worker);
-        }
+    private final AutoStorage autoStorage;
+    private  int sizeStorage;
+    public ControllerAutoStorage(AutoStorage autoStorage, Integer sizeStorage) {
+        this.autoStorage = autoStorage;
+        this.sizeStorage = sizeStorage;
     }
 
-    public static void isWakesUpWorkers(int currentCount) {
-        synchronized(workers) {
+    public  void isWakesUpWorkers(int currentCount) {
+        synchronized(autoStorage) {
             if (currentCount <= sizeStorage) {
-                for(var worker : workers) {
-                    synchronized(worker) {
-                        worker.notify();
-                    }
-                }
+                autoStorage.notifyAll();
             }
         }
     }

@@ -5,6 +5,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class ThreadPool<T extends Runnable> {
+
     List<Thread> threads;
     public ThreadPool(int threadCount, T clazz) {
         threads = Stream.generate(() -> new Thread(clazz))

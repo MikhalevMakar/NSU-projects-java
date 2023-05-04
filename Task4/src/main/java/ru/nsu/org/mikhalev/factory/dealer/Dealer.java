@@ -31,13 +31,13 @@ public class Dealer implements Runnable, Observable {
                     String message  = String.valueOf(autoStorage.getAuto().getId());
                     notifyObservers(message + "\n", Integer.valueOf(countFinishedAuto.incrementAndGet()));
 
-                    if(Boolean.valueOf(Properties_Value.LOG_SALE.getValue())) {
+                    if (Boolean.valueOf(Properties_Value.LOG_SALE.getValue())) {
                         log.info(message);
                     }
                 }
                 Thread.sleep(time);
             } catch (InterruptedException e) {
-                throw new RuntimeException(e);
+                Thread.currentThread().interrupt();
             }
         }
     }

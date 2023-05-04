@@ -24,23 +24,18 @@ public class DetailSupplier <T extends Detail> implements Runnable {
 
     @Override
     public void run() {
-        detailStorage.registrationSupplier(this);
-
-        while (true) {
+        while (!Thread.currentThread().isInterrupted()) {
             try {
-                if (!detailStorage.isFull()) {
-                    synchronized(detailStorage) {
-                        detailStorage.addDetail (create());
-                        detailStorage.notify();
+                synchronized (detailStorage) {
+                    while (detailStorage.isFull()) {
+                        detailStorage.wait();
                     }
-                } else {
-                    synchronized (this) {
-                        this.wait ();
-                    }
+                    detailStorage.addDetail(create());
+                    detailStorage.notifyAll();
                 }
                 Thread.sleep(time);
             } catch (InterruptedException e) {
-                throw new RuntimeException(e);
+                Thread.currentThread().interrupt();
             }
         }
     }

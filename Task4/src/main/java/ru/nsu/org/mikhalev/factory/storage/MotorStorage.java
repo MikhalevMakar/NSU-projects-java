@@ -5,6 +5,6 @@ import ru.nsu.org.mikhalev.proces_input.properties_read.Properties_Value;
 
 public class MotorStorage extends DetailStorage<Motor> {
     public MotorStorage() {
-        super(Integer.parseInt(Properties_Value.STORAGE_MOTOR_SIZE.getValue()), 1);
+        super(Integer.parseInt(Properties_Value.STORAGE_MOTOR_SIZE.getValue()));
     }
 }
