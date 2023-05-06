@@ -1,26 +1,33 @@
 package ru.nsu.org.mikhalev.thread_pool;
 
+import java.util.LinkedList;
 import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
+import java.util.concurrent.LinkedBlockingQueue;
 
-public class ThreadPool<T extends Runnable> {
-
-    List<Thread> threads;
-    public ThreadPool(int threadCount, T clazz) {
-        threads = Stream.generate(() -> new Thread(clazz))
-                                                .limit(threadCount)
-                                                .collect(Collectors.toList());
-    }
-
+public class ThreadPool {
+    private List<TaskExecute> listTaskExecute = new LinkedList<>();
+    private LinkedBlockingQueue<Task> queueTasks = new LinkedBlockingQueue<>();
     public void start() {
-        for(var thread : threads) {
+        for(var thread : listTaskExecute) {
             thread.start();
         }
     }
 
+    public int getSizeQueueTask() {
+        return queueTasks.size();
+    }
+
+    public void addTask(Task task) {
+        queueTasks.add(task);
+    }
+
+    public void addTaskExecute(TaskExecute task) {
+        task.setQueueTask(queueTasks);
+        listTaskExecute.add(task);
+    }
+
     public void end() {
-        for (Thread thread : threads) {
+        for (var thread : listTaskExecute) {
             thread.interrupt();
         }
     }

@@ -7,7 +7,7 @@ public class DetailStorage<T extends Detail> extends Storage<T>  {
         super(sizeStorage);
     }
 
-    public void addDetail(T detail){
+    public void addDetail(T detail) {
         synchronized (details) {
             details.notifyAll();
             details.add(detail);
@@ -15,18 +15,18 @@ public class DetailStorage<T extends Detail> extends Storage<T>  {
         }
     }
 
-    public T getDetail() throws InterruptedException {
+    public T getDetail() throws InterruptedException{
         T detail;
         synchronized(details) {
             while (details.isEmpty()) {
                 details.wait();
             }
-            detail = details.removeFirst();
-        }
 
-        if (details.size() < this.sizeStorage) {
-            synchronized (this) {
-                this.notifyAll();
+            detail = details.removeFirst();
+
+
+            if (details.size() < this.sizeStorage) {
+                details.notifyAll();
             }
         }
 

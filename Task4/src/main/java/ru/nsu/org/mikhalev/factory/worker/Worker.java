@@ -2,28 +2,30 @@ package ru.nsu.org.mikhalev.factory.worker;
 
 import lombok.extern.log4j.Log4j2;
 import ru.nsu.org.mikhalev.factory.detail.*;
+import ru.nsu.org.mikhalev.factory.storage.MotorStorage;
 import ru.nsu.org.mikhalev.factory.storage.auto_storage.AutoStorage;
 import ru.nsu.org.mikhalev.factory.storage.DetailStorage;
+import ru.nsu.org.mikhalev.thread_pool.Task;
 
 import java.util.LinkedList;
 
 @Log4j2
-public class Worker implements Runnable {
+public class Worker implements Task {
     private static LinkedList<DetailStorage<? extends Detail>> storages = new LinkedList<>();
     private LinkedList<Detail> caseDetails = new LinkedList<>();
     private final AutoStorage autoStorage;
 
-    public Worker(AutoStorage autoStorage,
-                  DetailStorage<Accessory> accessoryStorage,
-                  DetailStorage<Body> bodyStorage,
-                  DetailStorage<Motor> motorStorage) {
+    public Worker(AutoStorage autoStorage) {
         this.autoStorage = autoStorage;
-
-        storages.add(accessoryStorage);
-        storages.add(motorStorage);
-        storages.add(bodyStorage);
     }
 
+    public static void registrationStorages(DetailStorage<Accessory> accessoryStorage,
+                                            DetailStorage<Body> bodyStorage,
+                                            MotorStorage motorStorage) {
+        storages.add(accessoryStorage);
+        storages.add(bodyStorage);
+        storages.add(motorStorage);
+    }
     private void requestDetails() throws InterruptedException {
         caseDetails.clear();
         for (var storage : storages) {
@@ -33,20 +35,19 @@ public class Worker implements Runnable {
     }
 
     @Override
-    public void run(){
-        while (!Thread.currentThread().isInterrupted()) {
-            try {
-                synchronized (autoStorage) {
-                    while (autoStorage.isFull()) {
-                        autoStorage.wait();
-                    }
-                    requestDetails();
-                    autoStorage.addAuto(new Auto(caseDetails));
+    public void execute() {
+        try {
+            synchronized (autoStorage) {
+                while (autoStorage.isFull()) {
+                    System.out.println ("autoStorage is full");
+                    autoStorage.wait();
                 }
-            } catch (InterruptedException e) {
-                log.warn("Exception ExcWorker", e);
-                Thread.currentThread().interrupt();
+                System.out.println("autoStorage is not full");
+                requestDetails();
+                autoStorage.addAuto(new Auto(caseDetails));
             }
+        } catch (InterruptedException e) {
+            log.warn("Exception ExcWorker", e);
         }
     }
 }

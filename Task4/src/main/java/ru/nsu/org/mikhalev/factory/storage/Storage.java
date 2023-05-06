@@ -9,14 +9,17 @@ import java.util.LinkedList;
 public class Storage<T extends Detail> implements Observable {
     private LinkedList<Observer> observers = new LinkedList<>();
     protected final int sizeStorage;
-    protected LinkedList<T> details = new LinkedList<>();
+    protected final LinkedList<T> details = new LinkedList<>();
 
     public Storage(int sizeStorage) {
         this.sizeStorage = sizeStorage;
     }
 
-    public synchronized boolean isFull() {
-        return details.size() > sizeStorage;
+    public boolean isFull() {
+        synchronized (details) {
+            System.out.println ("auto storage size " + details.size ());
+            return details.size () >= sizeStorage;
+        }
     }
 
     @Override

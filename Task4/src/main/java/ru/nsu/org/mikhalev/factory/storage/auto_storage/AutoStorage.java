@@ -1,32 +1,41 @@
 package ru.nsu.org.mikhalev.factory.storage.auto_storage;
 
+import lombok.extern.log4j.Log4j2;
 import ru.nsu.org.mikhalev.factory.detail.Auto;
 import ru.nsu.org.mikhalev.factory.storage.Storage;
 import ru.nsu.org.mikhalev.proces_input.properties_read.Properties_Value;
 
 
+@Log4j2
 public class AutoStorage extends Storage<Auto> {
-    private ControllerAutoStorage controllerAutoStorage;
+    private final ControllerAutoStorage controllerAutoStorage;
     public AutoStorage() {
-        super(Integer.valueOf(Properties_Value.STORAGE_AUTO_SIZE.getValue()));
-        controllerAutoStorage = new ControllerAutoStorage(this, Integer.valueOf(Properties_Value.STORAGE_AUTO_SIZE.getValue()));
-
+        super(Integer.parseInt(Properties_Value.STORAGE_AUTO_SIZE.getValue()));
+        controllerAutoStorage = new ControllerAutoStorage(this,
+                                                           Integer.valueOf(Properties_Value
+                                                                                        .STORAGE_AUTO_SIZE
+                                                                                        .getValue()));
     }
 
     public synchronized void addAuto(Auto auto) {
-        notifyObservers(String.valueOf(details.size()), 0);
-        details.add(auto);
+            notifyObservers(String.valueOf(details.size()), 0);
+            details.add(auto);
     }
-    public synchronized Auto getAuto() throws InterruptedException{
-        System.out.println("BEFORE");
-        Auto auto = (!details.isEmpty ()) ? details.removeFirst() : null;
-        System.out.println("BEFORE");
-        while (auto == null) {
-            this.wait();
-            if (!details.isEmpty()) auto = details.removeFirst();
+
+    public synchronized Auto getAuto() {
+        while (details.isEmpty() && Thread.currentThread().isAlive()) {
+            try {
+                this.wait();
+            } catch (InterruptedException e) {
+                log.warn("Interrupted Exception in auto storage");
+                Thread.currentThread().interrupt();
+                return null;
+            }
         }
-        System.out.println("AFTER");
-        controllerAutoStorage.isWakesUpWorkers(details.size());
+        Auto auto = details.remove();
+        System.out.println("get Auto AFTER");
+
+        controllerAutoStorage.distributionTask(details.size());
         notifyObservers(String.valueOf(details.size()), 0);
         return auto;
     }

@@ -9,7 +9,7 @@ import ru.nsu.org.mikhalev.factory.storage.DetailStorage;
 public class DetailSupplier <T extends Detail> implements Runnable {
     @Setter
     private Integer time = 50;
-    private @NotNull Class<T> clazz;
+    private final @NotNull Class<T> clazz;
     private final DetailStorage<T> detailStorage;
 
     public DetailSupplier(DetailStorage<T> detailStorage, Class<T> clazz)  {
@@ -18,7 +18,7 @@ public class DetailSupplier <T extends Detail> implements Runnable {
     }
 
     @SneakyThrows
-    synchronized public T create() {
+    public synchronized T create() {
         return clazz.getDeclaredConstructor().newInstance();
     }
 
@@ -33,7 +33,9 @@ public class DetailSupplier <T extends Detail> implements Runnable {
                     detailStorage.addDetail(create());
                     detailStorage.notifyAll();
                 }
+
                 Thread.sleep(time);
+
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
             }

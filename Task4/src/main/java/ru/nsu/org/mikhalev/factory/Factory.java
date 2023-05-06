@@ -3,20 +3,13 @@ package ru.nsu.org.mikhalev.factory;
 import lombok.Getter;
 import lombok.extern.log4j.Log4j2;
 import ru.nsu.org.mikhalev.factory.dealer.Dealer;
-import ru.nsu.org.mikhalev.factory.detail.Accessory;
-import ru.nsu.org.mikhalev.factory.detail.Body;
-import ru.nsu.org.mikhalev.factory.detail.Motor;
-import ru.nsu.org.mikhalev.factory.storage.AccessoryStorage;
-import ru.nsu.org.mikhalev.factory.storage.BodyStorage;
-import ru.nsu.org.mikhalev.factory.storage.MotorStorage;
-import ru.nsu.org.mikhalev.factory.storage.auto_storage.AutoStorage;
-import ru.nsu.org.mikhalev.factory.suppliers.AccessorySupplier;
-import ru.nsu.org.mikhalev.factory.suppliers.BodySupplier;
-import ru.nsu.org.mikhalev.factory.suppliers.MotorSupplier;
+import ru.nsu.org.mikhalev.factory.detail.*;
+import ru.nsu.org.mikhalev.factory.storage.*;
+import ru.nsu.org.mikhalev.factory.storage.auto_storage.*;
+import ru.nsu.org.mikhalev.factory.suppliers.*;
 import ru.nsu.org.mikhalev.factory.worker.Worker;
-import ru.nsu.org.mikhalev.proces_input.properties_read.FactoryReader;
-import ru.nsu.org.mikhalev.proces_input.properties_read.Properties_Value;
-import ru.nsu.org.mikhalev.thread_pool.ThreadPool;
+import ru.nsu.org.mikhalev.proces_input.properties_read.*;
+import ru.nsu.org.mikhalev.thread_pool.ProduceThread;
 
 import java.io.IOException;
 
@@ -32,73 +25,73 @@ public class Factory {
     private MotorStorage motorStorage;
     @Getter
     private AutoStorage autoStorage;
-
-    private final ThreadPool<Worker> threadWorker;
-    private final ThreadPool<MotorSupplier> threadMotorSupplier;
-    private final ThreadPool<AccessorySupplier> threadAccessorySupplier;
-    private final ThreadPool<BodySupplier> threadBodySupplier;
+    private final ProduceThread<MotorSupplier> threadMotorSupplier;
+    private final ProduceThread<AccessorySupplier> threadAccessorySupplier;
+    private final ProduceThread<BodySupplier> threadBodySupplier;
     private AccessorySupplier accessorySupplier;
     private MotorSupplier motorSupplier;
     private  BodySupplier bodySupplier;
-    private final ThreadPool<Dealer> threadDealer;
+    private ControllerAutoStorage controllerAutoStorage;
+    private final ProduceThread<Dealer> threadDealer;
 
     public Factory(String link) throws IOException {
         log.info("Call FactoryReader.read()");
         FactoryReader.read(link);
 
-
         log.info("Create storage");
         createStorage();
 
-        Worker worker = new Worker(autoStorage, accessoryStorage, bodyStorage, motorStorage);
-
+        log.info("Generate suppliers");
         accessorySupplier = new AccessorySupplier(accessoryStorage, Accessory.class);
         motorSupplier = new MotorSupplier(motorStorage, Motor.class);
         bodySupplier = new BodySupplier(bodyStorage, Body.class);
         dealer = new Dealer(autoStorage);
 
+        log.info("Registration storages");
+        Worker.registrationStorages(accessoryStorage, bodyStorage, motorStorage);
 
         log.info("Generate new thread");
-        threadWorker = new ThreadPool<>(Integer.valueOf(Properties_Value.WORKERS.getValue()), worker);
+        threadMotorSupplier = new ProduceThread<>(1, motorSupplier);
 
-        threadMotorSupplier = new ThreadPool<>(1, motorSupplier);
+        threadBodySupplier = new ProduceThread<>(1, bodySupplier);
 
-        threadBodySupplier = new ThreadPool<>(1, bodySupplier);
+        threadAccessorySupplier = new ProduceThread<>(Integer.valueOf(Properties_Value.ACCESSORY_SUPPLIERS.getValue()),
+                                                      accessorySupplier);
 
-        threadAccessorySupplier = new ThreadPool<>(
-            Integer.valueOf(Properties_Value.ACCESSORY_SUPPLIERS.getValue()), accessorySupplier);
+        threadDealer = new ProduceThread<>(Integer.valueOf(Properties_Value.DEALERS.getValue()), dealer);
 
-        threadDealer = new ThreadPool<>(Integer.valueOf(Properties_Value.DEALERS.getValue()), dealer);
+        controllerAutoStorage = new ControllerAutoStorage(autoStorage,
+                                                          Integer.valueOf(Properties_Value.STORAGE_AUTO_SIZE.getValue()));
     }
+
     private void createStorage() {
         accessoryStorage = new AccessoryStorage();
         bodyStorage = new BodyStorage();
         motorStorage = new MotorStorage();
         autoStorage = new AutoStorage();
     }
-
     public void start() {
         log.info("factory start work");
 
-        threadWorker.start();
         threadMotorSupplier.start();
         threadAccessorySupplier.start();
         threadBodySupplier.start();
         threadDealer.start();
+        controllerAutoStorage.start();
     }
 
     public void stop() {
         log.info("factory start interrupt");
-        threadWorker.end();
+
         threadMotorSupplier.end();
         threadAccessorySupplier.end();
         threadBodySupplier.end();
         threadDealer.end();
+        controllerAutoStorage.end();
     }
 
     public void setTimeDealer(int time) { dealer.setTime(time);}
     public void setTimeAccessorySupplier(int time) { accessorySupplier.setTime(time);}
     public void setTimeBodySupplier(int time) { bodySupplier.setTime(time); }
     public void setTimeMotorSupplier(int time) { motorSupplier.setTime(time);}
-
 }

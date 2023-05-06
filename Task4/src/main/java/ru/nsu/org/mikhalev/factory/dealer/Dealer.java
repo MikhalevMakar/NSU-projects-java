@@ -10,6 +10,8 @@ import ru.nsu.org.mikhalev.view.observer.Observer;
 import java.util.LinkedList;
 import java.util.concurrent.atomic.AtomicInteger;
 
+import static java.lang.Boolean.*;
+
 @Log4j2
 public class Dealer implements Runnable, Observable {
     private LinkedList<Observer> observers = new LinkedList<>();
@@ -23,21 +25,24 @@ public class Dealer implements Runnable, Observable {
 
     @Override
     public void run() {
-        log.info("Start work dealer,  method run");
-
-        while (true) {
+        log.info("Start work dealer, method run");
+        String message;
+        while (Thread.currentThread().isAlive()) {
             try {
-                synchronized(autoStorage) {
-                    String message  = String.valueOf(autoStorage.getAuto().getId());
-                    notifyObservers(message + "\n", Integer.valueOf(countFinishedAuto.incrementAndGet()));
-
-                    if (Boolean.valueOf(Properties_Value.LOG_SALE.getValue())) {
-                        log.info(message);
-                    }
+                synchronized (autoStorage) {
+                     message = String.valueOf(autoStorage.getAuto ().getId());
                 }
+
+                notifyObservers(message + "\n", countFinishedAuto.incrementAndGet());
+
+                if (TRUE.equals(valueOf(Properties_Value.LOG_SALE.getValue()))) {
+                    log.info(message);
+                }
+
                 Thread.sleep(time);
             } catch (InterruptedException e) {
-                Thread.currentThread().interrupt();
+                log.warn("Interrupted Exception in auto storage\n");
+                return;
             }
         }
     }
