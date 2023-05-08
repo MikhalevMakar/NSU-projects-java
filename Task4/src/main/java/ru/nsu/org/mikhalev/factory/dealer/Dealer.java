@@ -20,8 +20,6 @@ import static java.lang.Boolean.*;
  *
  * Dealer has dependencies with autoStorage and manages it
  */
-
-
 @Log4j2
 public class Dealer implements Runnable, Observable {
 
@@ -32,7 +30,6 @@ public class Dealer implements Runnable, Observable {
     /*
      * Initial speed of the dealer.
     */
-
     @Setter
     private int time = 50;
 
@@ -43,7 +40,6 @@ public class Dealer implements Runnable, Observable {
      *
      * @param AutoStorage
      */
-
     public Dealer(AutoStorage autoStorage) {
         this.autoStorage = autoStorage;
     }
@@ -56,7 +52,6 @@ public class Dealer implements Runnable, Observable {
      * @param void
      * @return void
      */
-
     @Override
     public void run() {
         log.info("Start work dealer, method run");
@@ -87,7 +82,6 @@ public class Dealer implements Runnable, Observable {
      * @param Observer
      * @return void
      */
-
     @Override
     public void registerObserver(Observer o){
         observers.add(o);
@@ -100,7 +94,6 @@ public class Dealer implements Runnable, Observable {
      * @param String, Integer
      * @return void
      */
-
     @Override
     public void notifyObservers(String message, Integer count) {
         for(Observer observer : observers) {
