@@ -8,10 +8,19 @@ import ru.nsu.org.mikhalev.view.GenerateMainMenu;
 
 import java.io.IOException;
 
+
+/*
+ * Initially, the factory menu is started
+ * The menu has a chat that responds to the following command : start
+ *                                                              help
+ *                                                              stop
+ *
+ */
 @Log4j2
 public class Main {
     public static void main(String[] args) throws ParseException, IOException {
         log.info("Create parseFileJSON");
+        //parse the link to the file hierarchy of the program.
         ParseFileJSON parseFileJSON = new ParseFileJSON(args);
 
         log.info("Create factory");
