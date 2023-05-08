@@ -1,4 +1,4 @@
-package ru.nsu.org.mikhalev.view.detail_storage;
+package ru.nsu.org.mikhalev.view.count_detail_factory;
 
 import org.jetbrains.annotations.NotNull;
 import ru.nsu.org.mikhalev.factory.dealer.Dealer;
@@ -9,7 +9,7 @@ import javax.swing.*;
 public class AutoDealer extends JLabel implements Observer {
     public AutoDealer(@NotNull Dealer dealer) {
         setText("<html><b>Count auto: 0 <b></html>");
-        setBounds(1050, 350, 150, 20);
+        setBounds(1050, 325, 150, 20);
         dealer.registerObserver(this);
     }
 

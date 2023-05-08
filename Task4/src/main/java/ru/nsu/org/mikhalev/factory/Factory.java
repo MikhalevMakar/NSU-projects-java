@@ -23,15 +23,17 @@ public class Factory {
     private BodyStorage bodyStorage;
     @Getter
     private MotorStorage motorStorage;
-    @Getter
-    private AutoStorage autoStorage;
+
+//    @Getter
+//    private AutoStorage autoStorage;
     private final ProduceThread<MotorSupplier> threadMotorSupplier;
     private final ProduceThread<AccessorySupplier> threadAccessorySupplier;
     private final ProduceThread<BodySupplier> threadBodySupplier;
-    private AccessorySupplier accessorySupplier;
-    private MotorSupplier motorSupplier;
-    private  BodySupplier bodySupplier;
-    private ControllerAutoStorage controllerAutoStorage;
+    private final AccessorySupplier accessorySupplier;
+    private final MotorSupplier motorSupplier;
+    private  final BodySupplier bodySupplier;
+    @Getter
+    private final ControllerAutoStorage controllerAutoStorage;
     private final ProduceThread<Dealer> threadDealer;
 
     public Factory(String link) throws IOException {
@@ -45,7 +47,10 @@ public class Factory {
         accessorySupplier = new AccessorySupplier(accessoryStorage, Accessory.class);
         motorSupplier = new MotorSupplier(motorStorage, Motor.class);
         bodySupplier = new BodySupplier(bodyStorage, Body.class);
-        dealer = new Dealer(autoStorage);
+        controllerAutoStorage = new ControllerAutoStorage(Integer.valueOf(Properties_Value
+                                                                                          .STORAGE_AUTO_SIZE
+                                                                                          .getValue()));
+        dealer = new Dealer(controllerAutoStorage.getAutoStorage());
 
         log.info("Registration storages");
         Worker.registrationStorages(accessoryStorage, bodyStorage, motorStorage);
@@ -55,29 +60,27 @@ public class Factory {
 
         threadBodySupplier = new ProduceThread<>(1, bodySupplier);
 
-        threadAccessorySupplier = new ProduceThread<>(Integer.valueOf(Properties_Value.ACCESSORY_SUPPLIERS.getValue()),
+        threadAccessorySupplier = new ProduceThread<>(Integer.valueOf(Properties_Value
+                                                                                       .ACCESSORY_SUPPLIERS
+                                                                                       .getValue()),
                                                       accessorySupplier);
 
         threadDealer = new ProduceThread<>(Integer.valueOf(Properties_Value.DEALERS.getValue()), dealer);
 
-        controllerAutoStorage = new ControllerAutoStorage(autoStorage,
-                                                          Integer.valueOf(Properties_Value.STORAGE_AUTO_SIZE.getValue()));
     }
 
     private void createStorage() {
         accessoryStorage = new AccessoryStorage();
         bodyStorage = new BodyStorage();
         motorStorage = new MotorStorage();
-        autoStorage = new AutoStorage();
     }
     public void start() {
         log.info("factory start work");
-
+        controllerAutoStorage.start();
         threadMotorSupplier.start();
         threadAccessorySupplier.start();
         threadBodySupplier.start();
         threadDealer.start();
-        controllerAutoStorage.start();
     }
 
     public void stop() {
@@ -94,4 +97,7 @@ public class Factory {
     public void setTimeAccessorySupplier(int time) { accessorySupplier.setTime(time);}
     public void setTimeBodySupplier(int time) { bodySupplier.setTime(time); }
     public void setTimeMotorSupplier(int time) { motorSupplier.setTime(time);}
+    public AutoStorage getAutoStorage() {
+        return controllerAutoStorage.getAutoStorage();
+    }
 }

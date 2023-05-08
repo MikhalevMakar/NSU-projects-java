@@ -9,12 +9,9 @@ import ru.nsu.org.mikhalev.proces_input.properties_read.Properties_Value;
 @Log4j2
 public class AutoStorage extends Storage<Auto> {
     private final ControllerAutoStorage controllerAutoStorage;
-    public AutoStorage() {
+    public AutoStorage(ControllerAutoStorage controllerAutoStorage) {
         super(Integer.parseInt(Properties_Value.STORAGE_AUTO_SIZE.getValue()));
-        controllerAutoStorage = new ControllerAutoStorage(this,
-                                                           Integer.valueOf(Properties_Value
-                                                                                        .STORAGE_AUTO_SIZE
-                                                                                        .getValue()));
+        this.controllerAutoStorage = controllerAutoStorage;
     }
 
     public synchronized void addAuto(Auto auto) {
@@ -23,18 +20,16 @@ public class AutoStorage extends Storage<Auto> {
     }
 
     public synchronized Auto getAuto() {
-        while (details.isEmpty() && Thread.currentThread().isAlive()) {
+        while (details.isEmpty () && Thread.currentThread ().isAlive ()) {
             try {
                 this.wait();
             } catch (InterruptedException e) {
-                log.warn("Interrupted Exception in auto storage");
-                Thread.currentThread().interrupt();
+                log.warn ("Interrupted Exception in auto storage");
+                Thread.currentThread ().interrupt ();
                 return null;
             }
         }
         Auto auto = details.remove();
-        System.out.println("get Auto AFTER");
-
         controllerAutoStorage.distributionTask(details.size());
         notifyObservers(String.valueOf(details.size()), 0);
         return auto;

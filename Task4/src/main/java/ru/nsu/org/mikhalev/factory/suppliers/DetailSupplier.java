@@ -1,11 +1,16 @@
 package ru.nsu.org.mikhalev.factory.suppliers;
 
+import lombok.Getter;
 import lombok.Setter;
 import lombok.SneakyThrows;
+import lombok.extern.log4j.Log4j2;
 import org.jetbrains.annotations.NotNull;
 import ru.nsu.org.mikhalev.factory.detail.Detail;
 import ru.nsu.org.mikhalev.factory.storage.DetailStorage;
 
+import java.lang.reflect.InvocationTargetException;
+
+@Log4j2
 public class DetailSupplier <T extends Detail> implements Runnable {
     @Setter
     private Integer time = 50;
@@ -17,25 +22,27 @@ public class DetailSupplier <T extends Detail> implements Runnable {
         this.clazz = clazz;
     }
 
-    @SneakyThrows
-    public synchronized T create() {
+
+    public synchronized T create() throws NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
         return clazz.getDeclaredConstructor().newInstance();
     }
 
     @Override
-    public void run() {
-        while (!Thread.currentThread().isInterrupted()) {
+    public void run(){
+        while (!Thread.currentThread ().isInterrupted ()) {
             try {
                 synchronized (detailStorage) {
-                    while (detailStorage.isFull()) {
-                        detailStorage.wait();
+                    try {
+                        detailStorage.addDetail(create());
+                    } catch (InstantiationException | IllegalAccessException | NoSuchMethodException |
+                             InvocationTargetException e) {
+                        log.info("Exception in " + this.getClass() + " method run().");
+                        return;
                     }
-                    detailStorage.addDetail(create());
                     detailStorage.notifyAll();
                 }
 
                 Thread.sleep(time);
-
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
             }

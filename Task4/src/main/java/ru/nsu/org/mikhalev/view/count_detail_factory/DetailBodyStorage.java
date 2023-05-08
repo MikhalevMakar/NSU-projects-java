@@ -1,4 +1,4 @@
-package ru.nsu.org.mikhalev.view.detail_storage;
+package ru.nsu.org.mikhalev.view.count_detail_factory;
 
 import org.jetbrains.annotations.NotNull;
 import ru.nsu.org.mikhalev.factory.storage.BodyStorage;

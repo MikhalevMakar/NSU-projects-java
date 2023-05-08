@@ -14,11 +14,11 @@ import static java.lang.Boolean.*;
 
 @Log4j2
 public class Dealer implements Runnable, Observable {
-    private LinkedList<Observer> observers = new LinkedList<>();
+    private final LinkedList<Observer> observers = new LinkedList<>();
     private final AutoStorage autoStorage;
     @Setter
     private int time = 50;
-    private AtomicInteger countFinishedAuto = new AtomicInteger();
+    private final AtomicInteger countFinishedAuto = new AtomicInteger();
     public Dealer(AutoStorage autoStorage) {
         this.autoStorage = autoStorage;
     }
@@ -30,7 +30,7 @@ public class Dealer implements Runnable, Observable {
         while (Thread.currentThread().isAlive()) {
             try {
                 synchronized (autoStorage) {
-                     message = String.valueOf(autoStorage.getAuto ().getId());
+                     message = String.valueOf(autoStorage.getAuto().getId());
                 }
 
                 notifyObservers(message + "\n", countFinishedAuto.incrementAndGet());

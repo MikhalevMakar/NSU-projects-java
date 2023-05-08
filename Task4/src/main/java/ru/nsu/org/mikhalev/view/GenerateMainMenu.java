@@ -3,7 +3,7 @@ package ru.nsu.org.mikhalev.view;
 import org.jetbrains.annotations.NotNull;
 import ru.nsu.org.mikhalev.factory.Factory;
 import ru.nsu.org.mikhalev.factory.dealer.Dealer;
-import ru.nsu.org.mikhalev.view.detail_storage.*;
+import ru.nsu.org.mikhalev.view.count_detail_factory.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -14,6 +14,7 @@ public class GenerateMainMenu {
     private DetailMotorStorage detailMotorStorage;
     private DetailAccessoryStorage detailAccessoryStorage;
     private DetailBodyStorage detailBodyStorage;
+    private ViewCountTaskThread viewCountTaskThread;
 
     private JFrame frame;
     public GenerateMainMenu(String link, @NotNull Factory factory) {
@@ -23,13 +24,14 @@ public class GenerateMainMenu {
 
         JLabel label = new JLabel(imageIcon);
 
-       frame.add(label, BorderLayout.WEST);
+        frame.add(label, BorderLayout.WEST);
 
         autoDealer = new AutoDealer(factory.getDealer());
         detailAutoStorage = new DetailAutoStorage(factory.getAutoStorage());
         detailAccessoryStorage = new DetailAccessoryStorage(factory.getAccessoryStorage());
         detailMotorStorage = new DetailMotorStorage(factory.getMotorStorage());
         detailBodyStorage = new DetailBodyStorage(factory.getBodyStorage());
+        viewCountTaskThread = new ViewCountTaskThread(factory.getControllerAutoStorage());
 
         addDetailAutoStorageFrame();
 
@@ -57,5 +59,6 @@ public class GenerateMainMenu {
         frame.add(detailMotorStorage, BorderLayout.EAST);
         frame.add(detailBodyStorage, BorderLayout.EAST);
         frame.add(autoDealer, BorderLayout.EAST);
+        frame.add(viewCountTaskThread, BorderLayout.EAST);
     }
 }

@@ -11,8 +11,8 @@ import java.util.LinkedList;
 
 @Log4j2
 public class Worker implements Task {
-    private static LinkedList<DetailStorage<? extends Detail>> storages = new LinkedList<>();
-    private LinkedList<Detail> caseDetails = new LinkedList<>();
+    private static final LinkedList<DetailStorage<? extends Detail>> storages = new LinkedList<>();
+    private final LinkedList<Detail> caseDetails = new LinkedList<>();
     private final AutoStorage autoStorage;
 
     public Worker(AutoStorage autoStorage) {
@@ -38,13 +38,14 @@ public class Worker implements Task {
     public void execute() {
         try {
             synchronized (autoStorage) {
-                while (autoStorage.isFull()) {
-                    System.out.println ("autoStorage is full");
+                while (autoStorage.isFull ()) {
+                    //System.out.println ("autoStorage is full");
                     autoStorage.wait();
                 }
-                System.out.println("autoStorage is not full");
+
+                //System.out.println ("autoStorage is not full");
                 requestDetails();
-                autoStorage.addAuto(new Auto(caseDetails));
+                autoStorage.addAuto (new Auto (caseDetails));
             }
         } catch (InterruptedException e) {
             log.warn("Exception ExcWorker", e);

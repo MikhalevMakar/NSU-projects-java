@@ -17,7 +17,6 @@ public class Storage<T extends Detail> implements Observable {
 
     public boolean isFull() {
         synchronized (details) {
-            System.out.println ("auto storage size " + details.size ());
             return details.size () >= sizeStorage;
         }
     }

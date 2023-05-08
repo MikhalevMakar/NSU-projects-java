@@ -1,4 +1,4 @@
-package ru.nsu.org.mikhalev;
+package aplication_main;
 
 import lombok.extern.log4j.Log4j2;
 import org.apache.commons.cli.ParseException;
