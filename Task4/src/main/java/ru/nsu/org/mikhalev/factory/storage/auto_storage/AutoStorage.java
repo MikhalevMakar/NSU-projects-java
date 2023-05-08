@@ -22,7 +22,8 @@ public class AutoStorage extends Storage<Auto> {
 
     /*
      * Constructor AutoStorage.
-     * @parameters ControllerAutoStorage.
+     *
+     * @parameters ControllerAutoStorage
      */
     public AutoStorage(ControllerAutoStorage controllerAutoStorage){
         super(Integer.parseInt(Properties_Value
@@ -35,8 +36,9 @@ public class AutoStorage extends Storage<Auto> {
     /*
      * Add auto to LinkedList<Details> detail.
      * synchronized this.
-     * @parameters Auto.
-     * @return void.
+     *
+     * @parameters Auto
+     * @return void
      */
     public synchronized void addAuto(Auto auto) {
 
@@ -50,9 +52,10 @@ public class AutoStorage extends Storage<Auto> {
      * This method getAuto() issues cars from the warehouse.
      * If the storage is full then workers do not supply the machines.
      * In case of interruption, the thread will be interrupted and the machines will = null.
-     * Then the warehouse notifies about the number of cars
-     * @parameters is void.
-     * @return value is type Auto.
+     * Then the warehouse notifies about the number of cars.
+     *
+     * @parameters is void
+     * @return value is type Auto
      */
     public synchronized Auto getAuto() {
         while (details.isEmpty() && Thread.currentThread().isAlive()) {

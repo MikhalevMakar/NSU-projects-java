@@ -27,17 +27,34 @@ public class Storage<T extends Detail> implements Observable {
         this.sizeStorage = sizeStorage;
     }
 
+    /*
+     *
+     * @param void
+     * @return boolean
+     */
     public boolean isFull() {
         synchronized (details) {
-            return details.size () >= sizeStorage;
+            return details.size() >= sizeStorage;
         }
     }
 
+    /*
+     * In this method registerObserver
+     *
+     * @param Observer
+     * @return void
+     */
     @Override
-    public void registerObserver(Observer o){
+    public void registerObserver(Observer o) {
         observers.add(o);
     }
 
+    /*
+     * Update observer
+     *
+     * @param String, Integer
+     * @return void
+     */
     @Override
     public void notifyObservers(String message, Integer count){
         for(Observer observer : observers) {

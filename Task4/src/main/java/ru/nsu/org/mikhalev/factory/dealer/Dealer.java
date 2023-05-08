@@ -14,7 +14,7 @@ import static java.lang.Boolean.*;
 
 
 /*
- * Dealer do pick up cars from the warehouse of cars.
+ * { Dealer } class do pick up cars from the warehouse of cars.
  *
  * Also implements two interfaces
  *

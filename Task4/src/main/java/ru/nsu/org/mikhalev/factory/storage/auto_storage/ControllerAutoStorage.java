@@ -9,7 +9,14 @@ import ru.nsu.org.mikhalev.view.observer.Observer;
 
 import java.util.LinkedList;
 
+
+/*
+ * { ControllerAutoStorage } class manages the auto storage.
+ * Transmits information to the workers.
+ */
+
 public class ControllerAutoStorage implements Observable {
+
     private final LinkedList<Observer> observers = new LinkedList<>();
 
     @Getter
@@ -19,7 +26,8 @@ public class ControllerAutoStorage implements Observable {
 
     private  final int sizeStorage;
 
-    private static final double fillingPercentage = 0.8;
+    private static final double FILLING_PERCENTAGE = 0.8;
+
 
     public ControllerAutoStorage(Integer sizeStorage) {
         this.autoStorage = new AutoStorage(this);
@@ -34,9 +42,17 @@ public class ControllerAutoStorage implements Observable {
         }
     }
 
+
+    /*
+     * Launch  ThreadPool
+     *
+     * @param void
+     * @return void
+     */
     public void start() {
         threadPool.start();
-        distributionTask(0);
+        int START_SIZE_QUEUE = 0;
+        distributionTask(START_SIZE_QUEUE);
     }
 
     public void end() {
@@ -49,6 +65,13 @@ public class ControllerAutoStorage implements Observable {
         }
     }
 
+
+    /*
+     * This method add new task to queue.
+     *
+     * @param int
+     * @return void
+     */
     public void distributionTask(int currentCount) {
         notifyObservers("", threadPool.getSizeQueueTask());
         synchronized(autoStorage) {
@@ -56,13 +79,14 @@ public class ControllerAutoStorage implements Observable {
 
             if (currentCount < sizeStorage) {
                 int currentSizeAutoStorage = threadPool.getSizeQueueTask();
-                int sizeFillingStorage = (int) (fillingPercentage * sizeStorage);
+                int sizeFillingStorage = (int) (FILLING_PERCENTAGE * sizeStorage);
                 for(int i = 0; i < sizeFillingStorage - currentSizeAutoStorage - currentCount; ++i) {
                     addNewTask ();
                 }
             }
         }
     }
+
     public void registerObserver(Observer o){
         observers.add(o);
     }

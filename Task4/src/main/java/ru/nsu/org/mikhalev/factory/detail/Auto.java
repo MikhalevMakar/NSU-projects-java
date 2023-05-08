@@ -2,10 +2,15 @@ package ru.nsu.org.mikhalev.factory.detail;
 
 import lombok.Synchronized;
 import java.util.LinkedList;
+import java.util.List;
+
+/*
+ * { Auto } class this product that is manufactured at the factory.
+ */
 
 public class Auto extends Detail {
-    LinkedList<Detail> caseDetails = new LinkedList<>();
-    public Auto(LinkedList<Detail> caseDetails) {
+    private final LinkedList<Detail> caseDetails = new LinkedList<>();
+    public Auto(List<Detail> caseDetails) {
         super();
         synchronized(this.caseDetails) {
             this.caseDetails.addAll(caseDetails);

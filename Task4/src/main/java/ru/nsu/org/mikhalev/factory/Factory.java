@@ -13,29 +13,49 @@ import ru.nsu.org.mikhalev.thread_pool.ProduceThread;
 
 import java.io.IOException;
 
+/*
+ * { Factory } class runs all the factories
+ */
+
 @Log4j2
 public class Factory {
+
     @Getter
     private final Dealer dealer;
+
     @Getter
     private AccessoryStorage accessoryStorage;
+
     @Getter
     private BodyStorage bodyStorage;
+
     @Getter
     private MotorStorage motorStorage;
 
-//    @Getter
-//    private AutoStorage autoStorage;
     private final ProduceThread<MotorSupplier> threadMotorSupplier;
+
     private final ProduceThread<AccessorySupplier> threadAccessorySupplier;
+
     private final ProduceThread<BodySupplier> threadBodySupplier;
+
     private final AccessorySupplier accessorySupplier;
+
     private final MotorSupplier motorSupplier;
+
     private  final BodySupplier bodySupplier;
+
     @Getter
     private final ControllerAutoStorage controllerAutoStorage;
+
     private final ProduceThread<Dealer> threadDealer;
 
+    /*
+     * Construct
+     *
+     * This is where all the necessary objects to start the factory are created
+     *
+     * @param String this link for info_factory
+     */
     public Factory(String link) throws IOException {
         log.info("Call FactoryReader.read()");
         FactoryReader.read(link);
@@ -50,6 +70,8 @@ public class Factory {
         controllerAutoStorage = new ControllerAutoStorage(Integer.valueOf(Properties_Value
                                                                                           .STORAGE_AUTO_SIZE
                                                                                           .getValue()));
+
+        log.info("Create dealer");
         dealer = new Dealer(controllerAutoStorage.getAutoStorage());
 
         log.info("Registration storages");
@@ -69,13 +91,29 @@ public class Factory {
 
     }
 
+    /*
+     * This method create storages for factory
+     *
+     * @param void
+     * @return void
+     */
     private void createStorage() {
+        log.info("Create storage");
+
         accessoryStorage = new AccessoryStorage();
         bodyStorage = new BodyStorage();
         motorStorage = new MotorStorage();
     }
+
+    /*
+     * Launch work storages
+     *
+     * @param void
+     * @return void
+     */
     public void start() {
         log.info("factory start work");
+
         controllerAutoStorage.start();
         threadMotorSupplier.start();
         threadAccessorySupplier.start();
@@ -83,6 +121,12 @@ public class Factory {
         threadDealer.start();
     }
 
+    /*
+     * Interrupt work storages
+     *
+     * @param void
+     * @return void
+     */
     public void stop() {
         log.info("factory start interrupt");
 
@@ -94,9 +138,13 @@ public class Factory {
     }
 
     public void setTimeDealer(int time) { dealer.setTime(time);}
+
     public void setTimeAccessorySupplier(int time) { accessorySupplier.setTime(time);}
+
     public void setTimeBodySupplier(int time) { bodySupplier.setTime(time); }
+
     public void setTimeMotorSupplier(int time) { motorSupplier.setTime(time);}
+
     public AutoStorage getAutoStorage() {
         return controllerAutoStorage.getAutoStorage();
     }
