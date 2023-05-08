@@ -9,7 +9,7 @@ public class DetailStorage<T extends Detail> extends Storage<T>  {
         super(sizeStorage);
     }
 
-    public synchronized void addDetail(T detail) {
+    public void addDetail(T detail) {
         if(detail == null) {
             log.warn("Detail is null");
             return;
@@ -18,7 +18,7 @@ public class DetailStorage<T extends Detail> extends Storage<T>  {
         synchronized (details) {
             while (isFull() && Thread.currentThread().isAlive()) {
                 try {
-                    details.wait();
+                    this.details.wait();
                 } catch (InterruptedException e) {
                     log.warn("InterruptedException in method addDetail " + this.getClass());
                     return;

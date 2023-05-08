@@ -8,8 +8,11 @@ import ru.nsu.org.mikhalev.proces_input.properties_read.Properties_Value;
 
 /*
  * { Auto Storage } is a class that refers to a car storage warehouse.
+ *
  * This class has a dependency with the controller and workers.
+ *
  * The controller manages the warehouse, monitors its filling.
+ *
  * Workers once for a while send cars to the warehouse.
  */
 
@@ -18,11 +21,14 @@ public class AutoStorage extends Storage<Auto> {
     private final ControllerAutoStorage controllerAutoStorage;
 
     /*
-     * Сonstructor AutoStorage.
+     * Constructor AutoStorage.
      * @parameters ControllerAutoStorage.
      */
     public AutoStorage(ControllerAutoStorage controllerAutoStorage){
-        super(Integer.parseInt(Properties_Value.STORAGE_AUTO_SIZE.getValue()));
+        super(Integer.parseInt(Properties_Value
+                                               .STORAGE_AUTO_SIZE
+                                               .getValue()));
+
         this.controllerAutoStorage = controllerAutoStorage;
     }
 
@@ -33,7 +39,10 @@ public class AutoStorage extends Storage<Auto> {
      * @return void.
      */
     public synchronized void addAuto(Auto auto) {
-        notifyObservers(String.valueOf(details.size()), startSizeStorage);
+
+        notifyObservers(String.valueOf(details.size()),
+                        START_SIZE_STORAGE);
+
         details.add(auto);
     }
 
@@ -58,7 +67,8 @@ public class AutoStorage extends Storage<Auto> {
 
         Auto auto = details.remove();
         controllerAutoStorage.distributionTask(details.size());
-        notifyObservers(String.valueOf(details.size()), startSizeStorage);
+        notifyObservers(String.valueOf(details.size()), START_SIZE_STORAGE);
+
         return auto;
     }
 }

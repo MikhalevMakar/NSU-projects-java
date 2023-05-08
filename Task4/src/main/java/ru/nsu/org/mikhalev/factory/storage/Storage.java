@@ -6,15 +6,22 @@ import ru.nsu.org.mikhalev.view.observer.Observer;
 
 import java.util.LinkedList;
 
+/*
+ * The warehouse class implements the Observable interface.
+ * This class will inherit AccessoryStorage, BodyStorage, MotorStorage, DetailStorage.
+ *
+ */
+
 public class Storage<T extends Detail> implements Observable {
 
-    private LinkedList<Observer> observers = new LinkedList<>();
+    private final LinkedList<Observer> observers = new LinkedList<>();
 
     protected final int sizeStorage;
 
     protected final LinkedList<T> details = new LinkedList<>();
 
-    protected final int startSizeStorage = 0;
+    protected static final int START_SIZE_STORAGE = 0;
+
 
     public Storage(int sizeStorage) {
         this.sizeStorage = sizeStorage;
@@ -34,7 +41,7 @@ public class Storage<T extends Detail> implements Observable {
     @Override
     public void notifyObservers(String message, Integer count){
         for(Observer observer : observers) {
-            observer.notification(message, 0);
+            observer.notification(message, START_SIZE_STORAGE);
         }
     }
 }

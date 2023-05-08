@@ -14,8 +14,7 @@ public class ViewCountTaskThread extends JLabel implements Observer {
         }
 
         @Override
-        public void notification(String message,  Integer count){
-            System.out.println ("notification " + count);
-            setText("Count task in queue " + count);
+        public void notification(String message,  Integer count) {
+            setText("Count task in queue " + count);    
         }
 }
