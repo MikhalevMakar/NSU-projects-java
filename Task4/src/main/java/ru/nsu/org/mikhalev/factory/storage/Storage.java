@@ -7,9 +7,14 @@ import ru.nsu.org.mikhalev.view.observer.Observer;
 import java.util.LinkedList;
 
 public class Storage<T extends Detail> implements Observable {
+
     private LinkedList<Observer> observers = new LinkedList<>();
+
     protected final int sizeStorage;
+
     protected final LinkedList<T> details = new LinkedList<>();
+
+    protected final int startSizeStorage = 0;
 
     public Storage(int sizeStorage) {
         this.sizeStorage = sizeStorage;

@@ -9,14 +9,18 @@ import ru.nsu.org.mikhalev.view.observer.Observer;
 
 import java.util.LinkedList;
 
-
 public class ControllerAutoStorage implements Observable {
     private final LinkedList<Observer> observers = new LinkedList<>();
+
     @Getter
     private final AutoStorage autoStorage;
+
     private final ThreadPool threadPool = new ThreadPool();
+
     private  final int sizeStorage;
+
     private static final double fillingPercentage = 0.8;
+
     public ControllerAutoStorage(Integer sizeStorage) {
         this.autoStorage = new AutoStorage(this);
         this.sizeStorage = sizeStorage;
@@ -48,7 +52,6 @@ public class ControllerAutoStorage implements Observable {
     public void distributionTask(int currentCount) {
         notifyObservers("", threadPool.getSizeQueueTask());
         synchronized(autoStorage) {
-            System.out.println("Size queue " + threadPool.getSizeQueueTask() + " " + currentCount);
             autoStorage.notifyAll();
 
             if (currentCount < sizeStorage) {
