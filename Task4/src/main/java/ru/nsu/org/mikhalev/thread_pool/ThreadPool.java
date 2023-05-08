@@ -9,6 +9,10 @@ import java.util.NoSuchElementException;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 
+
+/*
+ * { ThreadPool } class analogy of default ThreadPool
+ */
 @Log4j2
 public class ThreadPool {
     private final List<TaskExecute> listTaskExecute = new LinkedList<>();

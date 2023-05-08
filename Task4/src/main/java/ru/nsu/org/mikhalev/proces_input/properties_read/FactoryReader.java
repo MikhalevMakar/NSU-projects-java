@@ -4,6 +4,10 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
+/*
+ * { FactoryReader } class create parameters  for factory
+ */
+
 public class FactoryReader {
     public static void read(String link) throws IOException {
         try (FileInputStream propertiesStream = new FileInputStream(link)) {

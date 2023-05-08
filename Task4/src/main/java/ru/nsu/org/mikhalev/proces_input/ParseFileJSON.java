@@ -16,6 +16,12 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.regex.Pattern;
 
+/*
+ * { ParseFileJSON } class сheck that the input data is correct.
+ *
+ * Forms the input data into the desired form.
+ */
+
 @Log4j2
 public class ParseFileJSON {
 
@@ -28,7 +34,9 @@ public class ParseFileJSON {
     }
 
     private static Options posixOptions = new Options();
+
     private GuiComponents gui_components;
+
     private InfoFactory info_factory;
 
     private static final Logger LOGGER = LogManager.getLogger(ParseFileJSON.class);
