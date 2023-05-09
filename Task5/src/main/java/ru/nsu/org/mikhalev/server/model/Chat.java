@@ -11,7 +11,7 @@ public class Chat {
 
 
 
-    
+
     public void addNewMessage(Message message) {
         historyMessages.add(message);
     }
