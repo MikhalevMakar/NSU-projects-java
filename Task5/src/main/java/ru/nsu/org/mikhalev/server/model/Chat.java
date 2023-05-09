@@ -8,10 +8,7 @@ public class Chat {
     private int INCREASE = 1;
 
     private ArrayList<Message> historyMessages = new ArrayList<>();
-
-
-
-
+    
     public void addNewMessage(Message message) {
         historyMessages.add(message);
     }
