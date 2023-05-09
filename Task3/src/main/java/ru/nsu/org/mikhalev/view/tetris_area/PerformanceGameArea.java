@@ -10,7 +10,6 @@ import ru.nsu.org.mikhalev.view.menu_game.LeaderBoard;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.ArrayList;
 
 public class PerformanceGameArea implements Observer {
     CreateFrame frame;
