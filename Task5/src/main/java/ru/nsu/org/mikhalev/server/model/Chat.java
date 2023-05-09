@@ -13,6 +13,7 @@ public class Chat {
         historyMessages.add(message);
     }
 
+    
     public Message getMessageLast() {
         return historyMessages.get(historyMessages.size() - INCREASE);
     }
