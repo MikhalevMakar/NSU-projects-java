@@ -1,4 +1,4 @@
-package ru.nsu.org.mikhalev.server;
+package ru.nsu.org.mikhalev.server.model;
 
 import ru.nsu.org.mikhalev.server.object_serializable.Message;
 

@@ -1,6 +1,8 @@
 package ru.nsu.org.mikhalev.server;
 
 import lombok.extern.log4j.Log4j2;
+import ru.nsu.org.mikhalev.server.model.Chat;
+import ru.nsu.org.mikhalev.server.model.User;
 import ru.nsu.org.mikhalev.server.object_serializable.Message;
 
 import java.util.LinkedList;
@@ -19,8 +21,10 @@ public class KernelServer {
         users.remove(user);
     }
 
-    public void broadcastMessage(Message message) {
-
+    public static void broadcastMessage(Message message) {
+        for(var user : users) {
+            user.messageReceive(message);
+        }
     }
 
 

@@ -3,12 +3,11 @@ package ru.nsu.org.mikhalev.aplication_main;
 
 import lombok.extern.log4j.Log4j2;
 import org.apache.commons.cli.ParseException;
-import ru.nsu.org.mikhalev.file_management.Configuration;
-import ru.nsu.org.mikhalev.file_management.ParseConfiguration;
+import ru.nsu.org.mikhalev.server.file_management.Configuration;
+import ru.nsu.org.mikhalev.server.file_management.ParseConfiguration;
 import ru.nsu.org.mikhalev.exceptions.ExcInvalidArg;
 
 import java.io.IOException;
-import java.util.logging.LogManager;
 
 @Log4j2
 public class Main {

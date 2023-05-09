@@ -1,4 +1,4 @@
-package ru.nsu.org.mikhalev.file_management;
+package ru.nsu.org.mikhalev.server.file_management;
 
 import lombok.Getter;
 public class Configuration {

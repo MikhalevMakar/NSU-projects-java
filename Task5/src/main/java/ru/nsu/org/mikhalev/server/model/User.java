@@ -1,9 +1,11 @@
-package ru.nsu.org.mikhalev.server;
+package ru.nsu.org.mikhalev.server.model;
 
 
 import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.log4j.Log4j2;
+import ru.nsu.org.mikhalev.server.KernelServer;
+import ru.nsu.org.mikhalev.server.commands.CommandExecution;
 import ru.nsu.org.mikhalev.server.object_serializable.Message;
 
 import java.io.IOException;
@@ -23,19 +25,15 @@ public class User  implements Runnable {
     private final Socket socket;
 
     @Getter
-    private final KernelServer server;
-
-    @Getter
     private final UUID id;
 
     ObjectInputStream objectInputStream;
     ObjectOutputStream objectOutputStream;
 
 
-    public User(final Socket socket, final KernelServer server, String nameUser) throws IOException {
+    public User(final Socket socket, String nameUser) throws IOException {
 
         this.socket = socket;
-        this.server = server;
         this.id = UUID.randomUUID();
         this.nameUser = nameUser;
 
@@ -44,7 +42,7 @@ public class User  implements Runnable {
     }
 
     public void disconnect() {
-        server.removeUser(this);
+        KernelServer.removeUser(this);
         try {
             socket.close();
         } catch (IOException e) {
@@ -53,7 +51,15 @@ public class User  implements Runnable {
         isDisconnected = true;
     }
 
-    private Message  messageReceive() {
+    public synchronized void messageReceive(Message message) {
+        try {
+            objectOutputStream.writeObject(message);
+        } catch (IOException e) {
+            log.error(String.format("Failed to send message %s to %s", message, nameUser), e);
+        }
+    }
+
+    public synchronized Message messageSend() {
         Message message = null;
         try {
             message = (Message) objectInputStream.readObject();
@@ -66,25 +72,18 @@ public class User  implements Runnable {
                                                     "Server: user disconnected",
                                                     nameUser);
 
-            server.broadcastMessage(disconnectMessage);
+            KernelServer.broadcastMessage(disconnectMessage);
         }
+
         return message;
     }
 
-    private synchronized void messageSend(Message message) {
-        try {
-            objectOutputStream.writeObject(message);
-        } catch (IOException e) {
-            log.error(String.format("Failed to send message to %s", message), e);
-        }
-    }
-
     @Override
-    public void run(){
+    public void run() {
         Message message;
         while(!isDisconnected) {
-            message  = messageReceive();
-
+            message  = messageSend();
+            CommandExecution.run(message);
         }
     }
 }
