@@ -9,7 +9,7 @@ public class CommandExecution {
     public CommandExecution(String link) throws IOException {
         loaderCommands = new LoaderCommands(link);
     }
-    public void run(Message nameCommand) {
-        loaderCommands.createInstanceClass(nameCommand.get);
+    public void run(Message nameCommand) throws Exception {
+        loaderCommands.createInstanceClass(nameCommand.getNameCommands());
     }
 }

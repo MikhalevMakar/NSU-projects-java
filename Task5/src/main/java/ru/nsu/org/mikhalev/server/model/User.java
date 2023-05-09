@@ -31,6 +31,8 @@ public class User  implements Runnable {
 
     CommandExecution commandExecution;
 
+    private static final String commandMessage = "message";
+
     public User(final Socket socket, String nameUser, String linkCommands) throws IOException {
 
         this.socket = socket;
@@ -70,7 +72,7 @@ public class User  implements Runnable {
             log.warn(String.format("User disconnected: %s", nameUser), e);
 
             Message disconnectMessage = new Message(String.format("Server: there was a problem with the %s", objectInputStream),
-                                                    nameUser);
+                                                                  commandMessage);
 
             KernelServer.broadcastMessage(disconnectMessage);
         }

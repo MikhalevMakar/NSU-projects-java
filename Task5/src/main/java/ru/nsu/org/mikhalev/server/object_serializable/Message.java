@@ -10,12 +10,12 @@ public class Message implements Serializable {
     private final String date;
 
     @Getter
-    private final String userName;
+    private final String nameCommands;
 
 
-    public Message(String date, String userName) {
+    public Message(String nameCommands, String date){
         this.date = date;
-        this.userName = userName;
+        this.nameCommands = nameCommands;
     }
 
 }
