@@ -1,7 +1,6 @@
-package ru.nsu.org.mikhalev;
+package ru.nsu.org.mikhalev.file_management;
 
 import lombok.Getter;
-
 public class Configuration {
     @Getter
     private final int port;

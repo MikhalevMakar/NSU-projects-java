@@ -1,4 +1,4 @@
-package ru.nsu.org.mikhalev;
+package ru.nsu.org.mikhalev.file_management;
 
 import com.google.gson.*;
 import com.google.gson.stream.JsonReader;
