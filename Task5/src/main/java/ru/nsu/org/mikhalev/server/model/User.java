@@ -1,6 +1,5 @@
 package ru.nsu.org.mikhalev.server.model;
 
-
 import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.log4j.Log4j2;
@@ -30,12 +29,14 @@ public class User  implements Runnable {
     ObjectInputStream objectInputStream;
     ObjectOutputStream objectOutputStream;
 
+    CommandExecution commandExecution;
 
-    public User(final Socket socket, String nameUser) throws IOException {
+    public User(final Socket socket, String nameUser, String linkCommands) throws IOException {
 
         this.socket = socket;
         this.id = UUID.randomUUID();
         this.nameUser = nameUser;
+        this.commandExecution = new CommandExecution(linkCommands);
 
         objectInputStream = new ObjectInputStream(this.socket.getInputStream());
         objectOutputStream = new ObjectOutputStream(this.socket.getOutputStream());
@@ -68,8 +69,7 @@ public class User  implements Runnable {
 
             log.warn(String.format("User disconnected: %s", nameUser), e);
 
-            Message disconnectMessage = new Message(String.format("There was a problem with the %s", objectInputStream),
-                                                    "Server: user disconnected",
+            Message disconnectMessage = new Message(String.format("Server: there was a problem with the %s", objectInputStream),
                                                     nameUser);
 
             KernelServer.broadcastMessage(disconnectMessage);
@@ -82,8 +82,8 @@ public class User  implements Runnable {
     public void run() {
         Message message;
         while(!isDisconnected) {
-            message  = messageSend();
-            CommandExecution.run(message);
+            message = messageSend();
+            commandExecution.run(message);
         }
     }
 }

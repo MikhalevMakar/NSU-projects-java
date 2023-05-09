@@ -5,8 +5,6 @@ import lombok.Getter;
 import java.io.Serializable;
 
 public class Message implements Serializable {
-    @Getter
-    private final String message;
 
     @Getter
     private final String date;
@@ -15,8 +13,7 @@ public class Message implements Serializable {
     private final String userName;
 
 
-    public Message(String message, String date, String userName) {
-        this.message = message;
+    public Message(String date, String userName) {
         this.date = date;
         this.userName = userName;
     }
