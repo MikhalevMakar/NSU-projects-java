@@ -9,6 +9,9 @@ public class Chat {
 
     private ArrayList<Message> historyMessages = new ArrayList<>();
 
+
+
+    
     public void addNewMessage(Message message) {
         historyMessages.add(message);
     }
