@@ -1,21 +1,22 @@
 package ru.nsu.org.mikhalev.server.object_serializable;
 
 import lombok.Getter;
+import lombok.Setter;
 
 import java.io.Serializable;
 
 public class Message implements Serializable {
 
     @Getter
-    private final String date;
+    private String date;
 
+    @Setter
     @Getter
-    private final String nameCommands;
+    private String typeMessage;
 
 
-    public Message(String nameCommands, String date){
+    public Message(String typeMessage, String date){
         this.date = date;
-        this.nameCommands = nameCommands;
+        this.typeMessage = typeMessage;
     }
-
 }

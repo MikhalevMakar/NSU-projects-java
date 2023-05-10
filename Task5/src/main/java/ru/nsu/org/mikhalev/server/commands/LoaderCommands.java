@@ -3,6 +3,8 @@ package ru.nsu.org.mikhalev.server.commands;
 import lombok.extern.log4j.Log4j2;
 import org.jetbrains.annotations.NotNull;
 import ru.nsu.org.mikhalev.exceptions.LoadException;
+import ru.nsu.org.mikhalev.server.commands.command_implementation.Command;
+import ru.nsu.org.mikhalev.server.commands.command_implementation.CommandAnnotation;
 
 import java.io.IOException;
 import java.io.InputStream;

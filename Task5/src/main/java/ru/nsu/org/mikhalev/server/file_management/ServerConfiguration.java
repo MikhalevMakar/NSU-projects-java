@@ -1,7 +1,8 @@
 package ru.nsu.org.mikhalev.server.file_management;
 
 import lombok.Getter;
-public class Configuration {
+public class ServerConfiguration {
+
     @Getter
     private final int port;
 
@@ -11,7 +12,7 @@ public class Configuration {
     @Getter
     private final String format;
 
-    Configuration(int port, boolean logging, String format) {
+    ServerConfiguration(int port, boolean logging, String format) {
         this.port = port;
         this.logging = logging;
         this.format = format;

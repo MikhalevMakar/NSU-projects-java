@@ -1,4 +1,4 @@
-package ru.nsu.org.mikhalev.server.commands;
+package ru.nsu.org.mikhalev.server.commands.command_implementation;
 
 import java.lang.annotation.*;
 

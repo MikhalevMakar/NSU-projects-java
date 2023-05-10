@@ -14,8 +14,7 @@ public class KernelServer {
 
     private static final List<User> users = new LinkedList<>();
 
-    private static final List<Chat> chats = new LinkedList<>();
-
+    //private static final List<Chat> chats = new LinkedList<>();
 
     public static void removeUser(User user) {
         users.remove(user);
@@ -27,8 +26,32 @@ public class KernelServer {
         }
     }
 
+    public static void sendMessagePerUser(User user, Message message) { // TODO
+        log.info("Attempting to send a message to a specific user");
+        for(var equelseUser : users) {
+            if(equelseUser.equals(user)) {
+                log.info("User %s received a message", user.getNameUser());
+                user.messageReceive(message);
+                return;
+            }
+        }
+        log.warn("No such user was found %s", user.getNameUser());
+    }
 
 
+
+    public static boolean addNewUser(User user) {
+        return users.add(user);
+    }
+
+    public static boolean contains(String nameUser) {
+        for(var existingUser : users) {
+            if(existingUser.getNameUser().equals(nameUser)) {
+                return false;
+            }
+        }
+        return true;
+    }
 }
 
 

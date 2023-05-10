@@ -2,7 +2,7 @@ package ru.nsu.org.mikhalev.server;
 
 public class ControllerServer {
 
-    public ControllerServer(){
+    public ControllerServer() {
 
     }
 

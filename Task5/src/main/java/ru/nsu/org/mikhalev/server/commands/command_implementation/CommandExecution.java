@@ -1,6 +1,7 @@
-package ru.nsu.org.mikhalev.server.commands;
+package ru.nsu.org.mikhalev.server.commands.command_implementation;
 
 import org.jetbrains.annotations.NotNull;
+import ru.nsu.org.mikhalev.server.commands.LoaderCommands;
 import ru.nsu.org.mikhalev.server.object_serializable.Message;
 
 public class CommandExecution {
@@ -13,6 +14,7 @@ public class CommandExecution {
     }
 
     public void run(@NotNull Message nameCommand) {
-        loaderCommands.createInstanceClass(nameCommand.getNameCommands());
+
+        loaderCommands.createInstanceClass(nameCommand.getTypeMessage());
     }
 }
