@@ -1,7 +1,6 @@
-package ru.nsu.org.mikhalev.server.model;
+package ru.nsu.org.mikhalev.server;
 
 import lombok.Getter;
-import ru.nsu.org.mikhalev.server.object_serializable.Message;
 
 import java.util.ArrayList;
 

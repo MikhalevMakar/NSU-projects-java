@@ -1,56 +1,55 @@
 package ru.nsu.org.mikhalev.server;
 
+import lombok.Getter;
 import lombok.extern.log4j.Log4j2;
-import ru.nsu.org.mikhalev.server.model.Chat;
-import ru.nsu.org.mikhalev.server.model.User;
-import ru.nsu.org.mikhalev.server.object_serializable.Message;
+import ru.nsu.org.mikhalev.clients.User;
+import ru.nsu.org.mikhalev.exceptions.UserNameException.NameContainsException;
 
-import java.util.LinkedList;
-import java.util.List;
-
+import java.io.IOException;
+import java.net.Socket;
+import java.util.HashMap;
+import java.net.ServerSocket;
+import java.util.Map;
 
 @Log4j2
 public class KernelServer {
 
-    private static final List<User> users = new LinkedList<>();
+    @Getter
+    private ServerSocket serverSocket;
 
-    //private static final List<Chat> chats = new LinkedList<>();
+    private Socket clientSocket = new Socket();
 
-    public static void removeUser(User user) {
-        users.remove(user);
+    private final Map<String, ServerCommunication> mapUser = new HashMap<>();
+
+    public KernelServer(int port) throws IOException{
+        this.serverSocket = new ServerSocket(port);
     }
 
-    public static void broadcastMessage(Message message) {
-        for(var user : users) {
-            user.messageReceive(message);
-        }
+    public void removeUser(User user) {
+        mapUser.remove(user);
     }
 
-    public static void sendMessagePerUser(User user, Message message) { // TODO
-        log.info("Attempting to send a message to a specific user");
-        for(var equelseUser : users) {
-            if(equelseUser.equals(user)) {
-                log.info("User %s received a message", user.getNameUser());
-                user.messageReceive(message);
-                return;
+    public void addNewUser(String nameUser, ServerCommunication serverCommunication) {
+         mapUser.put(nameUser, serverCommunication);
+    }
+
+    public  boolean contains(final String nameUser)  {
+        log.info("Check contain user name in mapUser");
+
+        return mapUser.containsKey(nameUser);
+    }
+
+    public void start() {
+        while(true) {
+            try {
+                clientSocket = serverSocket.accept();
+
+                Thread thread = new Thread(new ServerCommunication(this, clientSocket));
+                thread.start();
+            } catch(IOException ex) {
+                throw new RuntimeException();
             }
         }
-        log.warn("No such user was found %s", user.getNameUser());
-    }
-
-
-
-    public static boolean addNewUser(User user) {
-        return users.add(user);
-    }
-
-    public static boolean contains(String nameUser) {
-        for(var existingUser : users) {
-            if(existingUser.getNameUser().equals(nameUser)) {
-                return false;
-            }
-        }
-        return true;
     }
 }
 

@@ -1,7 +1,7 @@
 package ru.nsu.org.mikhalev.server.commands.command_implementation;
 
-import ru.nsu.org.mikhalev.server.model.User;
-import ru.nsu.org.mikhalev.server.object_serializable.Message;
+import ru.nsu.org.mikhalev.clients.User;
+import ru.nsu.org.mikhalev.server.Message;
 
 public class CommandList implements Command {
 
