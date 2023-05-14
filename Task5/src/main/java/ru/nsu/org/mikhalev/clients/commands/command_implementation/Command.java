@@ -1,4 +1,4 @@
-package ru.nsu.org.mikhalev.server.commands.command_implementation;
+package ru.nsu.org.mikhalev.clients.commands.command_implementation;
 
 import ru.nsu.org.mikhalev.clients.User;
 import ru.nsu.org.mikhalev.server.Message;

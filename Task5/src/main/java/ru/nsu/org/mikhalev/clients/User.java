@@ -1,9 +1,9 @@
 package ru.nsu.org.mikhalev.clients;
 
 import lombok.Getter;
-import lombok.Setter;
 import lombok.extern.log4j.Log4j2;
-import ru.nsu.org.mikhalev.server.commands.command_implementation.CommandExecution;
+import org.jetbrains.annotations.NotNull;
+import ru.nsu.org.mikhalev.clients.commands.command_implementation.Command;
 import ru.nsu.org.mikhalev.server.Message;
 
 import java.io.*;
@@ -13,51 +13,41 @@ import java.util.UUID;
 @Log4j2
 public class User  implements Closeable {
     @Getter
-    private final String nameUser;
-
-    @Getter
     private final UUID id;
-
-    private Socket socket;
 
     ObjectInputStream objectInputStream;
 
     ObjectOutputStream objectOutputStream;
 
-    private static BufferedReader reader;
-
-    private static BufferedReader in;
-
-    private static PrintWriter out;
-
     private static final String host = "localhost";
 
-    private static final String answerUserAdded  = "true";
+    public User(Integer port) throws IOException {
+        log.info("Create user");
 
-    private static final String commandMessage = "message";
-
-    public User(Integer port, String nameUser) throws IOException {
-
-        socket = new Socket(host, port);
+        Socket socket = new Socket(host, port);
 
         this.id = UUID.randomUUID();
 
-        this.nameUser = nameUser;
+        log.info("create object deserialization");
 
-        in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+        objectOutputStream = new ObjectOutputStream(socket.getOutputStream());
 
-        out = new PrintWriter (new OutputStreamWriter(socket.getOutputStream()), true);
+        log.info("Create object serialization");
+        objectInputStream = new ObjectInputStream(socket.getInputStream());
+
     }
 
-//    public synchronized void messageReceive(Message message) {
-//        try {
-//            objectOutputStream.writeObject(message);
-//        } catch (IOException e) {
-//            log.error(String.format("Failed to send message %s to %s", message, nameUser), e);
-//        }
-//    }
-//
-//    public synchronized Message messageSend() {
+    public synchronized void messageReceive() {
+        try {
+            log.info("messageReceive to server");
+            Message<?> message = (Message<?>) objectInputStream.readObject();
+            System.out.println(message.getTypeMessage());
+        } catch (IOException | ClassNotFoundException e) {
+            log.error("Failed to send message", e);
+        }
+    }
+
+//    public synchronized Message messageSend(final Message<?> messag) {
 //        Message message = null;
 //        try {
 //            message = (Message) objectInputStream.readObject();
@@ -78,19 +68,23 @@ public class User  implements Closeable {
 //        return (Objects.equals(user.getNameUser(), nameUser) && user.getId() == id);
 //    }
 
-    public String connect(final String login) throws IOException {
+    public Message<?> connect(final @NotNull Message<String> login) throws IOException, ClassNotFoundException {
 
-        log.info("Call function connect, name user: " + login);
+        log.info("Request server: correct name user: " + login.getContent());
+        objectOutputStream.writeObject(login);
+        objectOutputStream.flush();
 
+        return (Message<?>) objectInputStream.readObject();
+    }
 
-        log.info("Request server: correct nameUser: " + login);
-        out.println(login);
-
-        return in.readLine();
+    public void launchCommunication() {
+       // while(socket.isConnected()) {
+            messageReceive();
+        //}
     }
 
     @Override
-    public void close() throws IOException{
+    public void close() throws IOException {
 
         objectInputStream.close();
         objectOutputStream.close();

@@ -12,7 +12,7 @@ module ru.nsu.org.mikhalev {
     requires log4j;
     requires org.apache.logging.log4j;
     requires org.jetbrains.annotations;
-    requires org.apache.commons;
+    //requires org.apache.commons;
 
     exports ru.nsu.org.mikhalev.clients.aplication_main;
     exports ru.nsu.org.mikhalev.server.aplication_main;

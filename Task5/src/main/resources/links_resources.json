@@ -3,5 +3,5 @@
 
 "commandsClients" : "/Users/natasamihaleva/NSU_Projects_Java/Task5/src/main/resources/client_input/clients_commands.properties",
 
-"configurationServer" : "/Users/natasamihaleva/NSU_Projects_Java/Task5/src/main/resources/server_input/configuration.json",
+"configurationServer" : "/Users/natasamihaleva/NSU_Projects_Java/Task5/src/main/resources/server_input/configuration.json"
 }

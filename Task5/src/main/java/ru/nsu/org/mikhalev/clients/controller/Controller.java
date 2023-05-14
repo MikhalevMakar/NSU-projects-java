@@ -5,10 +5,7 @@ import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 import ru.nsu.org.mikhalev.clients.User;
 import ru.nsu.org.mikhalev.clients.view.ControllerView;
-import ru.nsu.org.mikhalev.exceptions.ExcInvalidArg;
-import ru.nsu.org.mikhalev.server.KernelServer;
-import ru.nsu.org.mikhalev.server.file_management.LinksResources;
-import ru.nsu.org.mikhalev.server.file_management.ServerConfiguration;
+import ru.nsu.org.mikhalev.server.Message;
 
 import java.io.IOException;
 
@@ -44,21 +41,21 @@ public class Controller {
 
         this.controllerView = controllerView;
 
-        user = new User(8080, "Makar");
-
+        user = new User(8080);
+        log.info("Finished create controller");
     }
 
-    public void tryLogin(final String login) throws IOException {
+    //@Contract(value = "null -> false", pure = true)
+    public void tryLogin(final String login) throws IOException, ClassNotFoundException {
         log.info("Call function tryLogin, login: " + login);
 
-        String message;
+        Message<?> message = user.connect(new Message<>("tryLogin", login));
 
-        //do {
-            message = user.connect(login);
+        log.info("Request server: correct nameUser: " + message);
+        controllerView.printErrorMessage(message.getContent().toString());
 
-            log.info("Request server: correct nameUser: " + message);
-            controllerView.printErrorMessage(message);
-
-       // } while(message.equals(answerUserAdded));
+        if(message.getContent().equals(answerUserAdded)) {
+            controllerView.generateChat();
+        }
     }
 }

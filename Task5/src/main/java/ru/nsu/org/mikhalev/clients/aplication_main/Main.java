@@ -12,14 +12,13 @@ public class Main extends Application {
 
     public static void main(String... args) {
         log.info("Start program");
-
         launch();
     }
 
     @Override
     public void start(Stage stage) throws Exception {
-        ControllerView controllerView = new ControllerView();
-        controllerView.generateView(stage);
+        ControllerView controllerView = new ControllerView(stage);
+        controllerView.generateLogin();
         ControllerView.registration(new Controller(controllerView));
     }
 }

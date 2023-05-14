@@ -19,6 +19,9 @@ import java.io.IOException;
 
 @Log4j2
 public class ControllerView {
+
+    private Stage stage;
+
     private Pane root;
 
     /**
@@ -38,15 +41,17 @@ public class ControllerView {
     @FXML
     private TextField nameUser;
 
-    public ControllerView() {
+    public ControllerView() {}
+    public ControllerView(final Stage stage) {
+        this.stage = stage;
+
         Font font = Font.font("System", 15);
         error.setFont(font);
         error.setStyle("-fx-fill: red;");
     }
 
-    public void buttonConnect() throws IOException {
+    public void buttonConnect() throws IOException, ClassNotFoundException {
         log.info("Action button connect " + nameUser.getText());
-
         controller.tryLogin(nameUser.getText());
     }
     
@@ -54,18 +59,30 @@ public class ControllerView {
         this.error.setText(error);
     }
     
-    public void generateView(@NotNull Stage stage) throws IOException {
+    public void generateLogin() throws IOException {
+        log.info("Generate login");
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation (new File("/Users/natasamihaleva/NSU_Projects_Java/Task5/src/main/resources/login.fxml").toURI().toURL());
         root = fxmlLoader.load();
 
         root.getChildren().add(error);
-        
-        Scene scene = new Scene (root);
-        stage.setTitle ("Chat");
+
+        log.info("Load fxml");
+
+
+        Scene scene = new Scene(root);
+        stage.setTitle("Login");
         stage.setScene (scene);
         stage.setResizable (false);
-        stage.show ();
+        stage.show();
     }
 
+    public void generateChat() throws IOException {
+        log.info("Generate chat");
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation (new File("/Users/natasamihaleva/NSU_Projects_Java/Task5/src/main/resources/chat.fxml").toURI().toURL());
+
+        root = fxmlLoader.load ();
+        stage.setScene(new Scene(root));
+    }
 }

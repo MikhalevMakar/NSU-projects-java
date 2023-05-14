@@ -1,7 +1,7 @@
-package ru.nsu.org.mikhalev.server.commands.command_implementation;
+package ru.nsu.org.mikhalev.clients.commands.command_implementation;
 
 import org.jetbrains.annotations.NotNull;
-import ru.nsu.org.mikhalev.server.commands.LoaderCommands;
+import ru.nsu.org.mikhalev.clients.commands.LoaderCommands;
 import ru.nsu.org.mikhalev.server.Message;
 
 public class CommandExecution {

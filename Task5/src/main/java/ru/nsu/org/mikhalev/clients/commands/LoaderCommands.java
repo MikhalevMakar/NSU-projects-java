@@ -1,10 +1,10 @@
-package ru.nsu.org.mikhalev.server.commands;
+package ru.nsu.org.mikhalev.clients.commands;
 
 import lombok.extern.log4j.Log4j2;
 import org.jetbrains.annotations.NotNull;
+import ru.nsu.org.mikhalev.clients.commands.command_implementation.Command;
 import ru.nsu.org.mikhalev.exceptions.LoadException;
-import ru.nsu.org.mikhalev.server.commands.command_implementation.Command;
-import ru.nsu.org.mikhalev.server.commands.command_implementation.CommandAnnotation;
+import ru.nsu.org.mikhalev.clients.commands.command_implementation.CommandAnnotation;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -24,7 +24,7 @@ public class LoaderCommands {
             properties.load(inputStream);
         } catch(IOException io) {
             log.warn("Constructor loader commands " + io.getMessage ());
-            throw new LoadException("classCommands.properties was not found" + io.getMessage ());
+            throw new LoadException("classCommands.properties was not found" + io.getMessage());
         }
     }
 
