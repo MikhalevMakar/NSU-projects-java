@@ -1,4 +1,4 @@
-package ru.nsu.org.mikhalev.server;
+package ru.nsu.org.mikhalev.universal_utile_class;
 
 
 import lombok.Getter;

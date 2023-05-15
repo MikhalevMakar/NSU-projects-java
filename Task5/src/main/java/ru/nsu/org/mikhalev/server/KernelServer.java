@@ -2,8 +2,14 @@ package ru.nsu.org.mikhalev.server;
 
 import lombok.Getter;
 import lombok.extern.log4j.Log4j2;
+import org.jetbrains.annotations.NotNull;
 import ru.nsu.org.mikhalev.clients.User;
-import ru.nsu.org.mikhalev.exceptions.ExcKernelServer;
+import ru.nsu.org.mikhalev.server.file_management.LinksToConfiguration;
+import ru.nsu.org.mikhalev.universal_utile_class.exceptions.ExcKernelServer;
+import ru.nsu.org.mikhalev.universal_utile_class.Message;
+import ru.nsu.org.mikhalev.universal_utile_class.exceptions.ExcParseFileJSON;
+import ru.nsu.org.mikhalev.universal_utile_class.file_manager.Configuration;
+import ru.nsu.org.mikhalev.universal_utile_class.file_manager.ParseConfiguration;
 
 import java.io.IOException;
 import java.net.Socket;
@@ -17,26 +23,29 @@ public class KernelServer {
     @Getter
     private final ServerSocket serverSocket;
 
-    private Socket clientSocket  = new Socket();
-
     @Getter
     private final Map<String, ServerCommunication> mapUser = new HashMap<>();
 
-    public KernelServer(int port) throws IOException {
-        this.serverSocket = new ServerSocket(port);
+    public KernelServer(@NotNull LinksToConfiguration linksResources) throws IOException, ExcParseFileJSON {
+
+        Configuration configuration = ParseConfiguration.parseConfigurationJSON(Configuration.class,
+                                                                                linksResources.getConfigurationServer());
+        assert configuration != null;
+
+        this.serverSocket = new ServerSocket(configuration.getPort());
     }
 
     public void removeUser(User user) {
         mapUser.remove(user);
     }
 
-    public void addNewUser(String nameUser, ServerCommunication serverCommunication) {
-        log.info("Add new user, name " + nameUser);
+    public synchronized void addNewUser(String nameUser, ServerCommunication serverCommunication) {
+         log.info("Add new user, name " + nameUser);
          mapUser.put(nameUser, serverCommunication);
     }
 
-    public  boolean contains(final String nameUser)  {
-        log.info("Check contain user name in mapUser");
+    public synchronized boolean contains(final String nameUser)  {
+        log.info("Check contain user name in mapUser: " + nameUser);
 
         return mapUser.containsKey(nameUser);
     }
@@ -54,16 +63,16 @@ public class KernelServer {
     public void start() {
         log.info("Start work " + this);
 
-        while(true) {
+        Socket clientSocket;
+        while(!serverSocket.isClosed()) {
             try {
-                log.info("Connection with user");
                 clientSocket = serverSocket.accept();
-                log.info("Find new user");
+                log.info("Joining user: " + clientSocket.toString());
 
                 Thread thread = new Thread(new ServerCommunication(this, clientSocket));
                 thread.start();
             } catch(IOException ex) {
-                throw new ExcKernelServer("Error int class " + this);
+                throw new ExcKernelServer("Error: int class " + this);
             }
         }
     }

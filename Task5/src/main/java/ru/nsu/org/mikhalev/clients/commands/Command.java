@@ -1,7 +1,7 @@
-package ru.nsu.org.mikhalev.clients.commands.command_implementation;
+package ru.nsu.org.mikhalev.clients.commands;
 
 import ru.nsu.org.mikhalev.clients.User;
-import ru.nsu.org.mikhalev.server.Message;
+import ru.nsu.org.mikhalev.universal_utile_class.Message;
 
 public interface Command {
 

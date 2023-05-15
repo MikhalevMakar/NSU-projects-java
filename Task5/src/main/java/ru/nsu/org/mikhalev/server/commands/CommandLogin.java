@@ -1,13 +1,14 @@
-package ru.nsu.org.mikhalev.clients.commands.command_implementation;
+package ru.nsu.org.mikhalev.server.commands;
 
 import lombok.extern.log4j.Log4j2;
 import org.jetbrains.annotations.NotNull;
 import ru.nsu.org.mikhalev.clients.User;
-import ru.nsu.org.mikhalev.server.Message;
-
+import ru.nsu.org.mikhalev.clients.commands.Command;
+import ru.nsu.org.mikhalev.universal_utile_class.Message;
 
 @Log4j2
 public class CommandLogin implements Command {
+
     @Override
     public void execute(@NotNull User user, Message message) {
 //        log.info("Command login, user: " + user.getNameUser());
@@ -23,7 +24,7 @@ public class CommandLogin implements Command {
 //        if(!KernelServer.addNewUser(user)) {
 //            log.info("Failed to add a user");
 //        }
-//      KernelServer.broadcastMessage(message);
-
+//        KernelServer.broadcastMessage(message);
     }
+
 }

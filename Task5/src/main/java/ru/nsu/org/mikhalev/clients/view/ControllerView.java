@@ -2,7 +2,6 @@ package ru.nsu.org.mikhalev.clients.view;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
@@ -10,7 +9,6 @@ import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import lombok.extern.log4j.Log4j2;
-import org.jetbrains.annotations.NotNull;
 import ru.nsu.org.mikhalev.clients.controller.Controller;
 
 import java.io.File;
@@ -59,30 +57,31 @@ public class ControllerView {
         this.error.setText(error);
     }
     
-    public void generateLogin() throws IOException {
+    public void generateLogin(String linkFXML) throws IOException {
         log.info("Generate login");
+
         FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation (new File("/Users/natasamihaleva/NSU_Projects_Java/Task5/src/main/resources/login.fxml").toURI().toURL());
+        fxmlLoader.setLocation(new File(linkFXML).toURI().toURL());
         root = fxmlLoader.load();
 
         root.getChildren().add(error);
 
         log.info("Load fxml");
 
-
         Scene scene = new Scene(root);
-        stage.setTitle("Login");
+        stage.setTitle("General conversation");
         stage.setScene (scene);
         stage.setResizable (false);
         stage.show();
     }
 
-    public void generateChat() throws IOException {
+    public void generateChat(String linkFXML) throws IOException {
         log.info("Generate chat");
-        FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation (new File("/Users/natasamihaleva/NSU_Projects_Java/Task5/src/main/resources/chat.fxml").toURI().toURL());
 
-        root = fxmlLoader.load ();
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation (new File(linkFXML).toURI().toURL());
+
+        root = fxmlLoader.load();
         stage.setScene(new Scene(root));
     }
 }

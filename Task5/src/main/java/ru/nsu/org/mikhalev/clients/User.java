@@ -3,11 +3,13 @@ package ru.nsu.org.mikhalev.clients;
 import lombok.Getter;
 import lombok.extern.log4j.Log4j2;
 import org.jetbrains.annotations.NotNull;
-import ru.nsu.org.mikhalev.clients.commands.command_implementation.Command;
-import ru.nsu.org.mikhalev.server.Message;
+import ru.nsu.org.mikhalev.universal_utile_class.Message;
+import ru.nsu.org.mikhalev.universal_utile_class.exceptions.EcxClose;
+import ru.nsu.org.mikhalev.universal_utile_class.exceptions.ExcConnection;
 
 import java.io.*;
 import java.net.Socket;
+import java.util.Arrays;
 import java.util.UUID;
 
 @Log4j2
@@ -15,26 +17,17 @@ public class User  implements Closeable {
     @Getter
     private final UUID id;
 
-    ObjectInputStream objectInputStream;
+    private ObjectInputStream objectInputStream;
 
-    ObjectOutputStream objectOutputStream;
+    private ObjectOutputStream objectOutputStream;
 
-    private static final String host = "localhost";
+    private static final String HOST = "localhost";
 
-    public User(Integer port) throws IOException {
+    public User(int port) {
         log.info("Create user");
-
-        Socket socket = new Socket(host, port);
-
         this.id = UUID.randomUUID();
 
-        log.info("create object deserialization");
-
-        objectOutputStream = new ObjectOutputStream(socket.getOutputStream());
-
-        log.info("Create object serialization");
-        objectInputStream = new ObjectInputStream(socket.getInputStream());
-
+        connectToServer(port);
     }
 
     public synchronized void messageReceive() {
@@ -68,9 +61,19 @@ public class User  implements Closeable {
 //        return (Objects.equals(user.getNameUser(), nameUser) && user.getId() == id);
 //    }
 
-    public Message<?> connect(final @NotNull Message<String> login) throws IOException, ClassNotFoundException {
+    private void connectToServer(int port) {
+        try (Socket socket = new Socket(HOST, port)) {
+            objectOutputStream = new ObjectOutputStream(socket.getOutputStream());
+            objectInputStream = new ObjectInputStream (socket.getInputStream());
+        } catch (IOException e) {
+            log.warn("Connection error: " + e);
+            throw new ExcConnection("Connection error:" + e.getMessage());
+        }
+    }
 
+    public Message<?> connect(final @NotNull Message<String> login) throws IOException, ClassNotFoundException {
         log.info("Request server: correct name user: " + login.getContent());
+
         objectOutputStream.writeObject(login);
         objectOutputStream.flush();
 
@@ -84,9 +87,13 @@ public class User  implements Closeable {
     }
 
     @Override
-    public void close() throws IOException {
-
-        objectInputStream.close();
-        objectOutputStream.close();
+    public void close() {
+        try {
+            objectInputStream.close();
+            objectOutputStream.close();
+        } catch (IOException ex) {
+            log.error("Error close: " + ex);
+            throw new EcxClose("Error close: " + Arrays.toString(ex.getStackTrace()));
+        }
     }
 }

@@ -1,4 +1,4 @@
-package ru.nsu.org.mikhalev.exceptions;
+package ru.nsu.org.mikhalev.universal_utile_class.exceptions;
 
 import java.io.IOException;
 

@@ -1,14 +1,15 @@
-package ru.nsu.org.mikhalev.clients.commands;
+package ru.nsu.org.mikhalev.universal_utile_class;
 
 import lombok.extern.log4j.Log4j2;
 import org.jetbrains.annotations.NotNull;
-import ru.nsu.org.mikhalev.clients.commands.command_implementation.Command;
-import ru.nsu.org.mikhalev.exceptions.LoadException;
-import ru.nsu.org.mikhalev.clients.commands.command_implementation.CommandAnnotation;
+import ru.nsu.org.mikhalev.clients.commands.Command;
+import ru.nsu.org.mikhalev.clients.commands.CommandClients;
+import ru.nsu.org.mikhalev.universal_utile_class.exceptions.LoadException;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.lang.annotation.Annotation;
+import java.lang.reflect.InvocationTargetException;
 import java.util.Arrays;
 import java.util.Properties;
 
@@ -34,7 +35,7 @@ public class LoaderCommands {
         Class<?> clazz;
         Command command;
         try {
-            clazz = Class.forName(properties.getProperty(nameCommand.toUpperCase()));
+            clazz = Class.forName(properties.getProperty(nameCommand));
         } catch (NullPointerException | ClassNotFoundException ex) {
             throw new NullPointerException("This command wasn't found " + ex.getMessage());
         }
@@ -43,10 +44,10 @@ public class LoaderCommands {
 
         log.info("Annotation comparison CommandAnnotation");
         for (Annotation annotation : annotations) {
-            if (annotation instanceof CommandAnnotation) {
+            if (annotation instanceof CommandClients) {
                 try {
-                    command = (Command) clazz.newInstance();
-                } catch (InstantiationException | IllegalAccessException ex) {
+                    command = (Command) clazz.getConstructor().newInstance();
+                } catch (InstantiationException | IllegalAccessException | NoSuchMethodException | InvocationTargetException ex) {
                     log.error("Error: occurred at the time of command creation " + nameCommand);
                     throw new LoadException("Command: " + nameCommand + Arrays.toString(ex.getStackTrace()));
                 }

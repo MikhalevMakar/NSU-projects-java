@@ -1,28 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="507.0" prefWidth="746.0" style="-fx-background-color: #242A31;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <AnchorPane prefHeight="507.0" prefWidth="63.0" style="-fx-background-color: #2A363F;">
          <children>
-            <ImageView fitHeight="47.0" fitWidth="63.0" layoutX="4.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="53.0" fitWidth="40.0" layoutX="6.0" layoutY="456.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../../../Downloads/CITYPNG.COMChat_Comment_Vector_Icon_Transparent_PNG_-_1024x1024.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="47.0" fitWidth="63.0" layoutX="-8.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="92.0" fitWidth="63.0" layoutX="-6.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../../../Downloads/CeurULv3GEQ-PhotoRoom.png-PhotoRoom.png" />
                </image>
             </ImageView>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="53.0" prefHeight="507.0" prefWidth="321.0" style="-fx-background-color: #242A31;" />
+      <AnchorPane layoutX="53.0" prefHeight="507.0" prefWidth="321.0" style="-fx-background-color: #242A31;">
+         <children>
+            <VBox layoutY="25.0" prefHeight="480.0" prefWidth="326.0" />
+            <ListView fx:id="listView" prefHeight="508.0" prefWidth="328.0" style="-fx-background-color: #242A31;" />
+         </children></AnchorPane>
       <AnchorPane layoutX="381.0" layoutY="-1.0" prefHeight="507.0" prefWidth="2.0" style="-fx-background-color: #2A363F;" />
       <AnchorPane layoutX="53.0" layoutY="-1.0" prefHeight="26.0" prefWidth="693.0" style="-fx-background-color: #2A363F;" />
       <TextField focusTraversable="false" layoutX="383.0" layoutY="466.0" prefHeight="40.0" prefWidth="364.0" promptText="     Write your message..." style="-fx-background-color: #2A363F; -fx-font-family: Robot; -fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #ffffff;">
