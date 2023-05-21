@@ -1,5 +1,6 @@
 {
   "port": 8080,
   "logging": true,
-  "format": "serialization/deserialization"
+  "format": "serialization/deserialization",
+  "host" : "localhost"
 }

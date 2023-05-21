@@ -1,35 +1,38 @@
 package ru.nsu.org.mikhalev.server;
 
+import lombok.Getter;
 import lombok.extern.log4j.Log4j2;
-import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
-import ru.nsu.org.mikhalev.universal_utile_class.CommandExecution;
-import ru.nsu.org.mikhalev.universal_utile_class.exceptions.UserNameException.NameContainsException;
-import ru.nsu.org.mikhalev.universal_utile_class.exceptions.UserNameException.NameInvalidFormatException;
-import ru.nsu.org.mikhalev.universal_utile_class.exceptions.UserNameException.NameMaxLengthException;
+import ru.nsu.org.mikhalev.server.commands.ExecuteCommand;
+import ru.nsu.org.mikhalev.server.commands.Command;
+import ru.nsu.org.mikhalev.universal_utile_class.create_command.ContextCommand;
 import ru.nsu.org.mikhalev.universal_utile_class.Message;
+import ru.nsu.org.mikhalev.universal_utile_class.exceptions.ExcIO;
+import ru.nsu.org.mikhalev.universal_utile_class.exceptions.ExcLoadCommand;
 
 import java.io.*;
 import java.net.Socket;
+import java.util.Arrays;
 
 @Log4j2
-public class ServerCommunication implements Runnable, Closeable {
+public class ServerCommunication implements Runnable, Closeable, Serializable {
 
-    private static final int MAX_LENGTH_NAME = 30;
-
+    @Getter
     private final ObjectInputStream objectInputStream;
 
+    @Getter
     private final ObjectOutputStream objectOutputStream;
 
     private final Socket clientSocket;
 
+    @Getter
     private final KernelServer kernelServer;
 
-    private CommandExecution commandExecution;
+    private final ExecuteCommand executeCommand;
 
-
-    public ServerCommunication(final KernelServer kernelServer, final Socket clientSocket) throws IOException {
+    public ServerCommunication(final KernelServer kernelServer, final Socket clientSocket, String link) throws IOException {
         log.info("Create " + this);
+
         this.kernelServer = kernelServer;
         this.clientSocket = clientSocket;
 
@@ -37,54 +40,17 @@ public class ServerCommunication implements Runnable, Closeable {
 
         this.objectOutputStream = new ObjectOutputStream(this.clientSocket.getOutputStream());
 
-        //commandExecution = new CommandExecution(); //TODO
+        this.executeCommand = new ExecuteCommand(link);
     }
 
+    public boolean queryManagement(@NotNull Message<?> message) {
+        log.info("Get command create: " + message.getTypeMessage());
 
-    @Contract(pure = true)
-    private boolean isCorrectNameFormat(final @NotNull String nameUser) throws NameInvalidFormatException, IOException {
-        log.info("Check correct name format");
+        Command command = executeCommand.createInstanceClass(message.getTypeMessage());
+        assert command != null;
 
-        String regex = "^\\w+$";
-
-        if(nameUser.matches(regex)) return true;
-
-        Message<String> message = new Message<>("error", "Format user name is incorrect: " + nameUser);
-
-        objectOutputStream.writeObject(message);
-        log.warn("Format user name is incorrect: " + nameUser);
-        throw new NameInvalidFormatException("Incorrect name " + nameUser);
-    }
-
-
-    private boolean isContains(final @NotNull String nameUser) throws NameContainsException, IOException {
-
-        if(!kernelServer.contains(nameUser)) return true;
-
-
-        objectOutputStream.writeObject(new Message<>("error", "This user is contains in chat " + nameUser));
-        throw new NameContainsException("This user is contains in chat");
-    }
-
-    @Contract(pure = true)
-    private boolean isCorrectLengthName(final @NotNull String nameUser) throws NameMaxLengthException, IOException {
-        log.info("Check correct max length user name");
-
-        if(nameUser.length() <  MAX_LENGTH_NAME) return true;
-
-        objectOutputStream.writeObject(new Message<>("error", "Max length user name is incorrect: " + nameUser));
-
-        log.warn("Max length user name is incorrect: " + nameUser);
-        throw new NameMaxLengthException ("Max length user name >  " + MAX_LENGTH_NAME);
-    }
-
-    @Contract(pure = true)
-    private  boolean isCorrectNameUser(final @NotNull String nameUser) {
-        try {
-            return isCorrectLengthName(nameUser) && isCorrectNameFormat(nameUser) && isContains(nameUser);
-        } catch (NameInvalidFormatException | NameContainsException | NameMaxLengthException | IOException e) {
-            return false;
-        }
+        log.info("Create command: " + command.getClass());
+        return command.execute(this, (Message<String>) message);
     }
 
     private void requestAddUser() throws IOException, ClassNotFoundException {
@@ -96,32 +62,48 @@ public class ServerCommunication implements Runnable, Closeable {
             message = (Message<?>) objectInputStream.readObject();
             log.info("New user: " + message.getContent());
 
-            statusRun = isCorrectNameUser((String) message.getContent());
+            statusRun = queryManagement(message);
 
             log.info("Status add new user: " + statusRun);
         } while(!statusRun);
 
-        objectOutputStream.writeObject(new Message<> ("login", "true"));
-        objectOutputStream.flush();
+        requestSendMessage(new Message<>(ContextCommand.getLOG_IN(), true));
+
         kernelServer.addNewUser((String)message.getContent(), this);
-        //kernelServer.broadCastListUsers();
     }
 
-    public void requestSendMessage(final Message<?> message) throws IOException {
-        objectOutputStream.writeObject(message);
-        objectOutputStream.flush();
+    public void requestSendMessage(final Message<?> message) {
+        try {
+            log.info("Try send message");
+            objectOutputStream.writeObject(message);
+            objectOutputStream.flush();
+            log.info("Sended message");
+        } catch (IOException ex) {
+            throw new ExcIO("Error: io " + Arrays.toString(ex.getStackTrace()));
+        }
     }
 
     @Override
     public void run() {
         try {
             requestAddUser();
-        } catch(IOException | ClassNotFoundException ex) {
-            log.warn("Error in request user"  + ex);
+        } catch (IOException | ClassNotFoundException ex) {
+            log.warn ("Error in request user" + ex);
         }
+        Message<?> message;
+        while (!Thread.currentThread().isInterrupted()) {
+            try {
+                message = (Message<?>) objectInputStream.readObject();
 
+                log.info("New command has been received: " + message.getTypeMessage());
+
+                queryManagement(message);
+
+            } catch (IOException | ClassNotFoundException e) {
+                throw new ExcLoadCommand("Error: execute command");
+            }
+        }
     }
-
 
     @Override
     public void close() throws IOException {

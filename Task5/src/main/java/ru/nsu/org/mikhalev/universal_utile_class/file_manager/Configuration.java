@@ -14,13 +14,13 @@ public class Configuration {
     private final String format;
 
     @Getter
-    private final String linkCommandsServer;
+    private final String host;
 
     Configuration(final int port, final boolean logging,
-                  final String format, final String linkCommandsServer) {
+                  final String format, final String host) {
         this.port = port;
         this.logging = logging;
         this.format = format;
-        this.linkCommandsServer = linkCommandsServer;
+        this.host = host;
     }
 }
