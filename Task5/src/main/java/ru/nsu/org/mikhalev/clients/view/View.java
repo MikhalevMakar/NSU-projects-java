@@ -1,24 +1,16 @@
 package ru.nsu.org.mikhalev.clients.view;
 
-import javafx.application.Platform;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import lombok.Getter;
 import lombok.extern.log4j.Log4j2;
-import org.jetbrains.annotations.NotNull;
-import ru.nsu.org.mikhalev.clients.controller.Controller;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.List;
 
 
 @Log4j2
@@ -34,36 +26,11 @@ public class View {
      *         y – the vertical position of the text
      *         text – text to be contained in the instance
      */
+
+    @Getter
+    private ControllerView controllerView = new ControllerView();
     private final Text error = new Text(250, 450, "");
 
-    private static Controller controller;
-
-    @FXML
-    private ListView<String> participantsListView;
-
-    @FXML
-    private TextField nameUser;
-
-    private final ObservableList<String> observableList = FXCollections.observableArrayList();
-
-    public static void registration(final Controller controllerUser){
-        controller = controllerUser;
-    }
-
-    public void displayList(@NotNull List<String> list) {
-
-        log.info("Show list on display");
-
-        for(var v : list) {
-            System.out.println(v);
-        }
-
-        Platform.runLater(() -> {
-            observableList.setAll(list);
-            participantsListView.setItems(observableList);
-            participantsListView.refresh();
-        });
-    }
 
     public View() {}
 
@@ -73,11 +40,6 @@ public class View {
         Font font = Font.font("System", 15);
         error.setFont(font);
         error.setStyle("-fx-fill: red;");
-    }
-
-    public void buttonConnect() {
-        log.info("Action button connect " + nameUser.getText());
-        controller.tryLogin(nameUser.getText());
     }
 
     public void printErrorMessage(String error) {
@@ -109,6 +71,8 @@ public class View {
         fxmlLoader.setLocation(new File(linkFXML).toURI().toURL());
 
         root = fxmlLoader.load();
+
+        controllerView = fxmlLoader.getController();
 
         stage.setScene(new Scene(root));
         stage.show();

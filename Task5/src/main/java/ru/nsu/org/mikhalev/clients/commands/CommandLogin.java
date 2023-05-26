@@ -15,28 +15,25 @@ import java.util.Arrays;
 public class CommandLogin implements Command {
 
     @Override
-    public void execute(@NotNull Controller controller, @NotNull Message<?> message) throws IOException, ClassNotFoundException {
+    public void execute(@NotNull Controller controller, @NotNull Message<?> message) {
 
         log.info("Call function tryLogin, login: " + message.getTypeMessage());
 
         try {
-            controller.getUser().getObjectOutputStream().writeObject(message);
-            controller.getUser().getObjectOutputStream().flush();
-        } catch (IOException ex) {
+            controller.getUser().sendToServer(message);
+            message = (Message<?>) controller.getUser().getObjectInputStream().readObject();
+
+            log.info ("Request server: correct nameUser: " + message);
+            controller.getView().printErrorMessage (message.getContent ().toString());
+
+            if (Boolean.TRUE.equals(message.getContent())) {
+                controller.getView().generateChat(controller.getLinkConfigurationJSON().getChatFXML());
+
+                controller.getUser().launchListener();
+            }
+        } catch (IOException | ClassNotFoundException ex) {
             log.error("Error in method connect" + ex);
-            throw new ExcConnection ("Error in method connect" + Arrays.toString(ex.getStackTrace()));
-        }
-
-        message = (Message<?>) controller.getUser().getObjectInputStream().readObject();
-
-        log.info("Request server: correct nameUser: " + message);
-        controller.getUser().getController().getView().printErrorMessage(message.getContent().toString());
-
-        if(Boolean.TRUE.equals(message.getContent())) {
-            controller.getUser().getController().getView()
-                                .generateChat(controller.getUser().getController().getLinkConfigurationJSON().getChatFXML());
-
-            controller.getUser().launchListener();
+            throw new ExcConnection("Error in method connect" + Arrays.toString(ex.getStackTrace()));
         }
 
         log.info("Request server: correct name user: " + message.getContent());

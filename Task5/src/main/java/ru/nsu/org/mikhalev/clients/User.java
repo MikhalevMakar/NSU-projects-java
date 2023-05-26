@@ -50,7 +50,7 @@ public class User implements Closeable, Serializable {
     }
 
     public void launchListener() {
-        Runnable r = new Thread (() -> {
+        Runnable r = new Thread(() -> {
             while (!Thread.currentThread().isInterrupted()) {
                 try {
                     controller.queryManagement((Message<?>) objectInputStream.readObject());
@@ -62,6 +62,11 @@ public class User implements Closeable, Serializable {
 
         Thread thread = new Thread(r);
         thread.start();
+    }
+
+    public void sendToServer(Message<?> message) throws IOException {
+        objectOutputStream.writeObject(message);
+        objectOutputStream.flush();
     }
 
     @Override

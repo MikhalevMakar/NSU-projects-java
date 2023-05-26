@@ -42,8 +42,7 @@ public class Main  extends Application {
         View view = new View(stage);
 
         view.generateLogin(linksResources.getLoginFXML());
-
-        view.registration(new Controller(view, linksResources));
+        view.getControllerView().registration(new Controller(view, linksResources));
     }
 
 }

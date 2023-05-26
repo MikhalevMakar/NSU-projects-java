@@ -1,6 +1,6 @@
 {
   "commandsClients" : "commands_client.properties",
   "configurationJSON" : "/Users/natasamihaleva/NSU_Projects_Java/Task5/src/main/resources/client_input/configuration.json",
-  "loginFXML" : "/Users/natasamihaleva/NSU_Projects_Java/Task5/src/main/resources/login.fxml",
-  "chatFXML" : "/Users/natasamihaleva/NSU_Projects_Java/Task5/src/main/resources/chat.fxml"
+  "loginFXML" : "/Users/natasamihaleva/NSU_Projects_Java/Task5/src/main/resources/client_input/login.fxml",
+  "chatFXML" : "/Users/natasamihaleva/NSU_Projects_Java/Task5/src/main/resources/client_input/chat.fxml"
 }

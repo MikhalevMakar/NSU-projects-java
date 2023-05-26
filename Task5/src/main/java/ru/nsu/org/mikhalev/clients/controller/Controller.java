@@ -50,12 +50,12 @@ public class Controller {
         Command command;
         try {
 
-            command = executeCommand.createInstanceClass(message.getTypeMessage ());
+            command = executeCommand.createInstanceClass(message.getTypeMessage());
             log.info ("Create command: " + command.getClass());
 
             command.execute(this, message);
 
-        } catch (IOException  | ClassNotFoundException ex) {
+        } catch (IOException | ClassNotFoundException ex) {
             throw new ExcLoadCommand("Exc load " + Arrays.toString(ex.getStackTrace()));
         }
     }
