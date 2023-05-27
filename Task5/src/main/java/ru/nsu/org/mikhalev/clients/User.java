@@ -75,33 +75,3 @@ public class User implements Closeable, Serializable {
         objectOutputStream.close();
     }
 }
-
-
-//    public synchronized Message messageSend(final Message<?> messag) {
-//        Message message = null;
-//        try {
-//            message = (Message) objectInputStream.readObject();
-//        } catch (IOException | ClassNotFoundException e) {
-//
-//            log.warn(String.format("User disconnected: %s", nameUser), e);
-//
-//            Message disconnectMessage = new Message(String.format("Server: there was a problem with the %s", objectInputStream),
-//                                                    commandMessage);
-//
-//           // KernelServer.broadcastMessage(disconnectMessage);
-//        }
-//
-//        return message;
-//    }
-
-
-//    public synchronized void messageReceive() {
-//        try {
-//            log.info("messageReceive to server");
-//
-//            Message<?> message = (Message<?>) objectInputStream.readObject();
-//
-//        } catch (IOException | ClassNotFoundException e) {
-//            log.error("Failed to send message", e);
-//        }
-//    }

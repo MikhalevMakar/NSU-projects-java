@@ -28,7 +28,7 @@
       <AnchorPane layoutX="50.0" layoutY="-1.0" prefHeight="26.0" prefWidth="696.0" style="-fx-background-color: #2A363F;" />
       <AnchorPane layoutX="384.0" layoutY="464.0" prefHeight="42.0" prefWidth="362.0" style="-fx-background-color: #2A363F;">
          <children>
-            <TextField fx:id="nameUser" focusTraversable="false" layoutX="29.0" layoutY="1.0" prefHeight="41.0" prefWidth="299.0" promptText="     Write your message..." style="-fx-background-color: #2A363F; -fx-font-family: Robot; -fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #ffffff;">
+            <TextField fx:id="inputText" focusTraversable="false" layoutX="29.0" layoutY="1.0" onAction="#handleEnterKeyPressed" prefHeight="41.0" prefWidth="299.0" promptText="     Write your message..." style="-fx-background-color: #2A363F; -fx-font-family: Robot; -fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #ffffff;">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
@@ -50,5 +50,7 @@
             <ListView fx:id="participantsListView" prefHeight="482.0" prefWidth="312.0" style="-fx-background-color: #242A31;" stylesheets="@../chat.css" />
          </children>
       </VBox>
+      <VBox layoutX="388.0" layoutY="26.0" prefHeight="440.0" prefWidth="357.0" />
+      <ListView fx:id="historyMessageView" layoutX="389.0" layoutY="28.0" prefHeight="434.0" prefWidth="354.0" style="-fx-background-color: #242A31;" />
    </children>
 </AnchorPane>

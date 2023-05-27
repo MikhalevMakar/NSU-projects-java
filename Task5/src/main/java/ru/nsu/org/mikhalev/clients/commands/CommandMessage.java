@@ -1,20 +1,20 @@
 package ru.nsu.org.mikhalev.clients.commands;
 
+import lombok.extern.log4j.Log4j2;
+import org.jetbrains.annotations.NotNull;
 import ru.nsu.org.mikhalev.clients.controller.Controller;
 import ru.nsu.org.mikhalev.universal_utile_class.Message;
-import ru.nsu.org.mikhalev.universal_utile_class.exceptions.ExcIO;
 
-import java.io.IOException;
+import java.util.List;
 
 @CommandClient
+@Log4j2
 public class CommandMessage implements Command {
 
     @Override
-    public void execute(Controller controller, Message<?> message) {
-        try {
-            controller.getUser().sendToServer(message);
-        } catch (IOException ex) {
-            throw new ExcIO ("Error send message: type message" + message.getTypeMessage());
-        }
+    public void execute(@NotNull Controller controller, @NotNull Message<?> message) {
+        log.info("Execute command: " + message.getTypeMessage());
+
+        controller.getView().getControllerView().updateHistoryMessage((List<Message<String>>) message.getContent());
     }
 }

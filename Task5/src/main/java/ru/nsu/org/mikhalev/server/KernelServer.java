@@ -44,7 +44,8 @@ public class KernelServer {
         mapUser.remove(user);
     }
 
-    private void broadCastMessagesHistory(ServerCommunication serverCommunication) throws IOException {
+    private void broadCastMessagesHistory(ServerCommunication serverCommunication) {
+
         serverCommunication.requestSendMessage(new Message<>("Message", messages));
     }
 
@@ -54,7 +55,7 @@ public class KernelServer {
          mapUser.put(nameUser, serverCommunication);
          broadCastListUsers();
 
-        // broadCastMessagesHistory(serverCommunication);
+         //broadCastMessagesHistory(serverCommunication);
     }
 
     public synchronized boolean contains(final String nameUser)  {
@@ -94,7 +95,9 @@ public class KernelServer {
 
                 log.info("Joining user: " + clientSocket.toString());
 
-                Thread thread = new Thread(new ServerCommunication(this, clientSocket, linksToConfiguration.getCommandsServer()));
+                Thread thread = new Thread(new ServerCommunication(this,
+                                                                    clientSocket,
+                                                                    linksToConfiguration.getCommandsServer()));
                 thread.start();
             } catch(IOException ex) {
                 throw new ExcKernelServer("Error: int class " + this);

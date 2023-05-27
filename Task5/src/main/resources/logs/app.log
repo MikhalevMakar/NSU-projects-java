@@ -1242,3 +1242,343 @@
 2023-05-26 12:17:37,643 INFO r.n.o.m.c.c.Controller [Thread-5] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandList
 2023-05-26 12:17:37,643 INFO r.n.o.m.c.c.CommandList [Thread-5] Call listParticipants
 2023-05-26 12:17:37,644 INFO r.n.o.m.c.v.ControllerView [Thread-5] Show list on display
+2023-05-27 16:40:40,162 INFO r.n.o.m.s.a.Main [main] Start program
+2023-05-27 16:40:40,165 INFO r.n.o.m.s.a.Main [main] Check args
+2023-05-27 16:40:40,169 INFO r.n.o.m.u.f.ParseConfiguration [main] Entrance ParseFileJSON
+2023-05-27 16:40:40,206 INFO r.n.o.m.u.f.ParseConfiguration [main] Entrance ParseFileJSON
+2023-05-27 16:40:40,212 INFO r.n.o.m.s.KernelServer [main] Start work KernelServer
+2023-05-27 16:40:47,291 INFO r.n.o.m.c.a.Main [main] Start program
+2023-05-27 16:40:47,294 INFO r.n.o.m.c.a.Main [main] Check args
+2023-05-27 16:40:47,297 INFO r.n.o.m.u.f.ParseConfiguration [main] Entrance ParseFileJSON
+2023-05-27 16:40:47,490 INFO r.n.o.m.c.v.View [JavaFX Application Thread] Generate login
+2023-05-27 16:40:47,820 INFO r.n.o.m.c.v.View [JavaFX Application Thread] Load fxml
+2023-05-27 16:40:48,345 INFO r.n.o.m.u.f.ParseConfiguration [JavaFX Application Thread] Entrance ParseFileJSON
+2023-05-27 16:40:48,357 INFO r.n.o.m.c.User [JavaFX Application Thread] Create user
+2023-05-27 16:40:48,370 INFO r.n.o.m.s.KernelServer [main] Joining user: Socket[addr=/127.0.0.1,port=49310,localport=8080]
+2023-05-27 16:40:48,378 INFO r.n.o.m.s.ServerCommunication [main] Create ru.nsu.org.mikhalev.server.ServerCommunication@66982506
+2023-05-27 16:40:48,398 INFO r.n.o.m.s.ServerCommunication [Thread-0] Call requestAddUser
+2023-05-27 16:40:52,923 INFO r.n.o.m.c.v.ControllerView [JavaFX Application Thread] Action button connect Makar
+2023-05-27 16:40:52,925 INFO r.n.o.m.c.c.Controller [JavaFX Application Thread] Call function tryLogin, login: Makar
+2023-05-27 16:40:52,927 INFO r.n.o.m.c.c.ExecuteCommand [JavaFX Application Thread] Find class by nameCommand: logIn
+2023-05-27 16:40:52,938 INFO r.n.o.m.c.c.ExecuteCommand [JavaFX Application Thread] Annotation comparison CommandAnnotation
+2023-05-27 16:40:52,938 INFO r.n.o.m.c.c.Controller [JavaFX Application Thread] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandLogin
+2023-05-27 16:40:52,939 INFO r.n.o.m.c.c.CommandLogin [JavaFX Application Thread] Call function tryLogin, login: logIn
+2023-05-27 16:40:52,978 INFO r.n.o.m.s.ServerCommunication [Thread-0] New user: Makar
+2023-05-27 16:40:52,979 INFO r.n.o.m.s.ServerCommunication [Thread-0] Get command create: logIn
+2023-05-27 16:40:52,979 INFO r.n.o.m.s.c.ExecuteCommand [Thread-0] Find class by nameCommand
+2023-05-27 16:40:52,990 INFO r.n.o.m.s.c.ExecuteCommand [Thread-0] Annotation comparison CommandAnnotation
+2023-05-27 16:40:52,991 INFO r.n.o.m.s.ServerCommunication [Thread-0] Create command: class ru.nsu.org.mikhalev.server.commands.CommandLogin
+2023-05-27 16:40:52,991 INFO r.n.o.m.s.c.CommandLogin [Thread-0] Check correct max length user name
+2023-05-27 16:40:52,991 INFO r.n.o.m.s.c.CommandLogin [Thread-0] Check correct name format
+2023-05-27 16:40:52,991 INFO r.n.o.m.s.KernelServer [Thread-0] Check contain user name in mapUser: Makar
+2023-05-27 16:40:52,992 INFO r.n.o.m.s.ServerCommunication [Thread-0] Status add new user: true
+2023-05-27 16:40:52,993 INFO r.n.o.m.s.ServerCommunication [Thread-0] Try send message
+2023-05-27 16:40:53,001 INFO r.n.o.m.s.ServerCommunication [Thread-0] Sended message
+2023-05-27 16:40:53,001 INFO r.n.o.m.s.KernelServer [Thread-0] Add new user, name: Makar
+2023-05-27 16:40:53,001 INFO r.n.o.m.s.KernelServer [Thread-0] Broad cast list users
+2023-05-27 16:40:53,002 INFO r.n.o.m.s.ServerCommunication [Thread-0] Try send message
+2023-05-27 16:40:53,006 INFO r.n.o.m.s.ServerCommunication [Thread-0] Sended message
+2023-05-27 16:40:53,041 INFO r.n.o.m.c.c.CommandLogin [JavaFX Application Thread] Request server: correct nameUser: Message[typeMessage=logIn, content=true]
+2023-05-27 16:40:53,042 INFO r.n.o.m.c.v.View [JavaFX Application Thread] Generate chat
+2023-05-27 16:40:53,273 INFO r.n.o.m.c.c.CommandLogin [JavaFX Application Thread] Request server: correct name user: true
+2023-05-27 16:40:53,276 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Find class by nameCommand: listParticipants
+2023-05-27 16:40:53,279 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Annotation comparison CommandAnnotation
+2023-05-27 16:40:53,280 INFO r.n.o.m.c.c.Controller [Thread-5] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandList
+2023-05-27 16:40:53,280 INFO r.n.o.m.c.c.CommandList [Thread-5] Call listParticipants
+2023-05-27 16:40:53,280 INFO r.n.o.m.c.v.ControllerView [Thread-5] Show list on display
+2023-05-27 16:40:59,335 INFO r.n.o.m.c.c.ExecuteCommand [JavaFX Application Thread] Find class by nameCommand: message
+2023-05-27 16:40:59,340 INFO r.n.o.m.c.c.ExecuteCommand [JavaFX Application Thread] Annotation comparison CommandAnnotation
+2023-05-27 16:40:59,340 INFO r.n.o.m.c.c.Controller [JavaFX Application Thread] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandMessage
+2023-05-27 16:40:59,347 INFO r.n.o.m.s.ServerCommunication [Thread-0] New command has been received: message
+2023-05-27 16:40:59,348 INFO r.n.o.m.s.ServerCommunication [Thread-0] Get command create: message
+2023-05-27 16:40:59,349 INFO r.n.o.m.s.c.ExecuteCommand [Thread-0] Find class by nameCommand
+2023-05-27 16:44:40,569 INFO r.n.o.m.s.a.Main [main] Start program
+2023-05-27 16:44:40,571 INFO r.n.o.m.s.a.Main [main] Check args
+2023-05-27 16:44:40,574 INFO r.n.o.m.u.f.ParseConfiguration [main] Entrance ParseFileJSON
+2023-05-27 16:44:40,609 INFO r.n.o.m.u.f.ParseConfiguration [main] Entrance ParseFileJSON
+2023-05-27 16:44:40,616 INFO r.n.o.m.s.KernelServer [main] Start work KernelServer
+2023-05-27 16:44:48,100 INFO r.n.o.m.c.a.Main [main] Start program
+2023-05-27 16:44:48,103 INFO r.n.o.m.c.a.Main [main] Check args
+2023-05-27 16:44:48,106 INFO r.n.o.m.u.f.ParseConfiguration [main] Entrance ParseFileJSON
+2023-05-27 16:44:48,277 INFO r.n.o.m.c.v.View [JavaFX Application Thread] Generate login
+2023-05-27 16:44:48,635 INFO r.n.o.m.c.v.View [JavaFX Application Thread] Load fxml
+2023-05-27 16:44:49,105 INFO r.n.o.m.u.f.ParseConfiguration [JavaFX Application Thread] Entrance ParseFileJSON
+2023-05-27 16:44:49,113 INFO r.n.o.m.c.User [JavaFX Application Thread] Create user
+2023-05-27 16:44:49,121 INFO r.n.o.m.s.KernelServer [main] Joining user: Socket[addr=/127.0.0.1,port=49320,localport=8080]
+2023-05-27 16:44:49,126 INFO r.n.o.m.s.ServerCommunication [main] Create ru.nsu.org.mikhalev.server.ServerCommunication@66982506
+2023-05-27 16:44:49,138 INFO r.n.o.m.s.ServerCommunication [Thread-0] Call requestAddUser
+2023-05-27 16:44:51,632 INFO r.n.o.m.c.v.ControllerView [JavaFX Application Thread] Action button connect nnn
+2023-05-27 16:44:51,634 INFO r.n.o.m.c.c.Controller [JavaFX Application Thread] Call function tryLogin, login: nnn
+2023-05-27 16:44:51,635 INFO r.n.o.m.c.c.ExecuteCommand [JavaFX Application Thread] Find class by nameCommand: logIn
+2023-05-27 16:44:51,648 INFO r.n.o.m.c.c.ExecuteCommand [JavaFX Application Thread] Annotation comparison CommandAnnotation
+2023-05-27 16:44:51,648 INFO r.n.o.m.c.c.Controller [JavaFX Application Thread] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandLogin
+2023-05-27 16:44:51,648 INFO r.n.o.m.c.c.CommandLogin [JavaFX Application Thread] Call function tryLogin, login: logIn
+2023-05-27 16:44:51,683 INFO r.n.o.m.s.ServerCommunication [Thread-0] New user: nnn
+2023-05-27 16:44:51,684 INFO r.n.o.m.s.ServerCommunication [Thread-0] Get command create: logIn
+2023-05-27 16:44:51,684 INFO r.n.o.m.s.c.ExecuteCommand [Thread-0] Find class by nameCommand
+2023-05-27 16:44:51,694 INFO r.n.o.m.s.c.ExecuteCommand [Thread-0] Annotation comparison CommandAnnotation
+2023-05-27 16:44:51,695 INFO r.n.o.m.s.ServerCommunication [Thread-0] Create command: class ru.nsu.org.mikhalev.server.commands.CommandLogin
+2023-05-27 16:44:51,695 INFO r.n.o.m.s.c.CommandLogin [Thread-0] Check correct max length user name
+2023-05-27 16:44:51,695 INFO r.n.o.m.s.c.CommandLogin [Thread-0] Check correct name format
+2023-05-27 16:44:51,696 INFO r.n.o.m.s.KernelServer [Thread-0] Check contain user name in mapUser: nnn
+2023-05-27 16:44:51,696 INFO r.n.o.m.s.ServerCommunication [Thread-0] Status add new user: true
+2023-05-27 16:44:51,698 INFO r.n.o.m.s.ServerCommunication [Thread-0] Try send message
+2023-05-27 16:44:51,704 INFO r.n.o.m.s.ServerCommunication [Thread-0] Sended message
+2023-05-27 16:44:51,704 INFO r.n.o.m.s.KernelServer [Thread-0] Add new user, name: nnn
+2023-05-27 16:44:51,704 INFO r.n.o.m.s.KernelServer [Thread-0] Broad cast list users
+2023-05-27 16:44:51,707 INFO r.n.o.m.s.ServerCommunication [Thread-0] Try send message
+2023-05-27 16:44:51,710 INFO r.n.o.m.s.ServerCommunication [Thread-0] Sended message
+2023-05-27 16:44:51,742 INFO r.n.o.m.c.c.CommandLogin [JavaFX Application Thread] Request server: correct nameUser: Message[typeMessage=logIn, content=true]
+2023-05-27 16:44:51,742 INFO r.n.o.m.c.v.View [JavaFX Application Thread] Generate chat
+2023-05-27 16:44:51,986 INFO r.n.o.m.c.c.CommandLogin [JavaFX Application Thread] Request server: correct name user: true
+2023-05-27 16:44:51,991 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Find class by nameCommand: listParticipants
+2023-05-27 16:44:51,993 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Annotation comparison CommandAnnotation
+2023-05-27 16:44:51,996 INFO r.n.o.m.c.c.Controller [Thread-5] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandList
+2023-05-27 16:44:51,997 INFO r.n.o.m.c.c.CommandList [Thread-5] Call listParticipants
+2023-05-27 16:44:51,997 INFO r.n.o.m.c.v.ControllerView [Thread-5] Show list on display
+2023-05-27 16:44:56,095 INFO r.n.o.m.c.c.ExecuteCommand [JavaFX Application Thread] Find class by nameCommand: message
+2023-05-27 16:44:56,098 INFO r.n.o.m.c.c.ExecuteCommand [JavaFX Application Thread] Annotation comparison CommandAnnotation
+2023-05-27 16:44:56,098 INFO r.n.o.m.c.c.Controller [JavaFX Application Thread] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandMessage
+2023-05-27 16:44:56,100 INFO r.n.o.m.s.ServerCommunication [Thread-0] New command has been received: message
+2023-05-27 16:44:56,100 INFO r.n.o.m.s.ServerCommunication [Thread-0] Get command create: message
+2023-05-27 16:44:56,100 INFO r.n.o.m.s.c.ExecuteCommand [Thread-0] Find class by nameCommand
+2023-05-27 16:51:51,563 INFO r.n.o.m.s.a.Main [main] Start program
+2023-05-27 16:51:51,565 INFO r.n.o.m.s.a.Main [main] Check args
+2023-05-27 16:51:51,567 INFO r.n.o.m.u.f.ParseConfiguration [main] Entrance ParseFileJSON
+2023-05-27 16:51:51,610 INFO r.n.o.m.u.f.ParseConfiguration [main] Entrance ParseFileJSON
+2023-05-27 16:51:51,621 INFO r.n.o.m.s.KernelServer [main] Start work KernelServer
+2023-05-27 16:51:56,899 INFO r.n.o.m.c.a.Main [main] Start program
+2023-05-27 16:51:56,902 INFO r.n.o.m.c.a.Main [main] Check args
+2023-05-27 16:51:56,903 INFO r.n.o.m.u.f.ParseConfiguration [main] Entrance ParseFileJSON
+2023-05-27 16:51:57,055 INFO r.n.o.m.c.v.View [JavaFX Application Thread] Generate login
+2023-05-27 16:51:57,369 INFO r.n.o.m.c.v.View [JavaFX Application Thread] Load fxml
+2023-05-27 16:51:57,814 INFO r.n.o.m.u.f.ParseConfiguration [JavaFX Application Thread] Entrance ParseFileJSON
+2023-05-27 16:51:57,822 INFO r.n.o.m.c.User [JavaFX Application Thread] Create user
+2023-05-27 16:51:57,831 INFO r.n.o.m.s.KernelServer [main] Joining user: Socket[addr=/127.0.0.1,port=49336,localport=8080]
+2023-05-27 16:51:57,835 INFO r.n.o.m.s.ServerCommunication [main] Create ru.nsu.org.mikhalev.server.ServerCommunication@66982506
+2023-05-27 16:51:57,850 INFO r.n.o.m.s.ServerCommunication [Thread-0] Call requestAddUser
+2023-05-27 16:51:59,898 INFO r.n.o.m.c.v.ControllerView [JavaFX Application Thread] Action button connect jjj
+2023-05-27 16:51:59,899 INFO r.n.o.m.c.c.Controller [JavaFX Application Thread] Call function tryLogin, login: jjj
+2023-05-27 16:51:59,901 INFO r.n.o.m.c.c.ExecuteCommand [JavaFX Application Thread] Find class by nameCommand: logIn
+2023-05-27 16:51:59,913 INFO r.n.o.m.c.c.ExecuteCommand [JavaFX Application Thread] Annotation comparison CommandAnnotation
+2023-05-27 16:51:59,913 INFO r.n.o.m.c.c.Controller [JavaFX Application Thread] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandLogin
+2023-05-27 16:51:59,914 INFO r.n.o.m.c.c.CommandLogin [JavaFX Application Thread] Call function tryLogin, login: logIn
+2023-05-27 16:51:59,951 INFO r.n.o.m.s.ServerCommunication [Thread-0] New user: jjj
+2023-05-27 16:51:59,952 INFO r.n.o.m.s.ServerCommunication [Thread-0] Get command create: logIn
+2023-05-27 16:51:59,952 INFO r.n.o.m.s.c.ExecuteCommand [Thread-0] Find class by nameCommand
+2023-05-27 16:51:59,963 INFO r.n.o.m.s.c.ExecuteCommand [Thread-0] Annotation comparison CommandAnnotation
+2023-05-27 16:51:59,963 INFO r.n.o.m.s.ServerCommunication [Thread-0] Create command: class ru.nsu.org.mikhalev.server.commands.CommandLogin
+2023-05-27 16:51:59,963 INFO r.n.o.m.s.c.CommandLogin [Thread-0] Check correct max length user name
+2023-05-27 16:51:59,963 INFO r.n.o.m.s.c.CommandLogin [Thread-0] Check correct name format
+2023-05-27 16:51:59,964 INFO r.n.o.m.s.KernelServer [Thread-0] Check contain user name in mapUser: jjj
+2023-05-27 16:51:59,964 INFO r.n.o.m.s.ServerCommunication [Thread-0] Status add new user: true
+2023-05-27 16:51:59,966 INFO r.n.o.m.s.ServerCommunication [Thread-0] Try send message
+2023-05-27 16:51:59,971 INFO r.n.o.m.s.ServerCommunication [Thread-0] Sended message
+2023-05-27 16:51:59,971 INFO r.n.o.m.s.KernelServer [Thread-0] Add new user, name: jjj
+2023-05-27 16:51:59,971 INFO r.n.o.m.s.KernelServer [Thread-0] Broad cast list users
+2023-05-27 16:51:59,972 INFO r.n.o.m.s.ServerCommunication [Thread-0] Try send message
+2023-05-27 16:51:59,975 INFO r.n.o.m.s.ServerCommunication [Thread-0] Sended message
+2023-05-27 16:52:00,003 INFO r.n.o.m.c.c.CommandLogin [JavaFX Application Thread] Request server: correct nameUser: Message[typeMessage=logIn, content=true]
+2023-05-27 16:52:00,004 INFO r.n.o.m.c.v.View [JavaFX Application Thread] Generate chat
+2023-05-27 16:52:00,242 INFO r.n.o.m.c.c.CommandLogin [JavaFX Application Thread] Request server: correct name user: true
+2023-05-27 16:52:00,244 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Find class by nameCommand: listParticipants
+2023-05-27 16:52:00,246 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Annotation comparison CommandAnnotation
+2023-05-27 16:52:00,247 INFO r.n.o.m.c.c.Controller [Thread-5] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandList
+2023-05-27 16:52:00,248 INFO r.n.o.m.c.c.CommandList [Thread-5] Call listParticipants
+2023-05-27 16:52:00,248 INFO r.n.o.m.c.v.ControllerView [Thread-5] Show list on display
+2023-05-27 18:57:51,742 INFO r.n.o.m.s.a.Main [main] Start program
+2023-05-27 18:57:51,744 INFO r.n.o.m.s.a.Main [main] Check args
+2023-05-27 18:57:51,747 INFO r.n.o.m.u.f.ParseConfiguration [main] Entrance ParseFileJSON
+2023-05-27 18:57:51,789 INFO r.n.o.m.u.f.ParseConfiguration [main] Entrance ParseFileJSON
+2023-05-27 18:57:51,796 INFO r.n.o.m.s.KernelServer [main] Start work KernelServer
+2023-05-27 18:57:55,377 INFO r.n.o.m.c.a.Main [main] Start program
+2023-05-27 18:57:55,380 INFO r.n.o.m.c.a.Main [main] Check args
+2023-05-27 18:57:55,384 INFO r.n.o.m.u.f.ParseConfiguration [main] Entrance ParseFileJSON
+2023-05-27 18:57:55,583 INFO r.n.o.m.c.v.View [JavaFX Application Thread] Generate login
+2023-05-27 18:57:55,957 INFO r.n.o.m.c.v.View [JavaFX Application Thread] Load fxml
+2023-05-27 18:57:56,422 INFO r.n.o.m.u.f.ParseConfiguration [JavaFX Application Thread] Entrance ParseFileJSON
+2023-05-27 18:57:56,430 INFO r.n.o.m.c.User [JavaFX Application Thread] Create user
+2023-05-27 18:57:56,438 INFO r.n.o.m.s.KernelServer [main] Joining user: Socket[addr=/127.0.0.1,port=49507,localport=8080]
+2023-05-27 18:57:56,441 INFO r.n.o.m.s.ServerCommunication [main] Create ru.nsu.org.mikhalev.server.ServerCommunication@66982506
+2023-05-27 18:57:56,453 INFO r.n.o.m.s.ServerCommunication [Thread-0] Call requestAddUser
+2023-05-27 18:57:59,597 INFO r.n.o.m.c.v.ControllerView [JavaFX Application Thread] Action button connect MMMM
+2023-05-27 18:57:59,598 INFO r.n.o.m.c.c.Controller [JavaFX Application Thread] Call function tryLogin, login: MMMM
+2023-05-27 18:57:59,600 INFO r.n.o.m.c.c.ExecuteCommand [JavaFX Application Thread] Find class by nameCommand: logIn
+2023-05-27 18:57:59,610 INFO r.n.o.m.c.c.ExecuteCommand [JavaFX Application Thread] Annotation comparison CommandAnnotation
+2023-05-27 18:57:59,611 INFO r.n.o.m.c.c.Controller [JavaFX Application Thread] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandLogin
+2023-05-27 18:57:59,611 INFO r.n.o.m.c.c.CommandLogin [JavaFX Application Thread] Call function tryLogin, login: logIn
+2023-05-27 18:57:59,649 INFO r.n.o.m.s.ServerCommunication [Thread-0] New user: MMMM
+2023-05-27 18:57:59,650 INFO r.n.o.m.s.ServerCommunication [Thread-0] Get command create: logIn
+2023-05-27 18:57:59,650 INFO r.n.o.m.s.c.ExecuteCommand [Thread-0] Find class by nameCommand
+2023-05-27 18:57:59,662 INFO r.n.o.m.s.c.ExecuteCommand [Thread-0] Annotation comparison CommandAnnotation
+2023-05-27 18:57:59,663 INFO r.n.o.m.s.ServerCommunication [Thread-0] Create command: class ru.nsu.org.mikhalev.server.commands.CommandLogin
+2023-05-27 18:57:59,663 INFO r.n.o.m.s.c.CommandLogin [Thread-0] Check correct max length user name
+2023-05-27 18:57:59,663 INFO r.n.o.m.s.c.CommandLogin [Thread-0] Check correct name format
+2023-05-27 18:57:59,664 INFO r.n.o.m.s.KernelServer [Thread-0] Check contain user name in mapUser: MMMM
+2023-05-27 18:57:59,664 INFO r.n.o.m.s.ServerCommunication [Thread-0] Status add new user: true
+2023-05-27 18:57:59,665 INFO r.n.o.m.s.ServerCommunication [Thread-0] Try send message
+2023-05-27 18:57:59,671 INFO r.n.o.m.s.ServerCommunication [Thread-0] Sended message
+2023-05-27 18:57:59,672 INFO r.n.o.m.s.KernelServer [Thread-0] Add new user, name: MMMM
+2023-05-27 18:57:59,672 INFO r.n.o.m.s.KernelServer [Thread-0] Broad cast list users
+2023-05-27 18:57:59,673 INFO r.n.o.m.s.ServerCommunication [Thread-0] Try send message
+2023-05-27 18:57:59,676 INFO r.n.o.m.s.ServerCommunication [Thread-0] Sended message
+2023-05-27 18:57:59,703 INFO r.n.o.m.c.c.CommandLogin [JavaFX Application Thread] Request server: correct nameUser: Message[typeMessage=logIn, content=true]
+2023-05-27 18:57:59,704 INFO r.n.o.m.c.v.View [JavaFX Application Thread] Generate chat
+2023-05-27 18:57:59,979 INFO r.n.o.m.c.c.CommandLogin [JavaFX Application Thread] Request server: correct name user: true
+2023-05-27 18:57:59,984 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Find class by nameCommand: listParticipants
+2023-05-27 18:57:59,988 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Annotation comparison CommandAnnotation
+2023-05-27 18:57:59,988 INFO r.n.o.m.c.c.Controller [Thread-5] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandList
+2023-05-27 18:57:59,989 INFO r.n.o.m.c.c.CommandList [Thread-5] Call listParticipants
+2023-05-27 18:57:59,989 INFO r.n.o.m.c.v.ControllerView [Thread-5] Show list on display
+2023-05-27 18:58:06,363 INFO r.n.o.m.s.ServerCommunication [Thread-0] New command has been received: message
+2023-05-27 18:58:06,365 INFO r.n.o.m.s.ServerCommunication [Thread-0] Get command create: message
+2023-05-27 18:58:06,365 INFO r.n.o.m.s.c.ExecuteCommand [Thread-0] Find class by nameCommand
+2023-05-27 18:58:06,371 INFO r.n.o.m.s.c.ExecuteCommand [Thread-0] Annotation comparison CommandAnnotation
+2023-05-27 18:58:06,372 WARN r.n.o.m.s.c.ExecuteCommand [Thread-0] Command not found or class wasn't annotated
+2023-05-27 18:59:52,569 INFO r.n.o.m.s.a.Main [main] Start program
+2023-05-27 18:59:52,573 INFO r.n.o.m.s.a.Main [main] Check args
+2023-05-27 18:59:52,575 INFO r.n.o.m.u.f.ParseConfiguration [main] Entrance ParseFileJSON
+2023-05-27 18:59:52,614 INFO r.n.o.m.u.f.ParseConfiguration [main] Entrance ParseFileJSON
+2023-05-27 18:59:52,621 INFO r.n.o.m.s.KernelServer [main] Start work KernelServer
+2023-05-27 18:59:55,689 INFO r.n.o.m.c.a.Main [main] Start program
+2023-05-27 18:59:55,691 INFO r.n.o.m.c.a.Main [main] Check args
+2023-05-27 18:59:55,693 INFO r.n.o.m.u.f.ParseConfiguration [main] Entrance ParseFileJSON
+2023-05-27 18:59:55,839 INFO r.n.o.m.c.v.View [JavaFX Application Thread] Generate login
+2023-05-27 18:59:56,169 INFO r.n.o.m.c.v.View [JavaFX Application Thread] Load fxml
+2023-05-27 18:59:56,607 INFO r.n.o.m.u.f.ParseConfiguration [JavaFX Application Thread] Entrance ParseFileJSON
+2023-05-27 18:59:56,615 INFO r.n.o.m.c.User [JavaFX Application Thread] Create user
+2023-05-27 18:59:56,624 INFO r.n.o.m.s.KernelServer [main] Joining user: Socket[addr=/127.0.0.1,port=49514,localport=8080]
+2023-05-27 18:59:56,629 INFO r.n.o.m.s.ServerCommunication [main] Create ru.nsu.org.mikhalev.server.ServerCommunication@66982506
+2023-05-27 18:59:56,641 INFO r.n.o.m.s.ServerCommunication [Thread-0] Call requestAddUser
+2023-05-27 18:59:58,734 INFO r.n.o.m.c.v.ControllerView [JavaFX Application Thread] Action button connect Makar
+2023-05-27 18:59:58,735 INFO r.n.o.m.c.c.Controller [JavaFX Application Thread] Call function tryLogin, login: Makar
+2023-05-27 18:59:58,738 INFO r.n.o.m.c.c.ExecuteCommand [JavaFX Application Thread] Find class by nameCommand: logIn
+2023-05-27 18:59:58,749 INFO r.n.o.m.c.c.ExecuteCommand [JavaFX Application Thread] Annotation comparison CommandAnnotation
+2023-05-27 18:59:58,749 INFO r.n.o.m.c.c.Controller [JavaFX Application Thread] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandLogin
+2023-05-27 18:59:58,749 INFO r.n.o.m.c.c.CommandLogin [JavaFX Application Thread] Call function tryLogin, login: logIn
+2023-05-27 18:59:58,782 INFO r.n.o.m.s.ServerCommunication [Thread-0] New user: Makar
+2023-05-27 18:59:58,783 INFO r.n.o.m.s.ServerCommunication [Thread-0] Get command create: logIn
+2023-05-27 18:59:58,783 INFO r.n.o.m.s.c.ExecuteCommand [Thread-0] Find class by nameCommand
+2023-05-27 18:59:58,792 INFO r.n.o.m.s.c.ExecuteCommand [Thread-0] Annotation comparison CommandAnnotation
+2023-05-27 18:59:58,792 INFO r.n.o.m.s.ServerCommunication [Thread-0] Create command: class ru.nsu.org.mikhalev.server.commands.CommandLogin
+2023-05-27 18:59:58,792 INFO r.n.o.m.s.c.CommandLogin [Thread-0] Check correct max length user name
+2023-05-27 18:59:58,793 INFO r.n.o.m.s.c.CommandLogin [Thread-0] Check correct name format
+2023-05-27 18:59:58,793 INFO r.n.o.m.s.KernelServer [Thread-0] Check contain user name in mapUser: Makar
+2023-05-27 18:59:58,794 INFO r.n.o.m.s.ServerCommunication [Thread-0] Status add new user: true
+2023-05-27 18:59:58,795 INFO r.n.o.m.s.ServerCommunication [Thread-0] Try send message
+2023-05-27 18:59:58,801 INFO r.n.o.m.s.ServerCommunication [Thread-0] Sended message
+2023-05-27 18:59:58,802 INFO r.n.o.m.s.KernelServer [Thread-0] Add new user, name: Makar
+2023-05-27 18:59:58,802 INFO r.n.o.m.s.KernelServer [Thread-0] Broad cast list users
+2023-05-27 18:59:58,803 INFO r.n.o.m.s.ServerCommunication [Thread-0] Try send message
+2023-05-27 18:59:58,806 INFO r.n.o.m.s.ServerCommunication [Thread-0] Sended message
+2023-05-27 18:59:58,836 INFO r.n.o.m.c.c.CommandLogin [JavaFX Application Thread] Request server: correct nameUser: Message[typeMessage=logIn, content=true]
+2023-05-27 18:59:58,836 INFO r.n.o.m.c.v.View [JavaFX Application Thread] Generate chat
+2023-05-27 18:59:59,079 INFO r.n.o.m.c.c.CommandLogin [JavaFX Application Thread] Request server: correct name user: true
+2023-05-27 18:59:59,084 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Find class by nameCommand: listParticipants
+2023-05-27 18:59:59,090 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Annotation comparison CommandAnnotation
+2023-05-27 18:59:59,090 INFO r.n.o.m.c.c.Controller [Thread-5] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandList
+2023-05-27 18:59:59,091 INFO r.n.o.m.c.c.CommandList [Thread-5] Call listParticipants
+2023-05-27 18:59:59,091 INFO r.n.o.m.c.v.ControllerView [Thread-5] Show list on display
+2023-05-27 19:00:01,854 INFO r.n.o.m.s.ServerCommunication [Thread-0] New command has been received: message
+2023-05-27 19:00:01,855 INFO r.n.o.m.s.ServerCommunication [Thread-0] Get command create: message
+2023-05-27 19:00:01,855 INFO r.n.o.m.s.c.ExecuteCommand [Thread-0] Find class by nameCommand
+2023-05-27 19:00:01,857 INFO r.n.o.m.s.c.ExecuteCommand [Thread-0] Annotation comparison CommandAnnotation
+2023-05-27 19:00:01,862 INFO r.n.o.m.s.ServerCommunication [Thread-0] Create command: class ru.nsu.org.mikhalev.server.commands.CommandMessage
+2023-05-27 19:00:39,097 INFO r.n.o.m.s.a.Main [main] Start program
+2023-05-27 19:00:39,099 INFO r.n.o.m.s.a.Main [main] Check args
+2023-05-27 19:00:39,102 INFO r.n.o.m.u.f.ParseConfiguration [main] Entrance ParseFileJSON
+2023-05-27 19:00:39,143 INFO r.n.o.m.u.f.ParseConfiguration [main] Entrance ParseFileJSON
+2023-05-27 19:00:39,150 INFO r.n.o.m.s.KernelServer [main] Start work KernelServer
+2023-05-27 19:00:42,163 INFO r.n.o.m.c.a.Main [main] Start program
+2023-05-27 19:00:42,165 INFO r.n.o.m.c.a.Main [main] Check args
+2023-05-27 19:00:42,167 INFO r.n.o.m.u.f.ParseConfiguration [main] Entrance ParseFileJSON
+2023-05-27 19:00:42,310 INFO r.n.o.m.c.v.View [JavaFX Application Thread] Generate login
+2023-05-27 19:00:42,614 INFO r.n.o.m.c.v.View [JavaFX Application Thread] Load fxml
+2023-05-27 19:00:43,046 INFO r.n.o.m.u.f.ParseConfiguration [JavaFX Application Thread] Entrance ParseFileJSON
+2023-05-27 19:00:43,055 INFO r.n.o.m.c.User [JavaFX Application Thread] Create user
+2023-05-27 19:00:43,064 INFO r.n.o.m.s.KernelServer [main] Joining user: Socket[addr=/127.0.0.1,port=49521,localport=8080]
+2023-05-27 19:00:43,070 INFO r.n.o.m.s.ServerCommunication [main] Create ru.nsu.org.mikhalev.server.ServerCommunication@66982506
+2023-05-27 19:00:43,084 INFO r.n.o.m.s.ServerCommunication [Thread-0] Call requestAddUser
+2023-05-27 19:00:45,963 INFO r.n.o.m.c.v.ControllerView [JavaFX Application Thread] Action button connect Makar
+2023-05-27 19:00:45,965 INFO r.n.o.m.c.c.Controller [JavaFX Application Thread] Call function tryLogin, login: Makar
+2023-05-27 19:00:45,966 INFO r.n.o.m.c.c.ExecuteCommand [JavaFX Application Thread] Find class by nameCommand: logIn
+2023-05-27 19:00:45,979 INFO r.n.o.m.c.c.ExecuteCommand [JavaFX Application Thread] Annotation comparison CommandAnnotation
+2023-05-27 19:00:45,979 INFO r.n.o.m.c.c.Controller [JavaFX Application Thread] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandLogin
+2023-05-27 19:00:45,979 INFO r.n.o.m.c.c.CommandLogin [JavaFX Application Thread] Call function tryLogin, login: logIn
+2023-05-27 19:00:46,013 INFO r.n.o.m.s.ServerCommunication [Thread-0] New user: Makar
+2023-05-27 19:00:46,014 INFO r.n.o.m.s.ServerCommunication [Thread-0] Get command create: logIn
+2023-05-27 19:00:46,014 INFO r.n.o.m.s.c.ExecuteCommand [Thread-0] Find class by nameCommand
+2023-05-27 19:00:46,025 INFO r.n.o.m.s.c.ExecuteCommand [Thread-0] Annotation comparison CommandAnnotation
+2023-05-27 19:00:46,025 INFO r.n.o.m.s.ServerCommunication [Thread-0] Create command: class ru.nsu.org.mikhalev.server.commands.CommandLogin
+2023-05-27 19:00:46,026 INFO r.n.o.m.s.c.CommandLogin [Thread-0] Check correct max length user name
+2023-05-27 19:00:46,026 INFO r.n.o.m.s.c.CommandLogin [Thread-0] Check correct name format
+2023-05-27 19:00:46,026 INFO r.n.o.m.s.KernelServer [Thread-0] Check contain user name in mapUser: Makar
+2023-05-27 19:00:46,027 INFO r.n.o.m.s.ServerCommunication [Thread-0] Status add new user: true
+2023-05-27 19:00:46,028 INFO r.n.o.m.s.ServerCommunication [Thread-0] Try send message
+2023-05-27 19:00:46,034 INFO r.n.o.m.s.ServerCommunication [Thread-0] Sended message
+2023-05-27 19:00:46,034 INFO r.n.o.m.s.KernelServer [Thread-0] Add new user, name: Makar
+2023-05-27 19:00:46,034 INFO r.n.o.m.s.KernelServer [Thread-0] Broad cast list users
+2023-05-27 19:00:46,036 INFO r.n.o.m.s.ServerCommunication [Thread-0] Try send message
+2023-05-27 19:00:46,039 INFO r.n.o.m.s.ServerCommunication [Thread-0] Sended message
+2023-05-27 19:00:46,072 INFO r.n.o.m.c.c.CommandLogin [JavaFX Application Thread] Request server: correct nameUser: Message[typeMessage=logIn, content=true]
+2023-05-27 19:00:46,073 INFO r.n.o.m.c.v.View [JavaFX Application Thread] Generate chat
+2023-05-27 19:00:46,332 INFO r.n.o.m.c.c.CommandLogin [JavaFX Application Thread] Request server: correct name user: true
+2023-05-27 19:00:46,337 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Find class by nameCommand: listParticipants
+2023-05-27 19:00:46,341 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Annotation comparison CommandAnnotation
+2023-05-27 19:00:46,341 INFO r.n.o.m.c.c.Controller [Thread-5] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandList
+2023-05-27 19:00:46,342 INFO r.n.o.m.c.c.CommandList [Thread-5] Call listParticipants
+2023-05-27 19:00:46,342 INFO r.n.o.m.c.v.ControllerView [Thread-5] Show list on display
+2023-05-27 19:00:48,572 INFO r.n.o.m.s.ServerCommunication [Thread-0] New command has been received: message
+2023-05-27 19:00:48,573 INFO r.n.o.m.s.ServerCommunication [Thread-0] Get command create: message
+2023-05-27 19:00:48,573 INFO r.n.o.m.s.c.ExecuteCommand [Thread-0] Find class by nameCommand
+2023-05-27 19:00:48,577 INFO r.n.o.m.s.c.ExecuteCommand [Thread-0] Annotation comparison CommandAnnotation
+2023-05-27 19:00:48,580 INFO r.n.o.m.s.ServerCommunication [Thread-0] Create command: class ru.nsu.org.mikhalev.server.commands.CommandMessage
+2023-05-27 19:01:28,573 INFO r.n.o.m.s.a.Main [main] Start program
+2023-05-27 19:01:28,575 INFO r.n.o.m.s.a.Main [main] Check args
+2023-05-27 19:01:28,578 INFO r.n.o.m.u.f.ParseConfiguration [main] Entrance ParseFileJSON
+2023-05-27 19:01:28,617 INFO r.n.o.m.u.f.ParseConfiguration [main] Entrance ParseFileJSON
+2023-05-27 19:01:28,624 INFO r.n.o.m.s.KernelServer [main] Start work KernelServer
+2023-05-27 19:01:33,479 INFO r.n.o.m.c.a.Main [main] Start program
+2023-05-27 19:01:33,481 INFO r.n.o.m.c.a.Main [main] Check args
+2023-05-27 19:01:33,483 INFO r.n.o.m.u.f.ParseConfiguration [main] Entrance ParseFileJSON
+2023-05-27 19:01:33,631 INFO r.n.o.m.c.v.View [JavaFX Application Thread] Generate login
+2023-05-27 19:01:33,959 INFO r.n.o.m.c.v.View [JavaFX Application Thread] Load fxml
+2023-05-27 19:01:34,379 INFO r.n.o.m.u.f.ParseConfiguration [JavaFX Application Thread] Entrance ParseFileJSON
+2023-05-27 19:01:34,387 INFO r.n.o.m.c.User [JavaFX Application Thread] Create user
+2023-05-27 19:01:34,397 INFO r.n.o.m.s.KernelServer [main] Joining user: Socket[addr=/127.0.0.1,port=49532,localport=8080]
+2023-05-27 19:01:34,401 INFO r.n.o.m.s.ServerCommunication [main] Create ru.nsu.org.mikhalev.server.ServerCommunication@66982506
+2023-05-27 19:01:34,417 INFO r.n.o.m.s.ServerCommunication [Thread-0] Call requestAddUser
+2023-05-27 19:01:36,380 INFO r.n.o.m.c.v.ControllerView [JavaFX Application Thread] Action button connect Makar
+2023-05-27 19:01:36,381 INFO r.n.o.m.c.c.Controller [JavaFX Application Thread] Call function tryLogin, login: Makar
+2023-05-27 19:01:36,383 INFO r.n.o.m.c.c.ExecuteCommand [JavaFX Application Thread] Find class by nameCommand: logIn
+2023-05-27 19:01:36,395 INFO r.n.o.m.c.c.ExecuteCommand [JavaFX Application Thread] Annotation comparison CommandAnnotation
+2023-05-27 19:01:36,395 INFO r.n.o.m.c.c.Controller [JavaFX Application Thread] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandLogin
+2023-05-27 19:01:36,395 INFO r.n.o.m.c.c.CommandLogin [JavaFX Application Thread] Call function tryLogin, login: logIn
+2023-05-27 19:01:36,432 INFO r.n.o.m.s.ServerCommunication [Thread-0] New user: Makar
+2023-05-27 19:01:36,433 INFO r.n.o.m.s.ServerCommunication [Thread-0] Get command create: logIn
+2023-05-27 19:01:36,434 INFO r.n.o.m.s.c.ExecuteCommand [Thread-0] Find class by nameCommand
+2023-05-27 19:01:36,445 INFO r.n.o.m.s.c.ExecuteCommand [Thread-0] Annotation comparison CommandAnnotation
+2023-05-27 19:01:36,445 INFO r.n.o.m.s.ServerCommunication [Thread-0] Create command: class ru.nsu.org.mikhalev.server.commands.CommandLogin
+2023-05-27 19:01:36,445 INFO r.n.o.m.s.c.CommandLogin [Thread-0] Check correct max length user name
+2023-05-27 19:01:36,445 INFO r.n.o.m.s.c.CommandLogin [Thread-0] Check correct name format
+2023-05-27 19:01:36,446 INFO r.n.o.m.s.KernelServer [Thread-0] Check contain user name in mapUser: Makar
+2023-05-27 19:01:36,446 INFO r.n.o.m.s.ServerCommunication [Thread-0] Status add new user: true
+2023-05-27 19:01:36,448 INFO r.n.o.m.s.ServerCommunication [Thread-0] Try send message
+2023-05-27 19:01:36,454 INFO r.n.o.m.s.ServerCommunication [Thread-0] Sended message
+2023-05-27 19:01:36,455 INFO r.n.o.m.s.KernelServer [Thread-0] Add new user, name: Makar
+2023-05-27 19:01:36,455 INFO r.n.o.m.s.KernelServer [Thread-0] Broad cast list users
+2023-05-27 19:01:36,457 INFO r.n.o.m.s.ServerCommunication [Thread-0] Try send message
+2023-05-27 19:01:36,459 INFO r.n.o.m.s.ServerCommunication [Thread-0] Sended message
+2023-05-27 19:01:36,493 INFO r.n.o.m.c.c.CommandLogin [JavaFX Application Thread] Request server: correct nameUser: Message[typeMessage=logIn, content=true]
+2023-05-27 19:01:36,493 INFO r.n.o.m.c.v.View [JavaFX Application Thread] Generate chat
+2023-05-27 19:01:36,741 INFO r.n.o.m.c.c.CommandLogin [JavaFX Application Thread] Request server: correct name user: true
+2023-05-27 19:01:36,746 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Find class by nameCommand: listParticipants
+2023-05-27 19:01:36,752 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Annotation comparison CommandAnnotation
+2023-05-27 19:01:36,752 INFO r.n.o.m.c.c.Controller [Thread-5] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandList
+2023-05-27 19:01:36,752 INFO r.n.o.m.c.c.CommandList [Thread-5] Call listParticipants
+2023-05-27 19:01:36,752 INFO r.n.o.m.c.v.ControllerView [Thread-5] Show list on display
+2023-05-27 19:01:47,328 INFO r.n.o.m.s.ServerCommunication [Thread-0] New command has been received: message
+2023-05-27 19:01:47,329 INFO r.n.o.m.s.ServerCommunication [Thread-0] Get command create: message
+2023-05-27 19:01:47,329 INFO r.n.o.m.s.c.ExecuteCommand [Thread-0] Find class by nameCommand
+2023-05-27 19:01:47,333 INFO r.n.o.m.s.c.ExecuteCommand [Thread-0] Annotation comparison CommandAnnotation
+2023-05-27 19:01:47,336 INFO r.n.o.m.s.ServerCommunication [Thread-0] Create command: class ru.nsu.org.mikhalev.server.commands.CommandMessage

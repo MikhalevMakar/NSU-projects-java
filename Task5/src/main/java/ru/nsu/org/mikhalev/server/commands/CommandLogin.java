@@ -61,6 +61,7 @@ public class CommandLogin implements Command {
         throw new NameMaxLengthException ("Max length user name >  " + MAX_LENGTH_NAME);
     }
 
+    @Override
     public boolean execute(@NotNull ServerCommunication serverCommunication, @NotNull Message<String> message) {
         try {
             return isCorrectLengthName(message.getContent(), serverCommunication) &&
