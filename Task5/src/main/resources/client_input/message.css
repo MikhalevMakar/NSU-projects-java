@@ -1,0 +1,21 @@
+/* Стили для VBox */
+.vbox {
+    background-color: #FFFFFF;
+}
+
+/* Стили для выделенных сообщений */
+.vbox .message.selected {
+    background-color: #DCF8C6;
+    border-color: #34B7F1;
+}
+
+/* Стили для текста сообщений */
+.vbox .message .text {
+    color: #000000;
+}
+
+/* Стили для выделенного текста сообщений */
+.vbox .message.selected .text {
+    color: #000000;
+    font-weight: bold;
+}

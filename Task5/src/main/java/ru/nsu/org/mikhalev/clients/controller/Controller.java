@@ -47,9 +47,10 @@ public class Controller {
     }
 
     public void queryManagement(@NotNull Message<?> message) {
+        log.info("Query management " + message.getContent());
+
         Command command;
         try {
-
             command = executeCommand.createInstanceClass(message.getTypeMessage());
             log.info ("Create command: " + command.getClass());
 
@@ -61,8 +62,9 @@ public class Controller {
     }
 
     @Contract(value = "null -> false", pure = true)
-    public void tryLogin(final String login) {
-        log.info("Call function tryLogin, login: " + login);
-        queryManagement(new Message<>(ContextCommand.getLOG_IN(), login));
+    public void tryLogin(final String logIn) {
+        log.info("Call function tryLogin, login: " + logIn);
+        user.setLogIn(logIn);
+        queryManagement(new Message<>(ContextCommand.getLOG_IN(), logIn));
     }
 }

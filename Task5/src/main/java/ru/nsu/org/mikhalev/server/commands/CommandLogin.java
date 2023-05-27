@@ -5,6 +5,7 @@ import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 import ru.nsu.org.mikhalev.server.ServerCommunication;
 import ru.nsu.org.mikhalev.universal_utile_class.Message;
+import ru.nsu.org.mikhalev.universal_utile_class.create_command.ContextCommand;
 import ru.nsu.org.mikhalev.universal_utile_class.exceptions.UserNameException.NameContainsException;
 import ru.nsu.org.mikhalev.universal_utile_class.exceptions.UserNameException.NameInvalidFormatException;
 import ru.nsu.org.mikhalev.universal_utile_class.exceptions.UserNameException.NameMaxLengthException;
@@ -42,7 +43,7 @@ public class CommandLogin implements Command {
         if(!server.getKernelServer().contains(nameUser)) return true;
 
         server.getObjectOutputStream()
-            .writeObject(new Message<>("error", "This user is contains in chat " + nameUser));
+            .writeObject(new Message<>(ContextCommand.getERROR(), "This user is contains in chat " + nameUser));
 
         throw new NameContainsException("This user is contains in chat");
     }

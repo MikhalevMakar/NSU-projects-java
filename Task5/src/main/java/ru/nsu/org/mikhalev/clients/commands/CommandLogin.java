@@ -24,7 +24,7 @@ public class CommandLogin implements Command {
             message = (Message<?>) controller.getUser().getObjectInputStream().readObject();
 
             log.info ("Request server: correct nameUser: " + message);
-            controller.getView().printErrorMessage (message.getContent ().toString());
+            controller.getView().printErrorMessage(message.getContent ().toString());
 
             if (Boolean.TRUE.equals(message.getContent())) {
                 controller.getView().generateChat(controller.getLinkConfigurationJSON().getChatFXML());

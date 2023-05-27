@@ -26,6 +26,7 @@ public class KernelServer {
     @Getter
     private final Map<String, ServerCommunication> mapUser = new HashMap<>();
 
+    @Getter
     private final List<Message<String>> messages = new LinkedList<>();
 
     private final LinksToConfiguration linksToConfiguration;
@@ -44,9 +45,15 @@ public class KernelServer {
         mapUser.remove(user);
     }
 
-    private void broadCastMessagesHistory(ServerCommunication serverCommunication) {
+    public void broadCastListMessages(List<Message<String>> messageList) {
+        log.info("Broad cast list messages");
 
-        serverCommunication.requestSendMessage(new Message<>("Message", messages));
+        final Message<List<Message<String>>> message = new Message<>(ContextCommand.getMESSAGE(), messageList.stream().toList());
+
+        for (Map.Entry<String, ServerCommunication> entry : mapUser.entrySet()) {
+            System.out.println("here");
+            entry.getValue().requestSendMessage(message);
+        }
     }
 
     public synchronized void addNewUser(String nameUser, ServerCommunication serverCommunication) {
@@ -54,8 +61,7 @@ public class KernelServer {
 
          mapUser.put(nameUser, serverCommunication);
          broadCastListUsers();
-
-         //broadCastMessagesHistory(serverCommunication);
+         serverCommunication.requestSendMessage(new Message<>(ContextCommand.getMESSAGE(), messages));
     }
 
     public synchronized boolean contains(final String nameUser)  {
@@ -69,16 +75,6 @@ public class KernelServer {
 
         final Message<List<String>> message = new Message<>(ContextCommand.getLIST_PARTICIPANTS(),
                                                             mapUser.keySet().stream().toList());
-
-        for (Map.Entry<String, ServerCommunication> entry : mapUser.entrySet()) {
-            entry.getValue().requestSendMessage(message);
-        }
-    }
-
-    private void broadCastListMessages(List<Message<String>> messagesList) {
-        log.info("Broad cast list messages");
-
-        final Message<List<Message<String>>> message = new Message<>(ContextCommand.getCHAT_HISTORY(), messagesList);
 
         for (Map.Entry<String, ServerCommunication> entry : mapUser.entrySet()) {
             entry.getValue().requestSendMessage(message);

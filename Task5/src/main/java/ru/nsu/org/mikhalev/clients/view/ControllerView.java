@@ -57,7 +57,7 @@ public class ControllerView {
 
         Platform.runLater(() -> {
             for (var message : historyMessage) {
-                historyMessageView.getItems().add(message.getTypeMessage() + " : " + message.getContent());
+                historyMessageView.getItems().add(message.getLogIn() + " : " + message.getContent());
             }
             historyMessageView.refresh();
         });
@@ -66,12 +66,13 @@ public class ControllerView {
     public void handleEnterKeyPressed() {
         inputText.setOnKeyPressed(event -> {
             if (event.getCode() == KeyCode.ENTER && (inputText.getText().length() != 0)) {
+                log.info("Send text " + inputText.getText());
                 try {
                     controller.getUser().sendToServer(new Message<>(ContextCommand.getMESSAGE(), inputText.getText()));
+                    inputText.clear();
                 } catch (IOException e) {
-                    throw new ExcIO("Error io" + e.getMessage());
+                    throw new ExcIO("Error i | o" + e.getMessage());
                 }
-                inputText.clear();
             }
         });
     }

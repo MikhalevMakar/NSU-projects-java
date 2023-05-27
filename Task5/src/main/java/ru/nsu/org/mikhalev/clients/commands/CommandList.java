@@ -12,7 +12,7 @@ import java.util.List;
 public class CommandList implements Command {
 
     @Override
-    public void execute(@NotNull Controller controller, Message<?> message) {
+    public void execute(@NotNull Controller controller, @NotNull Message<?> message) {
         log.info("Call " + message.getTypeMessage());
 
         controller.getView().getControllerView().displayList((List<String>)message.getContent());

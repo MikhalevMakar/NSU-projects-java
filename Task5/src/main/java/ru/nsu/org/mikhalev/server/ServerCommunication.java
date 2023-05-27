@@ -18,6 +18,9 @@ import java.util.Arrays;
 public class ServerCommunication implements Runnable, Closeable, Serializable {
 
     @Getter
+    private String nameUser;
+
+    @Getter
     private final ObjectInputStream objectInputStream;
 
     @Getter
@@ -67,6 +70,7 @@ public class ServerCommunication implements Runnable, Closeable, Serializable {
             log.info("Status add new user: " + statusRun);
         } while(!statusRun);
 
+        nameUser =  (String) message.getContent();
         requestSendMessage(new Message<>(ContextCommand.getLOG_IN(), true));
 
         kernelServer.addNewUser((String)message.getContent(), this);
@@ -77,7 +81,7 @@ public class ServerCommunication implements Runnable, Closeable, Serializable {
             log.info("Try send message");
             objectOutputStream.writeObject(message);
             objectOutputStream.flush();
-            log.info("Sended message");
+            log.info("Send message");
         } catch (IOException ex) {
             throw new ExcIO("Error: io " + Arrays.toString(ex.getStackTrace()));
         }
@@ -95,7 +99,7 @@ public class ServerCommunication implements Runnable, Closeable, Serializable {
             try {
                 message = (Message<?>) objectInputStream.readObject();
 
-                log.info("New command has been received: " + message.getTypeMessage());
+                log.info("New command has been received: " + message.getContent() + " " + message.getTypeMessage());
 
                 queryManagement(message);
 

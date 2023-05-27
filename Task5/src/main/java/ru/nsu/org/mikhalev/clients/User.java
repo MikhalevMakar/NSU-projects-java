@@ -1,6 +1,7 @@
 package ru.nsu.org.mikhalev.clients;
 
 import lombok.Getter;
+import lombok.Setter;
 import lombok.extern.log4j.Log4j2;
 import ru.nsu.org.mikhalev.clients.controller.Controller;
 import ru.nsu.org.mikhalev.universal_utile_class.Message;
@@ -13,6 +14,10 @@ import java.util.UUID;
 
 @Log4j2
 public class User implements Closeable, Serializable {
+
+    @Setter
+    @Getter
+    private String logIn;
 
     @Getter
     private final UUID id;

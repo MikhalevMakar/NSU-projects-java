@@ -13,7 +13,7 @@ public class CommandMessage implements Command {
 
     @Override
     public void execute(@NotNull Controller controller, @NotNull Message<?> message) {
-        log.info("Execute command: " + message.getTypeMessage());
+        log.info("Execute command: " + message.getTypeMessage() + message.getContent());
 
         controller.getView().getControllerView().updateHistoryMessage((List<Message<String>>) message.getContent());
     }
