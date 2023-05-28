@@ -15,7 +15,7 @@ public class CommandList implements Command {
     public void execute(@NotNull Controller controller, @NotNull Message<?> message) {
         log.info("Call " + message.getTypeMessage());
 
-        controller.getView().getControllerView().displayList((List<String>)message.getContent());
+        controller.getView().getControllerView().displayList(controller.getUser().getLogIn(), (List<String>)message.getContent());
 
     }
 }

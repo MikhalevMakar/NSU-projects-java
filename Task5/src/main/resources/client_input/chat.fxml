@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.net.URL?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
@@ -51,15 +50,7 @@
             <ListView fx:id="participantsListView" prefHeight="482.0" prefWidth="312.0" style="-fx-background-color: #242A31;" stylesheets="@../chat.css" />
          </children>
       </VBox>
-      <VBox layoutX="388.0" layoutY="26.0" prefHeight="440.0" prefWidth="357.0">
-         <stylesheets>
-            <URL value="@../chat.css" />
-            <URL value="@message.css" />
-         </stylesheets></VBox>
-      <ListView fx:id="historyMessageView" layoutX="389.0" layoutY="28.0" prefHeight="434.0" prefWidth="354.0" style="-fx-background-color: #242A31;">
-         <stylesheets>
-            <URL value="@../chat.css" />
-            <URL value="@message.css" />
-         </stylesheets></ListView>
+      <VBox layoutX="388.0" layoutY="26.0" prefHeight="440.0" prefWidth="357.0" stylesheets="@../chat.css" />
+      <ListView fx:id="historyMessageView" layoutX="389.0" layoutY="28.0" prefHeight="434.0" prefWidth="354.0" style="-fx-background-color: #242A31;" stylesheets="@../chat.css" />
    </children>
 </AnchorPane>

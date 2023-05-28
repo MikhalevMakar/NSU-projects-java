@@ -12,31 +12,27 @@
     -fx-text-fill: #FFFFFF;
 }
 
+
+
 .list-view .list-cell:selected {
     -fx-background-color: #336699;
     -fx-text-fill: #FFFFFF;
 }
 
-.scroll-bar {
-    -fx-background-color: transparent; /* Сделать фон ползунка прозрачным /
+.list-view .list-cell .label {
+    -fx-text-fill: white;
 }
 
-.scroll-bar .track {
-    -fx-background-color: transparent; / Сделать фон трека прозрачным /
+.message-item .text {
+    -fx-padding: 1px 2px;
 }
 
-.scroll-bar .thumb {
-    -fx-background-color: transparent; / Сделать фон ползунка прозрачным /
-}
-
-.scroll-bar:increment-button {
-    -fx-padding: 0; / убрать отступы /
-    -fx-background-color: transparent; / сделать фон стрелок прозрачным /
-    -fx-shape: ""; / убрать форму стрелок /
-}
-
-.scroll-bar:decrement-arrow {
-    -fx-background-color: transparent; / сделать фон стрелок прозрачным /
-    -fx-padding: 0; / убрать отступы /
-    -fx-shape: ""; / убрать форму стрелок */
+.message-item {
+    -fx-padding: 2px;
+    -fx-border-radius: 100px;
+    -fx-background-radius: 200px;
+    -fx-border-color: #2A363F;
+    -fx-border-width: 2px;
+    -fx-border-insets: 2px;
+    -fx-background-color: #2A363F;
 }
