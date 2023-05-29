@@ -50,15 +50,11 @@ public class Controller {
         log.info("Query management " + message.getContent());
 
         Command command;
-        try {
-            command = executeCommand.createInstanceClass(message.getTypeMessage());
-            log.info ("Create command: " + command.getClass());
 
-            command.execute(this, message);
+        command = executeCommand.createInstanceClass(message.getTypeMessage());
+        log.info ("Create command: " + command.getClass());
 
-        } catch (IOException | ClassNotFoundException ex) {
-            throw new ExcLoadCommand("Exc load " + Arrays.toString(ex.getStackTrace()));
-        }
+        command.execute(this, message);
     }
 
     @Contract(value = "null -> false", pure = true)

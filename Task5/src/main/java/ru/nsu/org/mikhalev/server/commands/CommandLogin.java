@@ -37,7 +37,7 @@ public class CommandLogin implements Command {
         throw new NameInvalidFormatException("Incorrect name " + nameUser);
     }
 
-    private boolean isContains(final @NotNull String nameUser, ServerCommunication server) throws NameContainsException,
+    private boolean isContains(final @NotNull String nameUser, @NotNull ServerCommunication server) throws NameContainsException,
                                                                                                   IOException {
 
         if(!server.getKernelServer().contains(nameUser)) return true;

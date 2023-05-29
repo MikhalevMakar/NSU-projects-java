@@ -18,4 +18,10 @@ public class ContextCommand {
 
     @Getter
     private static final String ERROR = "error";
+
+    @Getter
+    private static final String USER_EXIT = "userExit";
+
+    @Getter
+    private static final String BROAD_CAST_NEW_USER = "broadCastNewUser";
 }

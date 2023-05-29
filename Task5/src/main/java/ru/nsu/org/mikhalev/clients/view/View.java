@@ -20,24 +20,16 @@ public class View {
 
     private Pane root;
 
-    /**
-     * Creates an instance of Text on the given coordinates containing the given string.
-     * Params: x – the horizontal position of the text
-     *         y – the vertical position of the text
-     *         text – text to be contained in the instance
-     */
-
     @Getter
-    private ControllerView controllerView = new ControllerView();
+    private ControllerView controllerView;
     private final Text error = new Text(250, 450, "");
 
-
     public View() {}
-
     public View(final Stage stage) {
         this.stage = stage;
 
         Font font = Font.font("System", 15);
+        controllerView = new ControllerView(stage);
         error.setFont(font);
         error.setStyle("-fx-fill: red;");
     }

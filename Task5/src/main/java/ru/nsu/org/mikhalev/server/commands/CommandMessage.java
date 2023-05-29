@@ -14,7 +14,7 @@ public class CommandMessage implements Command {
 
     @Override
     public boolean execute(@NotNull ServerCommunication serverCommunication, @NotNull Message<String> message) {
-       log.info("Execute command " + message.getTypeMessage() + " data " + message.getContent() + "user " + serverCommunication.getNameUser());
+       log.info("Execute command " + message.getTypeMessage() + "user " + serverCommunication.getNameUser());
 
        message.setLogIn(serverCommunication.getNameUser());
 

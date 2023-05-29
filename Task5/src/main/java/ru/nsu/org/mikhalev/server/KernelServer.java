@@ -3,7 +3,6 @@ package ru.nsu.org.mikhalev.server;
 import lombok.Getter;
 import lombok.extern.log4j.Log4j2;
 import org.jetbrains.annotations.NotNull;
-import ru.nsu.org.mikhalev.clients.User;
 import ru.nsu.org.mikhalev.server.file_management.LinksToConfiguration;
 import ru.nsu.org.mikhalev.universal_utile_class.create_command.ContextCommand;
 import ru.nsu.org.mikhalev.universal_utile_class.exceptions.ExcKernelServer;
@@ -41,11 +40,11 @@ public class KernelServer {
         this.serverSocket = new ServerSocket(configuration.getPort());
     }
 
-    public void removeUser(User user){
+    public void removeUser(String user) {
         mapUser.remove(user);
     }
 
-    public void broadCastListMessages(List<Message<String>> messageList) {
+    public void broadCastListMessages(@NotNull List<Message<String>> messageList) {
         log.info("Broad cast list messages");
 
         final Message<List<Message<String>>> message = new Message<>(ContextCommand.getMESSAGE(), messageList.stream().toList());
@@ -61,6 +60,11 @@ public class KernelServer {
 
          mapUser.put(nameUser, serverCommunication);
          broadCastListUsers();
+
+         List<Message<String>> messageList = new LinkedList<>();
+         messageList.add(new Message<>(ContextCommand.getBROAD_CAST_NEW_USER(), String.format("Add new user: %s", nameUser)));
+         broadCastListMessages(messageList); //TODO
+
          serverCommunication.requestSendMessage(new Message<>(ContextCommand.getMESSAGE(), messages));
     }
 
@@ -105,6 +109,3 @@ public class KernelServer {
         return this.getClass().getSimpleName();
     }
 }
-
-
-

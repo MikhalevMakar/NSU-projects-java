@@ -9,6 +9,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 
+import javafx.stage.Stage;
 import org.jetbrains.annotations.NotNull;
 import lombok.extern.log4j.Log4j2;
 import ru.nsu.org.mikhalev.clients.controller.Controller;
@@ -28,6 +29,9 @@ public class ControllerView {
     private TextField inputText;
 
     @FXML
+    private TextField countConnectUser;
+
+    @FXML
     private ListView<MessageItem> historyMessageView;
 
     @FXML
@@ -35,6 +39,25 @@ public class ControllerView {
 
     @FXML
     private TextField nameUser;
+
+    public ControllerView() {}
+    public ControllerView(@NotNull Stage stage) {
+        stage.setOnCloseRequest(event -> handleWindowClose());
+    }
+
+    private void handleWindowClose() {
+        try {
+            Message<String> message = new Message<>(ContextCommand.getUSER_EXIT(),
+                                                    String.format("User: %s has left the chat", controller.getUser().getLogIn()));
+
+            message.setLogIn(controller.getUser().getLogIn());
+
+            controller.getUser().sendToServer(message);
+            Platform.exit();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     public static void registration(final Controller controllerUser){
         controller = controllerUser;
@@ -45,7 +68,7 @@ public class ControllerView {
 
         Platform.runLater(() -> {
             participantsListView.getItems().clear();
-
+            countConnectUser.setText(String.format("%d", list.size()));
             for (String user : list) {
                 Label label = new Label(user);
                 if (nameUser.equals(user)) {
@@ -57,13 +80,14 @@ public class ControllerView {
     }
 
     public void updateHistoryMessage(List<Message<String>> historyMessage) {
-        log.info("update messages");
 
         Platform.runLater(() -> {
-            String logIn = controller.getUser().getLogIn();
+            log.info("Update messages");
+
             for (var message : historyMessage) {
-                Pos alignment = message.getLogIn().equals(logIn) ? Pos.CENTER_RIGHT : Pos.CENTER_LEFT;
-                MessageItem messageItem = new MessageItem(message, alignment);
+                //MessageItem messageItem = new MessageItem(message);
+
+                MessageItem messageItem = new MessageItem(message, controller.getUser().getLogIn());
 
                 historyMessageView.getItems().add(messageItem);
             }
