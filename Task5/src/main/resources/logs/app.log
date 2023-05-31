@@ -1,0 +1,1172 @@
+2023-05-29 19:17:37,176 INFO r.n.o.m.s.a.Main [main] Start program
+2023-05-29 19:17:37,179 INFO r.n.o.m.s.a.Main [main] Check args
+2023-05-29 19:17:37,184 INFO r.n.o.m.u.f.ParseConfiguration [main] Entrance ParseFileJSON
+2023-05-29 19:17:37,233 INFO r.n.o.m.u.f.ParseConfiguration [main] Entrance ParseFileJSON
+2023-05-29 19:17:37,245 INFO r.n.o.m.s.KernelServer [main] Start work KernelServer
+2023-05-29 19:17:45,962 INFO r.n.o.m.c.a.Main [main] Start program
+2023-05-29 19:17:45,965 INFO r.n.o.m.c.a.Main [main] Check args
+2023-05-29 19:17:45,968 INFO r.n.o.m.u.f.ParseConfiguration [main] Entrance ParseFileJSON
+2023-05-29 19:17:46,153 INFO r.n.o.m.c.v.View [JavaFX Application Thread] Generate login
+2023-05-29 19:17:46,550 INFO r.n.o.m.c.v.View [JavaFX Application Thread] Load fxml
+2023-05-29 19:17:47,167 INFO r.n.o.m.u.f.ParseConfiguration [JavaFX Application Thread] Entrance ParseFileJSON
+2023-05-29 19:17:47,176 INFO r.n.o.m.c.User [JavaFX Application Thread] Create user
+2023-05-29 19:17:47,190 INFO r.n.o.m.s.KernelServer [main] Joining user: Socket[addr=/127.0.0.1,port=50426,localport=8080]
+2023-05-29 19:17:47,202 INFO r.n.o.m.s.ServerCommunication [main] Create ru.nsu.org.mikhalev.server.ServerCommunication@66982506
+2023-05-29 19:17:47,247 INFO r.n.o.m.s.ServerCommunication [Thread-0] Call requestAddUser
+2023-05-29 19:17:51,613 INFO r.n.o.m.c.v.ControllerView [JavaFX Application Thread] Action button connect Makar
+2023-05-29 19:17:51,617 INFO r.n.o.m.c.c.Controller [JavaFX Application Thread] Call function tryLogin, login: Makar
+2023-05-29 19:17:51,620 INFO r.n.o.m.c.c.Controller [JavaFX Application Thread] Query management Makar
+2023-05-29 19:17:51,620 INFO r.n.o.m.c.c.ExecuteCommand [JavaFX Application Thread] Find class by nameCommand: logIn
+2023-05-29 19:17:51,639 INFO r.n.o.m.c.c.ExecuteCommand [JavaFX Application Thread] Annotation comparison CommandAnnotation
+2023-05-29 19:17:51,640 INFO r.n.o.m.c.c.Controller [JavaFX Application Thread] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandLogin
+2023-05-29 19:17:51,640 INFO r.n.o.m.c.c.CommandLogin [JavaFX Application Thread] Call function tryLogin, login: logIn
+2023-05-29 19:17:51,702 INFO r.n.o.m.s.ServerCommunication [Thread-0] New user: Makar
+2023-05-29 19:17:51,707 INFO r.n.o.m.s.ServerCommunication [Thread-0] Get command create: logIn
+2023-05-29 19:17:51,708 INFO r.n.o.m.s.c.ExecuteCommand [Thread-0] Find class by nameCommand
+2023-05-29 19:17:51,736 INFO r.n.o.m.s.c.ExecuteCommand [Thread-0] Annotation comparison CommandAnnotation
+2023-05-29 19:17:51,736 INFO r.n.o.m.s.ServerCommunication [Thread-0] Create command: class ru.nsu.org.mikhalev.server.commands.CommandLogin
+2023-05-29 19:17:51,736 INFO r.n.o.m.s.c.CommandLogin [Thread-0] Check correct max length user name
+2023-05-29 19:17:51,737 INFO r.n.o.m.s.c.CommandLogin [Thread-0] Check correct name format
+2023-05-29 19:17:51,739 INFO r.n.o.m.s.KernelServer [Thread-0] Check contain user name in mapUser: Makar
+2023-05-29 19:17:51,743 INFO r.n.o.m.s.ServerCommunication [Thread-0] Status add new user: true
+2023-05-29 19:17:51,744 INFO r.n.o.m.s.ServerCommunication [Thread-0] Try send message
+2023-05-29 19:17:51,765 INFO r.n.o.m.s.ServerCommunication [Thread-0] Send message
+2023-05-29 19:17:51,765 INFO r.n.o.m.c.c.CommandLogin [JavaFX Application Thread] Request server: correct nameUser: ru.nsu.org.mikhalev.universal_utile_class.Message@6a030588
+2023-05-29 19:17:51,766 INFO r.n.o.m.c.v.View [JavaFX Application Thread] Generate chat
+2023-05-29 19:17:51,766 INFO r.n.o.m.s.KernelServer [Thread-0] Add new user, name: Makar
+2023-05-29 19:17:51,766 INFO r.n.o.m.s.KernelServer [Thread-0] Broad cast list users
+2023-05-29 19:17:51,770 INFO r.n.o.m.s.ServerCommunication [Thread-0] Try send message
+2023-05-29 19:17:51,779 INFO r.n.o.m.s.ServerCommunication [Thread-0] Send message
+2023-05-29 19:17:51,779 INFO r.n.o.m.s.KernelServer [Thread-0] Broad cast list messages
+2023-05-29 19:17:51,779 INFO r.n.o.m.s.ServerCommunication [Thread-0] Try send message
+2023-05-29 19:17:51,780 INFO r.n.o.m.s.ServerCommunication [Thread-0] Send message
+2023-05-29 19:17:51,780 INFO r.n.o.m.s.ServerCommunication [Thread-0] Try send message
+2023-05-29 19:17:51,783 INFO r.n.o.m.s.ServerCommunication [Thread-0] Send message
+2023-05-29 19:17:52,153 INFO r.n.o.m.c.c.CommandLogin [JavaFX Application Thread] Request server: correct name user: true
+2023-05-29 19:17:52,168 INFO r.n.o.m.c.c.Controller [Thread-5] Query management [Makar]
+2023-05-29 19:17:52,168 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Find class by nameCommand: listParticipants
+2023-05-29 19:17:52,171 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Annotation comparison CommandAnnotation
+2023-05-29 19:17:52,171 INFO r.n.o.m.c.c.Controller [Thread-5] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandList
+2023-05-29 19:17:52,172 INFO r.n.o.m.c.c.CommandList [Thread-5] Call listParticipants
+2023-05-29 19:17:52,172 INFO r.n.o.m.c.v.ControllerView [Thread-5] Show list on display
+2023-05-29 19:17:52,173 INFO r.n.o.m.c.c.Controller [Thread-5] Query management [ru.nsu.org.mikhalev.universal_utile_class.Message@3379d6b7]
+2023-05-29 19:17:52,173 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Find class by nameCommand: message
+2023-05-29 19:17:52,174 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Annotation comparison CommandAnnotation
+2023-05-29 19:17:52,177 INFO r.n.o.m.c.c.Controller [Thread-5] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandMessage
+2023-05-29 19:17:52,179 INFO r.n.o.m.c.c.CommandMessage [Thread-5] Execute command: message[ru.nsu.org.mikhalev.universal_utile_class.Message@3379d6b7]
+2023-05-29 19:17:52,183 INFO r.n.o.m.c.c.Controller [Thread-5] Query management []
+2023-05-29 19:17:52,184 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Find class by nameCommand: message
+2023-05-29 19:17:52,184 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Annotation comparison CommandAnnotation
+2023-05-29 19:17:52,185 INFO r.n.o.m.c.c.Controller [Thread-5] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandMessage
+2023-05-29 19:17:52,185 INFO r.n.o.m.c.c.CommandMessage [Thread-5] Execute command: message[]
+2023-05-29 19:17:52,209 INFO r.n.o.m.c.v.ControllerView [JavaFX Application Thread] Update messages
+2023-05-29 19:17:52,211 INFO r.n.o.m.c.v.ControllerView [JavaFX Application Thread] Update messages
+2023-05-29 19:17:56,401 INFO r.n.o.m.c.a.Main [main] Start program
+2023-05-29 19:17:56,407 INFO r.n.o.m.c.a.Main [main] Check args
+2023-05-29 19:17:56,410 INFO r.n.o.m.u.f.ParseConfiguration [main] Entrance ParseFileJSON
+2023-05-29 19:17:56,564 INFO r.n.o.m.c.v.View [JavaFX Application Thread] Generate login
+2023-05-29 19:17:56,937 INFO r.n.o.m.c.v.View [JavaFX Application Thread] Load fxml
+2023-05-29 19:17:57,509 INFO r.n.o.m.u.f.ParseConfiguration [JavaFX Application Thread] Entrance ParseFileJSON
+2023-05-29 19:17:57,524 INFO r.n.o.m.c.User [JavaFX Application Thread] Create user
+2023-05-29 19:17:57,539 INFO r.n.o.m.s.KernelServer [main] Joining user: Socket[addr=/127.0.0.1,port=50430,localport=8080]
+2023-05-29 19:17:57,541 INFO r.n.o.m.s.ServerCommunication [main] Create ru.nsu.org.mikhalev.server.ServerCommunication@740fb309
+2023-05-29 19:17:57,553 INFO r.n.o.m.s.ServerCommunication [Thread-1] Call requestAddUser
+2023-05-29 19:18:01,977 INFO r.n.o.m.c.v.ControllerView [JavaFX Application Thread] Action button connect Kirill
+2023-05-29 19:18:01,978 INFO r.n.o.m.c.c.Controller [JavaFX Application Thread] Call function tryLogin, login: Kirill
+2023-05-29 19:18:01,980 INFO r.n.o.m.c.c.Controller [JavaFX Application Thread] Query management Kirill
+2023-05-29 19:18:01,980 INFO r.n.o.m.c.c.ExecuteCommand [JavaFX Application Thread] Find class by nameCommand: logIn
+2023-05-29 19:18:01,993 INFO r.n.o.m.c.c.ExecuteCommand [JavaFX Application Thread] Annotation comparison CommandAnnotation
+2023-05-29 19:18:01,993 INFO r.n.o.m.c.c.Controller [JavaFX Application Thread] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandLogin
+2023-05-29 19:18:01,994 INFO r.n.o.m.c.c.CommandLogin [JavaFX Application Thread] Call function tryLogin, login: logIn
+2023-05-29 19:18:02,008 INFO r.n.o.m.s.ServerCommunication [Thread-1] New user: Kirill
+2023-05-29 19:18:02,009 INFO r.n.o.m.s.ServerCommunication [Thread-1] Get command create: logIn
+2023-05-29 19:18:02,011 INFO r.n.o.m.s.c.ExecuteCommand [Thread-1] Find class by nameCommand
+2023-05-29 19:18:02,011 INFO r.n.o.m.s.c.ExecuteCommand [Thread-1] Annotation comparison CommandAnnotation
+2023-05-29 19:18:02,012 INFO r.n.o.m.s.ServerCommunication [Thread-1] Create command: class ru.nsu.org.mikhalev.server.commands.CommandLogin
+2023-05-29 19:18:02,012 INFO r.n.o.m.s.c.CommandLogin [Thread-1] Check correct max length user name
+2023-05-29 19:18:02,012 INFO r.n.o.m.s.c.CommandLogin [Thread-1] Check correct name format
+2023-05-29 19:18:02,012 INFO r.n.o.m.s.KernelServer [Thread-1] Check contain user name in mapUser: Kirill
+2023-05-29 19:18:02,012 INFO r.n.o.m.s.ServerCommunication [Thread-1] Status add new user: true
+2023-05-29 19:18:02,012 INFO r.n.o.m.s.ServerCommunication [Thread-1] Try send message
+2023-05-29 19:18:02,013 INFO r.n.o.m.s.ServerCommunication [Thread-1] Send message
+2023-05-29 19:18:02,013 INFO r.n.o.m.s.KernelServer [Thread-1] Add new user, name: Kirill
+2023-05-29 19:18:02,015 INFO r.n.o.m.c.c.CommandLogin [JavaFX Application Thread] Request server: correct nameUser: ru.nsu.org.mikhalev.universal_utile_class.Message@4fad8308
+2023-05-29 19:18:02,016 INFO r.n.o.m.c.v.View [JavaFX Application Thread] Generate chat
+2023-05-29 19:18:02,014 INFO r.n.o.m.s.KernelServer [Thread-1] Broad cast list users
+2023-05-29 19:18:02,031 INFO r.n.o.m.s.ServerCommunication [Thread-1] Try send message
+2023-05-29 19:18:02,034 INFO r.n.o.m.s.ServerCommunication [Thread-1] Send message
+2023-05-29 19:18:02,035 INFO r.n.o.m.s.ServerCommunication [Thread-1] Try send message
+2023-05-29 19:18:02,035 INFO r.n.o.m.s.ServerCommunication [Thread-1] Send message
+2023-05-29 19:18:02,035 INFO r.n.o.m.s.KernelServer [Thread-1] Broad cast list messages
+2023-05-29 19:18:02,036 INFO r.n.o.m.s.ServerCommunication [Thread-1] Try send message
+2023-05-29 19:18:02,042 INFO r.n.o.m.s.ServerCommunication [Thread-1] Send message
+2023-05-29 19:18:02,043 INFO r.n.o.m.s.ServerCommunication [Thread-1] Try send message
+2023-05-29 19:18:02,044 INFO r.n.o.m.s.ServerCommunication [Thread-1] Send message
+2023-05-29 19:18:02,045 INFO r.n.o.m.s.ServerCommunication [Thread-1] Try send message
+2023-05-29 19:18:02,045 INFO r.n.o.m.s.ServerCommunication [Thread-1] Send message
+2023-05-29 19:18:02,045 INFO r.n.o.m.c.c.Controller [Thread-5] Query management [Makar, Kirill]
+2023-05-29 19:18:02,048 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Find class by nameCommand: listParticipants
+2023-05-29 19:18:02,049 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Annotation comparison CommandAnnotation
+2023-05-29 19:18:02,050 INFO r.n.o.m.c.c.Controller [Thread-5] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandList
+2023-05-29 19:18:02,051 INFO r.n.o.m.c.c.CommandList [Thread-5] Call listParticipants
+2023-05-29 19:18:02,052 INFO r.n.o.m.c.v.ControllerView [Thread-5] Show list on display
+2023-05-29 19:18:02,053 INFO r.n.o.m.c.c.Controller [Thread-5] Query management [ru.nsu.org.mikhalev.universal_utile_class.Message@1c5b7c4e]
+2023-05-29 19:18:02,054 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Find class by nameCommand: message
+2023-05-29 19:18:02,055 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Annotation comparison CommandAnnotation
+2023-05-29 19:18:02,056 INFO r.n.o.m.c.c.Controller [Thread-5] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandMessage
+2023-05-29 19:18:02,056 INFO r.n.o.m.c.c.CommandMessage [Thread-5] Execute command: message[ru.nsu.org.mikhalev.universal_utile_class.Message@1c5b7c4e]
+2023-05-29 19:18:02,074 INFO r.n.o.m.c.v.ControllerView [JavaFX Application Thread] Update messages
+2023-05-29 19:18:02,395 INFO r.n.o.m.c.c.CommandLogin [JavaFX Application Thread] Request server: correct name user: true
+2023-05-29 19:18:02,402 INFO r.n.o.m.c.c.Controller [Thread-5] Query management [Makar, Kirill]
+2023-05-29 19:18:02,402 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Find class by nameCommand: listParticipants
+2023-05-29 19:18:02,405 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Annotation comparison CommandAnnotation
+2023-05-29 19:18:02,406 INFO r.n.o.m.c.c.Controller [Thread-5] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandList
+2023-05-29 19:18:02,407 INFO r.n.o.m.c.c.CommandList [Thread-5] Call listParticipants
+2023-05-29 19:18:02,407 INFO r.n.o.m.c.v.ControllerView [Thread-5] Show list on display
+2023-05-29 19:18:02,408 INFO r.n.o.m.c.c.Controller [Thread-5] Query management [ru.nsu.org.mikhalev.universal_utile_class.Message@331e0982]
+2023-05-29 19:18:02,409 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Find class by nameCommand: message
+2023-05-29 19:18:02,410 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Annotation comparison CommandAnnotation
+2023-05-29 19:18:02,413 INFO r.n.o.m.c.c.Controller [Thread-5] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandMessage
+2023-05-29 19:18:02,415 INFO r.n.o.m.c.c.CommandMessage [Thread-5] Execute command: message[ru.nsu.org.mikhalev.universal_utile_class.Message@331e0982]
+2023-05-29 19:18:02,419 INFO r.n.o.m.c.c.Controller [Thread-5] Query management []
+2023-05-29 19:18:02,419 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Find class by nameCommand: message
+2023-05-29 19:18:02,419 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Annotation comparison CommandAnnotation
+2023-05-29 19:18:02,419 INFO r.n.o.m.c.c.Controller [Thread-5] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandMessage
+2023-05-29 19:18:02,420 INFO r.n.o.m.c.c.CommandMessage [Thread-5] Execute command: message[]
+2023-05-29 19:18:02,462 INFO r.n.o.m.c.v.ControllerView [JavaFX Application Thread] Update messages
+2023-05-29 19:18:02,464 INFO r.n.o.m.c.v.ControllerView [JavaFX Application Thread] Update messages
+2023-05-29 19:18:11,502 INFO r.n.o.m.c.v.ControllerView [JavaFX Application Thread] Send text hi
+2023-05-29 19:18:11,514 INFO r.n.o.m.s.ServerCommunication [Thread-1] New command has been received: hi message
+2023-05-29 19:18:11,516 INFO r.n.o.m.s.ServerCommunication [Thread-1] Get command create: message
+2023-05-29 19:18:11,516 INFO r.n.o.m.s.c.ExecuteCommand [Thread-1] Find class by nameCommand
+2023-05-29 19:18:11,524 INFO r.n.o.m.s.c.ExecuteCommand [Thread-1] Annotation comparison CommandAnnotation
+2023-05-29 19:18:11,526 INFO r.n.o.m.s.ServerCommunication [Thread-1] Create command: class ru.nsu.org.mikhalev.server.commands.CommandMessage
+2023-05-29 19:18:11,527 INFO r.n.o.m.s.c.CommandMessage [Thread-1] Execute command messageuser Kirill
+2023-05-29 19:18:11,528 INFO r.n.o.m.s.KernelServer [Thread-1] Broad cast list messages
+2023-05-29 19:18:11,528 INFO r.n.o.m.s.ServerCommunication [Thread-1] Try send message
+2023-05-29 19:18:11,530 INFO r.n.o.m.s.ServerCommunication [Thread-1] Send message
+2023-05-29 19:18:11,530 INFO r.n.o.m.s.ServerCommunication [Thread-1] Try send message
+2023-05-29 19:18:11,530 INFO r.n.o.m.s.ServerCommunication [Thread-1] Send message
+2023-05-29 19:18:11,532 INFO r.n.o.m.c.c.Controller [Thread-5] Query management [ru.nsu.org.mikhalev.universal_utile_class.Message@34fb5500]
+2023-05-29 19:18:11,532 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Find class by nameCommand: message
+2023-05-29 19:18:11,532 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Annotation comparison CommandAnnotation
+2023-05-29 19:18:11,532 INFO r.n.o.m.c.c.Controller [Thread-5] Query management [ru.nsu.org.mikhalev.universal_utile_class.Message@534cc54]
+2023-05-29 19:18:11,533 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Find class by nameCommand: message
+2023-05-29 19:18:11,533 INFO r.n.o.m.c.c.Controller [Thread-5] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandMessage
+2023-05-29 19:18:11,534 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Annotation comparison CommandAnnotation
+2023-05-29 19:18:11,534 INFO r.n.o.m.c.c.CommandMessage [Thread-5] Execute command: message[ru.nsu.org.mikhalev.universal_utile_class.Message@34fb5500]
+2023-05-29 19:18:11,534 INFO r.n.o.m.c.c.Controller [Thread-5] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandMessage
+2023-05-29 19:18:11,535 INFO r.n.o.m.c.v.ControllerView [JavaFX Application Thread] Update messages
+2023-05-29 19:18:11,535 INFO r.n.o.m.c.c.CommandMessage [Thread-5] Execute command: message[ru.nsu.org.mikhalev.universal_utile_class.Message@534cc54]
+2023-05-29 19:18:11,536 INFO r.n.o.m.c.v.ControllerView [JavaFX Application Thread] Update messages
+2023-05-29 19:18:15,620 INFO r.n.o.m.c.v.ControllerView [JavaFX Application Thread] Send text hi
+2023-05-29 19:18:15,623 INFO r.n.o.m.s.ServerCommunication [Thread-0] New command has been received: hi message
+2023-05-29 19:18:15,624 INFO r.n.o.m.s.ServerCommunication [Thread-0] Get command create: message
+2023-05-29 19:18:15,624 INFO r.n.o.m.s.c.ExecuteCommand [Thread-0] Find class by nameCommand
+2023-05-29 19:18:15,624 INFO r.n.o.m.s.c.ExecuteCommand [Thread-0] Annotation comparison CommandAnnotation
+2023-05-29 19:18:15,625 INFO r.n.o.m.s.ServerCommunication [Thread-0] Create command: class ru.nsu.org.mikhalev.server.commands.CommandMessage
+2023-05-29 19:18:15,625 INFO r.n.o.m.s.c.CommandMessage [Thread-0] Execute command messageuser Makar
+2023-05-29 19:18:15,626 INFO r.n.o.m.s.KernelServer [Thread-0] Broad cast list messages
+2023-05-29 19:18:15,626 INFO r.n.o.m.s.ServerCommunication [Thread-0] Try send message
+2023-05-29 19:18:15,628 INFO r.n.o.m.s.ServerCommunication [Thread-0] Send message
+2023-05-29 19:18:15,629 INFO r.n.o.m.c.c.Controller [Thread-5] Query management [ru.nsu.org.mikhalev.universal_utile_class.Message@36d5d57a]
+2023-05-29 19:18:15,629 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Find class by nameCommand: message
+2023-05-29 19:18:15,629 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Annotation comparison CommandAnnotation
+2023-05-29 19:18:15,629 INFO r.n.o.m.s.ServerCommunication [Thread-0] Try send message
+2023-05-29 19:18:15,630 INFO r.n.o.m.s.ServerCommunication [Thread-0] Send message
+2023-05-29 19:18:15,630 INFO r.n.o.m.c.c.Controller [Thread-5] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandMessage
+2023-05-29 19:18:15,631 INFO r.n.o.m.c.c.CommandMessage [Thread-5] Execute command: message[ru.nsu.org.mikhalev.universal_utile_class.Message@36d5d57a]
+2023-05-29 19:18:15,632 INFO r.n.o.m.c.c.Controller [Thread-5] Query management [ru.nsu.org.mikhalev.universal_utile_class.Message@35e30f57]
+2023-05-29 19:18:15,633 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Find class by nameCommand: message
+2023-05-29 19:18:15,633 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Annotation comparison CommandAnnotation
+2023-05-29 19:18:15,634 INFO r.n.o.m.c.c.Controller [Thread-5] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandMessage
+2023-05-29 19:18:15,634 INFO r.n.o.m.c.c.CommandMessage [Thread-5] Execute command: message[ru.nsu.org.mikhalev.universal_utile_class.Message@35e30f57]
+2023-05-29 19:18:15,637 INFO r.n.o.m.c.v.ControllerView [JavaFX Application Thread] Update messages
+2023-05-29 19:18:15,637 INFO r.n.o.m.c.v.ControllerView [JavaFX Application Thread] Update messages
+2023-05-29 19:18:25,537 INFO r.n.o.m.c.v.ControllerView [JavaFX Application Thread] Send text how are you ?
+2023-05-29 19:18:25,544 INFO r.n.o.m.s.ServerCommunication [Thread-0] New command has been received: how are you ? message
+2023-05-29 19:18:25,547 INFO r.n.o.m.s.ServerCommunication [Thread-0] Get command create: message
+2023-05-29 19:18:25,548 INFO r.n.o.m.s.c.ExecuteCommand [Thread-0] Find class by nameCommand
+2023-05-29 19:18:25,548 INFO r.n.o.m.s.c.ExecuteCommand [Thread-0] Annotation comparison CommandAnnotation
+2023-05-29 19:18:25,549 INFO r.n.o.m.s.ServerCommunication [Thread-0] Create command: class ru.nsu.org.mikhalev.server.commands.CommandMessage
+2023-05-29 19:18:25,549 INFO r.n.o.m.s.c.CommandMessage [Thread-0] Execute command messageuser Makar
+2023-05-29 19:18:25,550 INFO r.n.o.m.s.KernelServer [Thread-0] Broad cast list messages
+2023-05-29 19:18:25,551 INFO r.n.o.m.s.ServerCommunication [Thread-0] Try send message
+2023-05-29 19:18:25,553 INFO r.n.o.m.s.ServerCommunication [Thread-0] Send message
+2023-05-29 19:18:25,553 INFO r.n.o.m.s.ServerCommunication [Thread-0] Try send message
+2023-05-29 19:18:25,554 INFO r.n.o.m.s.ServerCommunication [Thread-0] Send message
+2023-05-29 19:18:25,555 INFO r.n.o.m.c.c.Controller [Thread-5] Query management [ru.nsu.org.mikhalev.universal_utile_class.Message@75b61060]
+2023-05-29 19:18:25,556 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Find class by nameCommand: message
+2023-05-29 19:18:25,557 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Annotation comparison CommandAnnotation
+2023-05-29 19:18:25,558 INFO r.n.o.m.c.c.Controller [Thread-5] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandMessage
+2023-05-29 19:18:25,559 INFO r.n.o.m.c.c.CommandMessage [Thread-5] Execute command: message[ru.nsu.org.mikhalev.universal_utile_class.Message@75b61060]
+2023-05-29 19:18:25,557 INFO r.n.o.m.c.c.Controller [Thread-5] Query management [ru.nsu.org.mikhalev.universal_utile_class.Message@4b764d]
+2023-05-29 19:18:25,559 INFO r.n.o.m.c.v.ControllerView [JavaFX Application Thread] Update messages
+2023-05-29 19:18:25,560 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Find class by nameCommand: message
+2023-05-29 19:18:25,560 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Annotation comparison CommandAnnotation
+2023-05-29 19:18:25,561 INFO r.n.o.m.c.c.Controller [Thread-5] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandMessage
+2023-05-29 19:18:25,562 INFO r.n.o.m.c.c.CommandMessage [Thread-5] Execute command: message[ru.nsu.org.mikhalev.universal_utile_class.Message@4b764d]
+2023-05-29 19:18:25,563 INFO r.n.o.m.c.v.ControllerView [JavaFX Application Thread] Update messages
+2023-05-29 19:18:27,199 INFO r.n.o.m.c.v.ControllerView [JavaFX Application Thread] Send text cdc
+2023-05-29 19:18:27,206 INFO r.n.o.m.s.ServerCommunication [Thread-1] New command has been received: cdc message
+2023-05-29 19:18:27,207 INFO r.n.o.m.s.ServerCommunication [Thread-1] Get command create: message
+2023-05-29 19:18:27,207 INFO r.n.o.m.s.c.ExecuteCommand [Thread-1] Find class by nameCommand
+2023-05-29 19:18:27,208 INFO r.n.o.m.s.c.ExecuteCommand [Thread-1] Annotation comparison CommandAnnotation
+2023-05-29 19:18:27,208 INFO r.n.o.m.s.ServerCommunication [Thread-1] Create command: class ru.nsu.org.mikhalev.server.commands.CommandMessage
+2023-05-29 19:18:27,208 INFO r.n.o.m.s.c.CommandMessage [Thread-1] Execute command messageuser Kirill
+2023-05-29 19:18:27,209 INFO r.n.o.m.s.KernelServer [Thread-1] Broad cast list messages
+2023-05-29 19:18:27,209 INFO r.n.o.m.s.ServerCommunication [Thread-1] Try send message
+2023-05-29 19:18:27,212 INFO r.n.o.m.s.ServerCommunication [Thread-1] Send message
+2023-05-29 19:18:27,213 INFO r.n.o.m.s.ServerCommunication [Thread-1] Try send message
+2023-05-29 19:18:27,215 INFO r.n.o.m.s.ServerCommunication [Thread-1] Send message
+2023-05-29 19:18:27,218 INFO r.n.o.m.c.c.Controller [Thread-5] Query management [ru.nsu.org.mikhalev.universal_utile_class.Message@7c8c390e]
+2023-05-29 19:18:27,218 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Find class by nameCommand: message
+2023-05-29 19:18:27,219 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Annotation comparison CommandAnnotation
+2023-05-29 19:18:27,221 INFO r.n.o.m.c.c.Controller [Thread-5] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandMessage
+2023-05-29 19:18:27,220 INFO r.n.o.m.c.c.Controller [Thread-5] Query management [ru.nsu.org.mikhalev.universal_utile_class.Message@32c8bb94]
+2023-05-29 19:18:27,223 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Find class by nameCommand: message
+2023-05-29 19:18:27,223 INFO r.n.o.m.c.c.CommandMessage [Thread-5] Execute command: message[ru.nsu.org.mikhalev.universal_utile_class.Message@7c8c390e]
+2023-05-29 19:18:27,223 INFO r.n.o.m.c.v.ControllerView [JavaFX Application Thread] Update messages
+2023-05-29 19:18:27,224 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Annotation comparison CommandAnnotation
+2023-05-29 19:18:27,226 INFO r.n.o.m.c.c.Controller [Thread-5] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandMessage
+2023-05-29 19:18:27,227 INFO r.n.o.m.c.c.CommandMessage [Thread-5] Execute command: message[ru.nsu.org.mikhalev.universal_utile_class.Message@32c8bb94]
+2023-05-29 19:18:27,230 INFO r.n.o.m.c.v.ControllerView [JavaFX Application Thread] Update messages
+2023-05-29 19:18:40,476 INFO r.n.o.m.c.a.Main [main] Start program
+2023-05-29 19:18:40,479 INFO r.n.o.m.c.a.Main [main] Check args
+2023-05-29 19:18:40,481 INFO r.n.o.m.u.f.ParseConfiguration [main] Entrance ParseFileJSON
+2023-05-29 19:18:40,681 INFO r.n.o.m.c.v.View [JavaFX Application Thread] Generate login
+2023-05-29 19:18:41,068 INFO r.n.o.m.c.v.View [JavaFX Application Thread] Load fxml
+2023-05-29 19:18:41,645 INFO r.n.o.m.u.f.ParseConfiguration [JavaFX Application Thread] Entrance ParseFileJSON
+2023-05-29 19:18:41,657 INFO r.n.o.m.c.User [JavaFX Application Thread] Create user
+2023-05-29 19:18:41,671 INFO r.n.o.m.s.KernelServer [main] Joining user: Socket[addr=/127.0.0.1,port=50435,localport=8080]
+2023-05-29 19:18:41,673 INFO r.n.o.m.s.ServerCommunication [main] Create ru.nsu.org.mikhalev.server.ServerCommunication@7bd7d6d6
+2023-05-29 19:18:41,681 INFO r.n.o.m.s.ServerCommunication [Thread-2] Call requestAddUser
+2023-05-29 19:18:46,361 INFO r.n.o.m.c.v.ControllerView [JavaFX Application Thread] Action button connect Nikita
+2023-05-29 19:18:46,362 INFO r.n.o.m.c.c.Controller [JavaFX Application Thread] Call function tryLogin, login: Nikita
+2023-05-29 19:18:46,363 INFO r.n.o.m.c.c.Controller [JavaFX Application Thread] Query management Nikita
+2023-05-29 19:18:46,363 INFO r.n.o.m.c.c.ExecuteCommand [JavaFX Application Thread] Find class by nameCommand: logIn
+2023-05-29 19:18:46,409 INFO r.n.o.m.c.c.ExecuteCommand [JavaFX Application Thread] Annotation comparison CommandAnnotation
+2023-05-29 19:18:46,409 INFO r.n.o.m.c.c.Controller [JavaFX Application Thread] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandLogin
+2023-05-29 19:18:46,409 INFO r.n.o.m.c.c.CommandLogin [JavaFX Application Thread] Call function tryLogin, login: logIn
+2023-05-29 19:18:46,429 INFO r.n.o.m.s.ServerCommunication [Thread-2] New user: Nikita
+2023-05-29 19:18:46,430 INFO r.n.o.m.s.ServerCommunication [Thread-2] Get command create: logIn
+2023-05-29 19:18:46,430 INFO r.n.o.m.s.c.ExecuteCommand [Thread-2] Find class by nameCommand
+2023-05-29 19:18:46,430 INFO r.n.o.m.s.c.ExecuteCommand [Thread-2] Annotation comparison CommandAnnotation
+2023-05-29 19:18:46,431 INFO r.n.o.m.s.ServerCommunication [Thread-2] Create command: class ru.nsu.org.mikhalev.server.commands.CommandLogin
+2023-05-29 19:18:46,431 INFO r.n.o.m.s.c.CommandLogin [Thread-2] Check correct max length user name
+2023-05-29 19:18:46,431 INFO r.n.o.m.s.c.CommandLogin [Thread-2] Check correct name format
+2023-05-29 19:18:46,432 INFO r.n.o.m.s.KernelServer [Thread-2] Check contain user name in mapUser: Nikita
+2023-05-29 19:18:46,433 INFO r.n.o.m.s.ServerCommunication [Thread-2] Status add new user: true
+2023-05-29 19:18:46,433 INFO r.n.o.m.s.ServerCommunication [Thread-2] Try send message
+2023-05-29 19:18:46,433 INFO r.n.o.m.s.ServerCommunication [Thread-2] Send message
+2023-05-29 19:18:46,435 INFO r.n.o.m.s.KernelServer [Thread-2] Add new user, name: Nikita
+2023-05-29 19:18:46,435 INFO r.n.o.m.s.KernelServer [Thread-2] Broad cast list users
+2023-05-29 19:18:46,435 INFO r.n.o.m.s.ServerCommunication [Thread-2] Try send message
+2023-05-29 19:18:46,436 INFO r.n.o.m.s.ServerCommunication [Thread-2] Send message
+2023-05-29 19:18:46,436 INFO r.n.o.m.c.c.CommandLogin [JavaFX Application Thread] Request server: correct nameUser: ru.nsu.org.mikhalev.universal_utile_class.Message@d96b8c0
+2023-05-29 19:18:46,436 INFO r.n.o.m.c.v.View [JavaFX Application Thread] Generate chat
+2023-05-29 19:18:46,436 INFO r.n.o.m.s.ServerCommunication [Thread-2] Try send message
+2023-05-29 19:18:46,436 INFO r.n.o.m.s.ServerCommunication [Thread-2] Send message
+2023-05-29 19:18:46,437 INFO r.n.o.m.s.ServerCommunication [Thread-2] Try send message
+2023-05-29 19:18:46,437 INFO r.n.o.m.s.ServerCommunication [Thread-2] Send message
+2023-05-29 19:18:46,437 INFO r.n.o.m.s.KernelServer [Thread-2] Broad cast list messages
+2023-05-29 19:18:46,438 INFO r.n.o.m.s.ServerCommunication [Thread-2] Try send message
+2023-05-29 19:18:46,438 INFO r.n.o.m.s.ServerCommunication [Thread-2] Send message
+2023-05-29 19:18:46,438 INFO r.n.o.m.s.ServerCommunication [Thread-2] Try send message
+2023-05-29 19:18:46,438 INFO r.n.o.m.s.ServerCommunication [Thread-2] Send message
+2023-05-29 19:18:46,441 INFO r.n.o.m.s.ServerCommunication [Thread-2] Try send message
+2023-05-29 19:18:46,440 INFO r.n.o.m.c.c.Controller [Thread-5] Query management [Makar, Nikita, Kirill]
+2023-05-29 19:18:46,441 INFO r.n.o.m.c.c.Controller [Thread-5] Query management [Makar, Nikita, Kirill]
+2023-05-29 19:18:46,442 INFO r.n.o.m.s.ServerCommunication [Thread-2] Send message
+2023-05-29 19:18:46,442 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Find class by nameCommand: listParticipants
+2023-05-29 19:18:46,443 INFO r.n.o.m.s.ServerCommunication [Thread-2] Try send message
+2023-05-29 19:18:46,443 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Annotation comparison CommandAnnotation
+2023-05-29 19:18:46,443 INFO r.n.o.m.s.ServerCommunication [Thread-2] Send message
+2023-05-29 19:18:46,442 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Find class by nameCommand: listParticipants
+2023-05-29 19:18:46,444 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Annotation comparison CommandAnnotation
+2023-05-29 19:18:46,444 INFO r.n.o.m.c.c.Controller [Thread-5] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandList
+2023-05-29 19:18:46,444 INFO r.n.o.m.c.c.Controller [Thread-5] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandList
+2023-05-29 19:18:46,444 INFO r.n.o.m.c.c.CommandList [Thread-5] Call listParticipants
+2023-05-29 19:18:46,444 INFO r.n.o.m.c.c.CommandList [Thread-5] Call listParticipants
+2023-05-29 19:18:46,444 INFO r.n.o.m.c.v.ControllerView [Thread-5] Show list on display
+2023-05-29 19:18:46,445 INFO r.n.o.m.c.v.ControllerView [Thread-5] Show list on display
+2023-05-29 19:18:46,445 INFO r.n.o.m.c.c.Controller [Thread-5] Query management [ru.nsu.org.mikhalev.universal_utile_class.Message@123120ca]
+2023-05-29 19:18:46,445 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Find class by nameCommand: message
+2023-05-29 19:18:46,445 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Annotation comparison CommandAnnotation
+2023-05-29 19:18:46,446 INFO r.n.o.m.c.c.Controller [Thread-5] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandMessage
+2023-05-29 19:18:46,447 INFO r.n.o.m.c.c.CommandMessage [Thread-5] Execute command: message[ru.nsu.org.mikhalev.universal_utile_class.Message@123120ca]
+2023-05-29 19:18:46,446 INFO r.n.o.m.c.c.Controller [Thread-5] Query management [ru.nsu.org.mikhalev.universal_utile_class.Message@11bd87f5]
+2023-05-29 19:18:46,447 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Find class by nameCommand: message
+2023-05-29 19:18:46,448 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Annotation comparison CommandAnnotation
+2023-05-29 19:18:46,448 INFO r.n.o.m.c.c.Controller [Thread-5] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandMessage
+2023-05-29 19:18:46,453 INFO r.n.o.m.c.c.CommandMessage [Thread-5] Execute command: message[ru.nsu.org.mikhalev.universal_utile_class.Message@11bd87f5]
+2023-05-29 19:18:46,470 INFO r.n.o.m.c.v.ControllerView [JavaFX Application Thread] Update messages
+2023-05-29 19:18:46,487 INFO r.n.o.m.c.v.ControllerView [JavaFX Application Thread] Update messages
+2023-05-29 19:18:46,819 INFO r.n.o.m.c.c.CommandLogin [JavaFX Application Thread] Request server: correct name user: true
+2023-05-29 19:18:46,826 INFO r.n.o.m.c.c.Controller [Thread-5] Query management [Makar, Nikita, Kirill]
+2023-05-29 19:18:46,827 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Find class by nameCommand: listParticipants
+2023-05-29 19:18:46,829 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Annotation comparison CommandAnnotation
+2023-05-29 19:18:46,829 INFO r.n.o.m.c.c.Controller [Thread-5] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandList
+2023-05-29 19:18:46,831 INFO r.n.o.m.c.c.CommandList [Thread-5] Call listParticipants
+2023-05-29 19:18:46,831 INFO r.n.o.m.c.v.ControllerView [Thread-5] Show list on display
+2023-05-29 19:18:46,832 INFO r.n.o.m.c.c.Controller [Thread-5] Query management [ru.nsu.org.mikhalev.universal_utile_class.Message@203eda49]
+2023-05-29 19:18:46,832 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Find class by nameCommand: message
+2023-05-29 19:18:46,833 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Annotation comparison CommandAnnotation
+2023-05-29 19:18:46,835 INFO r.n.o.m.c.c.Controller [Thread-5] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandMessage
+2023-05-29 19:18:46,836 INFO r.n.o.m.c.c.CommandMessage [Thread-5] Execute command: message[ru.nsu.org.mikhalev.universal_utile_class.Message@203eda49]
+2023-05-29 19:18:46,842 INFO r.n.o.m.c.c.Controller [Thread-5] Query management [ru.nsu.org.mikhalev.universal_utile_class.Message@3cc9b253, ru.nsu.org.mikhalev.universal_utile_class.Message@55e07b21, ru.nsu.org.mikhalev.universal_utile_class.Message@3d2d403d, ru.nsu.org.mikhalev.universal_utile_class.Message@50c4fc68]
+2023-05-29 19:18:46,842 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Find class by nameCommand: message
+2023-05-29 19:18:46,843 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Annotation comparison CommandAnnotation
+2023-05-29 19:18:46,843 INFO r.n.o.m.c.c.Controller [Thread-5] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandMessage
+2023-05-29 19:18:46,843 INFO r.n.o.m.c.c.CommandMessage [Thread-5] Execute command: message[ru.nsu.org.mikhalev.universal_utile_class.Message@3cc9b253, ru.nsu.org.mikhalev.universal_utile_class.Message@55e07b21, ru.nsu.org.mikhalev.universal_utile_class.Message@3d2d403d, ru.nsu.org.mikhalev.universal_utile_class.Message@50c4fc68]
+2023-05-29 19:18:46,865 INFO r.n.o.m.c.v.ControllerView [JavaFX Application Thread] Update messages
+2023-05-29 19:18:46,870 INFO r.n.o.m.c.v.ControllerView [JavaFX Application Thread] Update messages
+2023-05-29 19:18:57,540 INFO r.n.o.m.c.v.ControllerView [JavaFX Application Thread] Send text goodby 
+2023-05-29 19:18:57,560 INFO r.n.o.m.s.ServerCommunication [Thread-2] New command has been received: goodby  message
+2023-05-29 19:18:57,572 INFO r.n.o.m.s.ServerCommunication [Thread-2] Get command create: message
+2023-05-29 19:18:57,573 INFO r.n.o.m.s.c.ExecuteCommand [Thread-2] Find class by nameCommand
+2023-05-29 19:18:57,575 INFO r.n.o.m.s.c.ExecuteCommand [Thread-2] Annotation comparison CommandAnnotation
+2023-05-29 19:18:57,577 INFO r.n.o.m.s.ServerCommunication [Thread-2] Create command: class ru.nsu.org.mikhalev.server.commands.CommandMessage
+2023-05-29 19:18:57,577 INFO r.n.o.m.s.c.CommandMessage [Thread-2] Execute command messageuser Nikita
+2023-05-29 19:18:57,579 INFO r.n.o.m.s.KernelServer [Thread-2] Broad cast list messages
+2023-05-29 19:18:57,584 INFO r.n.o.m.s.ServerCommunication [Thread-2] Try send message
+2023-05-29 19:18:57,591 INFO r.n.o.m.s.ServerCommunication [Thread-2] Send message
+2023-05-29 19:18:57,592 INFO r.n.o.m.s.ServerCommunication [Thread-2] Try send message
+2023-05-29 19:18:57,593 INFO r.n.o.m.s.ServerCommunication [Thread-2] Send message
+2023-05-29 19:18:57,593 INFO r.n.o.m.s.ServerCommunication [Thread-2] Try send message
+2023-05-29 19:18:57,594 INFO r.n.o.m.s.ServerCommunication [Thread-2] Send message
+2023-05-29 19:18:57,594 INFO r.n.o.m.c.c.Controller [Thread-5] Query management [ru.nsu.org.mikhalev.universal_utile_class.Message@216e9709]
+2023-05-29 19:18:57,595 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Find class by nameCommand: message
+2023-05-29 19:18:57,594 INFO r.n.o.m.c.c.Controller [Thread-5] Query management [ru.nsu.org.mikhalev.universal_utile_class.Message@95bfebd]
+2023-05-29 19:18:57,595 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Annotation comparison CommandAnnotation
+2023-05-29 19:18:57,596 INFO r.n.o.m.c.c.Controller [Thread-5] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandMessage
+2023-05-29 19:18:57,596 INFO r.n.o.m.c.c.CommandMessage [Thread-5] Execute command: message[ru.nsu.org.mikhalev.universal_utile_class.Message@216e9709]
+2023-05-29 19:18:57,596 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Find class by nameCommand: message
+2023-05-29 19:18:57,596 INFO r.n.o.m.c.v.ControllerView [JavaFX Application Thread] Update messages
+2023-05-29 19:18:57,597 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Annotation comparison CommandAnnotation
+2023-05-29 19:18:57,597 INFO r.n.o.m.c.c.Controller [Thread-5] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandMessage
+2023-05-29 19:18:57,597 INFO r.n.o.m.c.c.CommandMessage [Thread-5] Execute command: message[ru.nsu.org.mikhalev.universal_utile_class.Message@95bfebd]
+2023-05-29 19:18:57,602 INFO r.n.o.m.c.v.ControllerView [JavaFX Application Thread] Update messages
+2023-05-29 19:18:57,608 INFO r.n.o.m.c.c.Controller [Thread-5] Query management [ru.nsu.org.mikhalev.universal_utile_class.Message@3f050c6c]
+2023-05-29 19:18:57,615 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Find class by nameCommand: message
+2023-05-29 19:18:57,616 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Annotation comparison CommandAnnotation
+2023-05-29 19:18:57,621 INFO r.n.o.m.c.c.Controller [Thread-5] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandMessage
+2023-05-29 19:18:57,622 INFO r.n.o.m.c.c.CommandMessage [Thread-5] Execute command: message[ru.nsu.org.mikhalev.universal_utile_class.Message@3f050c6c]
+2023-05-29 19:18:57,624 INFO r.n.o.m.c.v.ControllerView [JavaFX Application Thread] Update messages
+2023-05-29 19:18:59,400 INFO r.n.o.m.c.v.ControllerView [JavaFX Application Thread] Send text ewdw
+2023-05-29 19:18:59,404 INFO r.n.o.m.s.ServerCommunication [Thread-2] New command has been received: ewdw message
+2023-05-29 19:18:59,404 INFO r.n.o.m.s.ServerCommunication [Thread-2] Get command create: message
+2023-05-29 19:18:59,405 INFO r.n.o.m.s.c.ExecuteCommand [Thread-2] Find class by nameCommand
+2023-05-29 19:18:59,405 INFO r.n.o.m.s.c.ExecuteCommand [Thread-2] Annotation comparison CommandAnnotation
+2023-05-29 19:18:59,405 INFO r.n.o.m.s.ServerCommunication [Thread-2] Create command: class ru.nsu.org.mikhalev.server.commands.CommandMessage
+2023-05-29 19:18:59,406 INFO r.n.o.m.s.c.CommandMessage [Thread-2] Execute command messageuser Nikita
+2023-05-29 19:18:59,406 INFO r.n.o.m.s.KernelServer [Thread-2] Broad cast list messages
+2023-05-29 19:18:59,406 INFO r.n.o.m.s.ServerCommunication [Thread-2] Try send message
+2023-05-29 19:18:59,407 INFO r.n.o.m.s.ServerCommunication [Thread-2] Send message
+2023-05-29 19:18:59,407 INFO r.n.o.m.s.ServerCommunication [Thread-2] Try send message
+2023-05-29 19:18:59,408 INFO r.n.o.m.s.ServerCommunication [Thread-2] Send message
+2023-05-29 19:18:59,408 INFO r.n.o.m.s.ServerCommunication [Thread-2] Try send message
+2023-05-29 19:18:59,408 INFO r.n.o.m.s.ServerCommunication [Thread-2] Send message
+2023-05-29 19:18:59,410 INFO r.n.o.m.c.c.Controller [Thread-5] Query management [ru.nsu.org.mikhalev.universal_utile_class.Message@7701d976]
+2023-05-29 19:18:59,410 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Find class by nameCommand: message
+2023-05-29 19:18:59,410 INFO r.n.o.m.c.c.Controller [Thread-5] Query management [ru.nsu.org.mikhalev.universal_utile_class.Message@64a7fcdf]
+2023-05-29 19:18:59,411 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Annotation comparison CommandAnnotation
+2023-05-29 19:18:59,411 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Find class by nameCommand: message
+2023-05-29 19:18:59,411 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Annotation comparison CommandAnnotation
+2023-05-29 19:18:59,412 INFO r.n.o.m.c.c.Controller [Thread-5] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandMessage
+2023-05-29 19:18:59,413 INFO r.n.o.m.c.c.CommandMessage [Thread-5] Execute command: message[ru.nsu.org.mikhalev.universal_utile_class.Message@64a7fcdf]
+2023-05-29 19:18:59,414 INFO r.n.o.m.c.v.ControllerView [JavaFX Application Thread] Update messages
+2023-05-29 19:18:59,410 INFO r.n.o.m.c.c.Controller [Thread-5] Query management [ru.nsu.org.mikhalev.universal_utile_class.Message@4c2bcae6]
+2023-05-29 19:18:59,416 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Find class by nameCommand: message
+2023-05-29 19:18:59,416 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Annotation comparison CommandAnnotation
+2023-05-29 19:18:59,417 INFO r.n.o.m.c.c.Controller [Thread-5] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandMessage
+2023-05-29 19:18:59,417 INFO r.n.o.m.c.c.CommandMessage [Thread-5] Execute command: message[ru.nsu.org.mikhalev.universal_utile_class.Message@4c2bcae6]
+2023-05-29 19:18:59,413 INFO r.n.o.m.c.c.Controller [Thread-5] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandMessage
+2023-05-29 19:18:59,418 INFO r.n.o.m.c.c.CommandMessage [Thread-5] Execute command: message[ru.nsu.org.mikhalev.universal_utile_class.Message@7701d976]
+2023-05-29 19:18:59,419 INFO r.n.o.m.c.v.ControllerView [JavaFX Application Thread] Update messages
+2023-05-29 19:18:59,419 INFO r.n.o.m.c.v.ControllerView [JavaFX Application Thread] Update messages
+2023-05-29 19:19:00,677 INFO r.n.o.m.s.ServerCommunication [Thread-2] New command has been received: User: Nikita has left the chat userExit
+2023-05-29 19:19:00,678 INFO r.n.o.m.s.ServerCommunication [Thread-2] Get command create: userExit
+2023-05-29 19:19:00,678 INFO r.n.o.m.s.c.ExecuteCommand [Thread-2] Find class by nameCommand
+2023-05-29 19:19:00,687 INFO r.n.o.m.s.c.ExecuteCommand [Thread-2] Annotation comparison CommandAnnotation
+2023-05-29 19:19:00,690 INFO r.n.o.m.s.ServerCommunication [Thread-2] Create command: class ru.nsu.org.mikhalev.server.commands.CommandExit
+2023-05-29 19:19:00,692 INFO r.n.o.m.s.c.CommandExit [Thread-2] Delete user Nikita
+2023-05-29 19:19:00,692 INFO r.n.o.m.s.KernelServer [Thread-2] Broad cast list messages
+2023-05-29 19:19:00,692 INFO r.n.o.m.s.ServerCommunication [Thread-2] Try send message
+2023-05-29 19:19:00,693 INFO r.n.o.m.s.ServerCommunication [Thread-2] Send message
+2023-05-29 19:19:00,693 INFO r.n.o.m.s.ServerCommunication [Thread-2] Try send message
+2023-05-29 19:19:00,693 INFO r.n.o.m.s.ServerCommunication [Thread-2] Send message
+2023-05-29 19:19:00,694 INFO r.n.o.m.s.KernelServer [Thread-2] Broad cast list users
+2023-05-29 19:19:00,694 INFO r.n.o.m.c.c.Controller [Thread-5] Query management [ru.nsu.org.mikhalev.universal_utile_class.Message@797eed0c]
+2023-05-29 19:19:00,695 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Find class by nameCommand: message
+2023-05-29 19:19:00,695 INFO r.n.o.m.s.ServerCommunication [Thread-2] Try send message
+2023-05-29 19:19:00,695 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Annotation comparison CommandAnnotation
+2023-05-29 19:19:00,695 INFO r.n.o.m.c.c.Controller [Thread-5] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandMessage
+2023-05-29 19:19:00,695 INFO r.n.o.m.c.c.CommandMessage [Thread-5] Execute command: message[ru.nsu.org.mikhalev.universal_utile_class.Message@797eed0c]
+2023-05-29 19:19:00,695 INFO r.n.o.m.c.c.Controller [Thread-5] Query management [ru.nsu.org.mikhalev.universal_utile_class.Message@3b48dcec]
+2023-05-29 19:19:00,696 INFO r.n.o.m.s.ServerCommunication [Thread-2] Send message
+2023-05-29 19:19:00,696 INFO r.n.o.m.s.ServerCommunication [Thread-2] Try send message
+2023-05-29 19:19:00,697 INFO r.n.o.m.s.ServerCommunication [Thread-2] Send message
+2023-05-29 19:19:00,697 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Find class by nameCommand: message
+2023-05-29 19:19:00,698 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Annotation comparison CommandAnnotation
+2023-05-29 19:19:00,698 INFO r.n.o.m.c.c.Controller [Thread-5] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandMessage
+2023-05-29 19:19:00,699 INFO r.n.o.m.c.c.CommandMessage [Thread-5] Execute command: message[ru.nsu.org.mikhalev.universal_utile_class.Message@3b48dcec]
+2023-05-29 19:19:00,698 INFO r.n.o.m.c.v.ControllerView [JavaFX Application Thread] Update messages
+2023-05-29 19:19:00,700 INFO r.n.o.m.c.c.Controller [Thread-5] Query management [Makar, Kirill]
+2023-05-29 19:19:00,701 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Find class by nameCommand: listParticipants
+2023-05-29 19:19:00,701 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Annotation comparison CommandAnnotation
+2023-05-29 19:19:00,701 INFO r.n.o.m.c.c.Controller [Thread-5] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandList
+2023-05-29 19:19:00,701 INFO r.n.o.m.c.c.CommandList [Thread-5] Call listParticipants
+2023-05-29 19:19:00,701 INFO r.n.o.m.c.v.ControllerView [Thread-5] Show list on display
+2023-05-29 19:19:00,702 INFO r.n.o.m.c.v.ControllerView [JavaFX Application Thread] Update messages
+2023-05-29 19:19:00,699 INFO r.n.o.m.c.c.Controller [Thread-5] Query management [Makar, Kirill]
+2023-05-29 19:19:00,709 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Find class by nameCommand: listParticipants
+2023-05-29 19:19:00,709 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Annotation comparison CommandAnnotation
+2023-05-29 19:19:00,710 INFO r.n.o.m.c.c.Controller [Thread-5] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandList
+2023-05-29 19:19:00,710 INFO r.n.o.m.c.c.CommandList [Thread-5] Call listParticipants
+2023-05-29 19:19:00,710 INFO r.n.o.m.c.v.ControllerView [Thread-5] Show list on display
+2023-05-29 19:19:06,788 INFO r.n.o.m.s.ServerCommunication [Thread-0] New command has been received: User: Makar has left the chat userExit
+2023-05-29 19:19:06,790 INFO r.n.o.m.s.ServerCommunication [Thread-0] Get command create: userExit
+2023-05-29 19:19:06,790 INFO r.n.o.m.s.c.ExecuteCommand [Thread-0] Find class by nameCommand
+2023-05-29 19:19:06,791 INFO r.n.o.m.s.c.ExecuteCommand [Thread-0] Annotation comparison CommandAnnotation
+2023-05-29 19:19:06,791 INFO r.n.o.m.s.ServerCommunication [Thread-0] Create command: class ru.nsu.org.mikhalev.server.commands.CommandExit
+2023-05-29 19:19:06,791 INFO r.n.o.m.s.c.CommandExit [Thread-0] Delete user Makar
+2023-05-29 19:19:06,792 INFO r.n.o.m.s.KernelServer [Thread-0] Broad cast list messages
+2023-05-29 19:19:06,793 INFO r.n.o.m.s.ServerCommunication [Thread-0] Try send message
+2023-05-29 19:19:06,800 INFO r.n.o.m.s.ServerCommunication [Thread-0] Send message
+2023-05-29 19:19:06,801 INFO r.n.o.m.s.KernelServer [Thread-0] Broad cast list users
+2023-05-29 19:19:06,801 INFO r.n.o.m.s.ServerCommunication [Thread-0] Try send message
+2023-05-29 19:19:06,802 INFO r.n.o.m.s.ServerCommunication [Thread-0] Send message
+2023-05-29 19:19:06,804 INFO r.n.o.m.c.c.Controller [Thread-5] Query management [ru.nsu.org.mikhalev.universal_utile_class.Message@62d2a599]
+2023-05-29 19:19:06,806 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Find class by nameCommand: message
+2023-05-29 19:19:06,806 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Annotation comparison CommandAnnotation
+2023-05-29 19:19:06,807 INFO r.n.o.m.c.c.Controller [Thread-5] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandMessage
+2023-05-29 19:19:06,808 INFO r.n.o.m.c.c.CommandMessage [Thread-5] Execute command: message[ru.nsu.org.mikhalev.universal_utile_class.Message@62d2a599]
+2023-05-29 19:19:06,808 INFO r.n.o.m.c.v.ControllerView [JavaFX Application Thread] Update messages
+2023-05-29 19:19:06,808 INFO r.n.o.m.c.c.Controller [Thread-5] Query management [Kirill]
+2023-05-29 19:19:06,809 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Find class by nameCommand: listParticipants
+2023-05-29 19:19:06,810 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Annotation comparison CommandAnnotation
+2023-05-29 19:19:06,810 INFO r.n.o.m.c.c.Controller [Thread-5] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandList
+2023-05-29 19:19:06,810 INFO r.n.o.m.c.c.CommandList [Thread-5] Call listParticipants
+2023-05-29 19:19:06,810 INFO r.n.o.m.c.v.ControllerView [Thread-5] Show list on display
+2023-05-29 19:19:08,807 INFO r.n.o.m.s.ServerCommunication [Thread-1] New command has been received: User: Kirill has left the chat userExit
+2023-05-29 19:19:08,812 INFO r.n.o.m.s.ServerCommunication [Thread-1] Get command create: userExit
+2023-05-29 19:19:08,812 INFO r.n.o.m.s.c.ExecuteCommand [Thread-1] Find class by nameCommand
+2023-05-29 19:19:08,813 INFO r.n.o.m.s.c.ExecuteCommand [Thread-1] Annotation comparison CommandAnnotation
+2023-05-29 19:19:08,813 INFO r.n.o.m.s.ServerCommunication [Thread-1] Create command: class ru.nsu.org.mikhalev.server.commands.CommandExit
+2023-05-29 19:19:08,813 INFO r.n.o.m.s.c.CommandExit [Thread-1] Delete user Kirill
+2023-05-29 19:19:08,813 INFO r.n.o.m.s.KernelServer [Thread-1] Broad cast list messages
+2023-05-29 19:19:08,813 INFO r.n.o.m.s.KernelServer [Thread-1] Broad cast list users
+2023-05-29 19:19:23,251 INFO r.n.o.m.c.a.Main [main] Start program
+2023-05-29 19:19:23,254 INFO r.n.o.m.c.a.Main [main] Check args
+2023-05-29 19:19:23,256 INFO r.n.o.m.u.f.ParseConfiguration [main] Entrance ParseFileJSON
+2023-05-29 19:19:23,432 INFO r.n.o.m.c.v.View [JavaFX Application Thread] Generate login
+2023-05-29 19:19:23,803 INFO r.n.o.m.c.v.View [JavaFX Application Thread] Load fxml
+2023-05-29 19:19:24,345 INFO r.n.o.m.u.f.ParseConfiguration [JavaFX Application Thread] Entrance ParseFileJSON
+2023-05-29 19:19:24,355 INFO r.n.o.m.c.User [JavaFX Application Thread] Create user
+2023-05-29 19:19:33,279 INFO r.n.o.m.s.a.Main [main] Start program
+2023-05-29 19:19:33,283 INFO r.n.o.m.s.a.Main [main] Check args
+2023-05-29 19:19:33,287 INFO r.n.o.m.u.f.ParseConfiguration [main] Entrance ParseFileJSON
+2023-05-29 19:19:33,347 INFO r.n.o.m.u.f.ParseConfiguration [main] Entrance ParseFileJSON
+2023-05-29 19:19:33,361 INFO r.n.o.m.s.KernelServer [main] Start work KernelServer
+2023-05-29 19:19:37,557 INFO r.n.o.m.c.a.Main [main] Start program
+2023-05-29 19:19:37,560 INFO r.n.o.m.c.a.Main [main] Check args
+2023-05-29 19:19:37,562 INFO r.n.o.m.u.f.ParseConfiguration [main] Entrance ParseFileJSON
+2023-05-29 19:19:37,721 INFO r.n.o.m.c.v.View [JavaFX Application Thread] Generate login
+2023-05-29 19:19:38,044 INFO r.n.o.m.c.v.View [JavaFX Application Thread] Load fxml
+2023-05-29 19:19:38,647 INFO r.n.o.m.u.f.ParseConfiguration [JavaFX Application Thread] Entrance ParseFileJSON
+2023-05-29 19:19:38,656 INFO r.n.o.m.c.User [JavaFX Application Thread] Create user
+2023-05-29 19:19:38,667 INFO r.n.o.m.s.KernelServer [main] Joining user: Socket[addr=/127.0.0.1,port=50447,localport=8080]
+2023-05-29 19:19:38,674 INFO r.n.o.m.s.ServerCommunication [main] Create ru.nsu.org.mikhalev.server.ServerCommunication@66982506
+2023-05-29 19:19:38,691 INFO r.n.o.m.s.ServerCommunication [Thread-0] Call requestAddUser
+2023-05-29 19:19:44,740 INFO r.n.o.m.c.v.ControllerView [JavaFX Application Thread] Action button connect Makar
+2023-05-29 19:19:44,741 INFO r.n.o.m.c.c.Controller [JavaFX Application Thread] Call function tryLogin, login: Makar
+2023-05-29 19:19:44,742 INFO r.n.o.m.c.c.Controller [JavaFX Application Thread] Query management Makar
+2023-05-29 19:19:44,742 INFO r.n.o.m.c.c.ExecuteCommand [JavaFX Application Thread] Find class by nameCommand: logIn
+2023-05-29 19:19:44,754 INFO r.n.o.m.c.c.ExecuteCommand [JavaFX Application Thread] Annotation comparison CommandAnnotation
+2023-05-29 19:19:44,754 INFO r.n.o.m.c.c.Controller [JavaFX Application Thread] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandLogin
+2023-05-29 19:19:44,755 INFO r.n.o.m.c.c.CommandLogin [JavaFX Application Thread] Call function tryLogin, login: logIn
+2023-05-29 19:19:44,792 INFO r.n.o.m.s.ServerCommunication [Thread-0] New user: Makar
+2023-05-29 19:19:44,793 INFO r.n.o.m.s.ServerCommunication [Thread-0] Get command create: logIn
+2023-05-29 19:19:44,793 INFO r.n.o.m.s.c.ExecuteCommand [Thread-0] Find class by nameCommand
+2023-05-29 19:19:44,804 INFO r.n.o.m.s.c.ExecuteCommand [Thread-0] Annotation comparison CommandAnnotation
+2023-05-29 19:19:44,805 INFO r.n.o.m.s.ServerCommunication [Thread-0] Create command: class ru.nsu.org.mikhalev.server.commands.CommandLogin
+2023-05-29 19:19:44,805 INFO r.n.o.m.s.c.CommandLogin [Thread-0] Check correct max length user name
+2023-05-29 19:19:44,805 INFO r.n.o.m.s.c.CommandLogin [Thread-0] Check correct name format
+2023-05-29 19:19:44,805 INFO r.n.o.m.s.KernelServer [Thread-0] Check contain user name in mapUser: Makar
+2023-05-29 19:19:44,806 INFO r.n.o.m.s.ServerCommunication [Thread-0] Status add new user: true
+2023-05-29 19:19:44,807 INFO r.n.o.m.s.ServerCommunication [Thread-0] Try send message
+2023-05-29 19:19:44,815 INFO r.n.o.m.s.ServerCommunication [Thread-0] Send message
+2023-05-29 19:19:44,815 INFO r.n.o.m.s.KernelServer [Thread-0] Add new user, name: Makar
+2023-05-29 19:19:44,815 INFO r.n.o.m.s.KernelServer [Thread-0] Broad cast list users
+2023-05-29 19:19:44,816 INFO r.n.o.m.c.c.CommandLogin [JavaFX Application Thread] Request server: correct nameUser: ru.nsu.org.mikhalev.universal_utile_class.Message@7396b034
+2023-05-29 19:19:44,817 INFO r.n.o.m.c.v.View [JavaFX Application Thread] Generate chat
+2023-05-29 19:19:44,818 INFO r.n.o.m.s.ServerCommunication [Thread-0] Try send message
+2023-05-29 19:19:44,824 INFO r.n.o.m.s.ServerCommunication [Thread-0] Send message
+2023-05-29 19:19:44,824 INFO r.n.o.m.s.KernelServer [Thread-0] Broad cast list messages
+2023-05-29 19:19:44,825 INFO r.n.o.m.s.ServerCommunication [Thread-0] Try send message
+2023-05-29 19:19:44,825 INFO r.n.o.m.s.ServerCommunication [Thread-0] Send message
+2023-05-29 19:19:44,825 INFO r.n.o.m.s.ServerCommunication [Thread-0] Try send message
+2023-05-29 19:19:44,830 INFO r.n.o.m.s.ServerCommunication [Thread-0] Send message
+2023-05-29 19:19:45,131 INFO r.n.o.m.c.c.CommandLogin [JavaFX Application Thread] Request server: correct name user: true
+2023-05-29 19:19:45,140 INFO r.n.o.m.c.c.Controller [Thread-5] Query management [Makar]
+2023-05-29 19:19:45,141 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Find class by nameCommand: listParticipants
+2023-05-29 19:19:45,144 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Annotation comparison CommandAnnotation
+2023-05-29 19:19:45,144 INFO r.n.o.m.c.c.Controller [Thread-5] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandList
+2023-05-29 19:19:45,145 INFO r.n.o.m.c.c.CommandList [Thread-5] Call listParticipants
+2023-05-29 19:19:45,145 INFO r.n.o.m.c.v.ControllerView [Thread-5] Show list on display
+2023-05-29 19:19:45,146 INFO r.n.o.m.c.c.Controller [Thread-5] Query management [ru.nsu.org.mikhalev.universal_utile_class.Message@27711097]
+2023-05-29 19:19:45,146 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Find class by nameCommand: message
+2023-05-29 19:19:45,147 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Annotation comparison CommandAnnotation
+2023-05-29 19:19:45,148 INFO r.n.o.m.c.c.Controller [Thread-5] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandMessage
+2023-05-29 19:19:45,149 INFO r.n.o.m.c.c.CommandMessage [Thread-5] Execute command: message[ru.nsu.org.mikhalev.universal_utile_class.Message@27711097]
+2023-05-29 19:19:45,151 INFO r.n.o.m.c.c.Controller [Thread-5] Query management []
+2023-05-29 19:19:45,152 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Find class by nameCommand: message
+2023-05-29 19:19:45,152 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Annotation comparison CommandAnnotation
+2023-05-29 19:19:45,152 INFO r.n.o.m.c.c.Controller [Thread-5] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandMessage
+2023-05-29 19:19:45,152 INFO r.n.o.m.c.c.CommandMessage [Thread-5] Execute command: message[]
+2023-05-29 19:19:45,173 INFO r.n.o.m.c.v.ControllerView [JavaFX Application Thread] Update messages
+2023-05-29 19:19:45,176 INFO r.n.o.m.c.v.ControllerView [JavaFX Application Thread] Update messages
+2023-05-29 19:20:16,052 INFO r.n.o.m.c.a.Main [main] Start program
+2023-05-29 19:20:16,055 INFO r.n.o.m.c.a.Main [main] Check args
+2023-05-29 19:20:16,058 INFO r.n.o.m.u.f.ParseConfiguration [main] Entrance ParseFileJSON
+2023-05-29 19:20:16,198 INFO r.n.o.m.c.v.View [JavaFX Application Thread] Generate login
+2023-05-29 19:20:16,536 INFO r.n.o.m.c.v.View [JavaFX Application Thread] Load fxml
+2023-05-29 19:20:16,963 INFO r.n.o.m.u.f.ParseConfiguration [JavaFX Application Thread] Entrance ParseFileJSON
+2023-05-29 19:20:16,974 INFO r.n.o.m.c.User [JavaFX Application Thread] Create user
+2023-05-29 19:20:16,981 INFO r.n.o.m.s.KernelServer [main] Joining user: Socket[addr=/127.0.0.1,port=50451,localport=8080]
+2023-05-29 19:20:16,983 INFO r.n.o.m.s.ServerCommunication [main] Create ru.nsu.org.mikhalev.server.ServerCommunication@740fb309
+2023-05-29 19:20:16,987 INFO r.n.o.m.s.ServerCommunication [Thread-1] Call requestAddUser
+2023-05-29 19:20:21,763 INFO r.n.o.m.c.v.ControllerView [JavaFX Application Thread] Action button connect Kirill
+2023-05-29 19:20:21,763 INFO r.n.o.m.c.c.Controller [JavaFX Application Thread] Call function tryLogin, login: Kirill
+2023-05-29 19:20:21,765 INFO r.n.o.m.c.c.Controller [JavaFX Application Thread] Query management Kirill
+2023-05-29 19:20:21,765 INFO r.n.o.m.c.c.ExecuteCommand [JavaFX Application Thread] Find class by nameCommand: logIn
+2023-05-29 19:20:21,778 INFO r.n.o.m.c.c.ExecuteCommand [JavaFX Application Thread] Annotation comparison CommandAnnotation
+2023-05-29 19:20:21,778 INFO r.n.o.m.c.c.Controller [JavaFX Application Thread] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandLogin
+2023-05-29 19:20:21,778 INFO r.n.o.m.c.c.CommandLogin [JavaFX Application Thread] Call function tryLogin, login: logIn
+2023-05-29 19:20:21,787 INFO r.n.o.m.s.ServerCommunication [Thread-1] New user: Kirill
+2023-05-29 19:20:21,788 INFO r.n.o.m.s.ServerCommunication [Thread-1] Get command create: logIn
+2023-05-29 19:20:21,788 INFO r.n.o.m.s.c.ExecuteCommand [Thread-1] Find class by nameCommand
+2023-05-29 19:20:21,788 INFO r.n.o.m.s.c.ExecuteCommand [Thread-1] Annotation comparison CommandAnnotation
+2023-05-29 19:20:21,789 INFO r.n.o.m.s.ServerCommunication [Thread-1] Create command: class ru.nsu.org.mikhalev.server.commands.CommandLogin
+2023-05-29 19:20:21,789 INFO r.n.o.m.s.c.CommandLogin [Thread-1] Check correct max length user name
+2023-05-29 19:20:21,789 INFO r.n.o.m.s.c.CommandLogin [Thread-1] Check correct name format
+2023-05-29 19:20:21,789 INFO r.n.o.m.s.KernelServer [Thread-1] Check contain user name in mapUser: Kirill
+2023-05-29 19:20:21,789 INFO r.n.o.m.s.ServerCommunication [Thread-1] Status add new user: true
+2023-05-29 19:20:21,789 INFO r.n.o.m.s.ServerCommunication [Thread-1] Try send message
+2023-05-29 19:20:21,790 INFO r.n.o.m.s.ServerCommunication [Thread-1] Send message
+2023-05-29 19:20:21,790 INFO r.n.o.m.s.KernelServer [Thread-1] Add new user, name: Kirill
+2023-05-29 19:20:21,790 INFO r.n.o.m.s.KernelServer [Thread-1] Broad cast list users
+2023-05-29 19:20:21,790 INFO r.n.o.m.s.ServerCommunication [Thread-1] Try send message
+2023-05-29 19:20:21,792 INFO r.n.o.m.s.ServerCommunication [Thread-1] Send message
+2023-05-29 19:20:21,792 INFO r.n.o.m.s.ServerCommunication [Thread-1] Try send message
+2023-05-29 19:20:21,792 INFO r.n.o.m.c.c.CommandLogin [JavaFX Application Thread] Request server: correct nameUser: ru.nsu.org.mikhalev.universal_utile_class.Message@6cfce78f
+2023-05-29 19:20:21,792 INFO r.n.o.m.c.v.View [JavaFX Application Thread] Generate chat
+2023-05-29 19:20:21,792 INFO r.n.o.m.s.ServerCommunication [Thread-1] Send message
+2023-05-29 19:20:21,792 INFO r.n.o.m.s.KernelServer [Thread-1] Broad cast list messages
+2023-05-29 19:20:21,793 INFO r.n.o.m.s.ServerCommunication [Thread-1] Try send message
+2023-05-29 19:20:21,793 INFO r.n.o.m.s.ServerCommunication [Thread-1] Send message
+2023-05-29 19:20:21,794 INFO r.n.o.m.s.ServerCommunication [Thread-1] Try send message
+2023-05-29 19:20:21,795 INFO r.n.o.m.s.ServerCommunication [Thread-1] Send message
+2023-05-29 19:20:21,798 INFO r.n.o.m.s.ServerCommunication [Thread-1] Try send message
+2023-05-29 19:20:21,799 INFO r.n.o.m.s.ServerCommunication [Thread-1] Send message
+2023-05-29 19:20:21,798 INFO r.n.o.m.c.c.Controller [Thread-5] Query management [Makar, Kirill]
+2023-05-29 19:20:21,805 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Find class by nameCommand: listParticipants
+2023-05-29 19:20:21,806 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Annotation comparison CommandAnnotation
+2023-05-29 19:20:21,807 INFO r.n.o.m.c.c.Controller [Thread-5] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandList
+2023-05-29 19:20:21,808 INFO r.n.o.m.c.c.CommandList [Thread-5] Call listParticipants
+2023-05-29 19:20:21,808 INFO r.n.o.m.c.v.ControllerView [Thread-5] Show list on display
+2023-05-29 19:20:21,810 INFO r.n.o.m.c.c.Controller [Thread-5] Query management [ru.nsu.org.mikhalev.universal_utile_class.Message@4ef9b739]
+2023-05-29 19:20:21,810 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Find class by nameCommand: message
+2023-05-29 19:20:21,811 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Annotation comparison CommandAnnotation
+2023-05-29 19:20:21,811 INFO r.n.o.m.c.c.Controller [Thread-5] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandMessage
+2023-05-29 19:20:21,812 INFO r.n.o.m.c.c.CommandMessage [Thread-5] Execute command: message[ru.nsu.org.mikhalev.universal_utile_class.Message@4ef9b739]
+2023-05-29 19:20:21,840 INFO r.n.o.m.c.v.ControllerView [JavaFX Application Thread] Update messages
+2023-05-29 19:20:22,116 INFO r.n.o.m.c.c.CommandLogin [JavaFX Application Thread] Request server: correct name user: true
+2023-05-29 19:20:22,122 INFO r.n.o.m.c.c.Controller [Thread-5] Query management [Makar, Kirill]
+2023-05-29 19:20:22,123 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Find class by nameCommand: listParticipants
+2023-05-29 19:20:22,125 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Annotation comparison CommandAnnotation
+2023-05-29 19:20:22,126 INFO r.n.o.m.c.c.Controller [Thread-5] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandList
+2023-05-29 19:20:22,126 INFO r.n.o.m.c.c.CommandList [Thread-5] Call listParticipants
+2023-05-29 19:20:22,126 INFO r.n.o.m.c.v.ControllerView [Thread-5] Show list on display
+2023-05-29 19:20:22,127 INFO r.n.o.m.c.c.Controller [Thread-5] Query management [ru.nsu.org.mikhalev.universal_utile_class.Message@4c968445]
+2023-05-29 19:20:22,128 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Find class by nameCommand: message
+2023-05-29 19:20:22,128 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Annotation comparison CommandAnnotation
+2023-05-29 19:20:22,129 INFO r.n.o.m.c.c.Controller [Thread-5] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandMessage
+2023-05-29 19:20:22,130 INFO r.n.o.m.c.c.CommandMessage [Thread-5] Execute command: message[ru.nsu.org.mikhalev.universal_utile_class.Message@4c968445]
+2023-05-29 19:20:22,133 INFO r.n.o.m.c.c.Controller [Thread-5] Query management []
+2023-05-29 19:20:22,133 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Find class by nameCommand: message
+2023-05-29 19:20:22,133 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Annotation comparison CommandAnnotation
+2023-05-29 19:20:22,133 INFO r.n.o.m.c.c.Controller [Thread-5] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandMessage
+2023-05-29 19:20:22,133 INFO r.n.o.m.c.c.CommandMessage [Thread-5] Execute command: message[]
+2023-05-29 19:20:22,174 INFO r.n.o.m.c.v.ControllerView [JavaFX Application Thread] Update messages
+2023-05-29 19:20:22,176 INFO r.n.o.m.c.v.ControllerView [JavaFX Application Thread] Update messages
+2023-05-29 19:20:42,275 INFO r.n.o.m.c.v.ControllerView [JavaFX Application Thread] Send text dddd
+2023-05-29 19:20:42,293 INFO r.n.o.m.s.ServerCommunication [Thread-0] New command has been received: dddd message
+2023-05-29 19:20:42,298 INFO r.n.o.m.s.ServerCommunication [Thread-0] Get command create: message
+2023-05-29 19:20:42,299 INFO r.n.o.m.s.c.ExecuteCommand [Thread-0] Find class by nameCommand
+2023-05-29 19:20:42,305 INFO r.n.o.m.s.c.ExecuteCommand [Thread-0] Annotation comparison CommandAnnotation
+2023-05-29 19:20:42,307 INFO r.n.o.m.s.ServerCommunication [Thread-0] Create command: class ru.nsu.org.mikhalev.server.commands.CommandMessage
+2023-05-29 19:20:42,308 INFO r.n.o.m.s.c.CommandMessage [Thread-0] Execute command messageuser Makar
+2023-05-29 19:20:42,308 INFO r.n.o.m.s.KernelServer [Thread-0] Broad cast list messages
+2023-05-29 19:20:42,309 INFO r.n.o.m.s.ServerCommunication [Thread-0] Try send message
+2023-05-29 19:20:42,310 INFO r.n.o.m.s.ServerCommunication [Thread-0] Send message
+2023-05-29 19:20:42,310 INFO r.n.o.m.s.ServerCommunication [Thread-0] Try send message
+2023-05-29 19:20:42,311 INFO r.n.o.m.s.ServerCommunication [Thread-0] Send message
+2023-05-29 19:20:42,312 INFO r.n.o.m.c.c.Controller [Thread-5] Query management [ru.nsu.org.mikhalev.universal_utile_class.Message@28db1824]
+2023-05-29 19:20:42,312 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Find class by nameCommand: message
+2023-05-29 19:20:42,313 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Annotation comparison CommandAnnotation
+2023-05-29 19:20:42,314 INFO r.n.o.m.c.c.Controller [Thread-5] Query management [ru.nsu.org.mikhalev.universal_utile_class.Message@36d4399c]
+2023-05-29 19:20:42,314 INFO r.n.o.m.c.c.Controller [Thread-5] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandMessage
+2023-05-29 19:20:42,315 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Find class by nameCommand: message
+2023-05-29 19:20:42,315 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Annotation comparison CommandAnnotation
+2023-05-29 19:20:42,316 INFO r.n.o.m.c.c.CommandMessage [Thread-5] Execute command: message[ru.nsu.org.mikhalev.universal_utile_class.Message@28db1824]
+2023-05-29 19:20:42,316 INFO r.n.o.m.c.v.ControllerView [JavaFX Application Thread] Update messages
+2023-05-29 19:20:42,316 INFO r.n.o.m.c.c.Controller [Thread-5] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandMessage
+2023-05-29 19:20:42,317 INFO r.n.o.m.c.c.CommandMessage [Thread-5] Execute command: message[ru.nsu.org.mikhalev.universal_utile_class.Message@36d4399c]
+2023-05-29 19:20:42,318 INFO r.n.o.m.c.v.ControllerView [JavaFX Application Thread] Update messages
+2023-05-29 19:21:07,686 INFO r.n.o.m.s.ServerCommunication [Thread-0] New command has been received: User: Makar has left the chat userExit
+2023-05-29 19:21:07,688 INFO r.n.o.m.s.ServerCommunication [Thread-0] Get command create: userExit
+2023-05-29 19:21:07,688 INFO r.n.o.m.s.c.ExecuteCommand [Thread-0] Find class by nameCommand
+2023-05-29 19:21:07,694 INFO r.n.o.m.s.c.ExecuteCommand [Thread-0] Annotation comparison CommandAnnotation
+2023-05-29 19:21:07,695 INFO r.n.o.m.s.ServerCommunication [Thread-0] Create command: class ru.nsu.org.mikhalev.server.commands.CommandExit
+2023-05-29 19:21:07,696 INFO r.n.o.m.s.c.CommandExit [Thread-0] Delete user Makar
+2023-05-29 19:21:07,697 INFO r.n.o.m.s.KernelServer [Thread-0] Broad cast list messages
+2023-05-29 19:21:07,697 INFO r.n.o.m.s.ServerCommunication [Thread-0] Try send message
+2023-05-29 19:21:07,706 INFO r.n.o.m.s.ServerCommunication [Thread-0] Send message
+2023-05-29 19:21:07,707 INFO r.n.o.m.s.KernelServer [Thread-0] Broad cast list users
+2023-05-29 19:21:07,707 INFO r.n.o.m.s.ServerCommunication [Thread-0] Try send message
+2023-05-29 19:21:07,707 INFO r.n.o.m.s.ServerCommunication [Thread-0] Send message
+2023-05-29 19:21:07,725 INFO r.n.o.m.c.c.Controller [Thread-5] Query management [ru.nsu.org.mikhalev.universal_utile_class.Message@4411f18a]
+2023-05-29 19:21:07,727 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Find class by nameCommand: message
+2023-05-29 19:21:07,727 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Annotation comparison CommandAnnotation
+2023-05-29 19:21:07,728 INFO r.n.o.m.c.c.Controller [Thread-5] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandMessage
+2023-05-29 19:21:07,729 INFO r.n.o.m.c.c.CommandMessage [Thread-5] Execute command: message[ru.nsu.org.mikhalev.universal_utile_class.Message@4411f18a]
+2023-05-29 19:21:07,731 INFO r.n.o.m.c.v.ControllerView [JavaFX Application Thread] Update messages
+2023-05-29 19:21:07,731 INFO r.n.o.m.c.c.Controller [Thread-5] Query management [Kirill]
+2023-05-29 19:21:07,739 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Find class by nameCommand: listParticipants
+2023-05-29 19:21:07,741 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Annotation comparison CommandAnnotation
+2023-05-29 19:21:07,745 INFO r.n.o.m.c.c.Controller [Thread-5] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandList
+2023-05-29 19:21:07,745 INFO r.n.o.m.c.c.CommandList [Thread-5] Call listParticipants
+2023-05-29 19:21:07,746 INFO r.n.o.m.c.v.ControllerView [Thread-5] Show list on display
+2023-05-29 19:21:08,226 INFO r.n.o.m.s.ServerCommunication [Thread-1] New command has been received: User: Kirill has left the chat userExit
+2023-05-29 19:21:08,230 INFO r.n.o.m.s.ServerCommunication [Thread-1] Get command create: userExit
+2023-05-29 19:21:08,230 INFO r.n.o.m.s.c.ExecuteCommand [Thread-1] Find class by nameCommand
+2023-05-29 19:21:08,230 INFO r.n.o.m.s.c.ExecuteCommand [Thread-1] Annotation comparison CommandAnnotation
+2023-05-29 19:21:08,231 INFO r.n.o.m.s.ServerCommunication [Thread-1] Create command: class ru.nsu.org.mikhalev.server.commands.CommandExit
+2023-05-29 19:21:08,231 INFO r.n.o.m.s.c.CommandExit [Thread-1] Delete user Kirill
+2023-05-29 19:21:08,231 INFO r.n.o.m.s.KernelServer [Thread-1] Broad cast list messages
+2023-05-29 19:21:08,231 INFO r.n.o.m.s.KernelServer [Thread-1] Broad cast list users
+2023-05-30 10:21:34,509 INFO r.n.o.m.s.a.Main [main] Start program
+2023-05-30 10:21:34,511 INFO r.n.o.m.s.a.Main [main] Check args
+2023-05-30 10:21:34,514 INFO r.n.o.m.u.f.ParseConfiguration [main] Entrance ParseFileJSON
+2023-05-30 10:21:34,554 INFO r.n.o.m.u.f.ParseConfiguration [main] Entrance ParseFileJSON
+2023-05-30 10:21:34,561 INFO r.n.o.m.s.KernelServer [main] Start work KernelServer
+2023-05-30 10:22:10,908 INFO r.n.o.m.c.a.Main [main] Start program
+2023-05-30 10:22:10,911 INFO r.n.o.m.c.a.Main [main] Check args
+2023-05-30 10:22:10,913 INFO r.n.o.m.u.f.ParseConfiguration [main] Entrance ParseFileJSON
+2023-05-30 10:22:11,062 INFO r.n.o.m.c.v.View [JavaFX Application Thread] Generate login
+2023-05-30 10:22:11,369 INFO r.n.o.m.c.v.View [JavaFX Application Thread] Load fxml
+2023-05-30 10:22:11,836 INFO r.n.o.m.u.f.ParseConfiguration [JavaFX Application Thread] Entrance ParseFileJSON
+2023-05-30 10:22:11,850 INFO r.n.o.m.c.User [JavaFX Application Thread] Create user
+2023-05-30 10:22:11,858 INFO r.n.o.m.s.KernelServer [main] Joining user: Socket[addr=/127.0.0.1,port=50686,localport=8080]
+2023-05-30 10:22:11,861 INFO r.n.o.m.s.ServerCommunication [main] Create ru.nsu.org.mikhalev.server.ServerCommunication@66982506
+2023-05-30 10:22:11,873 INFO r.n.o.m.s.ServerCommunication [Thread-0] Call requestAddUser
+2023-05-30 10:22:17,126 INFO r.n.o.m.c.a.Main [main] Start program
+2023-05-30 10:22:17,128 INFO r.n.o.m.c.a.Main [main] Check args
+2023-05-30 10:22:17,129 INFO r.n.o.m.u.f.ParseConfiguration [main] Entrance ParseFileJSON
+2023-05-30 10:22:17,255 INFO r.n.o.m.c.v.View [JavaFX Application Thread] Generate login
+2023-05-30 10:22:17,555 INFO r.n.o.m.c.v.View [JavaFX Application Thread] Load fxml
+2023-05-30 10:22:18,034 INFO r.n.o.m.u.f.ParseConfiguration [JavaFX Application Thread] Entrance ParseFileJSON
+2023-05-30 10:22:18,043 INFO r.n.o.m.c.User [JavaFX Application Thread] Create user
+2023-05-30 10:22:18,050 INFO r.n.o.m.s.KernelServer [main] Joining user: Socket[addr=/127.0.0.1,port=50690,localport=8080]
+2023-05-30 10:22:18,050 INFO r.n.o.m.s.ServerCommunication [main] Create ru.nsu.org.mikhalev.server.ServerCommunication@740fb309
+2023-05-30 10:22:18,055 INFO r.n.o.m.s.ServerCommunication [Thread-1] Call requestAddUser
+2023-05-30 10:22:21,883 INFO r.n.o.m.c.a.Main [main] Start program
+2023-05-30 10:22:21,885 INFO r.n.o.m.c.a.Main [main] Check args
+2023-05-30 10:22:21,887 INFO r.n.o.m.u.f.ParseConfiguration [main] Entrance ParseFileJSON
+2023-05-30 10:22:22,004 INFO r.n.o.m.c.v.View [JavaFX Application Thread] Generate login
+2023-05-30 10:22:22,298 INFO r.n.o.m.c.v.View [JavaFX Application Thread] Load fxml
+2023-05-30 10:22:22,742 INFO r.n.o.m.u.f.ParseConfiguration [JavaFX Application Thread] Entrance ParseFileJSON
+2023-05-30 10:22:22,750 INFO r.n.o.m.c.User [JavaFX Application Thread] Create user
+2023-05-30 10:22:22,757 INFO r.n.o.m.s.KernelServer [main] Joining user: Socket[addr=/127.0.0.1,port=50694,localport=8080]
+2023-05-30 10:22:22,758 INFO r.n.o.m.s.ServerCommunication [main] Create ru.nsu.org.mikhalev.server.ServerCommunication@7bd7d6d6
+2023-05-30 10:22:22,760 INFO r.n.o.m.s.ServerCommunication [Thread-2] Call requestAddUser
+2023-05-30 10:22:33,208 INFO r.n.o.m.c.v.ControllerView [JavaFX Application Thread] Action button connect Makar
+2023-05-30 10:22:33,209 INFO r.n.o.m.c.c.Controller [JavaFX Application Thread] Call function tryLogin, login: Makar
+2023-05-30 10:22:33,210 INFO r.n.o.m.c.c.Controller [JavaFX Application Thread] Query management Makar
+2023-05-30 10:22:33,210 INFO r.n.o.m.c.c.ExecuteCommand [JavaFX Application Thread] Find class by nameCommand: logIn
+2023-05-30 10:22:33,222 INFO r.n.o.m.c.c.ExecuteCommand [JavaFX Application Thread] Annotation comparison CommandAnnotation
+2023-05-30 10:22:33,223 INFO r.n.o.m.c.c.Controller [JavaFX Application Thread] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandLogin
+2023-05-30 10:22:33,223 INFO r.n.o.m.c.c.CommandLogin [JavaFX Application Thread] Call function tryLogin, login: logIn
+2023-05-30 10:22:33,255 INFO r.n.o.m.s.ServerCommunication [Thread-2] New user: Makar
+2023-05-30 10:22:33,256 INFO r.n.o.m.s.ServerCommunication [Thread-2] Get command create: logIn
+2023-05-30 10:22:33,256 INFO r.n.o.m.s.c.ExecuteCommand [Thread-2] Find class by nameCommand
+2023-05-30 10:22:33,266 INFO r.n.o.m.s.c.ExecuteCommand [Thread-2] Annotation comparison CommandAnnotation
+2023-05-30 10:22:33,267 INFO r.n.o.m.s.ServerCommunication [Thread-2] Create command: class ru.nsu.org.mikhalev.server.commands.CommandLogin
+2023-05-30 10:22:33,267 INFO r.n.o.m.s.c.CommandLogin [Thread-2] Check correct max length user name
+2023-05-30 10:22:33,267 INFO r.n.o.m.s.c.CommandLogin [Thread-2] Check correct name format
+2023-05-30 10:22:33,267 INFO r.n.o.m.s.KernelServer [Thread-2] Check contain user name in mapUser: Makar
+2023-05-30 10:22:33,268 INFO r.n.o.m.s.ServerCommunication [Thread-2] Status add new user: true
+2023-05-30 10:22:33,269 INFO r.n.o.m.s.ServerCommunication [Thread-2] Try send message
+2023-05-30 10:22:33,277 INFO r.n.o.m.s.ServerCommunication [Thread-2] Send message
+2023-05-30 10:22:33,277 INFO r.n.o.m.s.KernelServer [Thread-2] Add new user, name: Makar
+2023-05-30 10:22:33,277 INFO r.n.o.m.s.KernelServer [Thread-2] Broad cast list users
+2023-05-30 10:22:33,277 INFO r.n.o.m.c.c.CommandLogin [JavaFX Application Thread] Request server: correct nameUser: ru.nsu.org.mikhalev.universal_utile_class.Message@4d8e4960
+2023-05-30 10:22:33,277 INFO r.n.o.m.c.v.View [JavaFX Application Thread] Generate chat
+2023-05-30 10:22:33,279 INFO r.n.o.m.s.ServerCommunication [Thread-2] Try send message
+2023-05-30 10:22:33,284 INFO r.n.o.m.s.ServerCommunication [Thread-2] Send message
+2023-05-30 10:22:33,284 INFO r.n.o.m.s.KernelServer [Thread-2] Broad cast list messages
+2023-05-30 10:22:33,284 INFO r.n.o.m.s.ServerCommunication [Thread-2] Try send message
+2023-05-30 10:22:33,285 INFO r.n.o.m.s.ServerCommunication [Thread-2] Send message
+2023-05-30 10:22:33,285 INFO r.n.o.m.s.ServerCommunication [Thread-2] Try send message
+2023-05-30 10:22:33,288 INFO r.n.o.m.s.ServerCommunication [Thread-2] Send message
+2023-05-30 10:22:33,573 INFO r.n.o.m.c.c.CommandLogin [JavaFX Application Thread] Request server: correct name user: true
+2023-05-30 10:22:33,578 INFO r.n.o.m.c.c.Controller [Thread-5] Query management [Makar]
+2023-05-30 10:22:33,578 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Find class by nameCommand: listParticipants
+2023-05-30 10:22:33,580 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Annotation comparison CommandAnnotation
+2023-05-30 10:22:33,580 INFO r.n.o.m.c.c.Controller [Thread-5] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandList
+2023-05-30 10:22:33,581 INFO r.n.o.m.c.c.CommandList [Thread-5] Call listParticipants
+2023-05-30 10:22:33,581 INFO r.n.o.m.c.v.ControllerView [Thread-5] Show list on display
+2023-05-30 10:22:33,582 INFO r.n.o.m.c.c.Controller [Thread-5] Query management [ru.nsu.org.mikhalev.universal_utile_class.Message@27711097]
+2023-05-30 10:22:33,582 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Find class by nameCommand: message
+2023-05-30 10:22:33,583 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Annotation comparison CommandAnnotation
+2023-05-30 10:22:33,585 INFO r.n.o.m.c.c.Controller [Thread-5] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandMessage
+2023-05-30 10:22:33,586 INFO r.n.o.m.c.c.CommandMessage [Thread-5] Execute command: message[ru.nsu.org.mikhalev.universal_utile_class.Message@27711097]
+2023-05-30 10:22:33,589 INFO r.n.o.m.c.c.Controller [Thread-5] Query management []
+2023-05-30 10:22:33,590 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Find class by nameCommand: message
+2023-05-30 10:22:33,590 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Annotation comparison CommandAnnotation
+2023-05-30 10:22:33,590 INFO r.n.o.m.c.c.Controller [Thread-5] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandMessage
+2023-05-30 10:22:33,590 INFO r.n.o.m.c.c.CommandMessage [Thread-5] Execute command: message[]
+2023-05-30 10:22:33,616 INFO r.n.o.m.c.v.ControllerView [JavaFX Application Thread] Update messages
+2023-05-30 10:22:33,619 INFO r.n.o.m.c.v.ControllerView [JavaFX Application Thread] Update messages
+2023-05-30 10:22:41,236 INFO r.n.o.m.c.v.ControllerView [JavaFX Application Thread] Action button connect Makar
+2023-05-30 10:22:41,237 INFO r.n.o.m.c.c.Controller [JavaFX Application Thread] Call function tryLogin, login: Makar
+2023-05-30 10:22:41,238 INFO r.n.o.m.c.c.Controller [JavaFX Application Thread] Query management Makar
+2023-05-30 10:22:41,238 INFO r.n.o.m.c.c.ExecuteCommand [JavaFX Application Thread] Find class by nameCommand: logIn
+2023-05-30 10:22:41,251 INFO r.n.o.m.c.c.ExecuteCommand [JavaFX Application Thread] Annotation comparison CommandAnnotation
+2023-05-30 10:22:41,251 INFO r.n.o.m.c.c.Controller [JavaFX Application Thread] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandLogin
+2023-05-30 10:22:41,251 INFO r.n.o.m.c.c.CommandLogin [JavaFX Application Thread] Call function tryLogin, login: logIn
+2023-05-30 10:22:41,261 INFO r.n.o.m.s.ServerCommunication [Thread-1] New user: Makar
+2023-05-30 10:22:41,261 INFO r.n.o.m.s.ServerCommunication [Thread-1] Get command create: logIn
+2023-05-30 10:22:41,261 INFO r.n.o.m.s.c.ExecuteCommand [Thread-1] Find class by nameCommand
+2023-05-30 10:22:41,261 INFO r.n.o.m.s.c.ExecuteCommand [Thread-1] Annotation comparison CommandAnnotation
+2023-05-30 10:22:41,261 INFO r.n.o.m.s.ServerCommunication [Thread-1] Create command: class ru.nsu.org.mikhalev.server.commands.CommandLogin
+2023-05-30 10:22:41,262 INFO r.n.o.m.s.c.CommandLogin [Thread-1] Check correct max length user name
+2023-05-30 10:22:41,262 INFO r.n.o.m.s.c.CommandLogin [Thread-1] Check correct name format
+2023-05-30 10:22:41,262 INFO r.n.o.m.s.KernelServer [Thread-1] Check contain user name in mapUser: Makar
+2023-05-30 10:22:41,263 INFO r.n.o.m.s.ServerCommunication [Thread-1] Status add new user: false
+2023-05-30 10:22:41,264 INFO r.n.o.m.c.c.CommandLogin [JavaFX Application Thread] Request server: correct nameUser: ru.nsu.org.mikhalev.universal_utile_class.Message@326c355b
+2023-05-30 10:22:41,264 INFO r.n.o.m.c.c.CommandLogin [JavaFX Application Thread] Request server: correct name user: This user is contains in chat Makar
+2023-05-30 10:22:49,337 INFO r.n.o.m.c.v.ControllerView [JavaFX Application Thread] Action button connect Makar Mikhalev
+2023-05-30 10:22:49,338 INFO r.n.o.m.c.c.Controller [JavaFX Application Thread] Call function tryLogin, login: Makar Mikhalev
+2023-05-30 10:22:49,338 INFO r.n.o.m.c.c.Controller [JavaFX Application Thread] Query management Makar Mikhalev
+2023-05-30 10:22:49,338 INFO r.n.o.m.c.c.ExecuteCommand [JavaFX Application Thread] Find class by nameCommand: logIn
+2023-05-30 10:22:49,338 INFO r.n.o.m.c.c.ExecuteCommand [JavaFX Application Thread] Annotation comparison CommandAnnotation
+2023-05-30 10:22:49,339 INFO r.n.o.m.c.c.Controller [JavaFX Application Thread] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandLogin
+2023-05-30 10:22:49,339 INFO r.n.o.m.c.c.CommandLogin [JavaFX Application Thread] Call function tryLogin, login: logIn
+2023-05-30 10:22:49,339 INFO r.n.o.m.s.ServerCommunication [Thread-1] New user: Makar Mikhalev
+2023-05-30 10:22:49,340 INFO r.n.o.m.s.ServerCommunication [Thread-1] Get command create: logIn
+2023-05-30 10:22:49,340 INFO r.n.o.m.s.c.ExecuteCommand [Thread-1] Find class by nameCommand
+2023-05-30 10:22:49,340 INFO r.n.o.m.s.c.ExecuteCommand [Thread-1] Annotation comparison CommandAnnotation
+2023-05-30 10:22:49,341 INFO r.n.o.m.s.ServerCommunication [Thread-1] Create command: class ru.nsu.org.mikhalev.server.commands.CommandLogin
+2023-05-30 10:22:49,341 INFO r.n.o.m.s.c.CommandLogin [Thread-1] Check correct max length user name
+2023-05-30 10:22:49,341 INFO r.n.o.m.s.c.CommandLogin [Thread-1] Check correct name format
+2023-05-30 10:22:49,342 INFO r.n.o.m.c.c.CommandLogin [JavaFX Application Thread] Request server: correct nameUser: ru.nsu.org.mikhalev.universal_utile_class.Message@21faf8ba
+2023-05-30 10:22:49,342 WARN r.n.o.m.s.c.CommandLogin [Thread-1] Format user name is incorrect: Makar Mikhalev
+2023-05-30 10:22:49,342 INFO r.n.o.m.c.c.CommandLogin [JavaFX Application Thread] Request server: correct name user: Format user name is incorrect: Makar Mikhalev
+2023-05-30 10:22:49,343 INFO r.n.o.m.s.ServerCommunication [Thread-1] Status add new user: false
+2023-05-30 10:22:53,469 INFO r.n.o.m.c.v.ControllerView [JavaFX Application Thread] Action button connect MakarMikhalev
+2023-05-30 10:22:53,471 INFO r.n.o.m.c.c.Controller [JavaFX Application Thread] Call function tryLogin, login: MakarMikhalev
+2023-05-30 10:22:53,471 INFO r.n.o.m.c.c.Controller [JavaFX Application Thread] Query management MakarMikhalev
+2023-05-30 10:22:53,471 INFO r.n.o.m.c.c.ExecuteCommand [JavaFX Application Thread] Find class by nameCommand: logIn
+2023-05-30 10:22:53,471 INFO r.n.o.m.c.c.ExecuteCommand [JavaFX Application Thread] Annotation comparison CommandAnnotation
+2023-05-30 10:22:53,471 INFO r.n.o.m.c.c.Controller [JavaFX Application Thread] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandLogin
+2023-05-30 10:22:53,471 INFO r.n.o.m.c.c.CommandLogin [JavaFX Application Thread] Call function tryLogin, login: logIn
+2023-05-30 10:22:53,472 INFO r.n.o.m.s.ServerCommunication [Thread-1] New user: MakarMikhalev
+2023-05-30 10:22:53,473 INFO r.n.o.m.s.ServerCommunication [Thread-1] Get command create: logIn
+2023-05-30 10:22:53,473 INFO r.n.o.m.s.c.ExecuteCommand [Thread-1] Find class by nameCommand
+2023-05-30 10:22:53,473 INFO r.n.o.m.s.c.ExecuteCommand [Thread-1] Annotation comparison CommandAnnotation
+2023-05-30 10:22:53,473 INFO r.n.o.m.s.ServerCommunication [Thread-1] Create command: class ru.nsu.org.mikhalev.server.commands.CommandLogin
+2023-05-30 10:22:53,473 INFO r.n.o.m.s.c.CommandLogin [Thread-1] Check correct max length user name
+2023-05-30 10:22:53,474 INFO r.n.o.m.s.c.CommandLogin [Thread-1] Check correct name format
+2023-05-30 10:22:53,474 INFO r.n.o.m.s.KernelServer [Thread-1] Check contain user name in mapUser: MakarMikhalev
+2023-05-30 10:22:53,474 INFO r.n.o.m.s.ServerCommunication [Thread-1] Status add new user: true
+2023-05-30 10:22:53,475 INFO r.n.o.m.s.ServerCommunication [Thread-1] Try send message
+2023-05-30 10:22:53,475 INFO r.n.o.m.s.ServerCommunication [Thread-1] Send message
+2023-05-30 10:22:53,475 INFO r.n.o.m.s.KernelServer [Thread-1] Add new user, name: MakarMikhalev
+2023-05-30 10:22:53,477 INFO r.n.o.m.s.KernelServer [Thread-1] Broad cast list users
+2023-05-30 10:22:53,477 INFO r.n.o.m.c.c.CommandLogin [JavaFX Application Thread] Request server: correct nameUser: ru.nsu.org.mikhalev.universal_utile_class.Message@39b26df3
+2023-05-30 10:22:53,478 INFO r.n.o.m.c.v.View [JavaFX Application Thread] Generate chat
+2023-05-30 10:22:53,478 INFO r.n.o.m.s.ServerCommunication [Thread-1] Try send message
+2023-05-30 10:22:53,478 INFO r.n.o.m.s.ServerCommunication [Thread-1] Send message
+2023-05-30 10:22:53,479 INFO r.n.o.m.c.c.Controller [Thread-5] Query management [Makar, MakarMikhalev]
+2023-05-30 10:22:53,479 INFO r.n.o.m.s.ServerCommunication [Thread-1] Try send message
+2023-05-30 10:22:53,479 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Find class by nameCommand: listParticipants
+2023-05-30 10:22:53,479 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Annotation comparison CommandAnnotation
+2023-05-30 10:22:53,479 INFO r.n.o.m.c.c.Controller [Thread-5] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandList
+2023-05-30 10:22:53,480 INFO r.n.o.m.c.c.CommandList [Thread-5] Call listParticipants
+2023-05-30 10:22:53,480 INFO r.n.o.m.c.v.ControllerView [Thread-5] Show list on display
+2023-05-30 10:22:53,480 INFO r.n.o.m.s.ServerCommunication [Thread-1] Send message
+2023-05-30 10:22:53,480 INFO r.n.o.m.s.KernelServer [Thread-1] Broad cast list messages
+2023-05-30 10:22:53,481 INFO r.n.o.m.s.ServerCommunication [Thread-1] Try send message
+2023-05-30 10:22:53,481 INFO r.n.o.m.s.ServerCommunication [Thread-1] Send message
+2023-05-30 10:22:53,482 INFO r.n.o.m.s.ServerCommunication [Thread-1] Try send message
+2023-05-30 10:22:53,482 INFO r.n.o.m.s.ServerCommunication [Thread-1] Send message
+2023-05-30 10:22:53,482 INFO r.n.o.m.s.ServerCommunication [Thread-1] Try send message
+2023-05-30 10:22:53,483 INFO r.n.o.m.s.ServerCommunication [Thread-1] Send message
+2023-05-30 10:22:53,483 INFO r.n.o.m.c.c.Controller [Thread-5] Query management [ru.nsu.org.mikhalev.universal_utile_class.Message@4ef9b739]
+2023-05-30 10:22:53,485 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Find class by nameCommand: message
+2023-05-30 10:22:53,485 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Annotation comparison CommandAnnotation
+2023-05-30 10:22:53,485 INFO r.n.o.m.c.c.Controller [Thread-5] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandMessage
+2023-05-30 10:22:53,486 INFO r.n.o.m.c.c.CommandMessage [Thread-5] Execute command: message[ru.nsu.org.mikhalev.universal_utile_class.Message@4ef9b739]
+2023-05-30 10:22:53,502 INFO r.n.o.m.c.v.ControllerView [JavaFX Application Thread] Update messages
+2023-05-30 10:22:53,765 INFO r.n.o.m.c.c.CommandLogin [JavaFX Application Thread] Request server: correct name user: true
+2023-05-30 10:22:53,771 INFO r.n.o.m.c.c.Controller [Thread-5] Query management [Makar, MakarMikhalev]
+2023-05-30 10:22:53,773 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Find class by nameCommand: listParticipants
+2023-05-30 10:22:53,775 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Annotation comparison CommandAnnotation
+2023-05-30 10:22:53,775 INFO r.n.o.m.c.c.Controller [Thread-5] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandList
+2023-05-30 10:22:53,777 INFO r.n.o.m.c.c.CommandList [Thread-5] Call listParticipants
+2023-05-30 10:22:53,777 INFO r.n.o.m.c.v.ControllerView [Thread-5] Show list on display
+2023-05-30 10:22:53,778 INFO r.n.o.m.c.c.Controller [Thread-5] Query management [ru.nsu.org.mikhalev.universal_utile_class.Message@668d3d33]
+2023-05-30 10:22:53,778 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Find class by nameCommand: message
+2023-05-30 10:22:53,779 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Annotation comparison CommandAnnotation
+2023-05-30 10:22:53,779 INFO r.n.o.m.c.c.Controller [Thread-5] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandMessage
+2023-05-30 10:22:53,780 INFO r.n.o.m.c.c.CommandMessage [Thread-5] Execute command: message[ru.nsu.org.mikhalev.universal_utile_class.Message@668d3d33]
+2023-05-30 10:22:53,785 INFO r.n.o.m.c.c.Controller [Thread-5] Query management []
+2023-05-30 10:22:53,787 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Find class by nameCommand: message
+2023-05-30 10:22:53,787 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Annotation comparison CommandAnnotation
+2023-05-30 10:22:53,788 INFO r.n.o.m.c.c.Controller [Thread-5] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandMessage
+2023-05-30 10:22:53,788 INFO r.n.o.m.c.c.CommandMessage [Thread-5] Execute command: message[]
+2023-05-30 10:22:53,828 INFO r.n.o.m.c.v.ControllerView [JavaFX Application Thread] Update messages
+2023-05-30 10:22:53,832 INFO r.n.o.m.c.v.ControllerView [JavaFX Application Thread] Update messages
+2023-05-30 10:23:15,856 INFO r.n.o.m.c.v.ControllerView [JavaFX Application Thread] Send text hello
+2023-05-30 10:23:15,861 INFO r.n.o.m.s.ServerCommunication [Thread-1] New command has been received: hello message
+2023-05-30 10:23:15,862 INFO r.n.o.m.s.ServerCommunication [Thread-1] Get command create: message
+2023-05-30 10:23:15,862 INFO r.n.o.m.s.c.ExecuteCommand [Thread-1] Find class by nameCommand
+2023-05-30 10:23:15,866 INFO r.n.o.m.s.c.ExecuteCommand [Thread-1] Annotation comparison CommandAnnotation
+2023-05-30 10:23:15,867 INFO r.n.o.m.s.ServerCommunication [Thread-1] Create command: class ru.nsu.org.mikhalev.server.commands.CommandMessage
+2023-05-30 10:23:15,867 INFO r.n.o.m.s.c.CommandMessage [Thread-1] Execute command messageuser MakarMikhalev
+2023-05-30 10:23:15,867 INFO r.n.o.m.s.KernelServer [Thread-1] Broad cast list messages
+2023-05-30 10:23:15,867 INFO r.n.o.m.s.ServerCommunication [Thread-1] Try send message
+2023-05-30 10:23:15,868 INFO r.n.o.m.s.ServerCommunication [Thread-1] Send message
+2023-05-30 10:23:15,868 INFO r.n.o.m.s.ServerCommunication [Thread-1] Try send message
+2023-05-30 10:23:15,869 INFO r.n.o.m.s.ServerCommunication [Thread-1] Send message
+2023-05-30 10:23:15,869 INFO r.n.o.m.c.c.Controller [Thread-5] Query management [ru.nsu.org.mikhalev.universal_utile_class.Message@28db1824]
+2023-05-30 10:23:15,869 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Find class by nameCommand: message
+2023-05-30 10:23:15,869 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Annotation comparison CommandAnnotation
+2023-05-30 10:23:15,870 INFO r.n.o.m.c.c.Controller [Thread-5] Query management [ru.nsu.org.mikhalev.universal_utile_class.Message@2e317c4f]
+2023-05-30 10:23:15,871 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Find class by nameCommand: message
+2023-05-30 10:23:15,870 INFO r.n.o.m.c.c.Controller [Thread-5] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandMessage
+2023-05-30 10:23:15,871 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Annotation comparison CommandAnnotation
+2023-05-30 10:23:15,871 INFO r.n.o.m.c.c.CommandMessage [Thread-5] Execute command: message[ru.nsu.org.mikhalev.universal_utile_class.Message@28db1824]
+2023-05-30 10:23:15,871 INFO r.n.o.m.c.v.ControllerView [JavaFX Application Thread] Update messages
+2023-05-30 10:23:15,872 INFO r.n.o.m.c.c.Controller [Thread-5] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandMessage
+2023-05-30 10:23:15,874 INFO r.n.o.m.c.c.CommandMessage [Thread-5] Execute command: message[ru.nsu.org.mikhalev.universal_utile_class.Message@2e317c4f]
+2023-05-30 10:23:15,875 INFO r.n.o.m.c.v.ControllerView [JavaFX Application Thread] Update messages
+2023-05-30 10:23:23,465 INFO r.n.o.m.c.v.ControllerView [JavaFX Application Thread] Send text hi
+2023-05-30 10:23:23,469 INFO r.n.o.m.s.ServerCommunication [Thread-2] New command has been received: hi message
+2023-05-30 10:23:23,470 INFO r.n.o.m.s.ServerCommunication [Thread-2] Get command create: message
+2023-05-30 10:23:23,470 INFO r.n.o.m.s.c.ExecuteCommand [Thread-2] Find class by nameCommand
+2023-05-30 10:23:23,471 INFO r.n.o.m.s.c.ExecuteCommand [Thread-2] Annotation comparison CommandAnnotation
+2023-05-30 10:23:23,471 INFO r.n.o.m.s.ServerCommunication [Thread-2] Create command: class ru.nsu.org.mikhalev.server.commands.CommandMessage
+2023-05-30 10:23:23,472 INFO r.n.o.m.s.c.CommandMessage [Thread-2] Execute command messageuser Makar
+2023-05-30 10:23:23,472 INFO r.n.o.m.s.KernelServer [Thread-2] Broad cast list messages
+2023-05-30 10:23:23,472 INFO r.n.o.m.s.ServerCommunication [Thread-2] Try send message
+2023-05-30 10:23:23,473 INFO r.n.o.m.s.ServerCommunication [Thread-2] Send message
+2023-05-30 10:23:23,474 INFO r.n.o.m.c.c.Controller [Thread-5] Query management [ru.nsu.org.mikhalev.universal_utile_class.Message@469959bc]
+2023-05-30 10:23:23,474 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Find class by nameCommand: message
+2023-05-30 10:23:23,474 INFO r.n.o.m.s.ServerCommunication [Thread-2] Try send message
+2023-05-30 10:23:23,475 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Annotation comparison CommandAnnotation
+2023-05-30 10:23:23,477 INFO r.n.o.m.c.c.Controller [Thread-5] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandMessage
+2023-05-30 10:23:23,479 INFO r.n.o.m.c.c.CommandMessage [Thread-5] Execute command: message[ru.nsu.org.mikhalev.universal_utile_class.Message@469959bc]
+2023-05-30 10:23:23,479 INFO r.n.o.m.c.v.ControllerView [JavaFX Application Thread] Update messages
+2023-05-30 10:23:23,479 INFO r.n.o.m.s.ServerCommunication [Thread-2] Send message
+2023-05-30 10:23:23,481 INFO r.n.o.m.c.c.Controller [Thread-5] Query management [ru.nsu.org.mikhalev.universal_utile_class.Message@7010e842]
+2023-05-30 10:23:23,482 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Find class by nameCommand: message
+2023-05-30 10:23:23,482 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Annotation comparison CommandAnnotation
+2023-05-30 10:23:23,482 INFO r.n.o.m.c.c.Controller [Thread-5] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandMessage
+2023-05-30 10:23:23,483 INFO r.n.o.m.c.c.CommandMessage [Thread-5] Execute command: message[ru.nsu.org.mikhalev.universal_utile_class.Message@7010e842]
+2023-05-30 10:23:23,485 INFO r.n.o.m.c.v.ControllerView [JavaFX Application Thread] Update messages
+2023-05-30 10:23:28,839 INFO r.n.o.m.c.v.ControllerView [JavaFX Application Thread] Action button connect Nikita
+2023-05-30 10:23:28,840 INFO r.n.o.m.c.c.Controller [JavaFX Application Thread] Call function tryLogin, login: Nikita
+2023-05-30 10:23:28,843 INFO r.n.o.m.c.c.Controller [JavaFX Application Thread] Query management Nikita
+2023-05-30 10:23:28,843 INFO r.n.o.m.c.c.ExecuteCommand [JavaFX Application Thread] Find class by nameCommand: logIn
+2023-05-30 10:23:28,856 INFO r.n.o.m.c.c.ExecuteCommand [JavaFX Application Thread] Annotation comparison CommandAnnotation
+2023-05-30 10:23:28,857 INFO r.n.o.m.c.c.Controller [JavaFX Application Thread] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandLogin
+2023-05-30 10:23:28,857 INFO r.n.o.m.c.c.CommandLogin [JavaFX Application Thread] Call function tryLogin, login: logIn
+2023-05-30 10:23:28,866 INFO r.n.o.m.s.ServerCommunication [Thread-0] New user: Nikita
+2023-05-30 10:23:28,867 INFO r.n.o.m.s.ServerCommunication [Thread-0] Get command create: logIn
+2023-05-30 10:23:28,867 INFO r.n.o.m.s.c.ExecuteCommand [Thread-0] Find class by nameCommand
+2023-05-30 10:23:28,867 INFO r.n.o.m.s.c.ExecuteCommand [Thread-0] Annotation comparison CommandAnnotation
+2023-05-30 10:23:28,867 INFO r.n.o.m.s.ServerCommunication [Thread-0] Create command: class ru.nsu.org.mikhalev.server.commands.CommandLogin
+2023-05-30 10:23:28,867 INFO r.n.o.m.s.c.CommandLogin [Thread-0] Check correct max length user name
+2023-05-30 10:23:28,867 INFO r.n.o.m.s.c.CommandLogin [Thread-0] Check correct name format
+2023-05-30 10:23:28,867 INFO r.n.o.m.s.KernelServer [Thread-0] Check contain user name in mapUser: Nikita
+2023-05-30 10:23:28,867 INFO r.n.o.m.s.ServerCommunication [Thread-0] Status add new user: true
+2023-05-30 10:23:28,867 INFO r.n.o.m.s.ServerCommunication [Thread-0] Try send message
+2023-05-30 10:23:28,868 INFO r.n.o.m.s.ServerCommunication [Thread-0] Send message
+2023-05-30 10:23:28,868 INFO r.n.o.m.s.KernelServer [Thread-0] Add new user, name: Nikita
+2023-05-30 10:23:28,868 INFO r.n.o.m.s.KernelServer [Thread-0] Broad cast list users
+2023-05-30 10:23:28,868 INFO r.n.o.m.s.ServerCommunication [Thread-0] Try send message
+2023-05-30 10:23:28,869 INFO r.n.o.m.c.c.Controller [Thread-5] Query management [Makar, Nikita, MakarMikhalev]
+2023-05-30 10:23:28,869 INFO r.n.o.m.s.ServerCommunication [Thread-0] Send message
+2023-05-30 10:23:28,870 INFO r.n.o.m.c.c.CommandLogin [JavaFX Application Thread] Request server: correct nameUser: ru.nsu.org.mikhalev.universal_utile_class.Message@11c74a4b
+2023-05-30 10:23:28,870 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Find class by nameCommand: listParticipants
+2023-05-30 10:23:28,870 INFO r.n.o.m.c.v.View [JavaFX Application Thread] Generate chat
+2023-05-30 10:23:28,870 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Annotation comparison CommandAnnotation
+2023-05-30 10:23:28,870 INFO r.n.o.m.s.ServerCommunication [Thread-0] Try send message
+2023-05-30 10:23:28,871 INFO r.n.o.m.c.c.Controller [Thread-5] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandList
+2023-05-30 10:23:28,872 INFO r.n.o.m.c.c.CommandList [Thread-5] Call listParticipants
+2023-05-30 10:23:28,872 INFO r.n.o.m.c.v.ControllerView [Thread-5] Show list on display
+2023-05-30 10:23:28,873 INFO r.n.o.m.s.ServerCommunication [Thread-0] Send message
+2023-05-30 10:23:28,874 INFO r.n.o.m.s.ServerCommunication [Thread-0] Try send message
+2023-05-30 10:23:28,874 INFO r.n.o.m.s.ServerCommunication [Thread-0] Send message
+2023-05-30 10:23:28,874 INFO r.n.o.m.s.KernelServer [Thread-0] Broad cast list messages
+2023-05-30 10:23:28,875 INFO r.n.o.m.s.ServerCommunication [Thread-0] Try send message
+2023-05-30 10:23:28,875 INFO r.n.o.m.s.ServerCommunication [Thread-0] Send message
+2023-05-30 10:23:28,875 INFO r.n.o.m.s.ServerCommunication [Thread-0] Try send message
+2023-05-30 10:23:28,876 INFO r.n.o.m.s.ServerCommunication [Thread-0] Send message
+2023-05-30 10:23:28,876 INFO r.n.o.m.s.ServerCommunication [Thread-0] Try send message
+2023-05-30 10:23:28,876 INFO r.n.o.m.c.c.Controller [Thread-5] Query management [Makar, Nikita, MakarMikhalev]
+2023-05-30 10:23:28,876 INFO r.n.o.m.s.ServerCommunication [Thread-0] Send message
+2023-05-30 10:23:28,876 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Find class by nameCommand: listParticipants
+2023-05-30 10:23:28,876 INFO r.n.o.m.s.ServerCommunication [Thread-0] Try send message
+2023-05-30 10:23:28,876 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Annotation comparison CommandAnnotation
+2023-05-30 10:23:28,876 INFO r.n.o.m.c.c.Controller [Thread-5] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandList
+2023-05-30 10:23:28,876 INFO r.n.o.m.c.c.CommandList [Thread-5] Call listParticipants
+2023-05-30 10:23:28,876 INFO r.n.o.m.s.ServerCommunication [Thread-0] Send message
+2023-05-30 10:23:28,877 INFO r.n.o.m.c.v.ControllerView [Thread-5] Show list on display
+2023-05-30 10:23:28,877 INFO r.n.o.m.c.c.Controller [Thread-5] Query management [ru.nsu.org.mikhalev.universal_utile_class.Message@5586ba29]
+2023-05-30 10:23:28,878 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Find class by nameCommand: message
+2023-05-30 10:23:28,878 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Annotation comparison CommandAnnotation
+2023-05-30 10:23:28,878 INFO r.n.o.m.c.c.Controller [Thread-5] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandMessage
+2023-05-30 10:23:28,878 INFO r.n.o.m.c.c.CommandMessage [Thread-5] Execute command: message[ru.nsu.org.mikhalev.universal_utile_class.Message@5586ba29]
+2023-05-30 10:23:28,889 INFO r.n.o.m.c.v.ControllerView [JavaFX Application Thread] Update messages
+2023-05-30 10:23:28,895 INFO r.n.o.m.c.c.Controller [Thread-5] Query management [ru.nsu.org.mikhalev.universal_utile_class.Message@157bedda]
+2023-05-30 10:23:28,895 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Find class by nameCommand: message
+2023-05-30 10:23:28,895 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Annotation comparison CommandAnnotation
+2023-05-30 10:23:28,896 INFO r.n.o.m.c.c.Controller [Thread-5] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandMessage
+2023-05-30 10:23:28,896 INFO r.n.o.m.c.c.CommandMessage [Thread-5] Execute command: message[ru.nsu.org.mikhalev.universal_utile_class.Message@157bedda]
+2023-05-30 10:23:28,901 INFO r.n.o.m.c.v.ControllerView [JavaFX Application Thread] Update messages
+2023-05-30 10:23:29,193 INFO r.n.o.m.c.c.CommandLogin [JavaFX Application Thread] Request server: correct name user: true
+2023-05-30 10:23:29,201 INFO r.n.o.m.c.c.Controller [Thread-5] Query management [Makar, Nikita, MakarMikhalev]
+2023-05-30 10:23:29,201 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Find class by nameCommand: listParticipants
+2023-05-30 10:23:29,204 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Annotation comparison CommandAnnotation
+2023-05-30 10:23:29,205 INFO r.n.o.m.c.c.Controller [Thread-5] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandList
+2023-05-30 10:23:29,205 INFO r.n.o.m.c.c.CommandList [Thread-5] Call listParticipants
+2023-05-30 10:23:29,205 INFO r.n.o.m.c.v.ControllerView [Thread-5] Show list on display
+2023-05-30 10:23:29,205 INFO r.n.o.m.c.c.Controller [Thread-5] Query management [ru.nsu.org.mikhalev.universal_utile_class.Message@68773c1f]
+2023-05-30 10:23:29,206 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Find class by nameCommand: message
+2023-05-30 10:23:29,206 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Annotation comparison CommandAnnotation
+2023-05-30 10:23:29,209 INFO r.n.o.m.c.c.Controller [Thread-5] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandMessage
+2023-05-30 10:23:29,210 INFO r.n.o.m.c.c.CommandMessage [Thread-5] Execute command: message[ru.nsu.org.mikhalev.universal_utile_class.Message@68773c1f]
+2023-05-30 10:23:29,215 INFO r.n.o.m.c.c.Controller [Thread-5] Query management [ru.nsu.org.mikhalev.universal_utile_class.Message@3501201, ru.nsu.org.mikhalev.universal_utile_class.Message@101126c8]
+2023-05-30 10:23:29,215 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Find class by nameCommand: message
+2023-05-30 10:23:29,215 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Annotation comparison CommandAnnotation
+2023-05-30 10:23:29,215 INFO r.n.o.m.c.c.Controller [Thread-5] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandMessage
+2023-05-30 10:23:29,216 INFO r.n.o.m.c.c.CommandMessage [Thread-5] Execute command: message[ru.nsu.org.mikhalev.universal_utile_class.Message@3501201, ru.nsu.org.mikhalev.universal_utile_class.Message@101126c8]
+2023-05-30 10:23:29,242 INFO r.n.o.m.c.v.ControllerView [JavaFX Application Thread] Update messages
+2023-05-30 10:23:29,244 INFO r.n.o.m.c.v.ControllerView [JavaFX Application Thread] Update messages
+2023-05-30 10:23:46,035 INFO r.n.o.m.c.v.ControllerView [JavaFX Application Thread] Send text how are  you?
+2023-05-30 10:23:46,039 INFO r.n.o.m.s.ServerCommunication [Thread-0] New command has been received: how are  you? message
+2023-05-30 10:23:46,042 INFO r.n.o.m.s.ServerCommunication [Thread-0] Get command create: message
+2023-05-30 10:23:46,043 INFO r.n.o.m.s.c.ExecuteCommand [Thread-0] Find class by nameCommand
+2023-05-30 10:23:46,043 INFO r.n.o.m.s.c.ExecuteCommand [Thread-0] Annotation comparison CommandAnnotation
+2023-05-30 10:23:46,044 INFO r.n.o.m.s.ServerCommunication [Thread-0] Create command: class ru.nsu.org.mikhalev.server.commands.CommandMessage
+2023-05-30 10:23:46,044 INFO r.n.o.m.s.c.CommandMessage [Thread-0] Execute command messageuser Nikita
+2023-05-30 10:23:46,044 INFO r.n.o.m.s.KernelServer [Thread-0] Broad cast list messages
+2023-05-30 10:23:46,044 INFO r.n.o.m.s.ServerCommunication [Thread-0] Try send message
+2023-05-30 10:23:46,045 INFO r.n.o.m.s.ServerCommunication [Thread-0] Send message
+2023-05-30 10:23:46,045 INFO r.n.o.m.s.ServerCommunication [Thread-0] Try send message
+2023-05-30 10:23:46,045 INFO r.n.o.m.s.ServerCommunication [Thread-0] Send message
+2023-05-30 10:23:46,046 INFO r.n.o.m.s.ServerCommunication [Thread-0] Try send message
+2023-05-30 10:23:46,046 INFO r.n.o.m.s.ServerCommunication [Thread-0] Send message
+2023-05-30 10:23:46,047 INFO r.n.o.m.c.c.Controller [Thread-5] Query management [ru.nsu.org.mikhalev.universal_utile_class.Message@1ca434fe]
+2023-05-30 10:23:46,048 INFO r.n.o.m.c.c.Controller [Thread-5] Query management [ru.nsu.org.mikhalev.universal_utile_class.Message@21546eba]
+2023-05-30 10:23:46,048 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Find class by nameCommand: message
+2023-05-30 10:23:46,048 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Annotation comparison CommandAnnotation
+2023-05-30 10:23:46,049 INFO r.n.o.m.c.c.Controller [Thread-5] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandMessage
+2023-05-30 10:23:46,049 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Find class by nameCommand: message
+2023-05-30 10:23:46,050 INFO r.n.o.m.c.c.CommandMessage [Thread-5] Execute command: message[ru.nsu.org.mikhalev.universal_utile_class.Message@21546eba]
+2023-05-30 10:23:46,050 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Annotation comparison CommandAnnotation
+2023-05-30 10:23:46,050 INFO r.n.o.m.c.v.ControllerView [JavaFX Application Thread] Update messages
+2023-05-30 10:23:46,051 INFO r.n.o.m.c.c.Controller [Thread-5] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandMessage
+2023-05-30 10:23:46,052 INFO r.n.o.m.c.c.CommandMessage [Thread-5] Execute command: message[ru.nsu.org.mikhalev.universal_utile_class.Message@1ca434fe]
+2023-05-30 10:23:46,053 INFO r.n.o.m.c.v.ControllerView [JavaFX Application Thread] Update messages
+2023-05-30 10:23:46,063 INFO r.n.o.m.c.c.Controller [Thread-5] Query management [ru.nsu.org.mikhalev.universal_utile_class.Message@56458fdf]
+2023-05-30 10:23:46,065 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Find class by nameCommand: message
+2023-05-30 10:23:46,066 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Annotation comparison CommandAnnotation
+2023-05-30 10:23:46,067 INFO r.n.o.m.c.c.Controller [Thread-5] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandMessage
+2023-05-30 10:23:46,068 INFO r.n.o.m.c.c.CommandMessage [Thread-5] Execute command: message[ru.nsu.org.mikhalev.universal_utile_class.Message@56458fdf]
+2023-05-30 10:23:46,070 INFO r.n.o.m.c.v.ControllerView [JavaFX Application Thread] Update messages
+2023-05-30 10:24:09,210 INFO r.n.o.m.s.ServerCommunication [Thread-0] New command has been received: User: Nikita has left the chat userExit
+2023-05-30 10:24:09,213 INFO r.n.o.m.s.ServerCommunication [Thread-0] Get command create: userExit
+2023-05-30 10:24:09,213 INFO r.n.o.m.s.c.ExecuteCommand [Thread-0] Find class by nameCommand
+2023-05-30 10:24:09,219 INFO r.n.o.m.s.c.ExecuteCommand [Thread-0] Annotation comparison CommandAnnotation
+2023-05-30 10:24:09,220 INFO r.n.o.m.s.ServerCommunication [Thread-0] Create command: class ru.nsu.org.mikhalev.server.commands.CommandExit
+2023-05-30 10:24:09,220 INFO r.n.o.m.s.c.CommandExit [Thread-0] Delete user Nikita
+2023-05-30 10:24:09,220 INFO r.n.o.m.s.KernelServer [Thread-0] Broad cast list messages
+2023-05-30 10:24:09,221 INFO r.n.o.m.s.ServerCommunication [Thread-0] Try send message
+2023-05-30 10:24:09,223 INFO r.n.o.m.s.ServerCommunication [Thread-0] Send message
+2023-05-30 10:24:09,224 INFO r.n.o.m.s.ServerCommunication [Thread-0] Try send message
+2023-05-30 10:24:09,224 INFO r.n.o.m.s.ServerCommunication [Thread-0] Send message
+2023-05-30 10:24:09,225 INFO r.n.o.m.s.KernelServer [Thread-0] Broad cast list users
+2023-05-30 10:24:09,225 INFO r.n.o.m.s.ServerCommunication [Thread-0] Try send message
+2023-05-30 10:24:09,225 INFO r.n.o.m.c.c.Controller [Thread-5] Query management [ru.nsu.org.mikhalev.universal_utile_class.Message@26afb70b]
+2023-05-30 10:24:09,225 INFO r.n.o.m.s.ServerCommunication [Thread-0] Send message
+2023-05-30 10:24:09,226 INFO r.n.o.m.s.ServerCommunication [Thread-0] Try send message
+2023-05-30 10:24:09,226 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Find class by nameCommand: message
+2023-05-30 10:24:09,226 INFO r.n.o.m.s.ServerCommunication [Thread-0] Send message
+2023-05-30 10:24:09,226 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Annotation comparison CommandAnnotation
+2023-05-30 10:24:09,226 INFO r.n.o.m.c.c.Controller [Thread-5] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandMessage
+2023-05-30 10:24:09,227 INFO r.n.o.m.c.c.CommandMessage [Thread-5] Execute command: message[ru.nsu.org.mikhalev.universal_utile_class.Message@26afb70b]
+2023-05-30 10:24:09,226 INFO r.n.o.m.c.c.Controller [Thread-5] Query management [ru.nsu.org.mikhalev.universal_utile_class.Message@4a2bddb]
+2023-05-30 10:24:09,227 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Find class by nameCommand: message
+2023-05-30 10:24:09,227 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Annotation comparison CommandAnnotation
+2023-05-30 10:24:09,227 INFO r.n.o.m.c.v.ControllerView [JavaFX Application Thread] Update messages
+2023-05-30 10:24:09,228 INFO r.n.o.m.c.c.Controller [Thread-5] Query management [Makar, MakarMikhalev]
+2023-05-30 10:24:09,228 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Find class by nameCommand: listParticipants
+2023-05-30 10:24:09,228 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Annotation comparison CommandAnnotation
+2023-05-30 10:24:09,228 INFO r.n.o.m.c.c.Controller [Thread-5] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandMessage
+2023-05-30 10:24:09,229 INFO r.n.o.m.c.c.Controller [Thread-5] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandList
+2023-05-30 10:24:09,230 INFO r.n.o.m.c.c.CommandList [Thread-5] Call listParticipants
+2023-05-30 10:24:09,229 INFO r.n.o.m.c.c.CommandMessage [Thread-5] Execute command: message[ru.nsu.org.mikhalev.universal_utile_class.Message@4a2bddb]
+2023-05-30 10:24:09,231 INFO r.n.o.m.c.v.ControllerView [Thread-5] Show list on display
+2023-05-30 10:24:09,232 INFO r.n.o.m.c.v.ControllerView [JavaFX Application Thread] Update messages
+2023-05-30 10:24:09,234 INFO r.n.o.m.c.c.Controller [Thread-5] Query management [Makar, MakarMikhalev]
+2023-05-30 10:24:09,235 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Find class by nameCommand: listParticipants
+2023-05-30 10:24:09,239 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Annotation comparison CommandAnnotation
+2023-05-30 10:24:09,240 INFO r.n.o.m.c.c.Controller [Thread-5] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandList
+2023-05-30 10:24:09,241 INFO r.n.o.m.c.c.CommandList [Thread-5] Call listParticipants
+2023-05-30 10:24:09,242 INFO r.n.o.m.c.v.ControllerView [Thread-5] Show list on display
+2023-05-30 10:24:31,930 INFO r.n.o.m.c.a.Main [main] Start program
+2023-05-30 10:24:31,933 INFO r.n.o.m.c.a.Main [main] Check args
+2023-05-30 10:24:31,935 INFO r.n.o.m.u.f.ParseConfiguration [main] Entrance ParseFileJSON
+2023-05-30 10:24:32,067 INFO r.n.o.m.c.v.View [JavaFX Application Thread] Generate login
+2023-05-30 10:24:32,380 INFO r.n.o.m.c.v.View [JavaFX Application Thread] Load fxml
+2023-05-30 10:24:32,793 INFO r.n.o.m.u.f.ParseConfiguration [JavaFX Application Thread] Entrance ParseFileJSON
+2023-05-30 10:24:32,801 INFO r.n.o.m.c.User [JavaFX Application Thread] Create user
+2023-05-30 10:24:32,810 INFO r.n.o.m.s.KernelServer [main] Joining user: Socket[addr=/127.0.0.1,port=50699,localport=8080]
+2023-05-30 10:24:32,811 INFO r.n.o.m.s.ServerCommunication [main] Create ru.nsu.org.mikhalev.server.ServerCommunication@43f02ef2
+2023-05-30 10:24:32,814 INFO r.n.o.m.s.ServerCommunication [Thread-3] Call requestAddUser
+2023-05-30 10:24:36,589 INFO r.n.o.m.c.v.ControllerView [JavaFX Application Thread] Action button connect den
+2023-05-30 10:24:36,590 INFO r.n.o.m.c.c.Controller [JavaFX Application Thread] Call function tryLogin, login: den
+2023-05-30 10:24:36,591 INFO r.n.o.m.c.c.Controller [JavaFX Application Thread] Query management den
+2023-05-30 10:24:36,592 INFO r.n.o.m.c.c.ExecuteCommand [JavaFX Application Thread] Find class by nameCommand: logIn
+2023-05-30 10:24:36,605 INFO r.n.o.m.c.c.ExecuteCommand [JavaFX Application Thread] Annotation comparison CommandAnnotation
+2023-05-30 10:24:36,605 INFO r.n.o.m.c.c.Controller [JavaFX Application Thread] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandLogin
+2023-05-30 10:24:36,605 INFO r.n.o.m.c.c.CommandLogin [JavaFX Application Thread] Call function tryLogin, login: logIn
+2023-05-30 10:24:36,615 INFO r.n.o.m.s.ServerCommunication [Thread-3] New user: den
+2023-05-30 10:24:36,615 INFO r.n.o.m.s.ServerCommunication [Thread-3] Get command create: logIn
+2023-05-30 10:24:36,615 INFO r.n.o.m.s.c.ExecuteCommand [Thread-3] Find class by nameCommand
+2023-05-30 10:24:36,615 INFO r.n.o.m.s.c.ExecuteCommand [Thread-3] Annotation comparison CommandAnnotation
+2023-05-30 10:24:36,615 INFO r.n.o.m.s.ServerCommunication [Thread-3] Create command: class ru.nsu.org.mikhalev.server.commands.CommandLogin
+2023-05-30 10:24:36,616 INFO r.n.o.m.s.c.CommandLogin [Thread-3] Check correct max length user name
+2023-05-30 10:24:36,616 INFO r.n.o.m.s.c.CommandLogin [Thread-3] Check correct name format
+2023-05-30 10:24:36,616 INFO r.n.o.m.s.KernelServer [Thread-3] Check contain user name in mapUser: den
+2023-05-30 10:24:36,616 INFO r.n.o.m.s.ServerCommunication [Thread-3] Status add new user: true
+2023-05-30 10:24:36,616 INFO r.n.o.m.s.ServerCommunication [Thread-3] Try send message
+2023-05-30 10:24:36,617 INFO r.n.o.m.s.ServerCommunication [Thread-3] Send message
+2023-05-30 10:24:36,617 INFO r.n.o.m.s.KernelServer [Thread-3] Add new user, name: den
+2023-05-30 10:24:36,617 INFO r.n.o.m.s.KernelServer [Thread-3] Broad cast list users
+2023-05-30 10:24:36,617 INFO r.n.o.m.s.ServerCommunication [Thread-3] Try send message
+2023-05-30 10:24:36,618 INFO r.n.o.m.c.c.CommandLogin [JavaFX Application Thread] Request server: correct nameUser: ru.nsu.org.mikhalev.universal_utile_class.Message@d96b8c0
+2023-05-30 10:24:36,617 INFO r.n.o.m.s.ServerCommunication [Thread-3] Send message
+2023-05-30 10:24:36,619 INFO r.n.o.m.c.v.View [JavaFX Application Thread] Generate chat
+2023-05-30 10:24:36,619 INFO r.n.o.m.s.ServerCommunication [Thread-3] Try send message
+2023-05-30 10:24:36,619 INFO r.n.o.m.s.ServerCommunication [Thread-3] Send message
+2023-05-30 10:24:36,619 INFO r.n.o.m.s.ServerCommunication [Thread-3] Try send message
+2023-05-30 10:24:36,619 INFO r.n.o.m.s.ServerCommunication [Thread-3] Send message
+2023-05-30 10:24:36,619 INFO r.n.o.m.s.KernelServer [Thread-3] Broad cast list messages
+2023-05-30 10:24:36,620 INFO r.n.o.m.s.ServerCommunication [Thread-3] Try send message
+2023-05-30 10:24:36,620 INFO r.n.o.m.s.ServerCommunication [Thread-3] Send message
+2023-05-30 10:24:36,620 INFO r.n.o.m.s.ServerCommunication [Thread-3] Try send message
+2023-05-30 10:24:36,620 INFO r.n.o.m.s.ServerCommunication [Thread-3] Send message
+2023-05-30 10:24:36,620 INFO r.n.o.m.s.ServerCommunication [Thread-3] Try send message
+2023-05-30 10:24:36,620 INFO r.n.o.m.s.ServerCommunication [Thread-3] Send message
+2023-05-30 10:24:36,620 INFO r.n.o.m.s.ServerCommunication [Thread-3] Try send message
+2023-05-30 10:24:36,620 INFO r.n.o.m.s.ServerCommunication [Thread-3] Send message
+2023-05-30 10:24:36,620 INFO r.n.o.m.c.c.Controller [Thread-5] Query management [Makar, den, MakarMikhalev]
+2023-05-30 10:24:36,621 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Find class by nameCommand: listParticipants
+2023-05-30 10:24:36,622 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Annotation comparison CommandAnnotation
+2023-05-30 10:24:36,623 INFO r.n.o.m.c.c.Controller [Thread-5] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandList
+2023-05-30 10:24:36,623 INFO r.n.o.m.c.c.CommandList [Thread-5] Call listParticipants
+2023-05-30 10:24:36,623 INFO r.n.o.m.c.v.ControllerView [Thread-5] Show list on display
+2023-05-30 10:24:36,624 INFO r.n.o.m.c.c.Controller [Thread-5] Query management [ru.nsu.org.mikhalev.universal_utile_class.Message@2af75edb]
+2023-05-30 10:24:36,624 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Find class by nameCommand: message
+2023-05-30 10:24:36,624 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Annotation comparison CommandAnnotation
+2023-05-30 10:24:36,624 INFO r.n.o.m.c.c.Controller [Thread-5] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandMessage
+2023-05-30 10:24:36,624 INFO r.n.o.m.c.c.CommandMessage [Thread-5] Execute command: message[ru.nsu.org.mikhalev.universal_utile_class.Message@2af75edb]
+2023-05-30 10:24:36,625 INFO r.n.o.m.c.c.Controller [Thread-5] Query management [Makar, den, MakarMikhalev]
+2023-05-30 10:24:36,628 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Find class by nameCommand: listParticipants
+2023-05-30 10:24:36,629 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Annotation comparison CommandAnnotation
+2023-05-30 10:24:36,630 INFO r.n.o.m.c.c.Controller [Thread-5] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandList
+2023-05-30 10:24:36,630 INFO r.n.o.m.c.c.CommandList [Thread-5] Call listParticipants
+2023-05-30 10:24:36,630 INFO r.n.o.m.c.v.ControllerView [Thread-5] Show list on display
+2023-05-30 10:24:36,632 INFO r.n.o.m.c.c.Controller [Thread-5] Query management [ru.nsu.org.mikhalev.universal_utile_class.Message@730717f5]
+2023-05-30 10:24:36,632 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Find class by nameCommand: message
+2023-05-30 10:24:36,633 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Annotation comparison CommandAnnotation
+2023-05-30 10:24:36,634 INFO r.n.o.m.c.c.Controller [Thread-5] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandMessage
+2023-05-30 10:24:36,636 INFO r.n.o.m.c.c.CommandMessage [Thread-5] Execute command: message[ru.nsu.org.mikhalev.universal_utile_class.Message@730717f5]
+2023-05-30 10:24:36,636 INFO r.n.o.m.c.v.ControllerView [JavaFX Application Thread] Update messages
+2023-05-30 10:24:36,672 INFO r.n.o.m.c.v.ControllerView [JavaFX Application Thread] Update messages
+2023-05-30 10:24:36,910 INFO r.n.o.m.c.c.CommandLogin [JavaFX Application Thread] Request server: correct name user: true
+2023-05-30 10:24:36,917 INFO r.n.o.m.c.c.Controller [Thread-5] Query management [Makar, den, MakarMikhalev]
+2023-05-30 10:24:36,918 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Find class by nameCommand: listParticipants
+2023-05-30 10:24:36,921 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Annotation comparison CommandAnnotation
+2023-05-30 10:24:36,922 INFO r.n.o.m.c.c.Controller [Thread-5] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandList
+2023-05-30 10:24:36,922 INFO r.n.o.m.c.c.CommandList [Thread-5] Call listParticipants
+2023-05-30 10:24:36,922 INFO r.n.o.m.c.v.ControllerView [Thread-5] Show list on display
+2023-05-30 10:24:36,923 INFO r.n.o.m.c.c.Controller [Thread-5] Query management [ru.nsu.org.mikhalev.universal_utile_class.Message@cc51357]
+2023-05-30 10:24:36,924 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Find class by nameCommand: message
+2023-05-30 10:24:36,924 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Annotation comparison CommandAnnotation
+2023-05-30 10:24:36,925 INFO r.n.o.m.c.c.Controller [Thread-5] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandMessage
+2023-05-30 10:24:36,926 INFO r.n.o.m.c.c.CommandMessage [Thread-5] Execute command: message[ru.nsu.org.mikhalev.universal_utile_class.Message@cc51357]
+2023-05-30 10:24:36,929 INFO r.n.o.m.c.c.Controller [Thread-5] Query management [ru.nsu.org.mikhalev.universal_utile_class.Message@621c75ae, ru.nsu.org.mikhalev.universal_utile_class.Message@7251050b, ru.nsu.org.mikhalev.universal_utile_class.Message@1459e7c4, ru.nsu.org.mikhalev.universal_utile_class.Message@9455ceb]
+2023-05-30 10:24:36,929 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Find class by nameCommand: message
+2023-05-30 10:24:36,929 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Annotation comparison CommandAnnotation
+2023-05-30 10:24:36,929 INFO r.n.o.m.c.c.Controller [Thread-5] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandMessage
+2023-05-30 10:24:36,930 INFO r.n.o.m.c.c.CommandMessage [Thread-5] Execute command: message[ru.nsu.org.mikhalev.universal_utile_class.Message@621c75ae, ru.nsu.org.mikhalev.universal_utile_class.Message@7251050b, ru.nsu.org.mikhalev.universal_utile_class.Message@1459e7c4, ru.nsu.org.mikhalev.universal_utile_class.Message@9455ceb]
+2023-05-30 10:24:36,963 INFO r.n.o.m.c.v.ControllerView [JavaFX Application Thread] Update messages
+2023-05-30 10:24:36,964 INFO r.n.o.m.c.v.ControllerView [JavaFX Application Thread] Update messages
+2023-05-30 10:24:40,305 INFO r.n.o.m.s.ServerCommunication [Thread-3] New command has been received: User: den has left the chat userExit
+2023-05-30 10:24:40,313 INFO r.n.o.m.s.ServerCommunication [Thread-3] Get command create: userExit
+2023-05-30 10:24:40,316 INFO r.n.o.m.s.c.ExecuteCommand [Thread-3] Find class by nameCommand
+2023-05-30 10:24:40,317 INFO r.n.o.m.s.c.ExecuteCommand [Thread-3] Annotation comparison CommandAnnotation
+2023-05-30 10:24:40,317 INFO r.n.o.m.s.ServerCommunication [Thread-3] Create command: class ru.nsu.org.mikhalev.server.commands.CommandExit
+2023-05-30 10:24:40,317 INFO r.n.o.m.s.c.CommandExit [Thread-3] Delete user den
+2023-05-30 10:24:40,317 INFO r.n.o.m.s.KernelServer [Thread-3] Broad cast list messages
+2023-05-30 10:24:40,318 INFO r.n.o.m.s.ServerCommunication [Thread-3] Try send message
+2023-05-30 10:24:40,318 INFO r.n.o.m.s.ServerCommunication [Thread-3] Send message
+2023-05-30 10:24:40,319 INFO r.n.o.m.s.ServerCommunication [Thread-3] Try send message
+2023-05-30 10:24:40,321 INFO r.n.o.m.c.c.Controller [Thread-5] Query management [ru.nsu.org.mikhalev.universal_utile_class.Message@4ac0fe5e]
+2023-05-30 10:24:40,321 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Find class by nameCommand: message
+2023-05-30 10:24:40,322 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Annotation comparison CommandAnnotation
+2023-05-30 10:24:40,322 INFO r.n.o.m.c.c.Controller [Thread-5] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandMessage
+2023-05-30 10:24:40,322 INFO r.n.o.m.c.c.CommandMessage [Thread-5] Execute command: message[ru.nsu.org.mikhalev.universal_utile_class.Message@4ac0fe5e]
+2023-05-30 10:24:40,323 INFO r.n.o.m.c.v.ControllerView [JavaFX Application Thread] Update messages
+2023-05-30 10:24:40,322 INFO r.n.o.m.s.ServerCommunication [Thread-3] Send message
+2023-05-30 10:24:40,323 INFO r.n.o.m.c.c.Controller [Thread-5] Query management [ru.nsu.org.mikhalev.universal_utile_class.Message@39d82172]
+2023-05-30 10:24:40,324 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Find class by nameCommand: message
+2023-05-30 10:24:40,324 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Annotation comparison CommandAnnotation
+2023-05-30 10:24:40,324 INFO r.n.o.m.c.c.Controller [Thread-5] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandMessage
+2023-05-30 10:24:40,325 INFO r.n.o.m.c.c.CommandMessage [Thread-5] Execute command: message[ru.nsu.org.mikhalev.universal_utile_class.Message@39d82172]
+2023-05-30 10:24:40,325 INFO r.n.o.m.c.v.ControllerView [JavaFX Application Thread] Update messages
+2023-05-30 10:24:40,327 INFO r.n.o.m.s.KernelServer [Thread-3] Broad cast list users
+2023-05-30 10:24:40,328 INFO r.n.o.m.s.ServerCommunication [Thread-3] Try send message
+2023-05-30 10:24:40,329 INFO r.n.o.m.s.ServerCommunication [Thread-3] Send message
+2023-05-30 10:24:40,329 INFO r.n.o.m.s.ServerCommunication [Thread-3] Try send message
+2023-05-30 10:24:40,330 INFO r.n.o.m.s.ServerCommunication [Thread-3] Send message
+2023-05-30 10:24:40,334 INFO r.n.o.m.c.c.Controller [Thread-5] Query management [Makar, MakarMikhalev]
+2023-05-30 10:24:40,335 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Find class by nameCommand: listParticipants
+2023-05-30 10:24:40,335 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Annotation comparison CommandAnnotation
+2023-05-30 10:24:40,336 INFO r.n.o.m.c.c.Controller [Thread-5] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandList
+2023-05-30 10:24:40,334 INFO r.n.o.m.c.c.Controller [Thread-5] Query management [Makar, MakarMikhalev]
+2023-05-30 10:24:40,339 INFO r.n.o.m.c.c.CommandList [Thread-5] Call listParticipants
+2023-05-30 10:24:40,340 INFO r.n.o.m.c.v.ControllerView [Thread-5] Show list on display
+2023-05-30 10:24:40,343 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Find class by nameCommand: listParticipants
+2023-05-30 10:24:40,348 INFO r.n.o.m.c.c.ExecuteCommand [Thread-5] Annotation comparison CommandAnnotation
+2023-05-30 10:24:40,352 INFO r.n.o.m.c.c.Controller [Thread-5] Create command: class ru.nsu.org.mikhalev.clients.commands.CommandList
+2023-05-30 10:24:40,352 INFO r.n.o.m.c.c.CommandList [Thread-5] Call listParticipants
+2023-05-30 10:24:40,352 INFO r.n.o.m.c.v.ControllerView [Thread-5] Show list on display

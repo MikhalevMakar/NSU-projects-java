@@ -50,7 +50,7 @@ public class KernelServer {
         final Message<List<Message<String>>> message = new Message<>(ContextCommand.getMESSAGE(), messageList.stream().toList());
 
         for (Map.Entry<String, ServerCommunication> entry : mapUser.entrySet()) {
-            System.out.println("here");
+
             entry.getValue().requestSendMessage(message);
         }
     }
@@ -63,7 +63,7 @@ public class KernelServer {
 
          List<Message<String>> messageList = new LinkedList<>();
          messageList.add(new Message<>(ContextCommand.getBROAD_CAST_NEW_USER(), String.format("Add new user: %s", nameUser)));
-         broadCastListMessages(messageList); //TODO
+         broadCastListMessages(messageList);
 
          serverCommunication.requestSendMessage(new Message<>(ContextCommand.getMESSAGE(), messages));
     }

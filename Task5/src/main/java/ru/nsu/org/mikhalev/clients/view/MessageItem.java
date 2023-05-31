@@ -19,20 +19,16 @@ public class MessageItem extends VBox {
             logInLabel.setStyle ("-fx-text-fill: #346ead;");
             contentLabel.setStyle("-fx-text-fill: white;");
             getChildren().addAll(logInLabel, contentLabel);
-
-        }
-        else if(message.getTypeMessage().equals(ContextCommand.getUSER_EXIT())) {
+        } else if(message.getTypeMessage().equals(ContextCommand.getUSER_EXIT())) {
             alignment = Pos.CENTER;
             contentLabel.setStyle("-fx-text-fill: red;");
             getChildren().addAll(contentLabel);
 
-        }
-        else if(message.getTypeMessage().equals(ContextCommand.getBROAD_CAST_NEW_USER())) {
+        } else if(message.getTypeMessage().equals(ContextCommand.getBROAD_CAST_NEW_USER())) {
             alignment = Pos.CENTER;
             contentLabel.setStyle("-fx-text-fill: #00b13c;");
             getChildren().addAll(contentLabel);
         }
-
         return alignment;
     }
 
