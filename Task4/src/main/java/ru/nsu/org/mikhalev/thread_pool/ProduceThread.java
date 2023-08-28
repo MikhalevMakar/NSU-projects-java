@@ -7,7 +7,9 @@ import java.util.stream.Stream;
  * { ProduceThread } class creates threads for suppliers, dealers.
  */
 
-public class ProduceThread<T extends Runnable> { List<Thread> threads;
+public class ProduceThread<T extends Runnable> { 
+    List<Thread> threads;
+    
     public ProduceThread(int threadCount, T clazz) {
         threads = Stream.generate(() -> new Thread(clazz))
                                                 .limit(threadCount)
