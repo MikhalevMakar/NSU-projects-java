@@ -18,13 +18,11 @@ module ru.nsu.org.mikhalev {
     exports ru.nsu.org.mikhalev.clients.aplication_main;
     exports ru.nsu.org.mikhalev.server.aplication_main;
     exports ru.nsu.org.mikhalev.clients.view;
-    exports ru.nsu.org.mikhalev.clients;
+    exports  ru.nsu.org.mikhalev.clients;
     exports ru.nsu.org.mikhalev.universal_utile_class.exceptions;
     exports ru.nsu.org.mikhalev.server;
-    exports ru.nsu.org.mikhalev.universal_utile_class;
-    exports ru.nsu.org.mikhalev.clients.controller;
-    exports ru.nsu.org.mikhalev.clients.file_management;
-    exports  ru.nsu.org.mikhalev.server.file_management;
+    exports  ru.nsu.org.mikhalev.universal_utile_class;
+
 
     opens ru.nsu.org.mikhalev.clients.aplication_main to
         javafx.fxml;

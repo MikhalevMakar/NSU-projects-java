@@ -1,0 +1,79 @@
+2023-02-28 08:59:52 INFO  Main:12 - Call calculator controller
+2023-02-28 08:59:52 DEBUG CalculatorController:27 - Calculator controller constructor args
+2023-02-28 08:59:52 DEBUG Context:31 - Call constructor Context input file
+2023-02-28 08:59:52 INFO  CalculatorController:32 - Create buffered reader
+2023-02-28 08:59:52 DEBUG CalculatorController:35 - Create load factory
+2023-02-28 08:59:52 DEBUG CalculatorController:41 - Read command and parameter DEFINE a 4
+2023-02-28 08:59:52 DEBUG CalculatorController:44 - Parse read line
+2023-02-28 08:59:52 INFO  LoaderFactory:30 - Find class by nameCommand
+2023-02-28 08:59:52 INFO  LoaderFactory:40 - Annotation comparison CommandAnnotation
+2023-02-28 08:59:52 DEBUG CalculatorController:48 - Create objet class operations.ru.nsu.ccfit.mikhalev.Define
+2023-02-28 08:59:52 DEBUG CalculatorController:51 - Calc command DEFINE
+2023-02-28 08:59:52 DEBUG CalculatorController:41 - Read command and parameter PUSH a
+2023-02-28 08:59:52 DEBUG CalculatorController:44 - Parse read line
+2023-02-28 08:59:52 INFO  LoaderFactory:30 - Find class by nameCommand
+2023-02-28 08:59:52 INFO  LoaderFactory:40 - Annotation comparison CommandAnnotation
+2023-02-28 08:59:52 DEBUG CalculatorController:48 - Create objet class operations.ru.nsu.ccfit.mikhalev.Push
+2023-02-28 08:59:52 DEBUG Operation:15 - Check correct size list args
+2023-02-28 08:59:52 DEBUG Operation:21 - Push value in stack
+2023-02-28 08:59:52 DEBUG Context:36 - Push value in Stack<Double>
+2023-02-28 08:59:52 DEBUG CalculatorController:51 - Calc command PUSH
+2023-02-28 08:59:52 DEBUG CalculatorController:41 - Read command and parameter # test
+2023-02-28 08:59:52 DEBUG CalculatorController:41 - Read command and parameter PRINT
+2023-02-28 08:59:52 DEBUG CalculatorController:44 - Parse read line
+2023-02-28 08:59:52 INFO  LoaderFactory:30 - Find class by nameCommand
+2023-02-28 08:59:52 INFO  LoaderFactory:40 - Annotation comparison CommandAnnotation
+2023-02-28 08:59:52 DEBUG CalculatorController:48 - Create objet class operations.ru.nsu.ccfit.mikhalev.Print
+2023-02-28 08:59:52 DEBUG Operation:15 - Try to print value, That's why call peek in stack
+2023-02-28 08:59:52 DEBUG CalculatorController:51 - Calc command PRINT
+2023-02-28 08:59:52 DEBUG CalculatorController:41 - Read command and parameter SQRT
+2023-02-28 08:59:52 DEBUG CalculatorController:44 - Parse read line
+2023-02-28 08:59:52 INFO  LoaderFactory:30 - Find class by nameCommand
+2023-02-28 08:59:52 INFO  LoaderFactory:40 - Annotation comparison CommandAnnotation
+2023-02-28 08:59:52 DEBUG CalculatorController:48 - Create objet class operations.ru.nsu.ccfit.mikhalev.Sqrt
+2023-02-28 08:59:52 DEBUG Context:44 - Try pop value in stack
+2023-02-28 08:59:52 DEBUG Context:36 - Push value in Stack<Double>
+2023-02-28 08:59:52 DEBUG Operation:28 - Push value 2.0
+2023-02-28 08:59:52 DEBUG Context:36 - Push value in Stack<Double>
+2023-02-28 08:59:52 DEBUG CalculatorController:51 - Calc command SQRT
+2023-02-28 08:59:52 DEBUG CalculatorController:41 - Read command and parameter DEFINE b 5
+2023-02-28 08:59:52 DEBUG CalculatorController:44 - Parse read line
+2023-02-28 08:59:52 INFO  LoaderFactory:30 - Find class by nameCommand
+2023-02-28 08:59:52 INFO  LoaderFactory:40 - Annotation comparison CommandAnnotation
+2023-02-28 08:59:52 DEBUG CalculatorController:48 - Create objet class operations.ru.nsu.ccfit.mikhalev.Define
+2023-02-28 08:59:52 DEBUG CalculatorController:51 - Calc command DEFINE
+2023-02-28 08:59:52 DEBUG CalculatorController:41 - Read command and parameter PUSH b
+2023-02-28 08:59:52 DEBUG CalculatorController:44 - Parse read line
+2023-02-28 08:59:52 INFO  LoaderFactory:30 - Find class by nameCommand
+2023-02-28 08:59:52 INFO  LoaderFactory:40 - Annotation comparison CommandAnnotation
+2023-02-28 08:59:52 DEBUG CalculatorController:48 - Create objet class operations.ru.nsu.ccfit.mikhalev.Push
+2023-02-28 08:59:52 DEBUG Operation:15 - Check correct size list args
+2023-02-28 08:59:52 DEBUG Operation:21 - Push value in stack
+2023-02-28 08:59:52 DEBUG Context:36 - Push value in Stack<Double>
+2023-02-28 08:59:52 DEBUG CalculatorController:51 - Calc command PUSH
+2023-02-28 08:59:52 DEBUG CalculatorController:41 - Read command and parameter PUSH a
+2023-02-28 08:59:52 DEBUG CalculatorController:44 - Parse read line
+2023-02-28 08:59:52 INFO  LoaderFactory:30 - Find class by nameCommand
+2023-02-28 08:59:52 INFO  LoaderFactory:40 - Annotation comparison CommandAnnotation
+2023-02-28 08:59:52 DEBUG CalculatorController:48 - Create objet class operations.ru.nsu.ccfit.mikhalev.Push
+2023-02-28 08:59:52 DEBUG Operation:15 - Check correct size list args
+2023-02-28 08:59:52 DEBUG Operation:21 - Push value in stack
+2023-02-28 08:59:52 DEBUG Context:36 - Push value in Stack<Double>
+2023-02-28 08:59:52 DEBUG CalculatorController:51 - Calc command PUSH
+2023-02-28 08:59:52 DEBUG CalculatorController:41 - Read command and parameter MINUS
+2023-02-28 08:59:52 DEBUG CalculatorController:44 - Parse read line
+2023-02-28 08:59:52 INFO  LoaderFactory:30 - Find class by nameCommand
+2023-02-28 08:59:52 INFO  LoaderFactory:40 - Annotation comparison CommandAnnotation
+2023-02-28 08:59:52 DEBUG CalculatorController:48 - Create objet class operations.ru.nsu.ccfit.mikhalev.Minus
+2023-02-28 08:59:52 DEBUG Context:44 - Try pop value in stack
+2023-02-28 08:59:52 DEBUG Context:44 - Try pop value in stack
+2023-02-28 08:59:52 DEBUG Context:36 - Push value in Stack<Double>
+2023-02-28 08:59:52 DEBUG CalculatorController:51 - Calc command MINUS
+2023-02-28 08:59:52 DEBUG CalculatorController:41 - Read command and parameter PRINT
+2023-02-28 08:59:52 DEBUG CalculatorController:44 - Parse read line
+2023-02-28 08:59:52 INFO  LoaderFactory:30 - Find class by nameCommand
+2023-02-28 08:59:52 INFO  LoaderFactory:40 - Annotation comparison CommandAnnotation
+2023-02-28 08:59:52 DEBUG CalculatorController:48 - Create objet class operations.ru.nsu.ccfit.mikhalev.Print
+2023-02-28 08:59:52 DEBUG Operation:15 - Try to print value, That's why call peek in stack
+2023-02-28 08:59:52 DEBUG CalculatorController:51 - Calc command PRINT
+2023-02-28 08:59:52 DEBUG Context:84 - Close Reader

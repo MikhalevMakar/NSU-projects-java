@@ -1,117 +1,87 @@
 package ru.nsu.org.mikhalev.clients.view;
 
-
-import javafx.application.Platform;
 import javafx.fxml.FXML;
-import javafx.geometry.Pos;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.TextField;
-import javafx.scene.input.KeyCode;
-
+import javafx.scene.layout.Pane;
+import javafx.scene.text.Font;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import org.jetbrains.annotations.NotNull;
 import lombok.extern.log4j.Log4j2;
 import ru.nsu.org.mikhalev.clients.controller.Controller;
-import ru.nsu.org.mikhalev.universal_utile_class.Message;
-import ru.nsu.org.mikhalev.universal_utile_class.create_command.ContextCommand;
-import ru.nsu.org.mikhalev.universal_utile_class.exceptions.ExcIO;
 
+import java.io.File;
 import java.io.IOException;
-import java.util.List;
+
 
 @Log4j2
 public class ControllerView {
 
+    private Stage stage;
+
+    private Pane root;
+
+    /**
+     * Creates an instance of Text on the given coordinates containing the given string.
+     * Params: x – the horizontal position of the text
+     *         y – the vertical position of the text
+     *         text – text to be contained in the instance
+     */
+    private final Text error = new Text(100, 450, "");
+
     private static Controller controller;
 
-    @FXML
-    private TextField inputText;
-
-    @FXML
-    private TextField countConnectUser;
-
-    @FXML
-    private ListView<MessageItem> historyMessageView;
-
-    @FXML
-    private ListView<Label> participantsListView;
+    public static void registration(Controller _controller) {
+        controller = _controller;
+    }
 
     @FXML
     private TextField nameUser;
 
     public ControllerView() {}
-    public ControllerView(@NotNull Stage stage) {
-        stage.setOnCloseRequest(event -> handleWindowClose());
+    public ControllerView(final Stage stage) {
+        this.stage = stage;
+
+        Font font = Font.font("System", 15);
+        error.setFont(font);
+        error.setStyle("-fx-fill: red;");
     }
 
-    private void handleWindowClose() {
-        try {
-            Message<String> message = new Message<>(ContextCommand.getUSER_EXIT(),
-                                                    String.format("User: %s has left the chat", controller.getUser().getLogIn()));
-
-            message.setLogIn(controller.getUser().getLogIn());
-
-            controller.getUser().sendToServer(message);
-            Platform.exit();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public static void registration(final Controller controllerUser){
-        controller = controllerUser;
-    }
-
-    public void displayList(String nameUser, @NotNull List<String> list) {
-        log.info("Show list on display");
-
-        Platform.runLater(() -> {
-            participantsListView.getItems().clear();
-            countConnectUser.setText(String.format("%d", list.size()));
-            for (String user : list) {
-                Label label = new Label(user);
-                if (nameUser.equals(user)) {
-                    label.setStyle("-fx-text-fill: #346ead;");
-                }
-                participantsListView.getItems().add(label);
-            }
-        });
-    }
-
-    public void updateHistoryMessage(List<Message<String>> historyMessage) {
-
-        Platform.runLater(() -> {
-            log.info("Update messages");
-
-            for (var message : historyMessage) {
-                //MessageItem messageItem = new MessageItem(message);
-
-                MessageItem messageItem = new MessageItem(message, controller.getUser().getLogIn());
-
-                historyMessageView.getItems().add(messageItem);
-            }
-            historyMessageView.refresh();
-        });
-    }
-
-
-    public void handleEnterKeyPressed() {
-        inputText.setOnKeyPressed(event -> {
-            if (event.getCode() == KeyCode.ENTER && (inputText.getText().length() != 0)) {
-                log.info("Send text " + inputText.getText());
-                try {
-                    controller.getUser().sendToServer(new Message<>(ContextCommand.getMESSAGE(), inputText.getText()));
-                    inputText.clear();
-                } catch (IOException e) {
-                    throw new ExcIO("Error i | o" + e.getMessage());
-                }
-            }
-        });
-    }
-
-    public void buttonConnect() {
+    public void buttonConnect() throws IOException, ClassNotFoundException {
         log.info("Action button connect " + nameUser.getText());
         controller.tryLogin(nameUser.getText());
+    }
+    
+    public void printErrorMessage(String error) {
+        this.error.setText(error);
+    }
+    
+    public void generateLogin(String linkFXML) throws IOException {
+        log.info("Generate login");
+
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(new File(linkFXML).toURI().toURL());
+        root = fxmlLoader.load();
+
+        root.getChildren().add(error);
+
+        log.info("Load fxml");
+
+        Scene scene = new Scene(root);
+        stage.setTitle("General conversation");
+        stage.setScene (scene);
+        stage.setResizable (false);
+        stage.show();
+    }
+
+    public void generateChat(String linkFXML) throws IOException {
+        log.info("Generate chat");
+
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation (new File(linkFXML).toURI().toURL());
+
+        root = fxmlLoader.load();
+        stage.setScene(new Scene(root));
     }
 }

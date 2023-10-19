@@ -1,66 +1,54 @@
 package ru.nsu.org.mikhalev.clients.controller;
 
-import lombok.Getter;
 import lombok.extern.log4j.Log4j2;
-import org.jetbrains.annotations.*;
-
+import org.jetbrains.annotations.Contract;
+import org.jetbrains.annotations.NotNull;
 import ru.nsu.org.mikhalev.clients.User;
-import ru.nsu.org.mikhalev.clients.commands.Command;
 import ru.nsu.org.mikhalev.clients.file_management.LinksToConfiguration;
-import ru.nsu.org.mikhalev.clients.view.View;
-import ru.nsu.org.mikhalev.clients.commands.ExecuteCommand;
-import ru.nsu.org.mikhalev.universal_utile_class.*;
-import ru.nsu.org.mikhalev.universal_utile_class.create_command.ContextCommand;
-import ru.nsu.org.mikhalev.universal_utile_class.exceptions.*;
-import ru.nsu.org.mikhalev.universal_utile_class.file_manager.*;
+import ru.nsu.org.mikhalev.clients.view.ControllerView;
+import ru.nsu.org.mikhalev.universal_utile_class.Message;
+import ru.nsu.org.mikhalev.universal_utile_class.exceptions.ExcParseFileJSON;
+import ru.nsu.org.mikhalev.universal_utile_class.file_manager.Configuration;
+import ru.nsu.org.mikhalev.universal_utile_class.file_manager.ParseConfiguration;
 
 import java.io.IOException;
-import java.util.Arrays;
 
 
 @Log4j2
 public class Controller {
 
-    private final ExecuteCommand executeCommand;
+    private static final String answerUserAdded  = "true"; //TODO
 
-    @Getter
-    private final User user;
+    private  User user;
 
-    @Getter
-    private final LinksToConfiguration linkConfigurationJSON;
+    private LinksToConfiguration linkConfigurationJSON;
 
-    @Getter
-    private final View view;
+    private final ControllerView controllerView;
 
-    public Controller(View view, @NotNull LinksToConfiguration linkConfigurationJSON) throws ExcParseFileJSON, ExcConnection {
-        this.view = view;
+    public Controller(ControllerView controllerView, @NotNull LinksToConfiguration linkConfigurationJSON) throws ExcParseFileJSON {
+        this.controllerView = controllerView;
 
         this.linkConfigurationJSON = linkConfigurationJSON;
-
-        this.executeCommand = new ExecuteCommand(linkConfigurationJSON.getCommandsClients());
 
         Configuration configuration = ParseConfiguration.parseConfigurationJSON(Configuration.class,
                                                                                 linkConfigurationJSON.getConfigurationJSON());
         assert configuration != null;
 
-        user = new User(this, configuration.getPort(), configuration.getHost());
-    }
-
-    public void queryManagement(@NotNull Message<?> message) {
-        log.info("Query management " + message.getContent());
-
-        Command command;
-
-        command = executeCommand.createInstanceClass(message.getTypeMessage());
-        log.info ("Create command: " + command.getClass());
-
-        command.execute(this, message);
+        user = new User(configuration.getPort());
+        // user.connectToServer(configuration.getPort());
+        log.info("Finished create controller");
     }
 
     @Contract(value = "null -> false", pure = true)
-    public void tryLogin(final String logIn) {
-        log.info("Call function tryLogin, login: " + logIn);
-        user.setLogIn(logIn);
-        queryManagement(new Message<>(ContextCommand.getLOG_IN(), logIn));
+    public void tryLogin(final String login) throws IOException, ClassNotFoundException {
+        log.info("Call function tryLogin, login: " + login);
+
+        Message<?> message = user.connect(new Message<>("tryLogin", login));
+
+        log.info("Request server: correct nameUser: " + message);
+        controllerView.printErrorMessage(message.getContent().toString());
+
+        if(message.getContent().equals(answerUserAdded))
+            controllerView.generateChat(linkConfigurationJSON.getChatFXML());
     }
 }

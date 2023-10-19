@@ -1,10 +1,10 @@
 package ru.nsu.org.mikhalev.clients;
 
 import lombok.Getter;
-import lombok.Setter;
 import lombok.extern.log4j.Log4j2;
-import ru.nsu.org.mikhalev.clients.controller.Controller;
+import org.jetbrains.annotations.NotNull;
 import ru.nsu.org.mikhalev.universal_utile_class.Message;
+import ru.nsu.org.mikhalev.universal_utile_class.exceptions.EcxClose;
 import ru.nsu.org.mikhalev.universal_utile_class.exceptions.ExcConnection;
 
 import java.io.*;
@@ -13,70 +13,87 @@ import java.util.Arrays;
 import java.util.UUID;
 
 @Log4j2
-public class User implements Closeable, Serializable {
-
-    @Setter
-    @Getter
-    private String logIn;
-
+public class User  implements Closeable {
     @Getter
     private final UUID id;
 
-    private Socket socket;
-
-    @Getter
     private ObjectInputStream objectInputStream;
 
-    @Getter
     private ObjectOutputStream objectOutputStream;
 
-    @Getter
-    private final Controller controller;
+    private static final String HOST = "localhost";
 
-    public User(Controller controller, int port, String host) throws ExcConnection{
+    public User(int port) {
         log.info("Create user");
         this.id = UUID.randomUUID();
 
-        this.controller = controller;
-
-        connect(port, host);
+        connectToServer(port);
     }
 
-    private void connect(int port, String host) throws ExcConnection{
+    public synchronized void messageReceive() {
         try {
-            socket = new Socket(host, port);
-            objectOutputStream = new ObjectOutputStream(socket.getOutputStream());
-            objectInputStream = new ObjectInputStream (socket.getInputStream());
-
-        } catch (IOException e) {
-            log.warn("Connection error: " + socket.getLocalPort());
-            throw new ExcConnection("Error: in method connectToServer " + e.getMessage());
+            log.info("messageReceive to server");
+            Message<?> message = (Message<?>) objectInputStream.readObject();
+            System.out.println(message.getTypeMessage());
+        } catch (IOException | ClassNotFoundException e) {
+            log.error("Failed to send message", e);
         }
     }
 
-    public void launchListener() {
-        Runnable r = new Thread(() -> {
-            while (!Thread.currentThread().isInterrupted()) {
-                try {
-                    controller.queryManagement((Message<?>) objectInputStream.readObject());
-                } catch (IOException | ClassNotFoundException e) {
-                    throw new ExcConnection("Error: " + Arrays.toString(e.getStackTrace()));
-                }
-            }
-        });
+//    public synchronized Message messageSend(final Message<?> messag) {
+//        Message message = null;
+//        try {
+//            message = (Message) objectInputStream.readObject();
+//        } catch (IOException | ClassNotFoundException e) {
+//
+//            log.warn(String.format("User disconnected: %s", nameUser), e);
+//
+//            Message disconnectMessage = new Message(String.format("Server: there was a problem with the %s", objectInputStream),
+//                                                    commandMessage);
+//
+//           // KernelServer.broadcastMessage(disconnectMessage);
+//        }
+//
+//        return message;
+//    }
 
-        Thread thread = new Thread(r);
-        thread.start();
+//    public boolean equals(@NotNull User user) {
+//        return (Objects.equals(user.getNameUser(), nameUser) && user.getId() == id);
+//    }
+
+    private void connectToServer(int port) {
+        try (Socket socket = new Socket(HOST, port)) {
+            objectOutputStream = new ObjectOutputStream(socket.getOutputStream());
+            objectInputStream = new ObjectInputStream (socket.getInputStream());
+        } catch (IOException e) {
+            log.warn("Connection error: " + e);
+            throw new ExcConnection("Connection error:" + e.getMessage());
+        }
     }
 
-    public void sendToServer(Message<?> message) throws IOException {
-        objectOutputStream.writeObject(message);
+    public Message<?> connect(final @NotNull Message<String> login) throws IOException, ClassNotFoundException {
+        log.info("Request server: correct name user: " + login.getContent());
+
+        objectOutputStream.writeObject(login);
         objectOutputStream.flush();
+
+        return (Message<?>) objectInputStream.readObject();
+    }
+
+    public void launchCommunication() {
+       // while(socket.isConnected()) {
+            messageReceive();
+        //}
     }
 
     @Override
-    public void close() throws IOException {
-        objectInputStream.close();
-        objectOutputStream.close();
+    public void close() {
+        try {
+            objectInputStream.close();
+            objectOutputStream.close();
+        } catch (IOException ex) {
+            log.error("Error close: " + ex);
+            throw new EcxClose("Error close: " + Arrays.toString(ex.getStackTrace()));
+        }
     }
 }

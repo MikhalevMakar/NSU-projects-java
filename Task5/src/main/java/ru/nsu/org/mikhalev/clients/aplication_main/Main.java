@@ -5,9 +5,10 @@ import javafx.stage.Stage;
 import lombok.extern.log4j.Log4j2;
 import ru.nsu.org.mikhalev.clients.controller.Controller;
 import ru.nsu.org.mikhalev.clients.file_management.LinksToConfiguration;
-import ru.nsu.org.mikhalev.clients.view.View;
+import ru.nsu.org.mikhalev.clients.view.ControllerView;
 import ru.nsu.org.mikhalev.universal_utile_class.exceptions.ExcInvalidArg;
 import ru.nsu.org.mikhalev.universal_utile_class.exceptions.ExcParseFileJSON;
+import ru.nsu.org.mikhalev.universal_utile_class.file_manager.Configuration;
 import ru.nsu.org.mikhalev.universal_utile_class.file_manager.ParseConfiguration;
 
 
@@ -39,10 +40,11 @@ public class Main  extends Application {
     @Override
     public void start(Stage stage) throws Exception {
 
-        View view = new View(stage);
+        ControllerView controllerView = new ControllerView(stage);
 
-        view.generateLogin(linksResources.getLoginFXML());
-        view.getControllerView().registration(new Controller(view, linksResources));
+        controllerView.generateLogin(linksResources.getLoginFXML());
+
+        ControllerView.registration(new Controller(controllerView, linksResources));
     }
 
 }

@@ -1,5 +1,5 @@
 {
-"commandsServer" : "commands_server.properties",
+"commandsServer" : "/Users/natasamihaleva/NSU_Projects_Java/Task5/src/main/resources/server_input/server_commands.properties",
 
 "configurationServer" : "/Users/natasamihaleva/NSU_Projects_Java/Task5/src/main/resources/server_input/configuration.json"
 }

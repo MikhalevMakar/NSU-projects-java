@@ -3,8 +3,8 @@ package ru.nsu.org.mikhalev.server;
 import lombok.Getter;
 import lombok.extern.log4j.Log4j2;
 import org.jetbrains.annotations.NotNull;
+import ru.nsu.org.mikhalev.clients.User;
 import ru.nsu.org.mikhalev.server.file_management.LinksToConfiguration;
-import ru.nsu.org.mikhalev.universal_utile_class.create_command.ContextCommand;
 import ru.nsu.org.mikhalev.universal_utile_class.exceptions.ExcKernelServer;
 import ru.nsu.org.mikhalev.universal_utile_class.Message;
 import ru.nsu.org.mikhalev.universal_utile_class.exceptions.ExcParseFileJSON;
@@ -13,8 +13,9 @@ import ru.nsu.org.mikhalev.universal_utile_class.file_manager.ParseConfiguration
 
 import java.io.IOException;
 import java.net.Socket;
-import java.util.*;
+import java.util.HashMap;
 import java.net.ServerSocket;
+import java.util.Map;
 
 @Log4j2
 public class KernelServer {
@@ -25,13 +26,7 @@ public class KernelServer {
     @Getter
     private final Map<String, ServerCommunication> mapUser = new HashMap<>();
 
-    @Getter
-    private final List<Message<String>> messages = new LinkedList<>();
-
-    private final LinksToConfiguration linksToConfiguration;
-
     public KernelServer(@NotNull LinksToConfiguration linksResources) throws IOException, ExcParseFileJSON {
-        this.linksToConfiguration = linksResources;
 
         Configuration configuration = ParseConfiguration.parseConfigurationJSON(Configuration.class,
                                                                                 linksResources.getConfigurationServer());
@@ -40,32 +35,13 @@ public class KernelServer {
         this.serverSocket = new ServerSocket(configuration.getPort());
     }
 
-    public void removeUser(String user) {
+    public void removeUser(User user) {
         mapUser.remove(user);
     }
 
-    public void broadCastListMessages(@NotNull List<Message<String>> messageList) {
-        log.info("Broad cast list messages");
-
-        final Message<List<Message<String>>> message = new Message<>(ContextCommand.getMESSAGE(), messageList.stream().toList());
-
-        for (Map.Entry<String, ServerCommunication> entry : mapUser.entrySet()) {
-
-            entry.getValue().requestSendMessage(message);
-        }
-    }
-
     public synchronized void addNewUser(String nameUser, ServerCommunication serverCommunication) {
-         log.info("Add new user, name: " + nameUser);
-
+         log.info("Add new user, name " + nameUser);
          mapUser.put(nameUser, serverCommunication);
-         broadCastListUsers();
-
-         List<Message<String>> messageList = new LinkedList<>();
-         messageList.add(new Message<>(ContextCommand.getBROAD_CAST_NEW_USER(), String.format("Add new user: %s", nameUser)));
-         broadCastListMessages(messageList);
-
-         serverCommunication.requestSendMessage(new Message<>(ContextCommand.getMESSAGE(), messages));
     }
 
     public synchronized boolean contains(final String nameUser)  {
@@ -74,11 +50,10 @@ public class KernelServer {
         return mapUser.containsKey(nameUser);
     }
 
-    public void broadCastListUsers()  {
-        log.info ("Broad cast list users");
+    public void broadCastListUsers() throws IOException {
+        log.info("Broad cast list users");
 
-        final Message<List<String>> message = new Message<>(ContextCommand.getLIST_PARTICIPANTS(),
-                                                            mapUser.keySet().stream().toList());
+        final Message<Map<String, ServerCommunication>> message = new Message<>("list", mapUser);
 
         for (Map.Entry<String, ServerCommunication> entry : mapUser.entrySet()) {
             entry.getValue().requestSendMessage(message);
@@ -92,12 +67,9 @@ public class KernelServer {
         while(!serverSocket.isClosed()) {
             try {
                 clientSocket = serverSocket.accept();
-
                 log.info("Joining user: " + clientSocket.toString());
 
-                Thread thread = new Thread(new ServerCommunication(this,
-                                                                    clientSocket,
-                                                                    linksToConfiguration.getCommandsServer()));
+                Thread thread = new Thread(new ServerCommunication(this, clientSocket));
                 thread.start();
             } catch(IOException ex) {
                 throw new ExcKernelServer("Error: int class " + this);
@@ -109,3 +81,6 @@ public class KernelServer {
         return this.getClass().getSimpleName();
     }
 }
+
+
+
