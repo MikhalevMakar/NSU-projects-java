@@ -14,7 +14,7 @@ import java.awt.*;
 public class PerformanceGameArea implements Observer {
     CreateFrame frame;
     private JButton buttonMenu, buttonPause, buttonPlay, buttonRestart;
-    private String PANEL_GAME_AREA = "PanelGameArea.jpg";
+    private final String PANEL_GAME_AREA = "gameattributes/PanelGameArea.jpg";
     private static GameController gameController;
     private static JPanel panel;
     public PerformanceGameArea(GameController gameController) {

@@ -1,10 +1,7 @@
     package ru.nsu.org.mikhalev.view.menu_game;
 
     import ru.nsu.org.mikhalev.model.Context;
-    import ru.nsu.org.mikhalev.view.CreateFrame;
-    import ru.nsu.org.mikhalev.view.HorizontalGradientButton;
-    import ru.nsu.org.mikhalev.view.SetColor;
-    import ru.nsu.org.mikhalev.view.tetris_area.PerformanceGameArea;
+    import ru.nsu.org.mikhalev.view.*;
     import ru.nsu.org.mikhalev.view.tetris_area.TetrisAreaView;
 
     import javax.swing.*;
@@ -15,7 +12,7 @@
     import java.util.concurrent.Executors;
 
     public class GenerateMenu {
-        private String MAIN_MENU = "MainMenu.jpg";
+        private String MAIN_MENU = "gameattributes/MainMenu.jpg";
         private JButton buttonStart,
                         buttonLevel,
                         buttonScore,
@@ -47,13 +44,11 @@
                     300,
                     SetColor.GREEN_START.get(),
                     SetColor.GREEN_END.get());
-            buttonStart.addActionListener(new ActionListener() {
-                public void actionPerformed(ActionEvent e) {
-                    frame.dispose();
-                    ExecutorService newExecutor = Executors.newSingleThreadExecutor();
-                    newExecutor.execute( new TetrisAreaView());
-                    newExecutor.shutdown();
-                }
+            buttonStart.addActionListener(e -> {
+                frame.dispose();
+                ExecutorService newExecutor = Executors.newSingleThreadExecutor();
+                newExecutor.execute( new TetrisAreaView());
+                newExecutor.shutdown();
             });
             frame.getContentPane().add(buttonStart);
         }
@@ -64,11 +59,7 @@
                                                        300,
                                                        SetColor.GOLD_START.get(),
                                                        SetColor.GOLD_END.get());
-            buttonLevel.addActionListener(new ActionListener() {
-                public void actionPerformed(ActionEvent e) {
-                    new GameLevelPanel();
-                }
-            });
+            buttonLevel.addActionListener(e -> new GameLevelPanel());
             frame.getContentPane().add(buttonLevel);
         }
         private void createButtonScore() {
@@ -77,11 +68,9 @@
                     450,
                     SetColor.GREEN_START.get(),
                     SetColor.GREEN_END.get());
-            buttonScore.addActionListener(new ActionListener() {
-                public void actionPerformed(ActionEvent e) {
-                    LeaderBoard leaderBoard = new LeaderBoard();
-                    leaderBoard.fillTablePlayer();
-                }
+            buttonScore.addActionListener(e -> {
+                LeaderBoard leaderBoard = new LeaderBoard();
+                leaderBoard.fillTablePlayer();
             });
             frame.getContentPane().add(buttonScore);
         }
@@ -91,11 +80,7 @@
                                                        450,
                                                        SetColor.GOLD_START.get(),
                                                        SetColor.GOLD_END.get());
-            buttonRules.addActionListener(new ActionListener() {
-                public void actionPerformed(ActionEvent e) {
-                    new RulesGame();
-                }
-            });
+            buttonRules.addActionListener(e -> new RulesGame());
             frame.getContentPane().add(buttonRules);
         }
     }

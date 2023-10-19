@@ -4,8 +4,8 @@ import ru.nsu.org.mikhalev.controller.GameController;
 import ru.nsu.org.mikhalev.model.GameArea;
 
 public class TetrisAreaView implements Runnable {
-    private static GameArea gameArea;
-    private GameController gameController;
+    private final GameArea gameArea;
+    private final GameController gameController;
     public TetrisAreaView() {
         gameArea = new GameArea();
         gameController = new GameController(gameArea);

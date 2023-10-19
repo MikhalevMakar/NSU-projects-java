@@ -5,7 +5,7 @@ import ru.nsu.org.mikhalev.model.Context;
 import java.awt.*;
 
 public class DrawGivenFigure {
-    static public void draw(Graphics graphics, Color color, int x, int y) {
+    public static void draw(Graphics graphics, Color color, int x, int y) {
         graphics.setColor(color);
         graphics.fillRect(x * Context.getOFFSET_SHARED() + Context.getOFFSET_TABLE_X(),
                           y * Context.getOFFSET_SHARED() + Context.getOFFSET_TABLE_Y(),

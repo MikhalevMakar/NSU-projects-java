@@ -5,46 +5,33 @@ import ru.nsu.org.mikhalev.model.Context;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
 
 public class GameLevelPanel extends JFrame {
-    private String PanelLevel = "PanelLevel.png";
-    private JCheckBox EASILY = new JCheckBox("EASILY");
-    private JPanel panel;
-    private JCheckBox MIDDLE = new JCheckBox("MIDDLE");
-    private JCheckBox HARD = new JCheckBox("HARD");
+    private final String PanelLevel = "gameattributes/PanelLevel.png";
+    private final JCheckBox EASILY = new JCheckBox("EASILY");
+    private final JPanel panel;
+    private final JCheckBox MIDDLE = new JCheckBox("MIDDLE");
+    private final JCheckBox HARD = new JCheckBox("HARD");
 
     private void checkListener() {
-        EASILY.addItemListener(new ItemListener() {
-            @Override
-            public void itemStateChanged(ItemEvent e) {
-                if (EASILY.isSelected()) {
-                    MIDDLE.setSelected(false);
-                    HARD.setSelected(false);
-                }
+        EASILY.addItemListener(e -> {
+            if (EASILY.isSelected()) {
+                MIDDLE.setSelected(false);
+                HARD.setSelected(false);
             }
         });
 
-        MIDDLE.addItemListener(new ItemListener() {
-            @Override
-            public void itemStateChanged(ItemEvent e) {
-                if (MIDDLE.isSelected()) {
-                    EASILY.setSelected(false);
-                    HARD.setSelected(false);
-                }
+        MIDDLE.addItemListener(e -> {
+            if (MIDDLE.isSelected()) {
+                EASILY.setSelected(false);
+                HARD.setSelected(false);
             }
         });
 
-        HARD.addItemListener(new ItemListener() {
-            @Override
-            public void itemStateChanged(ItemEvent e) {
-                if (HARD.isSelected()) {
-                    EASILY.setSelected(false);
-                    MIDDLE.setSelected(false);
-                }
+        HARD.addItemListener(e -> {
+            if (HARD.isSelected()) {
+                EASILY.setSelected(false);
+                MIDDLE.setSelected(false);
             }
         });
 
@@ -73,23 +60,11 @@ public class GameLevelPanel extends JFrame {
     }
 
     private void addActions() {
-        EASILY.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                GameController.setDELAY(Context.getEASILY());
-            }
-        });
+        EASILY.addActionListener(e -> GameController.setDELAY(Context.getEASILY()));
 
-        MIDDLE.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                GameController.setDELAY(Context.getMIDDLE());
-            }
-        });
+        MIDDLE.addActionListener(e -> GameController.setDELAY(Context.getMIDDLE()));
 
-        HARD.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                GameController.setDELAY(Context.getHARD());
-            }
-        });
+        HARD.addActionListener(e -> GameController.setDELAY(Context.getHARD()));
     }
 
     private void createEASILY() {

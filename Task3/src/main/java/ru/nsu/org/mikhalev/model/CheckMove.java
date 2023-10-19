@@ -14,10 +14,8 @@ public class CheckMove {
             for (int row = h - 1; row >= 0; --row) {
                 int x = column + shape.getX();
                 int y = row + shape.getY();
-                if (shape.IsShape(column, row) &&
-                    placedShape[y + 1][x] != null
-                )
-                return false;
+                if (shape.IsShape(column, row) && placedShape[y + 1][x] != null)
+                    return false;
             }
         }
         return true;

@@ -5,7 +5,7 @@ import ru.nsu.org.mikhalev.model.Context;
 import java.awt.*;
 
 public class FieldPanel {
-    static public void drawGridSquare(Graphics graphics) {
+    public static void drawGridSquare(Graphics graphics) {
         graphics.setColor(new Color(70,70,65));
         graphics.fillRect(Context.getOFFSET_TABLE_X(),
                 Context.getOFFSET_TABLE_Y(),

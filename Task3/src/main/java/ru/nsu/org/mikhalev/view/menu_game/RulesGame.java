@@ -22,11 +22,11 @@ public class RulesGame extends JFrame {
         panel.add(descriptionLabelFirst, BorderLayout.NORTH);
 
         JPanel figuresPanel = new JPanel(new GridLayout(1, 5));
-        ImageIcon clevelandIcon = new ImageIcon(Context.getPATH_RESOURCES() + "Cleveland.png");
-        ImageIcon heroIcon = new ImageIcon(Context.getPATH_RESOURCES() + "Hero.png");
-        ImageIcon rickyIcon = new ImageIcon(Context.getPATH_RESOURCES() + "Ricky.png");
-        ImageIcon teeWeeIcon = new ImageIcon(Context.getPATH_RESOURCES() + "TeeWee.png");
-        ImageIcon smashBoyIcon = new ImageIcon(Context.getPATH_RESOURCES() + "SmashBoy.png");
+        ImageIcon clevelandIcon = new ImageIcon(Context.getPATH_RESOURCES() + "gameattributes/Cleveland.png");
+        ImageIcon heroIcon = new ImageIcon(Context.getPATH_RESOURCES() + "gameattributes/Hero.png");
+        ImageIcon rickyIcon = new ImageIcon(Context.getPATH_RESOURCES() + "gameattributes/Ricky.png");
+        ImageIcon teeWeeIcon = new ImageIcon(Context.getPATH_RESOURCES() + "gameattributes/TeeWee.png");
+        ImageIcon smashBoyIcon = new ImageIcon(Context.getPATH_RESOURCES() + "gameattributes/SmashBoy.png");
 
         figuresPanel.add(new JLabel(clevelandIcon));
         figuresPanel.add(new JLabel(heroIcon));

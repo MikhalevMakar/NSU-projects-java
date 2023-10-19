@@ -1,7 +1,6 @@
 package ru.nsu.org.mikhalev.view.tetris_area;
 
 import ru.nsu.org.mikhalev.controller.GameController;
-import ru.nsu.org.mikhalev.model.GameArea;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;

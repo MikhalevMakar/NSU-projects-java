@@ -17,7 +17,7 @@ public class GameController {
     }
 
     public void setPaused(boolean isPaused) {
-        this.isPaused = isPaused;
+        GameController.isPaused = isPaused;
     }
 
     public static boolean getPaused() { return isPaused; }
